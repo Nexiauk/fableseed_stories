@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'nursery',
 ]
 
 SITE_ID = 1
