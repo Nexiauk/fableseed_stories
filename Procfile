@@ -1,0 +1,1 @@
+web: gunicorn story_forum.wsgi
