@@ -31,7 +31,7 @@ SECRET_KEY = '(z3lr%nruy(a0ja25^5e#psjj1$0&kr4mi*+_wlxlz!op&*g'
 DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com',
-                 '127.0.0.1:500',
+                 '127.0.0.1',
                  ]
 
 
@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'story_forum.urls'
