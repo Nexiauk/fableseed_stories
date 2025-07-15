@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
 class Fableseed(models.Model):
     seed = models.AutoField(primary_key=True)
-    flower_type = models.ForeignKey('Flower', on_delete=models.CASCADE)
+    flower_type = models.ForeignKey('nursery.Flower', on_delete=models.PROTECT)
     title = models.CharField(max_length=130)
     body = models.CharField(max_length=255)
     approval_status = models.BooleanField(default=False)
@@ -19,3 +20,16 @@ class Fableseed(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class Flower(models.Model):
+    flower = models.AutoField(primary_key=True)
+    flower_name = models.CharField(max_length=255)
+    flower_image = CloudinaryField('image', default='placeholder')
+
+    class Meta:
+        ordering = ["flower_name"]
+
+    def __str__(self):
+        return self.flower_name
+    
