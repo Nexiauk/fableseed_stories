@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Fableseed(models.Model):
-    seed = models.AutoField()
+    seed = models.AutoField(primary_key=True)
     flower_type = models.ForeignKey('Flower', on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    body = models.TextField(max_length=255)
+    title = models.CharField(max_length=130)
+    body = models.CharField(max_length=255)
     approval_status = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
