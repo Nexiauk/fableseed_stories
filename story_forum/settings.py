@@ -25,6 +25,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.herokuapp.com",
+]
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'os.environ.get("SECRET_KEY)'
 
@@ -45,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
