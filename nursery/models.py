@@ -33,3 +33,14 @@ class Flower(models.Model):
     def __str__(self):
         return self.flower_name
     
+    class FableBranch(models.Model):
+        seed_id = models.ForeignKey("nursery.Fableseed", on_delete=models.PROTECT)
+        body = models.TextField()
+        created_on = models.DateTimeField(auto_now_add=True)
+        edited_on = models.DateTimeField(auto_now=True)
+        author_id = models.ForeignKey(User, on_delete=models.PROTECT)
+        fablebuds_cost = models.PositiveIntegerField(default=1)
+
+        def __str__(self):
+            return self.body
+    
