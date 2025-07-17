@@ -21,9 +21,9 @@ class NurseryViewTests(TestCase):
 
 class NurseryModelTests(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username="lucytest", password="testpassword")
-        self.flower = Flower.objects.create(flower_name="Lily")
-        self.seed = Fableseed.objects.create (
+        self.user=User.objects.create_user(username="lucytest", password="testpassword")
+        self.flower=Flower.objects.create(flower_name="Lily")
+        self.seed=Fableseed.objects.create (
             flower_type=self.flower,
             title="My 1st Fableseed",
             body="Once upon a time...",
@@ -32,8 +32,18 @@ class NurseryModelTests(TestCase):
             fablebuds_earnt=1
         )
         self.branch = FableBranch.objects.create(
-            seed = self.seed,
-            body = "Story text goes here",
+            seed=self.seed,
+            body="Story text goes here",
+            author=self.user,
+            fablebuds_cost=1
+        )
+        self.longbody = (
+        "This is a really long string that should truncate because it is longer than 50 characters and I don't want to display anything that long."
+        )
+
+        self.long_branch = FableBranch.objects.create(
+            seed=self.seed,
+            body=self.longbody,
             author=self.user,
             fablebuds_cost=1
         )
@@ -51,3 +61,8 @@ class NurseryModelTests(TestCase):
         self.assertEqual(self.branch.author, self.user)
         self.assertEqual(self.branch.fablebuds_cost, 1)
         self.assertEqual(str(self.branch), "Story text goes here by lucytest")
+
+    def test_fablebranch_str_truncates_long_body_text(self):
+        expected = f"{self.longbody[:50]}... by {self.user.username}"
+        self.assertEqual(str(self.long_branch), expected)
+        
