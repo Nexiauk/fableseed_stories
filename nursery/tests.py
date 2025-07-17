@@ -20,7 +20,20 @@ class NurseryViewTests(TestCase):
         self.assertContains(response, "Test content")
 
 class NurseryModelTests(TestCase):
+    """
+    A class of tests to ensure that the nursery models work as expected.
+    Tests Fableseeds and Fablebranches.
+
+    Verifies that the instances are created correctly,
+    their fields contain expected values, and their string representations behave
+    as expected, including truncation.
+
+    """
     def setUp(self):
+        """
+        Create initial test data for users, flowers, fableseeds and 
+        fablebranches to use across tests.
+        """
         self.user=User.objects.create_user(username="lucytest", password="testpassword")
         self.flower=Flower.objects.create(flower_name="Lily")
         self.seed=Fableseed.objects.create (
@@ -49,6 +62,10 @@ class NurseryModelTests(TestCase):
         )
 
     def test_fableseed_creation_and_str(self):
+        """
+        Test that a Fableseed instance is created with expected field values
+          and that its string representation returns correctly.
+        """
         self.assertEqual(self.seed.title, "My 1st Fableseed")
         self.assertTrue(self.seed.approval_status)
         self.assertEqual(self.seed.body, "Once upon a time...")
@@ -56,6 +73,10 @@ class NurseryModelTests(TestCase):
         self.assertEqual(str(self.seed), "My 1st Fableseed by lucytest")
 
     def test_fablebranch_creation_and_str(self):
+        """
+        Test that a Fablebranch instance is created with expected field values
+        and that its string representation returns the full body and author.
+        """
         self.assertEqual(self.branch.seed, self.seed)
         self.assertEqual(self.branch.body, "Story text goes here")
         self.assertEqual(self.branch.author, self.user)
@@ -63,6 +84,10 @@ class NurseryModelTests(TestCase):
         self.assertEqual(str(self.branch), "Story text goes here by lucytest")
 
     def test_fablebranch_str_truncates_long_body_text(self):
+        """
+        Test that the string representation of a FableBranch with a long body 
+        truncates at 50 characters, followed by ellipsis and author.
+        """
         expected = f"{self.longbody[:50]}... by {self.user.username}"
         self.assertEqual(str(self.long_branch), expected)
         
