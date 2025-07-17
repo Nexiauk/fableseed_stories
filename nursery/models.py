@@ -4,43 +4,104 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 class Fableseed(models.Model):
+    """
+    Represents a story seed created by a user, associated with a flower type.
+
+    Attributes:
+    Seed(Autofield): Primary key identifier for the seed.
+    flower_type(ForeignKey): Reference to the associated flower object
+    title(CharField): Title of the fable seed
+    body(CharField): Story prompt written by the user
+    approval_status(BooleanField): Indicates if the seed has been approved by admin. Default is false.
+    created_on(DateTimeField): Timestamp when the seed was created
+    edited_on(DateTimeField): Timestamp when the seed was last edited
+    author(ForeignKey): Reference to the user who created the seed
+    fablebuds_earnt(PositiveIntegerField): Number of fablebuds earned by the seed. Default is 1)
+
+    Meta:
+        ordering: Seeds are sorted by creation date descending (newest first)
+
+    Methods:
+        __str__: Returns a string representation of the seed including title and author
+    """
+
     seed = models.AutoField(primary_key=True)
-    flower_type = models.ForeignKey('nursery.Flower', on_delete=models.PROTECT)
+    flower_type = models.ForeignKey("nursery.Flower", on_delete=models.PROTECT)
     title = models.CharField(max_length=130)
     body = models.CharField(max_length=255)
     approval_status = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.PROTECT)
-    fablebuds_earnt = models.PositiveIntegerField(default=0)
+    fablebuds_earnt = models.PositiveIntegerField(default=1)
 
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
-        return self.title
-    
+        return f"{self.title} by {self.author}"
+
 
 class Flower(models.Model):
+    """
+    Represents flowers available in the database to associate with a fableseed.
+
+    Attributes
+
+        flower(AutoField): Primary key identifier for the flower.
+        flower_name(CharField): The name of the flower.
+        flower_image(CloudinaryField): An image representation of the flower for the user's garden and to populate on the fableseed.
+
+    Meta:
+        ordering: Flowers are sorted by flower name in ascending alphabetical order.
+
+    Methods:
+        __str__: Returns a string representation of the flower name.
+    """
+
     flower = models.AutoField(primary_key=True)
     flower_name = models.CharField(max_length=255)
-    flower_image = CloudinaryField('image', default='placeholder')
+    flower_image = CloudinaryField("image", default="placeholder")
 
     class Meta:
         ordering = ["flower_name"]
 
     def __str__(self):
         return self.flower_name
-    
-    class FableBranch(models.Model):
-        seed_id = models.ForeignKey("nursery.Fableseed", on_delete=models.PROTECT)
-        body = models.TextField()
-        created_on = models.DateTimeField(auto_now_add=True)
-        edited_on = models.DateTimeField(auto_now=True)
-        author_id = models.ForeignKey(User, on_delete=models.PROTECT)
-        fablebuds_cost = models.PositiveIntegerField(default=1)
 
-        def __str__(self):
-            return self.body
-    
+
+class FableBranch(models.Model):
+    """
+    Represents a branching reply to the Fableseeds
+
+    Attributes:
+        branch(AutoField): Primary key identifier for the fablebranch.
+        seed(ForeignKey): Links to the Fableseed that the branch replies to.
+        body(TextField): Story content written by the user.
+        created_on(DateTimeField): Timestamp when the branch was created.
+        edited_on(DateTimeField): Timestamp when the branch was last edited.
+        author(ForeignKey): Reference to the user who created the branch.
+        Fablebuds_cost(PositiveIntegerField): Number of fablebuds it costs the user to write/purchase the branch. Default is 1.
+
+    Methods:
+        __str__: returns a string representation of the fablebranch text body and the name of the author who wrote it.
+        If the text is longer than 50 charcs, it will return a truncated version.
+
+    """
+
+    branch = models.AutoField(primary_key=True)
+    seed = models.ForeignKey("nursery.Fableseed", on_delete=models.PROTECT)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    edited_on = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User, on_delete=models.PROTECT)
+    fablebuds_cost = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return (
+            f"{self.body[:50]}... by {self.author}"
+            if len(self.body) > 50
+            else f"{self.body} by {self.author}"
+        )
