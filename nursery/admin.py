@@ -9,6 +9,15 @@ class FlowerAdmin(admin.ModelAdmin):
 
 @admin.register(Fableseed)
 class FableseedAdmin(admin.ModelAdmin):
+    fields = (
+        "title",
+        "author",
+        "flower_type",
+        "flower_image",
+        "body",
+        "approval_status",
+    )
+    readonly_fields = ("flower_image",)
     list_display = ("title", "author", "flower_name", "flower_image", "approval_status")
 
     def flower_name(self, obj):
