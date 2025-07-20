@@ -39,6 +39,7 @@ class Fableseed(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
+        
 
     def __str__(self):
         return f"{self.title} by {self.author}"
@@ -98,6 +99,10 @@ class FableBranch(models.Model):
     edited_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.PROTECT)
     fablebuds_cost = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        verbose_name = "Fablebranch"
+        verbose_name_plural = "Fablebranches"
 
     def __str__(self):
         return (
