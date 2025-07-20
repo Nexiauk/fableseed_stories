@@ -10,9 +10,10 @@ Nursery
 <p>Test content
     <button class="btn btn-neutral">Test</button>
 
-    {% for flower in flower_list %}
-       <p> {{flower.flower_name}}</p>
-        <img src="{{ flower.flower_image.url }}" alt="{{ flower.flower_name }}">
+    {% for fableseed in fableseed_list %}
+       <p> {{ fableseed.title }}</p>
+       <p> {{ fableseed.body }}</p>
+        <!-- <img src="{{ flower.flower_image.url }}" alt="{{ flower.flower_name }}"> -->
     {% endfor %}
 </p>
 {% endblock content %}

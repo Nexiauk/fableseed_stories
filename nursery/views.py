@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Flower
+from .models import Flower, Fableseed
 
 # Create your views here.
 def nursery(request):
@@ -23,4 +23,13 @@ def flower_view(request):
         "flower_list": flower_list
     }
     page_url="nursery/nursery.html"
+    return render(request, page_url, context)
+
+def fableseed_view(request):
+    fableseed_list = Fableseed.objects.all()
+    context = {
+        "fableseed_list": fableseed_list
+    }
+
+    page_url = "nursery/nursery.html"
     return render(request, page_url, context)
