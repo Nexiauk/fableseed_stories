@@ -92,9 +92,17 @@ class NurseryModelTests(TestCase):
         self.assertEqual(str(self.long_branch), expected)
 
     def test_fableseed_view_renders_correct_template_and_info(self):
-                response = self.client.get(reverse("nursery"))
-                self.assertEqual(response.status_code, 200)
-                self.assertTemplateUsed(response, "nursery/nursery.html")
-                self.assertIn("fableseed_list", response.context)
-                self.assertIn(self.seed, response.context["fableseed_list"])
+        """
+        Test that the nursery view loads correctly and provides the expected data.
+        This test performs a GET request on the nursery url and verifies:
+        - that the response code is 200; 
+        - that the nursery/nursery.html template renders the page; 
+        - that the context contains a variable named fableseed_list;
+        - that the fableseed list creates the specific seed object created for the test.
+        """
+        response = self.client.get(reverse("nursery"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "nursery/nursery.html")
+        self.assertIn("fableseed_list", response.context)
+        self.assertIn(self.seed, response.context["fableseed_list"])
         
