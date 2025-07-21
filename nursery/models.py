@@ -34,7 +34,7 @@ class Fableseed(models.Model):
     approval_status = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, on_delete=models.PROTECT)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     fablebuds_earnt = models.PositiveIntegerField(default=1)
 
     class Meta:
@@ -42,7 +42,8 @@ class Fableseed(models.Model):
         
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        author_name = self.author.username if self.author else "Deleted User"
+        return f"{self.title} by {author_name}"
 
 
 class Flower(models.Model):
@@ -97,7 +98,7 @@ class FableBranch(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, on_delete=models.PROTECT)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     fablebuds_cost = models.PositiveIntegerField(default=1)
 
     class Meta:
@@ -105,8 +106,9 @@ class FableBranch(models.Model):
         verbose_name_plural = "Fablebranches"
 
     def __str__(self):
+        author_name = self.author.username if self.author else "Deleted User"
         return (
-            f"{self.body[:50]}... by {self.author}"
+            f"{self.body[:50]}... by {author_name}"
             if len(self.body) > 50
-            else f"{self.body} by {self.author}"
+            else f"{self.body} by {author_name}"
         )
