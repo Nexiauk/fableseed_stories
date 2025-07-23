@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
-
+STATUS = ((0, "Pending"), (1, "Approved"))
 
 class Fableseed(models.Model):
     """
@@ -31,7 +31,7 @@ class Fableseed(models.Model):
     flower_type = models.ForeignKey("nursery.Flower", on_delete=models.PROTECT)
     title = models.CharField(max_length=130)
     body = models.CharField(max_length=255)
-    approval_status = models.BooleanField(default=False)
+    approval_status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
@@ -72,8 +72,7 @@ class Flower(models.Model):
 
     def __str__(self):
         return self.flower_name
-
-
+    
 class FableBranch(models.Model):
     """
     Represents a branching reply to the Fableseeds
