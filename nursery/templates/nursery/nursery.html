@@ -7,26 +7,21 @@ Nursery
 
 {% block content %}
 
-<p>Test content
-    <button class="btn btn-neutral">Test</button></p>
-
-    <table id="fableseed-list" class="table-auto w-full text-left min-w-max">
-        <thead>
-            <tr>
-                <th>Seed Title</th>
-                <th>Author</th>
-                <th>Date created</th>
-            </tr>
-                             {% for fableseed in fableseed_list %}
-            <tr>
-                <td>{{ fableseed.title }}</td>
-                <td>{{ fableseed.author }}</td>
-                <td>{{ fableseed.created_on }}</td>
-            </tr>
-                {% endfor %}
-        </thead>
-    </table>
-
-
+<table id="fableseed-list" class="table-auto w-xl text-left min-w-max  border-2">
+    <thead>
+        <tr class="border-2">
+            <th>Seed Title</th>
+            <th>Author</th>
+            <th>Date created</th>
+        </tr>
+        {% for fableseed in fableseed_list %}
+        <tr class="clickable">
+            <td>{{ fableseed.title }}</td>
+            <td>{{ fableseed.author }}</td>
+            <td>{{ fableseed.created_on }}</td>
+        </tr>
+        {% endfor %}
+    </thead>
+</table>
 
 {% endblock content %}
