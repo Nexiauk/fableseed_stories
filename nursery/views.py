@@ -2,21 +2,6 @@ from django.shortcuts import render
 from .models import Flower, Fableseed
 
 # Create your views here.
-def nursery(request):
-    """
-    Renders the nursery.html template, which shows a grid of all Fableseeds
-
-    Args:
-        request (HttpRequest): The HTTP request object sent by the browser
-
-    Returns:
-        HttpResponse:The rendered HTML response showing the nursery page
-    """
-    return render(
-        request,
-        "nursery/nursery.html",
-    )
-
 def flower_view(request):
     flower_list = Flower.objects.all()
     context = {
@@ -25,7 +10,7 @@ def flower_view(request):
     page_url="nursery/nursery.html"
     return render(request, page_url, context)
 
-def fableseed_view(request):
+def nursery_view(request):
     fableseed_list = Fableseed.objects.all()
     context = {
         "fableseed_list": fableseed_list
