@@ -1,11 +1,15 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from .models import Flower, Fableseed, FableBranch
 
 # Register your models here.
 
 @admin.register(Flower)
 class FlowerAdmin(admin.ModelAdmin):
-    list_display = ["flower_name", "flower_image"]
+    list_display = ["flower_name", "flower_image_url"]
+
+    def flower_image_url(self, obj):
+        return format_html('<img src="{}" style="height: 50px; width: 50px;" />', obj.flower_image.url)
 
 @admin.register(Fableseed)
 class FableseedAdmin(admin.ModelAdmin):
