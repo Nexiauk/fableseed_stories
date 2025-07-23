@@ -9,9 +9,24 @@ Nursery
 
 <p>Test content
     <button class="btn btn-neutral">Test</button></p>
-<ul class="list-disc pl-5">
-    {% for fableseed in fableseed_list %}
-<li>{{ fableseed.title }}</li>
-    {% endfor %}
-</ul>
+
+    <table id="fableseed-list" class="table-auto w-full text-left min-w-max">
+        <thead>
+            <tr>
+                <th>Seed Title</th>
+                <th>Author</th>
+                <th>Date created</th>
+            </tr>
+                             {% for fableseed in fableseed_list %}
+            <tr>
+                <td>{{ fableseed.title }}</td>
+                <td>{{ fableseed.author }}</td>
+                <td>{{ fableseed.created_on }}</td>
+            </tr>
+                {% endfor %}
+        </thead>
+    </table>
+
+
+
 {% endblock content %}
