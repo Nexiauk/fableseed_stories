@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.utils.html import format_html
 
 # Create your models here.
 STATUS = ((0, "Pending"), (1, "Approved"))
@@ -72,6 +73,9 @@ class Flower(models.Model):
 
     def __str__(self):
         return self.flower_name
+    
+    def flower_image_url(self):
+        return format_html('<img src="{}" style="height: 50px; width: 50px;" />', self.flower_image.url)
     
 class FableBranch(models.Model):
     """

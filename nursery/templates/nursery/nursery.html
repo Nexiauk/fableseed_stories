@@ -18,7 +18,7 @@ Nursery
             </tr>
             {% for fableseed in fableseed_list %}
             <tr class="clickable hover:bg-primary border ">
-                <td class="pl-3">icon</td>
+                <td class="pl-3">{{ fableseed.flower_type.flower_image_url}}</td>
                 <td class="py-3">{{ fableseed.title }}</td>
                 <td>{{ fableseed.author }}</td>
                 <td>{{ fableseed.created_on }}</td>
