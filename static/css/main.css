@@ -2316,6 +2316,9 @@
       }
     }
   }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .label {
     display: inline-flex;
     align-items: center;
@@ -2614,6 +2617,9 @@
   .w-52 {
     width: calc(var(--spacing) * 52);
   }
+  .w-full {
+    width: 100%;
+  }
   .w-xl {
     width: var(--container-xl);
   }
@@ -2688,6 +2694,12 @@
   .justify-center {
     justify-content: center;
   }
+  .divide-dashed {
+    :where(& > :not(:last-child)) {
+      --tw-border-style: dashed;
+      border-style: dashed;
+    }
+  }
   .place-self-center {
     place-self: center;
   }
@@ -2746,6 +2758,12 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
   .menu-title {
     padding-inline: calc(0.25rem * 3);
     padding-block: calc(0.25rem * 2);
@@ -2759,8 +2777,20 @@
   .px-1 {
     padding-inline: calc(var(--spacing) * 1);
   }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .pl-1 {
+    padding-left: calc(var(--spacing) * 1);
+  }
+  .pl-3 {
+    padding-left: calc(var(--spacing) * 3);
   }
   .text-left {
     text-align: left;

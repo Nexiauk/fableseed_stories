@@ -7,17 +7,19 @@ Nursery
 
 {% block content %}
 
-<div class="nursery justify-center">
-    <table id="fableseed-list" class="table-auto w-xl text-left min-w-max bg-base-100 border-2">
+<div class="nursery">
+    <table id="fableseed-list" class="table-auto w-full text-left min-w-max bg-base-100 border-2 border-collapse">
         <thead>
             <tr class="border-2">
+                <th class="icon"></th>
                 <th>Seed Title</th>
                 <th>Author</th>
                 <th>Date created</th>
             </tr>
             {% for fableseed in fableseed_list %}
-            <tr class="clickable hover:bg-primary">
-                <td>{{ fableseed.title }}</td>
+            <tr class="clickable hover:bg-primary border ">
+                <td class="pl-3">icon</td>
+                <td class="py-3">{{ fableseed.title }}</td>
                 <td>{{ fableseed.author }}</td>
                 <td>{{ fableseed.created_on }}</td>
             </tr>
