@@ -1,7 +1,5 @@
 @import "tailwindcss";
 @plugin "daisyui";
-
-
 @plugin "daisyui/theme" {
   name: "Fableseed";
   default: true;
