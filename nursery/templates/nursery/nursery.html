@@ -8,24 +8,25 @@ Nursery
 {% block content %}
 
 <div class="nursery">
-    <table id="fableseed-list" class="table-auto w-full text-left min-w-max bg-base-100 border-2 border-collapse">
+    <p>test text</p>
+    <!-- <table id="fableseed-list" class="table-auto w-full text-left min-w-max bg-base-100 border-2 border-secondary rounded-2xl">
         <thead>
-            <tr class="border-2">
+            <tr class="border-2 border-secondary">
                 <th class="icon"></th>
                 <th>Seed Title</th>
                 <th>Author</th>
                 <th>Date created</th>
             </tr>
             {% for fableseed in fableseed_list %}
-            <tr class="clickable hover:bg-primary border ">
+            <tr class="clickable hover:bg-base-200 border-1 border-secondary">
                 <td class="pl-3">{{ fableseed.flower_type.flower_image_url}}</td>
-                <td class="py-3">{{ fableseed.title }}</td>
+                <td class="py-5">{{ fableseed.title }}</td>
                 <td>{{ fableseed.author }}</td>
                 <td>{{ fableseed.created_on }}</td>
             </tr>
             {% endfor %}
         </thead>
-    </table>
+    </table> -->
 </div>
 
 {% endblock content %}

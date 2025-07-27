@@ -8,19 +8,19 @@
     <meta name="description"
         content="Welcome to Fableseed, a collaborative storytelling platform where stories grow like plants and words breathe life into a blooming world.">
     <meta name="author" content="Lucy Sears">
+    <meta name="keywords" content="storytelling, stories, collaborative, apocalypse, garden, flowers, ">
     <title>{% block title %}
         Fableseed
         {% endblock %}</title>
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
         <link href="{% static 'css/custom.css' %}" rel="stylesheet">
 </head>
-<header>
 
-</header>
 
-<body class="min-h-screen bg-base-200 flex flex-col">
-    <head>
-        <div class="navbar bg-base-100 shadow-sm">
+<body class="min-h-screen min-w-screen bg-primary">
+
+    <header class="w-full">
+        <div class="navbar bg-base-200 shadow-sm w-screen">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -58,10 +58,10 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn">Button</a>
+    <a class="btn bg-primary">Button</a>
   </div>
 </div>
-    </head>
+    </header>
     <main class="container mx-auto mt-4 flex-grow px-4">
         {% block content %}
         {% endblock %}
