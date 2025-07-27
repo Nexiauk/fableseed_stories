@@ -7,18 +7,18 @@ Nursery
 
 {% block content %}
 
-<div class="w-full h-full bg-base-100 rounded-xl drop-shadow-secondary-content drop-shadow-md" id="nursery">
-    <table id="fableseed-list" class="table-fixed w-full min-w-max text-left ">
+<div class="relative flex flex-col w-full h-full overflow-scroll bg-base-100 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md" id="nursery">
+    <table id="fableseed-list" class="table-fixed w-full min-w-max text-left">
         <thead>
             <tr>
-                <th class="icon p-4 border-b border-r border-secondary bg-base-300"></th>
-                <th class="p-4 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
+                <th class="w-17 icon border-b border-r border-secondary bg-base-300"></th>
+                <th class="p-2 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
                 <th class="p-4 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
                 <th class="p-4 border-b border-secondary bg-base-300 hidden sm:table-cell">Date created</th>
             </tr>
             {% for fableseed in fableseed_list %}
             <tr class="clickable hover:bg-secondary hover:text-secondary-content hover:font-bold">
-                <td class="p-4 border-t border-r border-secondary justify-center">{{ fableseed.flower_type.flower_image_url}}</td>
+                <td class="p-2 border-t border-r border-secondary">{{ fableseed.flower_type.flower_image_url}}</td>
                 <td class="p-4 border-t md:border-r border-secondary">{{ fableseed.title_trunc }}</td>
                 <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.author }}</td>
                 <td class="p-4 border-t border-secondary hidden sm:table-cell">{{ fableseed.created_on }}</td>
