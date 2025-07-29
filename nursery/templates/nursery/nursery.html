@@ -15,13 +15,13 @@ Nursery
             <tr>
                 <th class="w-17 icon border-b border-r border-secondary bg-base-300"></th>
                 <th class="p-2 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
-                <th class="p-4 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
-                <th class="p-4 border-b border-secondary bg-base-300 hidden sm:table-cell">Date created</th>
+                <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
+                <th class="p-2 border-b border-secondary bg-base-300 hidden sm:table-cell">Date created</th>
             </tr>
             {% for fableseed in fableseed_list %}
             <tr class="clickable hover:bg-secondary hover:text-secondary-content hover:font-bold">
                 <td class="p-2 border-t border-r border-secondary">{{ fableseed.flower_type.flower_image_url}}</td>
-                <td class="p-4 border-t md:border-r border-secondary">{{ fableseed.title_trunc }}</td>
+                <td class="p-4 border-t md:border-r border-secondary"><a href="/{{ fableseed.seed }}">{{ fableseed.title_trunc }}</a></td>
                 <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.author }}</td>
                 <td class="p-4 border-t border-secondary hidden sm:table-cell">{{ fableseed.created_on }}</td>
             </tr>

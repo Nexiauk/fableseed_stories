@@ -18,3 +18,7 @@ def nursery_view(request):
 
     page_url = "nursery/nursery.html"
     return render(request, page_url, context)
+
+def fableseed_view(request):
+    page_url = "nursery/fableseed-view.html"
+    return render(request, page_url)

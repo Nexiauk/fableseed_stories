@@ -10,7 +10,8 @@ class NurseryViewTests(TestCase):
 
     """
     def test_nursery_html_template(self):
-        """Test that the nursery page loads successfully,
+        """
+        Test that the nursery page loads successfully,
         uses the correct template, and contains expected text.
         Returns an HTTP 200 response.
         """
