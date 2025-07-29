@@ -1,24 +1,24 @@
 from django.shortcuts import render
 from .models import Flower, Fableseed
 
+
 # Create your views here.
 def flower_view(request):
     flower_list = Flower.objects.all()
-    context = {
-        "flower_list": flower_list
-    }
-    page_url="nursery/nursery.html"
-    return render(request, page_url, context)
-
-def nursery_view(request):
-    fableseed_list = Fableseed.objects.all()
-    context = {
-        "fableseed_list": fableseed_list
-    }
-
+    context = {"flower_list": flower_list}
     page_url = "nursery/nursery.html"
     return render(request, page_url, context)
 
-def fableseed_view(request):
+
+def nursery_view(request):
+    fableseed_list = Fableseed.objects.all()
+    context = {"fableseed_list": fableseed_list}
+    page_url = "nursery/nursery.html"
+    return render(request, page_url, context)
+
+
+def fableseed_view(request, seed):
+    fableseed_post = Fableseed.objects.get(seed=seed)
+    context = {"fableseed": fableseed_post}
     page_url = "nursery/fableseed-view.html"
-    return render(request, page_url)
+    return render(request, page_url, context)
