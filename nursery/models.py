@@ -109,7 +109,7 @@ class FableBranch(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    fablebuds_cost = models.PositiveIntegerField(default=1)
+    fablebuds_cost = models.PositiveIntegerField(default=0)
 
     class Meta:
         verbose_name = "Fablebranch"
