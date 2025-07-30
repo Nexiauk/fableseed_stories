@@ -8,14 +8,14 @@ Fableseed number {{ fableseed.seed }}
 {% block content %}
 
 <section
-    class="grid sm:grid-flow-row md:grid-flow-col gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
+    class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
     id="post-div">
-    <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl p-2 max-h-80" id="post-profile">
+    <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl sm: pb-2 md:p-2 max-h-80" id="post-profile">
         {{ fableseed.author }}
     </div>
-    <time class="md:col-span-10 border-b-2 pb-2 pt-2 italic">{{ fableseed.created_on }}</time>
+    <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ fableseed.created_on }}</time>
     <article class="md:col-span-10 md:row-span-10">
-        <h2 class="font-bold text-xl pb-2">{{ fableseed.title }}</h2>
+        <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
         <p>{{ fableseed.body }}</p>
     </article>
 </section>
