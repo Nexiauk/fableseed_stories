@@ -2212,6 +2212,9 @@
     border-end-start-radius: var(--tabcontent-radius-es);
     border-end-end-radius: var(--tabcontent-radius-ee);
   }
+  .col-12 {
+    grid-column: 12;
+  }
   .drawer-content {
     grid-column-start: 2;
     grid-row-start: 1;
@@ -2599,6 +2602,9 @@
   .table-cell {
     display: table-cell;
   }
+  .table-row {
+    display: table-row;
+  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -2693,11 +2699,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .overflow-auto {
+    overflow: auto;
+  }
   .overflow-scroll {
     overflow: scroll;
-  }
-  .overflow-y-hidden {
-    overflow-y: hidden;
   }
   .menu-sm {
     :where(li:not(.menu-title) > *:not(ul, details, .menu-title)), :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
@@ -2750,9 +2756,6 @@
   }
   .bg-base-300 {
     background-color: var(--color-base-300);
-  }
-  .bg-base-content {
-    background-color: var(--color-base-content);
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -2879,21 +2882,6 @@
   .ease-out {
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
-  }
-  .odd\:bg-secondary {
-    &:nth-child(odd) {
-      background-color: var(--color-secondary);
-    }
-  }
-  .odd\:text-secondary-content {
-    &:nth-child(odd) {
-      color: var(--color-secondary-content);
-    }
-  }
-  .even\:bg-base-100 {
-    &:nth-child(even) {
-      background-color: var(--color-base-100);
-    }
   }
   .hover\:bg-secondary {
     &:hover {
