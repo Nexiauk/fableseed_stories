@@ -1,6 +1,6 @@
 function handleRowClick(e) {
-        const link = e.currentTarget.dataset.href
-        window.location.href = link;
+    const link = e.currentTarget.dataset.href
+    window.location.href = link;
 }
 
 const seedTableRows = document.querySelectorAll(".clickable")
