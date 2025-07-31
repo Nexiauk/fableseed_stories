@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from garden.models import UserProfile
 from cloudinary.models import CloudinaryField
 from django.utils.html import format_html
 
@@ -124,7 +123,7 @@ class FableBranch(models.Model):
         try:
             display_name = self.author.userprofile.display_name 
             
-        except(AttributeError, UserProfile.DoesNotExist):
+        except (AttributeError, ObjectDoesNotExist):
             display_name =  "Deleted User"
         return (
             f"{self.body[:50]}... by {display_name}"

@@ -1,8 +1,8 @@
 from django.db import models
-from nursery.models import Fableseed, FableBranch, Flower
 from django.utils.html import format_html
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from nursery.models import Fableseed, FableBranch, Flower
 
 
 class UserFlower(models.Model):
@@ -53,10 +53,10 @@ class UserProfile(models.Model):
         fablebuds_count (PositiveIntegerField): Number of fablebuds the user has.
 
     Methods:
-        __str__: if the user has a display name, it will return that, if not, it will defualt to their username.
+        __str__: if the user has a display name, it will return that, if not, it will default to their username.
         user_profile_image: formats the url of the uploaded profile_picture into an image element with style applied.
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
     display_name = models.CharField(max_length=70)
     profile_picture = CloudinaryField("image", default="placeholder")
     bio = models.TextField()
