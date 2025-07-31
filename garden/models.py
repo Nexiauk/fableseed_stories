@@ -6,6 +6,24 @@ from cloudinary.models import CloudinaryField
 
 
 class UserFlower(models.Model):
+    """
+    Represents flowers earned by a user in the Fableseed ecosystem.
+
+    Attributes:
+        user (ForeignKey): Reference to the user who earned the flowers.
+        flower (ForeignKey): Reference to the type of flower earned.
+        quantity (PositiveIntegerField): Number of flowers earned.
+        earned_from_seed (ForeignKey): Reference to the Fableseed that generated the flowers.
+        earned_from_branch (ForeignKey): Reference to the FableBranch that generated the flowers.
+        earned_on (DateTimeField): Timestamp when the flowers were earned.
+
+    Meta:
+        ordering: Querysets order by flower.
+
+    Methods:
+        __str__: if the user has only earned one type of flower, it will return a string that 
+        makes sense in the singular. Else it will return a string that makes sense with the plural.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     flower = models.ForeignKey(Flower, on_delete=models.PROTECT)
     quantity = models.PositiveIntegerField(default=0)
@@ -24,6 +42,20 @@ class UserFlower(models.Model):
 
 
 class UserProfile(models.Model):
+    """
+    Stores profile information for a user in the Fableseed app.
+
+    Attributes:
+        user (OneToOneField): Links to the Django User.
+        display_name (CharField): Name shown publicly for the user.
+        profile_picture (CloudinaryField): User's profile image stored in Cloudinary.
+        bio (TextField): User's biography.
+        fablebuds_count (PositiveIntegerField): Number of fablebuds the user has.
+
+    Methods:
+        __str__: if the user has a display name, it will return that, if not, it will defualt to their username.
+        user_profile_image: formats the url of the uploaded profile_picture into an image element with style applied.
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     display_name = models.CharField(max_length=70)
     profile_picture = CloudinaryField("image", default="placeholder")

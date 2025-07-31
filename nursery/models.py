@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from garden.models import UserProfile
 from cloudinary.models import CloudinaryField
 from django.utils.html import format_html
 
@@ -95,12 +96,10 @@ class FableBranch(models.Model):
         created_on(DateTimeField): Timestamp when the branch was created.
         edited_on(DateTimeField): Timestamp when the branch was last edited.
         author(ForeignKey): Reference to the user who created the branch.
-        Fablebuds_cost(PositiveIntegerField): Number of fablebuds it costs the user to write/purchase the branch. Default is 1.
+        fablebuds_cost(PositiveIntegerField): Number of fablebuds it costs the user to write/purchase the branch. Default is 1.
 
-    Methods:
-        __str__: returns a string representation of the fablebranch text body and the name of the author who wrote it.
-        If the text is longer than 50 charcs, it will return a truncated version.
-
+    Meta:
+        sets verbose names for singular and plural versions of Fablebranch
     """
 
     branch = models.AutoField(primary_key=True)
@@ -116,9 +115,19 @@ class FableBranch(models.Model):
         verbose_name_plural = "Fablebranches"
 
     def __str__(self):
-        author_name = self.author.username if self.author else "Deleted User"
+        """
+        Returns a string representation of the fablebranch.
+
+        If the story body is longer than 50 characters, the text is truncated and followed by an ellipsis.
+        Includes the author's username or "Deleted user" if the author no longer exists.
+        """
+        try:
+            display_name = self.author.userprofile.display_name 
+            
+        except(AttributeError, UserProfile.DoesNotExist):
+            display_name =  "Deleted User"
         return (
-            f"{self.body[:50]}... by {author_name}"
+            f"{self.body[:50]}... by {display_name}"
             if len(self.body) > 50
-            else f"{self.body} by {author_name}"
+            else f"{self.body} by {display_name}"
         )
