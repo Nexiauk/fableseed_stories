@@ -1,10 +1,6 @@
 from django.db import models
 from nursery.models import Fableseed, FableBranch, Flower
 from django.utils.html import format_html
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
-# Create your models here.
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
@@ -39,12 +35,4 @@ class UserProfile(models.Model):
     
     def user_profile_image(self):
         return format_html('<img src="{}" style="height: 150px; width: 150px;" />', self.profile_picture.url)
-    
-    
-# @receiver(post_save, sender=User)
-# def create_or_update_user_profile(sender, instance, created, **kwargs):
-#     if created:
-#         try:
-#             UserProfile.objects.create(user=instance)
-#         except Exception as e:
-#             print(f"Error creating profile for user {instance.id}: {e}")
+

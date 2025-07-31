@@ -31,14 +31,5 @@ class UserProfileInline(admin.StackedInline):
 class CustomUserAdmin(UserAdmin):
     inlines = (UserProfileInline,)
 
-    list_display = ("username", "profile_url", "profile_image_url",)
-
-    def profile_url(self, obj):
-        if obj.userprofile.profile_picture:
-            return obj.userprofile.profile_picture  
-    
-    def profile_image_url(self, obj):
-        return format_html('<img src="{}" style="height: 50px; width: 50px;" />', obj.userprofile.profile_picture.url)
-
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
