@@ -40,10 +40,11 @@ class UserProfile(models.Model):
     def user_profile_image(self):
         return format_html('<img src="{}" style="height: 150px; width: 150px;" />', self.profile_picture.url)
     
-@receiver(post_save, sender=User)
-def create_or_update_user_profile(sender, instance, created, **kwargs):
-    if created:
-        try:
-            UserProfile.objects.create(user=instance)
-        except Exception as e:
-            print(f"Error creating profile for user {instance.id}: {e}")
+    
+# @receiver(post_save, sender=User)
+# def create_or_update_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         try:
+#             UserProfile.objects.create(user=instance)
+#         except Exception as e:
+#             print(f"Error creating profile for user {instance.id}: {e}")

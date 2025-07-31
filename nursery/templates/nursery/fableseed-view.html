@@ -12,6 +12,7 @@ Fableseed number {{ fableseed.seed }}
     id="post-div">
     <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl sm: pb-2 md:p-2 max-h-80" id="post-profile">
         {{ fableseed.author }}
+        {{ fableseed.author.userprofile.user_profile_image }}
     </div>
     <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ fableseed.created_on }}</time>
     <article class="md:col-span-10 md:row-span-10">
