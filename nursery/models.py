@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from cloudinary.models import CloudinaryField
 from django.utils.html import format_html
 
