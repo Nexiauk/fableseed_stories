@@ -9,6 +9,8 @@ Nursery
 This is the plant a fableseed page
 {% load crispy_forms_tags %}
 <form action="" method ="post" id="CreateFableseed">
-       {{ CreateFableseed|crispy }}
+       {{ form|crispy }}
+       {% csrf_token %}
+       <button type="submit"></button>
 </form>
 {% endblock content %}

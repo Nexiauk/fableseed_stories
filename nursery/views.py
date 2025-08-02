@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Flower, Fableseed
+from .forms import CreateFableseed
 
 
 # Create your views here.
@@ -25,4 +26,12 @@ def fableseed_view(request, seed):
 
 def create_fableseed_view(request):
     page_url = "nursery/plant-fableseed.html"
-    return render(request, page_url)
+    if request.method == "POST":
+        create_fableseed=CreateFableseed(data=request.POST)
+        if create_fableseed.is_valid():
+            posted_seed=create_fableseed.save(commit=False)
+            posted_seed.author=request.user
+            posted_seed.save()    
+        return redirect("fableseed-view", seed=posted_seed.pk)
+    form = CreateFableseed()
+    return render(request, page_url, {"form": form})
