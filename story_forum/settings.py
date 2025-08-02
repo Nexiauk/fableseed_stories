@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'cloudinary',
+    'crispy_forms',
     'nursery',
     'garden',
 ]
