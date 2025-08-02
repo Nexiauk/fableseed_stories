@@ -4,4 +4,8 @@ from .models import Fableseed
 class CreateFableseed(forms.ModelForm):
     class Meta:
         model = Fableseed
-        fields = ('body',)
+        fields = (
+            'title',
+            'flower_type',
+            'body',
+            )
