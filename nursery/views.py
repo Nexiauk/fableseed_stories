@@ -22,3 +22,7 @@ def fableseed_view(request, seed):
     context = {"fableseed": fableseed_post}
     page_url = "nursery/fableseed-view.html"
     return render(request, page_url, context)
+
+def create_fableseed_view(request):
+    page_url = "nursery/plant-fableseed.html"
+    return render(request, page_url)
