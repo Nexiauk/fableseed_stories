@@ -11,6 +11,6 @@ This is the plant a fableseed page
 <form action="" method ="post" id="CreateFableseed">
        {{ form|crispy }}
        {% csrf_token %}
-       <button type="submit"></button>
+       <button class="btn bg-primary" type="submit">Submit</button>
 </form>
 {% endblock content %}
