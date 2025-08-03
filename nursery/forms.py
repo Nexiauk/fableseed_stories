@@ -1,11 +1,13 @@
 from django import forms
 from .models import Fableseed, Flower
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, Submit
+from crispy_forms.layout import Layout, Field, Div, Submit
 
 
 class CreateFableseed(forms.ModelForm):
-    flower_type = forms.ModelChoiceField(queryset=Flower.objects.all())
+    flower_type = forms.ModelChoiceField(
+        queryset=Flower.objects.all(),
+    )
 
     class Meta:
         model = Fableseed
@@ -13,12 +15,19 @@ class CreateFableseed(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields['flower_type'].label = "Flower Type"
         self.helper = FormHelper()
         self.helper.form_id = "createFableseed"
         self.helper.form_method = "post"
-        self.helper.add_input(Submit('submit', 'Submit', css_class="mt-4"))
         self.helper.layout = Layout(
-            Field("title", css_class="mb-4"),
-            Field("body", css_class="mb-4"),
-            Field("flower_type", css_class="mt-4"),
+            Div(
+                Field("title", css_class="rounded-sm p-2 mb-2"),
+                css_class="mb-4 text-primary-content",
+            ),
+            Div(
+                Field("body", css_class="rounded-sm p-2 mb-2"),
+                css_class="mb-4 text-primary-content",
+            ),
+            Div(Field("flower_type", css_class="rounded-sm"), css_class="mb-4 text-primary-content"),
+            Submit("submit", "Submit", css_class="bg-primary mt-4")
         )
