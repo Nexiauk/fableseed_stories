@@ -10,17 +10,11 @@ Nursery
 {% block content %}
 
 <section
-    class="w-full max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6"
+    class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6"
     id="create-div">
-
-    {% crispy form %}
-
-    <!-- <form action="" method ="post" id="CreateFableseed">
-           {{ form | crispy }}
-           {% csrf_token %}
-           <button class="btn bg-primary" type="submit">Submit</button>
-    </form> -->
-
+            <form action="" class="{{ form.helper.form_class }}" method="{{ form.helper.form_method }}" id="{{ form.helper.form_id }}">
+                {% crispy form %}
+            </form>
 </section>
 
 {% endblock content %}
