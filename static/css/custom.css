@@ -1,3 +1,9 @@
-/* .clickable {
-cursor: pointer;
-} */
+select {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+select * {
+    color: black;
+}
