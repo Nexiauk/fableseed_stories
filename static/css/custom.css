@@ -5,5 +5,6 @@ select {
 }
 
 select * {
-    color: black;
+    color: #0d0d0d;
+    background-color: #f2f2f2;
 }
