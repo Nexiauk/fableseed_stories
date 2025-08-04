@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Flower, Fableseed
-from .forms import CreateFableseed
+from .forms import CreateFableseed, CreateFablebranch
 
 
 # Create your views here.
@@ -17,7 +17,6 @@ def nursery_view(request):
     for seed in fableseed_list:
         latest = seed.fablebranches.all().order_by('-created_on').first()
         seed.latest_branch = latest
-
     page_url = "nursery/nursery.html"
     return render(request, page_url, context)
 
@@ -38,4 +37,16 @@ def create_fableseed_view(request):
             posted_seed.save()    
         return redirect("fableseed-view", seed=posted_seed.pk)
     form = CreateFableseed()
+    return render(request, page_url, {"form": form})
+
+def create_fablebranch_view(request):
+    page_url = "nursery/grow-fablebranch.html"
+    if request.method == "POST":
+        create_fablebranch=CreateFablebranch(data=request.POST)
+        if create_fablebranch.is_valid():
+            posted_branch=create_fablebranch.save(commit=False)
+            posted_branch.author=request.user
+            posted_branch.save()    
+        return redirect("fableseed-view", branch=posted_branch.pk)
+    form = CreateFablebranch()
     return render(request, page_url, {"form": form})
