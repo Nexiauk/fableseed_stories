@@ -39,14 +39,16 @@ def create_fableseed_view(request):
     form = CreateFableseed()
     return render(request, page_url, {"form": form})
 
-def create_fablebranch_view(request):
+def create_fablebranch_view(request, seed):
+    original_seed = Fableseed.objects.get(seed=seed)
     page_url = "nursery/grow-fablebranch.html"
     if request.method == "POST":
         create_fablebranch=CreateFablebranch(data=request.POST)
         if create_fablebranch.is_valid():
             posted_branch=create_fablebranch.save(commit=False)
+            posted_branch.seed = original_seed
             posted_branch.author=request.user
             posted_branch.save()    
-        return redirect("fableseed-view", branch=posted_branch.pk)
+        return redirect("fableseed-view", seed=original_seed.seed)
     form = CreateFablebranch()
     return render(request, page_url, {"form": form})
