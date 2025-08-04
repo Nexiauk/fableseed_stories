@@ -29,13 +29,13 @@ class CreateFablebranch(forms.ModelForm):
     class Meta:
         model = FableBranch
         fields = ("body",)
-
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.helper = FormHelper()
-    #     self.helper.form_id = "CreateFablebranch"
-    #     self.helper.form_method = "post"
-    #     self.helper.layout = Layout(
-    #         Field("body", css_class="rounded-sm p-2 mb-4 text-primary-content"),
-    #         Submit("submit", "Submit", css_class="bg-primary mt-4"),
-    #     )
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = "CreateFablebranch"
+        self.helper.form_method = "post"
+        self.helper.layout = Layout(
+            Field("body", css_class="rounded-sm p-2 mb-4 text-primary-content"),
+            Submit("submit", "Submit", css_class="bg-primary mt-4"),
+        )
