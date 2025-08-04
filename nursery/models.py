@@ -103,7 +103,7 @@ class FableBranch(models.Model):
     """
 
     branch = models.AutoField(primary_key=True)
-    seed = models.ForeignKey("nursery.Fableseed", on_delete=models.PROTECT)
+    seed = models.ForeignKey("nursery.Fableseed", on_delete=models.PROTECT, related_name='fablebranches')
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)

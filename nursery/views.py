@@ -14,6 +14,10 @@ def flower_view(request):
 def nursery_view(request):
     fableseed_list = Fableseed.objects.all()
     context = {"fableseed_list": fableseed_list}
+    for seed in fableseed_list:
+        latest = seed.fablebranches.all().order_by('-created_on').first()
+        seed.latest_branch = latest
+
     page_url = "nursery/nursery.html"
     return render(request, page_url, context)
 
