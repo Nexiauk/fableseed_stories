@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .models import Flower, Fableseed
+from .models import Flower, Fableseed, FableBranch
 from .forms import CreateFableseed, CreateFablebranch
 
 
@@ -24,7 +24,13 @@ def nursery_view(request):
 
 def fableseed_view(request, seed):
     fableseed_post = Fableseed.objects.get(seed=seed)
-    context = {"fableseed": fableseed_post}
+    branch = request.GET.get('branch')
+    if branch:
+        posted_branch = FableBranch.objects.get(pk=branch)
+    else:
+        posted_branch = None
+    context = {"fableseed": fableseed_post,
+               "posted_branch": posted_branch}
     page_url = "nursery/fableseed-view.html"
     return render(request, page_url, context)
 
