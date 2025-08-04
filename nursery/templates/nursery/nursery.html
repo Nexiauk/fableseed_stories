@@ -17,7 +17,7 @@ Nursery
                 <th class="w-17 icon border-b border-r border-secondary bg-base-300"></th>
                 <th class="p-2 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
                 <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
-                <th class="p-2 border-b border-secondary bg-base-300 hidden sm:table-cell">Date created</th>
+                <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Date created</th>
                 <th class="p-2 border-b border-secondary bg-base-300 hidden sm:table-cell">Last Edited</th>
             </tr>
         </thead>
@@ -32,7 +32,7 @@ Nursery
                 <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.created_on }}</td>
                 <td class="p-4 border-t border-secondary hidden sm:table-cell">
                     {% if fableseed.latest_branch %}
-                    <p>by {{ fableseed.latest_branch.author }} on  {{ fableseed.latest_branch.created_on }}</p>
+                    <p >by {{ fableseed.latest_branch.author }}</p> <p class="text-sm">{{ fableseed.latest_branch.created_on }}</p>
                     {% endif %}
                 </td>
             </tr>
