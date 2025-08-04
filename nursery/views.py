@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from .models import Flower, Fableseed
 from .forms import CreateFableseed, CreateFablebranch
 
@@ -49,6 +50,8 @@ def create_fablebranch_view(request, seed):
             posted_branch.seed = original_seed
             posted_branch.author=request.user
             posted_branch.save()    
-        return redirect("fableseed-view", seed=original_seed.seed)
+            posted_url = reverse("fableseed-view", args=[original_seed.seed])
+            posted_url_with_branch_id = f"{posted_url}?branch={posted_branch.pk}"
+        return redirect(posted_url_with_branch_id)
     form = CreateFablebranch()
     return render(request, page_url, {"form": form})
