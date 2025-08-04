@@ -9,6 +9,7 @@ Nursery
 
 <div class="relative flex flex-col w-full h-full overflow-auto bg-base-100 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md"
     id="nursery">
+    <div class="col"><button class="btn bg-base-200">Button</button></div>
     <table id="fableseed-list" class="table-fixed w-full min-w-max text-left">
         <thead>
             <tr>
@@ -16,6 +17,7 @@ Nursery
                 <th class="p-2 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
                 <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
                 <th class="p-2 border-b border-secondary bg-base-300 hidden sm:table-cell">Date created</th>
+                <th class="p-2 border-b border-secondary bg-base-300 hidden sm:table-cell">Last Edited</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +28,9 @@ Nursery
                     <div>{{ fableseed.title_trunc }}</div>
                 </td>
                 <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.author }}</td>
-                <td class="p-4 border-t border-secondary hidden sm:table-cell">{{ fableseed.created_on }}</td>
+                <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.created_on }}</td>
+                <td class="p-4 border-t border-secondary hidden sm:table-cell">
+                    <p>by </p>{{ fablebranch.author }} <p>on </p> {{ fablebranch.created_on }}</td>
             </tr>
             {% endfor %}
         </tbody>

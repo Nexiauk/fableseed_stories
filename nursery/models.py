@@ -49,8 +49,8 @@ class Fableseed(models.Model):
     
     def title_trunc(self):
         return (
-            f"{self.title[:17]}..."
-            if len(self.title) > 17
+            f"{self.title[:20]}..."
+            if len(self.title) > 20
             else f"{self.title}"
         )
 
