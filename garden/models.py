@@ -58,7 +58,7 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
     display_name = models.CharField(max_length=70)
-    profile_picture = CloudinaryField("image", default="placeholder")
+    profile_picture = CloudinaryField("image", default="placeholder_l62d5p")
     bio = models.TextField()
     fablebuds_count = models.PositiveIntegerField(default=0)
 
