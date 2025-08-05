@@ -37,7 +37,7 @@ def fableseed_view(request, seed):
 def create_fableseed_view(request):
     page_url = "nursery/plant-fableseed.html"
     if request.method == "POST":
-        create_fableseed=CreateFableseed(data=request.POST)
+        create_fableseed=CreateFableseed(request.POST)
         if create_fableseed.is_valid():
             posted_seed=create_fableseed.save(commit=False)
             posted_seed.author=request.user
@@ -50,7 +50,7 @@ def create_fablebranch_view(request, seed):
     original_seed = Fableseed.objects.get(seed=seed)
     page_url = "nursery/grow-fablebranch.html"
     if request.method == "POST":
-        create_fablebranch=CreateFablebranch(data=request.POST)
+        create_fablebranch=CreateFablebranch(request.POST)
         if create_fablebranch.is_valid():
             posted_branch=create_fablebranch.save(commit=False)
             posted_branch.seed = original_seed
