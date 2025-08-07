@@ -7,23 +7,26 @@ Fableseed number {{ fableseed.seed }}
 
 {% block content %}
 
-<section
-    class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
-    id="fableseed-post">
-    <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl sm: pb-2 md:p-2 max-h-80" id="post-profile">
-        {{ fableseed.author }}
-        {{ fableseed.author.userprofile.user_profile_image }}
+<section class="grid sm:grid-flow-col md:grid-flow-row md:gap-4 mb-4" id="fableseed-post">
+    <div class="col"><a href="{% url 'grow-fablebranch' fableseed.seed %}" class="btn">Grow a Fablebranch</a></div>
+    <div
+        class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
+        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl sm: pb-2 md:p-2 max-h-80" id="post-profile">
+            {{ fableseed.author }}
+            {{ fableseed.author.userprofile.user_profile_image }}
+        </div>
+        <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ fableseed.created_on }}</time>
+        <article class="md:col-span-10 md:row-span-10">
+            <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
+            <p>{{ fableseed.body }}</p>
+        </article>
     </div>
-    <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ fableseed.created_on }}</time>
-    <article class="md:col-span-10 md:row-span-10">
-        <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
-        <p>{{ fableseed.body }}</p>
-    </article>
 </section>
-<div class="col"><a href="{% url 'grow-fablebranch' fableseed.seed %}" class="btn">Grow a Fablebranch</a></div>
 
 
-<secion id="fablebranch-replies">
+
+<section class="grid sm:grid-flow-col md:grid-flow-row md:gap-4" id="fablebranch-replies">
+    {% if posted_branches %}
     {% for branch in posted_branches %}
     <div
     class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
@@ -32,14 +35,17 @@ Fableseed number {{ fableseed.seed }}
         {{ branch.author }}
         {{ branch.author.userprofile.user_profile_image }}
     </div>
-    <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ branch.created_on.created_on }}</time>
+    <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ branch.created_on }}</time>
     <article class="md:col-span-10 md:row-span-10">
         <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
         <p>{{ branch.body }}</p>
     </article>
 </div>
 {% endfor %}
-</secion>
+{% else %}
+<p>No branches have grown yet. Be the first to respond!</p>
+{% endif %}
+</section>
 
 
 
