@@ -42,7 +42,7 @@ def create_fablebranch_view(request, seed):
             posted_branch.seed = fableseed_post
             posted_branch.author=request.user
             posted_branch.save()    
-            posted_url = reverse("fableseed-view", args=[fableseed_post.seed])
+            posted_url = reverse("fableseed-view", args=[fableseed_post.pk])
             posted_url_with_branch_id = f"{posted_url}?branch={posted_branch.pk}"
             return redirect(posted_url_with_branch_id)
     form = CreateFablebranch()
