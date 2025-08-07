@@ -21,16 +21,29 @@ Fableseed number {{ fableseed.seed }}
     </article>
 </section>
 <div class="col"><a href="{% url 'grow-fablebranch' fableseed.seed %}" class="btn">Grow a Fablebranch</a></div>
-<section
+
+
+<secion id="fablebranch-replies">
+    {% for branch in posted_branches %}
+    <div
     class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
-    id="fablebranch-reply">
+    id="fableseed-post">
     <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl sm: pb-2 md:p-2 max-h-80" id="post-profile">
-        {{ posted_branch.author}}
+        {{ branch.author }}
+        {{ branch.author.userprofile.user_profile_image }}
     </div>
-    <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ posted_branch.created_on }}</time>
+    <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ branch.created_on.created_on }}</time>
     <article class="md:col-span-10 md:row-span-10">
-        <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ posted_branch.title }}</h2>
-        <p>{{ posted_branch.body }}</p>
+        <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
+        <p>{{ branch.body }}</p>
     </article>
-</section>
+</div>
+{% endfor %}
+</secion>
+
+
+
+
+
+
 {% endblock content %}
