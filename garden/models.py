@@ -66,5 +66,5 @@ class UserProfile(models.Model):
         return self.display_name if self.display_name else self.user.username
     
     def user_profile_image(self):
-        return format_html('<img src="{}" style="height: 150px; width: 150px;" />', self.profile_picture.url)
+        return format_html('<img src="{}" style="height: 150px; width: 150px;" class="mx-auto" />', self.profile_picture.url)
 
