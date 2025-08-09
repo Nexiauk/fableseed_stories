@@ -11,7 +11,6 @@ def nursery_view(request):
     paginator = Paginator(fableseed_list, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
-
     for seed in page_obj:
         latest_branch = seed.fablebranches.all().order_by("-created_on").first()
         seed.latest_branch = latest_branch
