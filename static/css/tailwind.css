@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
@@ -33,4 +34,8 @@
   --border: 1px;
   --depth: 1;
   --noise: 0;
+}
+
+@theme {
+  --font-great-vibes: "Great Vibes", sans-serif; 
 }
