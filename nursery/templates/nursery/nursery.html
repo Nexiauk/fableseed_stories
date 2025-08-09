@@ -22,7 +22,7 @@ Nursery
                 </tr>
             </thead>
             <tbody>
-                {% for fableseed in fableseed_list %}
+                {% for fableseed in page_obj %}
                 <tr class="clickable hover:bg-secondary hover:text-secondary-content hover:font-bold cursor-pointer" data-href="{% url 'fableseed-view' fableseed.seed %}">
                     <td class="p-2 border-t border-r border-secondary">{{ fableseed.flower_type.flower_image_url}}</td>
                     <td class="p-4 border-t md:border-r border-secondary">
@@ -41,6 +41,23 @@ Nursery
     
         </table>
     </div>
+    <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 </section>
 
 {% endblock content %}
