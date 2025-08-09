@@ -54,6 +54,11 @@
         </ul>
       </div>
       <div class="navbar-end">
+        {% if user.is_authenticated %}
+        <p>You are currently logged in as {{user.userprofile.display_name}} </p>
+        {% else %}
+        <p>You are currently logged out </p>
+        {% endif %}
       </div>
     </div>
   </header>
