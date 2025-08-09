@@ -29,25 +29,31 @@
             </svg>
           </div>
           <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li><a>Item 1</a></li>
-            <li><a>Item 3</a></li>
+          <li><a>Home</a></li>
+          <li><a>About</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'account_logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'account_login' %}">Login</a></li>
+          {% endif %}
           </ul>
         </div>
         <h1 class=" mt-3 p-2"><a class="btn btn-ghost text-7xl font-great-vibes" href="{% url 'nursery' %}">Fableseed</a></h1>
       </div>
       <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal px-1">
-          <li><a>Item 1</a></li>
-          <li><a>Item 3</a></li>
+        <ul class="menu menu-horizontal px-1 gap-4">
+          <li><a class="btn bg-primary">Home</a></li>
+          <li><a class="btn bg-primary">About</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="btn bg-primary" href="{% url 'account_logout' %}">Logout</a></li>
+          {% else %}
+          <li><a class="btn bg-primary" href="{% url 'account_signup' %}">Sign Up</a></li>
+          <li><a class="btn bg-primary" href="{% url 'account_login' %}">Login</a></li>
+          {% endif %}
         </ul>
       </div>
       <div class="navbar-end">
-        {% if user.is_authenticated %}
-        <a class="btn bg-primary" href="{% url 'account_logout' %}">Logout</a>
-        {% else %}
-        <a class="btn bg-primary" href="{% url 'account_signup' %}">Register</a>
-        <a class="btn bg-primary" href="{% url 'account_login' %}">Login</a>
-        {% endif %}
       </div>
     </div>
   </header>
