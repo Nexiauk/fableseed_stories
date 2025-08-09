@@ -67,4 +67,12 @@ class UserProfile(models.Model):
     
     def user_profile_image(self):
         return format_html('<img src="{}" style="height: 150px; width: 150px;" class="mx-auto" />', self.profile_picture.url)
+    
+    @property
+    def get_display_name(self):
+        try:
+            return self.userprofile.display_name
+        except UserProfile.DoesNotExist:
+            return self.username
+    User.add_to_class('get_display_name', get_display_name)
 
