@@ -42,7 +42,12 @@
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn bg-primary">Button</a>
+    {% if user.is_authenticated %}
+    <a class="btn bg-primary" href="{% url 'account_logout' %}">Logout</a>
+  {% else %}
+     <a class="btn bg-primary" href="{% url 'account_signup' %}">Register</a>
+         <a class="btn bg-primary" href="{% url 'account_login' %}">Login</a>
+    {% endif %}
   </div>
 </div>
     </header>
