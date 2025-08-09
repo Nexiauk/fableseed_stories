@@ -37,7 +37,7 @@
             {% endif %}
           </ul>
         </div>
-        <h1 class="mt-3 p-2"><a class="font-bold text-6xl md:text-7xl font-great-vibes"
+        <h1 class="mt-3"><a class="font-bold text-6xl md:text-7xl font-great-vibes"
             href="{% url 'nursery' %}">Fableseed</a></h1>
       </div>
       <div class="navbar-center hidden lg:flex">
@@ -68,7 +68,7 @@
   <footer> {% if user.is_authenticated %}
     <p class="p-2 text-center">You are currently logged in as {{user.get_display_name}} </p>
     {% else %}
-    <p class="p2">You are currently logged out </p>
+    <p class="p2 text-center">You are currently logged out </p>
     {% endif %}
   </footer>
   <script src="{% static 'js/script.js' %}"></script>
