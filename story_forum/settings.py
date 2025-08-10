@@ -125,6 +125,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ACCOUNT_FORMS = {
+    'signup': 'garden.forms.CustomSignupForm',
+}
+
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Internationalization
