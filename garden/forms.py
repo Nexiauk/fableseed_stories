@@ -7,5 +7,5 @@ class CustomSignupForm(SignupForm):
     def save(self, request):
         user = super().save(request)
         user.userprofile.display_name = self.cleaned_data['display_name']
-        user.save()
+        user.userprofile.save()
         return user
