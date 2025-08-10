@@ -11,7 +11,7 @@
 
     <section class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6">
         <h2 class="mb-4 font-bold text-2xl">{% trans "Sign In" %}</h2>
-            <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please <a href="{{ signup_url }}">sign up first</a>.{% endblocktrans %}</p>
+            <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please <a class="underline hover:text-secondary-content" href="{{ signup_url }}">sign up first</a>.{% endblocktrans %}</p>
           <form class="login" id="login_form" method="post" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ form | crispy}}
