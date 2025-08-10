@@ -2690,6 +2690,9 @@
   .max-w-3xl {
     max-width: var(--container-3xl);
   }
+  .max-w-full {
+    max-width: 100%;
+  }
   .min-w-full {
     min-width: 100%;
   }

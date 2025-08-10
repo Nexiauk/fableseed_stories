@@ -1,27 +1,22 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
-
-{% load allauth i18n %}
+{% load i18n %}
+{% load allauth account %}
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Out" %}
-    {% endelement %}
-    {% element p %}
-        {% trans 'Are you sure you want to sign out?' %}
-    {% endelement %}
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-        {% slot body %}
+    <section class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6">
+        <h2 class="mb-4 font-bold text-2xl">{% trans "Sign Out" %}</h2>
+            <p class="mb-4">Are you sure you want to sign out?</p>
+          <form class="logout" id="logout_form" method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
-            {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
+            {{ form | crispy}}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="btn btn-signout right" type="submit">{% trans "Sign Out" %} &raquo;</button>
+          </form>
+    </section>
 {% endblock content %}
