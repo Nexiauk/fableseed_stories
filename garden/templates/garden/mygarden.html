@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block title %}
+Fableseed number {{ fableseed.seed }}
+{% endblock %}
 {% block content %}
+{{ user.username }}
 <p>This is the user garden</p>
 {% endblock content %}

@@ -45,6 +45,7 @@
           <li><a class="btn bg-primary hover:bg-base-100">Home</a></li>
           <li><a class="btn bg-primary hover:bg-base-100">About</a></li>
           {% if user.is_authenticated %}
+          <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
           <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
           <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'account_signup' %}">Sign Up</a></li>
