@@ -5,10 +5,22 @@
 {{user.get_display_name}}'s Garden
 {% endblock %}
 {% block content %}
-{{user.get_display_name}}
-{{user.userprofile.bio}}
-{{user.email}}
-{{user.first_name}}
-{{user.last_name}}
-{{user.userprofile.fablebuds_count}}
+<section class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6">
+    <h2 class="mb-4 font-bold text-2xl">My Garden</h2>
+    <dl>
+        <dt>Display Name</dt>
+        <dd>{{user.get_display_name}}</dd>
+        <dt>User Bio</dt>
+        <dd>{{user.userprofile.bio}}</dd>
+        <dt>Email Address</dt>
+        <dd>{{user.email}}</dd>
+        <dt>Full Name</dt>
+        <dd>
+            {{user.first_name}}
+            {{user.last_name}}
+        </dd>
+        <dt>Fablebud Count</dt>
+        <dd>{{user.userprofile.fablebuds_count}}</dd>
+    </dl>
+</section>
 {% endblock content %}
