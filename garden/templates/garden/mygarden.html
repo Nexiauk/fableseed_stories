@@ -6,6 +6,10 @@
 Fableseed number {{ fableseed.seed }}
 {% endblock %}
 {% block content %}
-{{ user.username }}
-<p>This is the user garden</p>
+{{user.get_display_name}}
+{{user.userprofile.bio}}
+{{user.email}}
+{{user.first_name}}
+{{user.last_name}}
+{{user.userprofile.fablebuds_count}}
 {% endblock content %}
