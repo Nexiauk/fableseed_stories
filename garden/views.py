@@ -16,15 +16,15 @@ def garden_view(request, id):
 @login_required
 def edit_profile_view(request):
     page_url = "garden/edit-profile.html"
+    profile = request.user.userprofile
     if request.method == "POST" :
-        user_form = EditProfileForm(request.POST, instance=request.user)
+        user_form = EditProfileForm(request.POST, request.FILES, instance=profile)
         if user_form.is_valid():
             user_form.save()
             messages.add_message(request, messages.SUCCESS, "Profile successfully updated")
-            finished_url = reverse("mygarden", args=[request.user.pk])
-            return redirect(finished_url)
+            return redirect("mygarden", request.user.pk)
         else:
             messages.add_message(request, messages.ERROR, "Error updating user profile")
     else:
-        user_form = EditProfileForm(instance=request.user)
+        user_form = EditProfileForm(instance=profile)
     return render(request, page_url, {"form":user_form})
