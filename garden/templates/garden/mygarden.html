@@ -5,8 +5,13 @@
 {{user.get_display_name}}'s Garden
 {% endblock %}
 {% block content %}
-<section class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6">
-    <h2 class="mb-4 font-bold text-2xl">My Garden</h2>
+<section
+    class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6">
+    <div class="container flex flex-row">
+        <h2 class="mb-4 font-bold text-2xl flex-1">My Garden</h2>
+        <div class="buttons flex flex-1 justify-end"> {% if user.is_authenticated %} <a href="{% url '' %}"
+                class="btn hover:bg-base-100">Edit Profile</a> {% endif %}</div>
+    </div>
     <dl>
         <dt>Display Name</dt>
         <dd>{{user.get_display_name}}</dd>
