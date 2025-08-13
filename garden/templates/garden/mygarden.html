@@ -9,7 +9,7 @@
     class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6 flex flex-col">
     <div class="container flex flex-row">
         <h2 class="mb-4 font-bold text-2xl">{{user.get_display_name}}'s Garden</h2>
-        <div class="buttons flex flex-1 justify-end"> {% if user.is_authenticated %} <a href=""
+        <div class="buttons flex flex-1 justify-end"> {% if user.is_authenticated %} <a href="{% url 'edit-profile' %}"
                 class="btn hover:bg-base-100">Edit Profile</a> {% endif %}</div>
     </div>
     <div id="profile-picture">

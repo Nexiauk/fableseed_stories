@@ -13,5 +13,6 @@ class CustomSignupForm(SignupForm):
         return user
     
 class EditProfileForm(forms.ModelForm):
-    model = UserProfile
-    fields = ("display_name", "bio", "profile_picture")
+    class Meta:
+        model = UserProfile
+        fields = ("display_name", "bio", "profile_picture")
