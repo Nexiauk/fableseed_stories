@@ -29,6 +29,7 @@ Fableseed number {{ fableseed.seed }}
 
 
 <section class="grid sm:grid-flow-row md:grid-flow-row gap-4" id="fablebranch-replies">
+    
     {% if posted_branches %}
     {% for branch in posted_branches %}
     <article
@@ -44,6 +45,7 @@ Fableseed number {{ fableseed.seed }}
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
+        <div class="md:col-span-10 flex justify-end">{% if user.is_authenticated %} <div class="column"><a href="{% url 'edit-fablebranch' branch.branch %}" class="btn hover:bg-base-100">Tend Fablebranch</a></div>{% endif %}</div>
     </article>
     {% endfor %}
     {% else %}

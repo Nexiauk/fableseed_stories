@@ -75,7 +75,7 @@ def edit_fablebranch_view(request, branch_id):
             messages.add_message(
                 request, messages.SUCCESS, "Your branch has been lovingly tended!"
             )
-            return redirect("fableseed-view")
+            return redirect("fableseed-view", seed=fablebranch.seed.pk)
         else:
             messages.add_message(request, messages.ERROR, "Error updating Fablebranch")
     else:
