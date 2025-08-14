@@ -67,7 +67,7 @@ def create_fablebranch_view(request, seed):
 @login_required
 def edit_fablebranch_view(request, branch_id):
     fablebranch = get_object_or_404(FableBranch, pk=branch_id, author=request.user)
-    page_url = "nursery/edit-fablebranch.html"
+    page_url = "nursery/edit.html"
     if request.method == "POST":
         edit_fablebranch_form = EditFableBranch(request.POST, instance=fablebranch)
         if edit_fablebranch_form.is_valid():
@@ -85,7 +85,7 @@ def edit_fablebranch_view(request, branch_id):
 @login_required
 def edit_fableseed_view(request, seed):
     fableseed_post = get_object_or_404(Fableseed, seed=seed, author=request.user)
-    page_url = "nursery/edit-fableseed.html"
+    page_url = "nursery/edit.html"
     if request.method == "POST":
         edit_fableseed_form = EditFableseed(request.POST, instance=fableseed_post)
         if edit_fableseed_form.is_valid():
