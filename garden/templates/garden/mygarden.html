@@ -20,13 +20,17 @@
         <dd>{{user.get_display_name}}</dd>
         <dt>User Bio</dt>
         <dd>{{user.userprofile.bio}}</dd>
+        {% if user.email %}
         <dt>Email Address</dt>
         <dd>{{user.email}}</dd>
+        {% endif %}
+        {%if user.first_name and user.last_name%}
         <dt>Full Name</dt>
         <dd>
             {{user.first_name}}
             {{user.last_name}}
         </dd>
+        {% endif %}
         <dt>Fablebud Count</dt>
         <dd>{{user.userprofile.fablebuds_count}}</dd>
     </dl>
