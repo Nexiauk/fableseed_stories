@@ -81,3 +81,21 @@ def edit_fablebranch_view(request, branch_id):
     else:
         edit_fablebranch_form = EditFableBranch(instance=fablebranch)
     return render(request, page_url, {"form": edit_fablebranch_form})
+
+@login_required
+def edit_fableseed_view(request, seed):
+    fableseed_post = get_object_or_404(Fableseed, seed=seed, author=request.user)
+    page_url = "nursery/edit-fableseed.html"
+    if request.method == "POST":
+        edit_fableseed_form = EditFableseed(request.POST, instance=fableseed_post)
+        if edit_fableseed_form.is_valid():
+            edit_fableseed_form.save()
+            messages.add_message(
+                request, messages.SUCCESS, "Your seed has been lovingly tended!"
+            )
+            return redirect("fableseed-view", seed=fableseed_post.pk)
+        else:
+            messages.add_message(request, messages.ERROR, "Error updating Fableseed")
+    else:
+        edit_fableseed_form = EditFableseed(instance=fableseed_post)
+    return render(request, page_url, {"form": edit_fableseed_form})
