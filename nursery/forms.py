@@ -13,7 +13,7 @@ class CreateFableseed(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields["flower_type"].label = "Flower Type"
         self.helper = FormHelper()
-        self.helper.form_id = "createFableseed"
+        self.helper.form_id = "create-fableseed"
         self.helper.form_method = "post"
         self.helper.layout = Layout(
             Field("title", css_class="rounded-sm p-2 mb-4 text-gray-700", placeholder="Enter your Fableseed title here..."),
@@ -30,14 +30,14 @@ class CreateFablebranch(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_id = "CreateFablebranch"
+        self.helper.form_id = "create-fablebranch"
         self.helper.form_method = "post"
         self.helper.layout = Layout(
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Submit("submit", "Grow Branch", css_class="bg-primary mt-4"),
         )
 
-class EditFableBranch(forms.ModelForm):
+class EditFablebranch(forms.ModelForm):
     class Meta:
         model = FableBranch
         fields = ("body",)
@@ -45,11 +45,11 @@ class EditFableBranch(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_id = "EditFablebranch"
+        self.helper.form_id = "edit-fablebranch"
         self.helper.form_method = "post"
         self.helper.layout = Layout(
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
-            Submit("submit", "Submit", css_class="bg-primary mt-4"),
+            Submit("submit", "Tend", css_class="bg-primary mt-4"),
         )
 
 class EditFableseed(forms.ModelForm):
@@ -61,12 +61,12 @@ class EditFableseed(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields["flower_type"].label = "Flower Type"
         self.helper = FormHelper()
-        self.helper.form_id = "createFableseed"
+        self.helper.form_id = "edit-fableseed"
         self.helper.form_method = "post"
         self.helper.layout = Layout(
-            Field("title", css_class="rounded-sm p-2 mb-4 text-gray-700", placeholder="Enter your Fableseed title here..."),
-            Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700", placeholder="Write your story starter here..."),
+            Field("title", css_class="rounded-sm p-2 mb-4 text-gray-700"),
+            Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Field("flower_type"),
-            Submit("submit", "Submit", css_class="bg-primary mt-4"),
+            Submit("submit", "Tend", css_class="bg-primary mt-4"),
         )
 

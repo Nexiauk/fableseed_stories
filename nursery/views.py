@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Fableseed, FableBranch
-from .forms import CreateFableseed, CreateFablebranch, EditFableBranch, EditFableseed
+from .forms import CreateFableseed, CreateFablebranch, EditFablebranch, EditFableseed
 
 
 def nursery_view(request):
@@ -69,7 +69,7 @@ def edit_fablebranch_view(request, branch_id):
     fablebranch = get_object_or_404(FableBranch, pk=branch_id, author=request.user)
     page_url = "nursery/edit.html"
     if request.method == "POST":
-        edit_fablebranch_form = EditFableBranch(request.POST, instance=fablebranch)
+        edit_fablebranch_form = EditFablebranch(request.POST, instance=fablebranch)
         if edit_fablebranch_form.is_valid():
             edit_fablebranch_form.save()
             messages.add_message(
@@ -79,7 +79,7 @@ def edit_fablebranch_view(request, branch_id):
         else:
             messages.add_message(request, messages.ERROR, "Error updating Fablebranch")
     else:
-        edit_fablebranch_form = EditFableBranch(instance=fablebranch)
+        edit_fablebranch_form = EditFablebranch(instance=fablebranch)
     return render(request, page_url, {"form": edit_fablebranch_form})
 
 @login_required
