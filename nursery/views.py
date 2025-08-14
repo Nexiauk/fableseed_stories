@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.contrib import messages
-from .models import Fableseed
-from .forms import CreateFableseed, CreateFablebranch
+from django.contrib.auth.decorators import login_required
+from .models import Fableseed, FableBranch
+from .forms import CreateFableseed, CreateFablebranch, EditFableBranch
 
 
 def nursery_view(request):
@@ -61,3 +62,22 @@ def create_fablebranch_view(request, seed):
     else:
         form = CreateFablebranch()
     return render(request, page_url, {"form": form})
+
+
+@login_required
+def edit_fablebranch_view(request, branch_id):
+    fablebranch = get_object_or_404(FableBranch, pk=branch_id, author=request.user)
+    page_url = "nursery/edit-fablebranch.html"
+    if request.method == "POST":
+        edit_fablebranch_form = EditFableBranch(request.POST, instance=fablebranch)
+        if edit_fablebranch_form.is_valid():
+            edit_fablebranch_form.save()
+            messages.add_message(
+                request, messages.SUCCESS, "Your branch has been lovingly tended!"
+            )
+            return redirect("fableseed-view")
+        else:
+            messages.add_message(request, messages.ERROR, "Error updating Fablebranch")
+    else:
+        edit_fablebranch_form = EditFableBranch(instance=fablebranch)
+    return render(request, page_url, {"form": edit_fablebranch_form})
