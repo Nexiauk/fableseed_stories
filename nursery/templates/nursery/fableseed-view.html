@@ -23,7 +23,7 @@ Fableseed number {{ fableseed.seed }}
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
             <p>{{ fableseed.body }}</p>
         </div>
-                <div class="md:col-span-10 flex justify-end">{% if user.is_authenticated %} <div class="column"><a href="{% url 'edit-fableseed' fableseed.seed %}" class="btn hover:bg-base-100">Tend Fableseed</a></div>{% endif %}</div>
+                <div class="md:col-span-10 flex justify-end">{% if user.is_authenticated and user == fableseed.author %} <div class="column"><a href="{% url 'edit-fableseed' fableseed.seed %}" class="btn hover:bg-base-100">Tend Fableseed</a></div>{% endif %}</div>
     </article>
 </section>
 
@@ -46,7 +46,7 @@ Fableseed number {{ fableseed.seed }}
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex justify-end">{% if user.is_authenticated %} <div class="column"><a href="{% url 'edit-fablebranch' branch.branch %}" class="btn hover:bg-base-100">Tend Fablebranch</a></div>{% endif %}</div>
+        <div class="md:col-span-10 flex justify-end">{% if user.is_authenticated and user == branch.author %} <div class="column"><a href="{% url 'edit-fablebranch' branch.branch %}" class="btn hover:bg-base-100">Tend Fablebranch</a></div>{% endif %}</div>
     </article>
     {% endfor %}
     {% else %}
