@@ -21,7 +21,7 @@ def nursery_view(request):
 
 
 def create_fableseed_view(request):
-    page_url = "nursery/plant-fableseed.html"
+    page_url = "nursery/cultivate.html"
     if request.method == "POST":
         form = CreateFableseed(request.POST)
         if form.is_valid():
@@ -46,7 +46,7 @@ def fableseed_view(request, seed):
 
 def create_fablebranch_view(request, seed):
     fableseed_post = get_object_or_404(Fableseed, seed=seed)
-    page_url = "nursery/grow-fablebranch.html"
+    page_url = "nursery/cultivate.html"
     if request.method == "POST":
         form = CreateFablebranch(request.POST)
         if form.is_valid():
