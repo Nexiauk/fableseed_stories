@@ -27,7 +27,12 @@ def create_fableseed_view(request):
         if form.is_valid():
             posted_seed = form.save(commit=False)
             posted_seed.author = request.user
+            request.user.userprofile.fablebuds_count += 1
+            request.user.userprofile.save()
             posted_seed.save()
+            messages.add_message(
+                request, messages.SUCCESS, "Your seed has been planted!"
+            )
             return redirect("fableseed-view", seed=posted_seed.pk)
         else:
             messages.add_message(request, messages.ERROR, "Error creating Fableseed")
