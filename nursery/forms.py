@@ -19,7 +19,7 @@ class CreateFableseed(forms.ModelForm):
             Field("title", css_class="rounded-sm p-2 mb-4 text-gray-700", placeholder="Enter your Fableseed title here..."),
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700", placeholder="Write your story starter here..."),
             Field("flower_type"),
-            Submit("submit", "Submit", css_class="bg-primary mt-4"),
+            Submit("submit", "Plant Seed", css_class="bg-primary mt-4"),
         )
 
 
@@ -34,7 +34,7 @@ class CreateFablebranch(forms.ModelForm):
         self.helper.form_method = "post"
         self.helper.layout = Layout(
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
-            Submit("submit", "Submit", css_class="bg-primary mt-4"),
+            Submit("submit", "Grow Branch", css_class="bg-primary mt-4"),
         )
 
 class EditFableBranch(forms.ModelForm):
