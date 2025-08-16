@@ -15,6 +15,7 @@
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
 </head>
+
 <body class="min-h-screen min-w-full max-w-full bg-primary flex flex-col">
   <header class="w-full">
     <div class="navbar bg-base-200 shadow">
@@ -64,13 +65,16 @@
     </div>
   </header>
   <main class="container mx-auto mt-4 flex-grow px-4">
-{% if messages %}
-  {% for message in messages %}
-    <div class="message alert max-sm:alert-vertical alert-success text-xs font-bold"" data-message="{{ message }}">
-      {{ message }}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="text-center">
+      <div class="message alert max-sm:alert-vertical alert-success text-xs font-bold inline-block mx-auto"
+        data-message="{{ message }}" role="alert" aria-live="assertive" aria-atomic="true">
+        {{ message }}
+      </div>
     </div>
-  {% endfor %}
-{% endif %}
+    {% endfor %}
+    {% endif %}
 
     {% block content %}
     {% endblock %}
