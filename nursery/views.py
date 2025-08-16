@@ -71,8 +71,11 @@ def create_fablebranch_view(request, seed):
             obj, created = UserFlower.objects.get_or_create(
                 user=request.user,
                 flower=flower,
-                earned_from_seed=fableseed_post,
-                quantity=1,
+                defaults={
+                    "earned_from_seed": fableseed_post,
+                    "earned_from_branch": posted_branch,
+                    "quantity": 1,
+                },
             )
             if created:
                 message_text = (
