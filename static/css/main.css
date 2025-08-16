@@ -2648,20 +2648,8 @@
   .min-h-40 {
     min-height: calc(var(--spacing) * 40);
   }
-  .min-h-\[40\] {
-    min-height: 40;
-  }
   .min-h-\[40px\] {
     min-height: 40px;
-  }
-  .min-h-\[50px\] {
-    min-height: 50px;
-  }
-  .min-h-\[120px\] {
-    min-height: 120px;
-  }
-  .min-h-\[150px\] {
-    min-height: 150px;
   }
   .min-h-screen {
     min-height: 100vh;

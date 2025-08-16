@@ -75,6 +75,7 @@ class Flower(models.Model):
     flower = models.AutoField(primary_key=True)
     flower_name = models.CharField(max_length=255)
     flower_image = CloudinaryField("image", default="placeholder")
+    fablebuds_cost = models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ["flower_name"]
@@ -108,7 +109,6 @@ class FableBranch(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="fableauthor")
-    fablebuds_cost = models.PositiveIntegerField(default=0)
 
     class Meta:
         verbose_name = "Fablebranch"

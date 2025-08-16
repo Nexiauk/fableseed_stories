@@ -6,7 +6,7 @@ from .models import Flower, Fableseed, FableBranch
 
 @admin.register(Flower)
 class FlowerAdmin(admin.ModelAdmin):
-    list_display = ["flower_name", "flower_image_url"]
+    list_display = ["flower_name", "flower_image_url", "fablebuds_cost"]
 
     def flower_image_url(self, obj):
         return format_html('<img src="{}" style="height: 50px; width: 50px;" />', obj.flower_image.url)
