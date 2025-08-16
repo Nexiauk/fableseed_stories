@@ -68,7 +68,11 @@
     {% if messages %}
     {% for message in messages %}
     <div class="text-center">
-      <div class="message alert max-sm:alert-vertical alert-success text-xs font-bold inline-block mx-auto"
+      <div class="
+      {% if 'success' in message.tags %}alert-success{% endif %}
+      {% if 'error' in message.tags %}alert-error{% endif %}
+      message alert max-sm:alert-vertical text-xs font-bold inline-block mx-auto
+      "
         data-message="{{ message }}" role="alert" aria-live="assertive" aria-atomic="true">
         {{ message }}
       </div>

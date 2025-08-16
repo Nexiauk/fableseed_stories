@@ -2842,6 +2842,11 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
   }
+  .alert-error {
+    border-color: var(--color-error);
+    color: var(--color-error-content);
+    --alert-color: var(--color-error);
+  }
   .alert-info {
     border-color: var(--color-info);
     color: var(--color-info-content);
