@@ -3088,6 +3088,13 @@
       }
     }
   }
+  .hover\:text-secondary {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-secondary);
+      }
+    }
+  }
   .hover\:text-secondary-content {
     &:hover {
       @media (hover: hover) {

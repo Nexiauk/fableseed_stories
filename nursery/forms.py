@@ -49,7 +49,7 @@ class EditFablebranch(forms.ModelForm):
         self.helper.form_method = "post"
         self.helper.layout = Layout(
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
-            Submit("submit", "Tend", css_class="bg-primary mt-4"),
+            Submit("submit", "Tend", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"),
         )
 
 class EditFableseed(forms.ModelForm):
@@ -67,6 +67,6 @@ class EditFableseed(forms.ModelForm):
             Field("title", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Field("flower_type"),
-            Submit("submit", "Tend", css_class="bg-primary mt-4"),
+            Submit("submit", "Tend", css_class="bg-primary mt-4 hover:bg-base-100 hover:text-secondary-content"),
         )
 
