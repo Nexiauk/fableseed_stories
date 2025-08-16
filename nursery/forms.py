@@ -67,6 +67,6 @@ class EditFableseed(forms.ModelForm):
             Field("title", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Field("flower_type"),
-            Submit("submit", "Tend", css_class="bg-primary mt-4 hover:bg-base-100 hover:text-secondary-content"),
+            Submit("submit", "Tend", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"),
         )
 
