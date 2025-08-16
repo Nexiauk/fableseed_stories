@@ -72,7 +72,6 @@ def create_fablebranch_view(request, seed):
                 user=request.user,
                 flower=flower,
                 earned_from_seed=fableseed_post,
-                earned_from_branch=posted_branch,
                 quantity=1,
             )
             if created:
@@ -84,9 +83,7 @@ def create_fablebranch_view(request, seed):
                 obj.save()
                 message_text = "Your plant is growing!"
             messages.success(request, message_text)
-            posted_url = reverse("fableseed-view", args=[fableseed_post.pk])
-            posted_url_with_branch_id = f"{posted_url}?branch={posted_branch.pk}"
-            return redirect(posted_url_with_branch_id)
+            return redirect("fableseed-view", seed=posted_branch.seed.pk)
         else:
             messages.add_message(request, messages.ERROR, "Error creating Fablebranch")
     else:
