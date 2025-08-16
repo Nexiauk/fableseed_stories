@@ -38,7 +38,7 @@
 <section id="user-flowers" class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6 flex flex-col">
     {% for flower in user_flowers %}
 {{flower.flower}} ({{flower.quantity}})
-{{flower.flower.flower_image_url}}
+<a href="{% url 'fableseed-view' flower.earned_from_seed.pk %}">{{flower.flower.flower_image_url}}</a>
     {% endfor %}
 </section>
 {% endblock content %}
