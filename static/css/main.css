@@ -15,6 +15,8 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-3xl: 48rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-xl: 1.25rem;
@@ -2822,6 +2824,16 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
   }
+  .alert-info {
+    border-color: var(--color-info);
+    color: var(--color-info-content);
+    --alert-color: var(--color-info);
+  }
+  .alert-success {
+    border-color: var(--color-success);
+    color: var(--color-success-content);
+    --alert-color: var(--color-success);
+  }
   .border-base-300 {
     border-color: var(--color-base-300);
   }
@@ -2919,6 +2931,10 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
   }
   .leading-normal {
     --tw-leading: var(--leading-normal);
@@ -3066,6 +3082,18 @@
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
+    }
+  }
+  .max-sm\:alert-vertical {
+    @media (width < 40rem) {
+      justify-content: center;
+      justify-items: center;
+      grid-auto-flow: row;
+      grid-template-columns: auto;
+      text-align: center;
+      &:has(:nth-child(2)) {
+        grid-template-columns: auto;
+      }
     }
   }
   .sm\:table-cell {

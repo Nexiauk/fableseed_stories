@@ -64,6 +64,14 @@
     </div>
   </header>
   <main class="container mx-auto mt-4 flex-grow px-4">
+{% if messages %}
+  {% for message in messages %}
+    <div class="message alert max-sm:alert-vertical alert-success text-xs font-bold"" data-message="{{ message }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+
     {% block content %}
     {% endblock %}
   </main>

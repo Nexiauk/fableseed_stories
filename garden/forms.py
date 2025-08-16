@@ -8,7 +8,6 @@ from crispy_forms.layout import Layout, Field, Submit
 
 class CustomSignupForm(SignupForm):
     display_name = forms.CharField(max_length=70, label="Display Name")
-
     def save(self, request):
         user = super().save(request)
         user.userprofile.display_name = self.cleaned_data["display_name"]
@@ -23,7 +22,7 @@ class EditProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_id = "CreateFablebranch"
+        self.helper.form_id = "edit-profile"
         self.helper.form_method = "post"
         self.helper.layout = Layout(
             Field("display_name", css_class="rounded-sm p-2 mb-4 text-gray-700"),
