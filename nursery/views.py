@@ -3,7 +3,8 @@ from django.urls import reverse
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Fableseed, FableBranch
+from .models import Fableseed, FableBranch, Flower
+from garden.models import UserFlower
 from .forms import CreateFableseed, CreateFablebranch, EditFablebranch, EditFableseed
 
 
@@ -20,6 +21,7 @@ def nursery_view(request):
     return render(request, page_url, context)
 
 
+@login_required
 def create_fableseed_view(request):
     page_url = "nursery/cultivate.html"
     if request.method == "POST":
@@ -43,14 +45,21 @@ def create_fableseed_view(request):
 
 def fableseed_view(request, seed):
     fableseed_post = get_object_or_404(Fableseed, seed=seed)
+    flower = fableseed_post.flower_type
     branches_list = fableseed_post.fablebranches.all().order_by("created_on")
-    context = {"fableseed": fableseed_post, "posted_branches": branches_list}
+    context = {
+        "fableseed": fableseed_post,
+        "posted_branches": branches_list,
+        "flower": flower,
+    }
     page_url = "nursery/fableseed-view.html"
     return render(request, page_url, context)
 
 
+@login_required
 def create_fablebranch_view(request, seed):
     fableseed_post = get_object_or_404(Fableseed, seed=seed)
+    flower = fableseed_post.flower_type
     page_url = "nursery/cultivate.html"
     if request.method == "POST":
         form = CreateFablebranch(request.POST)
@@ -59,9 +68,22 @@ def create_fablebranch_view(request, seed):
             posted_branch.seed = fableseed_post
             posted_branch.author = request.user
             posted_branch.save()
-            messages.add_message(
-                request, messages.SUCCESS, "Your branch is growing!"
+            obj, created = UserFlower.objects.get_or_create(
+                user=request.user,
+                flower=flower,
+                earned_from_seed=fableseed_post,
+                earned_from_branch=posted_branch,
+                quantity=1,
             )
+            if created:
+                message_text = (
+                    f"Your plant is growing! Your garden now contains a {flower}"
+                )
+            else:
+                obj.quantity += 1
+                obj.save()
+                message_text = "Your plant is growing!"
+            messages.success(request, message_text)
             posted_url = reverse("fableseed-view", args=[fableseed_post.pk])
             posted_url_with_branch_id = f"{posted_url}?branch={posted_branch.pk}"
             return redirect(posted_url_with_branch_id)
@@ -89,6 +111,7 @@ def edit_fablebranch_view(request, branch_id):
     else:
         edit_fablebranch_form = EditFablebranch(instance=fablebranch)
     return render(request, page_url, {"form": edit_fablebranch_form})
+
 
 @login_required
 def edit_fableseed_view(request, seed):
