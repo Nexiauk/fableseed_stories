@@ -97,7 +97,8 @@ def create_fablebranch_view(request, seed):
 @login_required
 def edit_fablebranch_view(request, branch_id):
     fablebranch = get_object_or_404(FableBranch, pk=branch_id, author=request.user)
-    page_url = "nursery/edit.html"
+    page_url = "nursery/cultivate.html"
+    edit_type = "Fablebranch"
     if request.method == "POST":
         edit_fablebranch_form = EditFablebranch(request.POST, instance=fablebranch)
         if edit_fablebranch_form.is_valid():
@@ -110,13 +111,14 @@ def edit_fablebranch_view(request, branch_id):
             messages.add_message(request, messages.ERROR, "Error updating Fablebranch")
     else:
         edit_fablebranch_form = EditFablebranch(instance=fablebranch)
-    return render(request, page_url, {"form": edit_fablebranch_form})
+    return render(request, page_url, {"form": edit_fablebranch_form, "edit_type":edit_type})
 
 
 @login_required
 def edit_fableseed_view(request, seed):
     fableseed_post = get_object_or_404(Fableseed, seed=seed, author=request.user)
-    page_url = "nursery/edit.html"
+    page_url = "nursery/cultivate.html"
+    edit_type = "Fableseed"
     if request.method == "POST":
         edit_fableseed_form = EditFableseed(request.POST, instance=fableseed_post)
         if edit_fableseed_form.is_valid():
@@ -129,9 +131,12 @@ def edit_fableseed_view(request, seed):
             messages.add_message(request, messages.ERROR, "Error updating Fableseed")
     else:
         edit_fableseed_form = EditFableseed(instance=fableseed_post)
-    return render(request, page_url, {"form": edit_fableseed_form})
+    return render(request, page_url, {"form": edit_fableseed_form, "edit_type":edit_type})
 
 @login_required
 def delete_fableseed_view(request, seed):
-    fableseed_post = get_object_or_404(Fableseed, seed=seed, author=request.user)
-    page_url = "nursery/delete"
+    fableseed_post = Fableseed.objects.get(seed=seed)
+    if fableseed_post.author == request.user:
+        fableseed_post.delete()
+        messages.add_message(request, messages.SUCCESS, "Your seed has been pruned!")
+        return redirect("nursery")
