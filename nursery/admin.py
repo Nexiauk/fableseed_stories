@@ -10,6 +10,10 @@ class FlowerAdmin(admin.ModelAdmin):
 
     def flower_image_url(self, obj):
         return format_html('<img src="{}" style="height: 50px; width: 50px;" />', obj.flower_image.url)
+    
+@admin.action(description="Approve Fableseed")
+def approve_fableseeds(modeladmin, request, queryset):
+    queryset.update(approval_status=1)
 
 @admin.register(Fableseed)
 class FableseedAdmin(admin.ModelAdmin):
@@ -22,7 +26,9 @@ class FableseedAdmin(admin.ModelAdmin):
         "approval_status",
     )
     readonly_fields = ("flower_image",)
-    list_display = ("title", "author", "flower_name", "flower_image", "approval_status")
+    list_display = ("title", "author", "flower_name", "flower_image", "approval_status",)
+    actions=[approve_fableseeds]
+    list_filter = ("approval_status",)
 
     def flower_name(self, obj):
         if obj.flower_type:
@@ -31,6 +37,7 @@ class FableseedAdmin(admin.ModelAdmin):
     def flower_image(self, obj):
         if obj.flower_type.flower_image:
             return obj.flower_type.flower_image
+        
 
 
 
