@@ -9,7 +9,7 @@ from .forms import CreateFableseed, CreateFablebranch, EditFablebranch, EditFabl
 
 
 def nursery_view(request):
-    fableseed_list = Fableseed.objects.all()
+    fableseed_list = Fableseed.objects.filter(approval_status=1)
     paginator = Paginator(fableseed_list, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
@@ -130,3 +130,8 @@ def edit_fableseed_view(request, seed):
     else:
         edit_fableseed_form = EditFableseed(instance=fableseed_post)
     return render(request, page_url, {"form": edit_fableseed_form})
+
+@login_required
+def delete_fableseed_view(request, seed):
+    fableseed_post = get_object_or_404(Fableseed, seed=seed, author=request.user)
+    page_url = "nursery/delete"
