@@ -2,28 +2,33 @@
 {% load static %}
 
 {% block title %}
+<!-- Dynamically sets the page title based on the Fableseed number -->
 Fableseed number {{ fableseed.seed }}
 {% endblock %}
 
 {% block content %}
 <!-- Delete confirmation modal for all Fableseed and Fablebranch delete buttons -->
 <dialog id="delete-message" class="modal">
-  <div class="modal-box">
-    <h3 class="text-lg font-bold">Warning</h3>
-    <p class="py-4">Are you sure you want to delete? This action cannot be undone.</p>
-    <div class="modal-action">
-      <form method="dialog">
-        <button class="btn hover:bg-secondary hover:text-secondary-content">Close</button>
-      </form>
-      <a class="btn hover:bg-secondary hover:text-secondary-content" id="delete-confirm">Confirm</a>
+    <div class="modal-box">
+        <h3 class="text-lg font-bold">Warning</h3>
+        <p class="py-4">Are you sure you want to delete? This action cannot be undone.</p>
+        <div class="modal-action">
+            <form method="dialog">
+                <button class="btn hover:bg-secondary hover:text-secondary-content">Close</button>
+            </form>
+            <a class="btn hover:bg-secondary hover:text-secondary-content" id="delete-confirm">Confirm</a>
+        </div>
     </div>
-  </div>
 </dialog>
+<!-- Section that contains the Fableseed post -->
 <section class="grid grid-flow-row gap-4 mb-4" id="fableseed-post">
-    {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'grow-fablebranch' fableseed.seed %}"
+    {% if user.is_authenticated %}
+    <!-- Show button to grow a new Fablebranch only to logged-in users -->
+    <div class="column mx-auto"><a href="{% url 'grow-fablebranch' fableseed.seed %}"
             class="btn hover:bg-secondary hover:text-secondary-content">Grow a Fablebranch</a></div>{% endif %}
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
+        <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
         <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80" id="post-profile">
             <p class="text-center">{{ fableseed.author.get_display_name }}</p>
             {{ fableseed.author.userprofile.user_profile_image }}
@@ -36,18 +41,19 @@ Fableseed number {{ fableseed.seed }}
             <p>{{ fableseed.body }}</p>
             {{fableseed.flower_type.flower_image_url}}
         </div>
-        {% if user.is_authenticated and user == fableseed.author %}<div class="md:col-span-10 flex justify-end gap-2"> <a
-                href="{% url 'edit-fableseed' fableseed.seed %}"
+        {% if user.is_authenticated and user == fableseed.author %}<div class="md:col-span-10 flex justify-end gap-2">
+            <a href="{% url 'edit-fableseed' fableseed.seed %}"
                 class="btn hover:bg-secondary hover:text-secondary-content edit">Tend Fableseed</a>
-                <button class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{fableseed.seed}}" data-type="seed">Prune Fableseed</button>
-                </div>{% endif %}
+            <button class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{fableseed.seed}}"
+                data-type="seed">Prune Fableseed</button>
+        </div>{% endif %}
     </article>
 </section>
 
 
-
+<!-- Section that contains all Fablebranch replie to the Fableseed post -->
 <section class="grid sm:grid-flow-row md:grid-flow-row gap-4" id="fablebranch-replies">
-
+    <!-- Iterates through all branches (replies) associated with this Fableseed -->
     {% if posted_branches %}
     {% for branch in posted_branches %}
     <article
@@ -63,15 +69,19 @@ Fableseed number {{ fableseed.seed }}
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex justify-end gap-2">{% if user.is_authenticated and user == branch.author %}
+        <div class="md:col-span-10 flex justify-end gap-2">
+            {% if user.is_authenticated and user == branch.author %}
+            <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
                 class="btn hover:bg-secondary hover:text-secondary-content">Tend Fablebranch</a>
-            <a class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{branch.branch}}" data-type="branch">Prune Fablebranch</a>
+            <a class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{branch.branch}}"
+                data-type="branch">Prune Fablebranch</a>
             {% endif %}
         </div>
     </article>
     {% endfor %}
     {% else %}
+    <!-- Display a message if no Fablebranch replies exist yet -->
     <p>No branches have grown yet. Be the first to respond!</p>
     {% endif %}
 </section>
