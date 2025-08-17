@@ -6,17 +6,16 @@ Fableseed number {{ fableseed.seed }}
 {% endblock %}
 
 {% block content %}
-<!-- Open the modal using ID.showModal() method -->
+<!-- Delete confirmation modal for all Fableseed and Fablebranch delete buttons -->
 <dialog id="delete-message" class="modal">
   <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
+    <h3 class="text-lg font-bold">Warning</h3>
+    <p class="py-4">Are you sure you want to delete? This action cannot be undone.</p>
     <div class="modal-action">
       <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
+        <button class="btn hover:bg-secondary hover:text-secondary-content">Close</button>
       </form>
-      <a class="btn" id="delete-confirm">Confirm</a>
+      <a class="btn hover:bg-secondary hover:text-secondary-content" id="delete-confirm">Confirm</a>
     </div>
   </div>
 </dialog>
