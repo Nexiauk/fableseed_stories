@@ -7,6 +7,7 @@ from .models import Flower, Fableseed, FableBranch
 @admin.register(Flower)
 class FlowerAdmin(admin.ModelAdmin):
     list_display = ["flower_name", "flower_image_url", "fablebuds_cost"]
+    list_filter = ("flower_name",)
 
     def flower_image_url(self, obj):
         return format_html('<img src="{}" style="height: 50px; width: 50px;" />', obj.flower_image.url)
@@ -21,12 +22,10 @@ class FableseedAdmin(admin.ModelAdmin):
         "title",
         "author",
         "flower_type",
-        "flower_image",
         "body",
         "approval_status",
     )
-    readonly_fields = ("flower_image",)
-    list_display = ("title", "author", "flower_name", "flower_image", "approval_status",)
+    list_display = ("title", "author", "flower_name", "body", "approval_status",)
     actions=[approve_fableseeds]
     list_filter = ("approval_status",)
 
