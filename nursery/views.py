@@ -9,6 +9,16 @@ from .forms import CreateFableseed, CreateFablebranch, EditFablebranch, EditFabl
 
 
 def nursery_view(request):
+    """
+    Display a paginated list of approved Fableseed objects in the nursery.
+    Annotates each seed with its latest branch.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: Rendered nursery page with paginated fableseed list.
+    """
     fableseed_list = Fableseed.objects.filter(approval_status=1)
     paginator = Paginator(fableseed_list, 10)
     page_number = request.GET.get("page")
@@ -23,6 +33,16 @@ def nursery_view(request):
 
 @login_required
 def create_fableseed_view(request):
+    """
+    Allow a logged-in user to create a new Fableseed.
+    Increments user's fablebuds_count and shows a success message if saved.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: Rendered cultivation form or redirect to fableseed view on success.
+    """
     page_url = "nursery/cultivate.html"
     if request.method == "POST":
         form = CreateFableseed(request.POST)
@@ -44,6 +64,16 @@ def create_fableseed_view(request):
 
 
 def fableseed_view(request, seed):
+    """
+    Display a single Fableseed with its flower type and branches.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        seed (int): Primary key of the Fableseed to display.
+
+    Returns:
+        HttpResponse: Rendered fableseed view page.
+    """
     fableseed_post = get_object_or_404(Fableseed, seed=seed)
     flower = fableseed_post.flower_type
     branches_list = fableseed_post.fablebranches.all().order_by("created_on")
@@ -58,6 +88,17 @@ def fableseed_view(request, seed):
 
 @login_required
 def create_fablebranch_view(request, seed):
+    """
+    Allow a logged-in user to add a FableBranch to an existing Fableseed.
+    Updates the user's garden with the corresponding flower.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        seed (int): Primary key of the Fableseed to add a branch to.
+
+    Returns:
+        HttpResponse: Rendered cultivation form or redirect to fableseed view on success.
+    """
     fableseed_post = get_object_or_404(Fableseed, seed=seed)
     flower = fableseed_post.flower_type
     page_url = "nursery/cultivate.html"
@@ -96,6 +137,17 @@ def create_fablebranch_view(request, seed):
 
 @login_required
 def edit_fablebranch_view(request, branch_id):
+    """
+    Allow the author of a FableBranch to edit it.
+    Displays messages based on success or failure.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        branch_id (int): Primary key of the FableBranch to edit.
+
+    Returns:
+        HttpResponse: Rendered edit form or redirect to fableseed view on success.
+    """
     fablebranch = get_object_or_404(FableBranch, pk=branch_id, author=request.user)
     page_url = "nursery/cultivate.html"
     edit_type = "Fablebranch"
@@ -116,6 +168,17 @@ def edit_fablebranch_view(request, branch_id):
 
 @login_required
 def edit_fableseed_view(request, seed):
+    """
+    Allow the author of a Fableseed to edit it.
+    Displays messages based on success or failure.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        seed (int): Primary key of the Fableseed to edit.
+
+    Returns:
+        HttpResponse: Rendered edit form or redirect to fableseed view on success.
+    """
     fableseed_post = get_object_or_404(Fableseed, seed=seed, author=request.user)
     page_url = "nursery/cultivate.html"
     edit_type = "Fableseed"
@@ -135,6 +198,18 @@ def edit_fableseed_view(request, seed):
 
 @login_required
 def delete_view(request,type, id):  
+    """
+    Delete a Fableseed or FableBranch authored by the user.
+    Displays a success message after deletion.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        type (str): Type of object to delete ('seed' or 'branch').
+        id (int): Primary key of the object to delete.
+
+    Returns:
+        HttpResponseRedirect: Redirects to the nursery view.
+    """
     if type == "seed":
         obj = get_object_or_404(Fableseed, pk=id, author=request.user)
     elif type == "branch":
