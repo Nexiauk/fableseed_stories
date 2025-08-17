@@ -57,7 +57,8 @@ def create_fableseed_view(request):
             )
             return redirect("fableseed-view", seed=posted_seed.pk)
         else:
-            messages.add_message(request, messages.ERROR, "Error creating Fableseed")
+            messages.add_message(request, messages.ERROR,
+                                 "Error creating Fableseed")
     else:
         form = CreateFableseed()
     return render(request, page_url, {"form": form})
@@ -129,7 +130,8 @@ def create_fablebranch_view(request, seed):
             messages.success(request, message_text)
             return redirect("fableseed-view", seed=posted_branch.seed.pk)
         else:
-            messages.add_message(request, messages.ERROR, "Error creating Fablebranch")
+            messages.add_message(request, messages.ERROR,
+                                 "Error creating Fablebranch")
     else:
         form = CreateFablebranch()
     return render(request, page_url, {"form": form})
@@ -148,11 +150,13 @@ def edit_fablebranch_view(request, branch_id):
     Returns:
         HttpResponse: Rendered edit form or redirect to fableseed view on success.
     """
-    fablebranch = get_object_or_404(FableBranch, pk=branch_id, author=request.user)
+    fablebranch = get_object_or_404(
+        FableBranch, pk=branch_id, author=request.user)
     page_url = "nursery/cultivate.html"
     edit_type = "Fablebranch"
     if request.method == "POST":
-        edit_fablebranch_form = EditFablebranch(request.POST, instance=fablebranch)
+        edit_fablebranch_form = EditFablebranch(
+            request.POST, instance=fablebranch)
         if edit_fablebranch_form.is_valid():
             edit_fablebranch_form.save()
             messages.add_message(
@@ -160,10 +164,11 @@ def edit_fablebranch_view(request, branch_id):
             )
             return redirect("fableseed-view", seed=fablebranch.seed.pk)
         else:
-            messages.add_message(request, messages.ERROR, "Error updating Fablebranch")
+            messages.add_message(request, messages.ERROR,
+                                 "Error updating Fablebranch")
     else:
         edit_fablebranch_form = EditFablebranch(instance=fablebranch)
-    return render(request, page_url, {"form": edit_fablebranch_form, "edit_type":edit_type})
+    return render(request, page_url, {"form": edit_fablebranch_form, "edit_type": edit_type})
 
 
 @login_required
@@ -179,11 +184,13 @@ def edit_fableseed_view(request, seed):
     Returns:
         HttpResponse: Rendered edit form or redirect to fableseed view on success.
     """
-    fableseed_post = get_object_or_404(Fableseed, seed=seed, author=request.user)
+    fableseed_post = get_object_or_404(
+        Fableseed, seed=seed, author=request.user)
     page_url = "nursery/cultivate.html"
     edit_type = "Fableseed"
     if request.method == "POST":
-        edit_fableseed_form = EditFableseed(request.POST, instance=fableseed_post)
+        edit_fableseed_form = EditFableseed(
+            request.POST, instance=fableseed_post)
         if edit_fableseed_form.is_valid():
             edit_fableseed_form.save()
             messages.add_message(
@@ -191,13 +198,15 @@ def edit_fableseed_view(request, seed):
             )
             return redirect("fableseed-view", seed=fableseed_post.pk)
         else:
-            messages.add_message(request, messages.ERROR, "Error updating Fableseed")
+            messages.add_message(request, messages.ERROR,
+                                 "Error updating Fableseed")
     else:
         edit_fableseed_form = EditFableseed(instance=fableseed_post)
-    return render(request, page_url, {"form": edit_fableseed_form, "edit_type":edit_type})
+    return render(request, page_url, {"form": edit_fableseed_form, "edit_type": edit_type})
+
 
 @login_required
-def delete_view(request,type, id):  
+def delete_view(request, type, id):
     """
     Delete a Fableseed or FableBranch authored by the user.
     Displays a success message after deletion.
@@ -213,11 +222,12 @@ def delete_view(request,type, id):
     if type == "seed":
         obj = get_object_or_404(Fableseed, pk=id, author=request.user)
     elif type == "branch":
-         obj = get_object_or_404(FableBranch, pk=id, author=request.user)
+        obj = get_object_or_404(FableBranch, pk=id, author=request.user)
     else:
         messages.error(request, "Invalid object type!")
         return redirect("nursery")
     obj.delete()
-    messages.add_message(request, messages.SUCCESS, f"Your {type} has been pruned!")
+    messages.add_message(request, messages.SUCCESS,
+                         f"Your {type} has been pruned!")
 
     return redirect("nursery")
