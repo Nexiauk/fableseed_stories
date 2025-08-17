@@ -134,12 +134,11 @@ def edit_fableseed_view(request, seed):
     return render(request, page_url, {"form": edit_fableseed_form, "edit_type":edit_type})
 
 @login_required
-def delete_view(request,type, id):
-    
+def delete_view(request,type, id):  
     if type == "seed":
-        obj = get_object_or_404(Fableseed, pk=id)
+        obj = get_object_or_404(Fableseed, pk=id, author=request.user)
     elif type == "branch":
-         obj = get_object_or_404(FableBranch, pk=id)
+         obj = get_object_or_404(FableBranch, pk=id, author=request.user)
     else:
         messages.error(request, "Invalid object type!")
         return redirect("nursery")

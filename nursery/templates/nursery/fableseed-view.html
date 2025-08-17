@@ -37,11 +37,11 @@ Fableseed number {{ fableseed.seed }}
             <p>{{ fableseed.body }}</p>
             {{fableseed.flower_type.flower_image_url}}
         </div>
-        <div class="md:col-span-10 flex justify-end gap-2">{% if user.is_authenticated and user == fableseed.author %} <a
+        {% if user.is_authenticated and user == fableseed.author %}<div class="md:col-span-10 flex justify-end gap-2"> <a
                 href="{% url 'edit-fableseed' fableseed.seed %}"
                 class="btn hover:bg-secondary hover:text-secondary-content edit">Tend Fableseed</a>
                 <button class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{fableseed.seed}}" data-type="seed">Prune Fableseed</button>
-                {% endif %}</div>
+                </div>{% endif %}
     </article>
 </section>
 
@@ -64,7 +64,7 @@ Fableseed number {{ fableseed.seed }}
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex justify-end gap-2">{% if user.is_authenticated and user == fableseed.author %}
+        <div class="md:col-span-10 flex justify-end gap-2">{% if user.is_authenticated and user == branch.author %}
             <a href="{% url 'edit-fablebranch' branch.branch %}"
                 class="btn hover:bg-secondary hover:text-secondary-content">Tend Fablebranch</a>
             <a class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{branch.branch}}" data-type="branch">Prune Fablebranch</a>
