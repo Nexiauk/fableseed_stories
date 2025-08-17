@@ -7,7 +7,7 @@ Fableseed number {{ fableseed.seed }}
 
 {% block content %}
 <!-- Open the modal using ID.showModal() method -->
-<dialog id="delete_message" class="modal">
+<dialog id="delete-message" class="modal">
   <div class="modal-box">
     <h3 class="text-lg font-bold">Hello!</h3>
     <p class="py-4">Press ESC key or click the button below to close</p>
@@ -16,6 +16,7 @@ Fableseed number {{ fableseed.seed }}
         <!-- if there is a button in form, it will close the modal -->
         <button class="btn">Close</button>
       </form>
+      <a class="btn" id="delete-confirm">Confirm</a>
     </div>
   </div>
 </dialog>
@@ -25,7 +26,7 @@ Fableseed number {{ fableseed.seed }}
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80" id="post-profile">
-            <p class="text-center">{{ fableseed.author }}</p>
+            <p class="text-center">{{ fableseed.author.get_display_name }}</p>
             {{ fableseed.author.userprofile.user_profile_image }}
 
 
@@ -39,7 +40,7 @@ Fableseed number {{ fableseed.seed }}
         <div class="md:col-span-10 flex justify-end gap-2">{% if user.is_authenticated and user == fableseed.author %} <a
                 href="{% url 'edit-fableseed' fableseed.seed %}"
                 class="btn hover:bg-secondary hover:text-secondary-content edit">Tend Fableseed</a>
-                <button class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{fableseed.seed}}">Prune Fableseed</button>
+                <button class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{fableseed.seed}}" data-type="seed">Prune Fableseed</button>
                 {% endif %}</div>
     </article>
 </section>
@@ -66,7 +67,7 @@ Fableseed number {{ fableseed.seed }}
         <div class="md:col-span-10 flex justify-end gap-2">{% if user.is_authenticated and user == fableseed.author %}
             <a href="{% url 'edit-fablebranch' branch.branch %}"
                 class="btn hover:bg-secondary hover:text-secondary-content">Tend Fablebranch</a>
-            <a class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{branch.branch}}">Prune Fablebranch</a>
+            <a class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{branch.branch}}" data-type="branch">Prune Fablebranch</a>
             {% endif %}
         </div>
     </article>

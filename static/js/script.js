@@ -10,12 +10,15 @@ seedTableRows.forEach((row) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const deleteButtons = document.querySelectorAll(".delete");
-    const deleteMessage = document.getElementById("delete_message")
+    const deleteMessage = document.getElementById("delete-message")
+    const deleteConfirm = document.getElementById("delete-confirm")
 
     deleteButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            let dataTarget = e.target.getAttribute("data-id")
+        btn.addEventListener("click", () => {
+            const dataTarget = btn.getAttribute("data-id")
+            const dataType = btn.getAttribute("data-type")
             deleteMessage.showModal()
+            deleteConfirm.href = `/prune/${dataType}/${dataTarget}/`
         });
     });
 });

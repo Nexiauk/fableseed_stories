@@ -9,4 +9,5 @@ urlpatterns = [
     path("grow-fablebranch/<int:seed>/", views.create_fablebranch_view, name="grow-fablebranch"),
     path("fablebranch/<int:branch_id>/edit/", views.edit_fablebranch_view, name="edit-fablebranch"),
     path("fableseed/<int:seed>/edit/", views.edit_fableseed_view, name="edit-fableseed"),
+    path("prune/<str:type>/<int:id>/", views.delete_view, name="prune"),
 ]

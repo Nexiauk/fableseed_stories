@@ -134,9 +134,16 @@ def edit_fableseed_view(request, seed):
     return render(request, page_url, {"form": edit_fableseed_form, "edit_type":edit_type})
 
 @login_required
-def delete_fableseed_view(request, seed):
-    fableseed_post = Fableseed.objects.get(seed=seed)
-    if fableseed_post.author == request.user:
-        fableseed_post.delete()
-        messages.add_message(request, messages.SUCCESS, "Your seed has been pruned!")
+def delete_view(request,type, id):
+    
+    if type == "seed":
+        obj = get_object_or_404(Fableseed, pk=id)
+    elif type == "branch":
+         obj = get_object_or_404(FableBranch, pk=id)
+    else:
+        messages.error(request, "Invalid object type!")
         return redirect("nursery")
+    obj.delete()
+    messages.add_message(request, messages.SUCCESS, f"Your {type} has been pruned!")
+
+    return redirect("nursery")

@@ -8,7 +8,7 @@ Nursery
 {% block content %}
 
 <section class="grid sm:grid-flow-col md:grid-flow-row gap-4 mb-4" id="nursery-table">
-    {% if user.is_authenticated %} <div class="column"><a href="{% url 'plant-fableseed' %}" class="btn hover:bg-secondary hover:text-secondary-content">Plant a
+    {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}" class="btn hover:bg-secondary hover:text-secondary-content">Plant a
             Seed</a></div> {% endif %}
     <div class="w-full h-full overflow-auto bg-base-100 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md"
         id="nursery">
