@@ -40,6 +40,9 @@ class UserFlower(models.Model):
             return f"{self.quantity} {self.flower} earned"
         else:
             return f"{self.quantity} {self.flower}s earned"
+        
+    def user_flower_image_url(self):
+        return format_html('<img src="{}" style="height: 100px; width: 100px;" />', self.flower.flower_image.url)
 
 
 class UserProfile(models.Model):
