@@ -28,7 +28,8 @@ class UserFlower(models.Model):
     flower = models.ForeignKey(Flower, on_delete=models.PROTECT)
     quantity = models.PositiveIntegerField(default=0)
     earned_from_seed = models.ForeignKey(Fableseed, on_delete=models.CASCADE)
-    earned_from_branch = models.ForeignKey(FableBranch, on_delete=models.CASCADE)
+    earned_from_branch = models.ForeignKey(
+        FableBranch, on_delete=models.CASCADE)
     earned_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -56,7 +57,8 @@ class UserProfile(models.Model):
         __str__: if the user has a display name, it will return that, if not, it will default to their username.
         user_profile_image: formats the url of the uploaded profile_picture into an image element with style applied.
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name='userprofile')
     display_name = models.CharField(max_length=70)
     profile_picture = CloudinaryField("image", default="placeholder_l62d5p")
     bio = models.TextField()
@@ -64,10 +66,10 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.display_name if self.display_name else self.user.username
-    
+
     def user_profile_image(self):
         return format_html('<img src="{}" style="height: 150px; width: 150px;" class="mr-auto" />', self.profile_picture.url)
-    
+
     @property
     def get_display_name(self):
         try:
@@ -75,4 +77,3 @@ class UserProfile(models.Model):
         except UserProfile.DoesNotExist:
             return self.username
     User.add_to_class('get_display_name', get_display_name)
-

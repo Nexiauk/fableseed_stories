@@ -7,6 +7,7 @@ from django.utils.html import format_html
 # Create your models here.
 STATUS = ((0, "Pending"), (1, "Approved"))
 
+
 class Fableseed(models.Model):
     """
     Represents a story seed created by a user, associated with a flower type.
@@ -36,17 +37,17 @@ class Fableseed(models.Model):
     approval_status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    author = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, blank=True)
     fablebuds_earnt = models.PositiveIntegerField(default=1)
 
     class Meta:
         ordering = ["-created_on"]
-        
 
     def __str__(self):
         author_name = self.author.username if self.author else "Deleted User"
         return f"{self.title} by {author_name}"
-    
+
     def title_trunc(self):
         return (
             f"{self.title[:20]}..."
@@ -82,10 +83,11 @@ class Flower(models.Model):
 
     def __str__(self):
         return self.flower_name
-    
+
     def flower_image_url(self):
         return format_html('<img src="{}" style="height: 50px; width: 50px;" />', self.flower_image.url)
-    
+
+
 class FableBranch(models.Model):
     """
     Represents a branching reply to the Fableseeds
@@ -104,11 +106,13 @@ class FableBranch(models.Model):
     """
 
     branch = models.AutoField(primary_key=True)
-    seed = models.ForeignKey("nursery.Fableseed", on_delete=models.PROTECT, related_name='fablebranches')
+    seed = models.ForeignKey(
+        "nursery.Fableseed", on_delete=models.PROTECT, related_name='fablebranches')
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="fableauthor")
+    author = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, blank=True, related_name="fableauthor")
 
     class Meta:
         verbose_name = "Fablebranch"
@@ -122,10 +126,10 @@ class FableBranch(models.Model):
         Includes the author's username or "Deleted user" if the author no longer exists.
         """
         try:
-            display_name = self.author.userprofile.display_name 
-            
+            display_name = self.author.userprofile.display_name
+
         except (AttributeError, ObjectDoesNotExist):
-            display_name =  "Deleted User"
+            display_name = "Deleted User"
         return (
             f"{self.body[:50]}... by {display_name}"
             if len(self.body) > 50

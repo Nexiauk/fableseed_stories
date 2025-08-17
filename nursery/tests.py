@@ -4,11 +4,14 @@ from django.contrib.auth.models import User
 from nursery.models import Fableseed, Flower, FableBranch
 
 # Create your tests here.
+
+
 class NurseryViewTests(TestCase):
     """
     A class of tests ensuring that the Nursery page loads successfully and displays all expected content.
 
     """
+
     def test_nursery_html_template(self):
         """
         Test that the nursery page loads successfully,
@@ -20,6 +23,7 @@ class NurseryViewTests(TestCase):
         self.assertTemplateUsed(response, "nursery/nursery.html")
         self.assertContains(response, "Test content")
 
+
 class NurseryModelTests(TestCase):
     """
     A class of tests to ensure that the nursery models work as expected.
@@ -30,14 +34,16 @@ class NurseryModelTests(TestCase):
     as expected, including truncation.
 
     """
+
     def setUp(self):
         """
         Create initial test data for users, flowers, fableseeds and 
         fablebranches to use across tests.
         """
-        self.user=User.objects.create_user(username="lucytest", password="testpassword")
-        self.flower=Flower.objects.create(flower_name="Lily")
-        self.seed=Fableseed.objects.create (
+        self.user = User.objects.create_user(
+            username="lucytest", password="testpassword")
+        self.flower = Flower.objects.create(flower_name="Lily")
+        self.seed = Fableseed.objects.create(
             flower_type=self.flower,
             title="My 1st Fableseed",
             body="Once upon a time...",
@@ -52,7 +58,7 @@ class NurseryModelTests(TestCase):
             fablebuds_cost=1
         )
         self.longbody = (
-        "This is a really long string that should truncate because it is longer than 50 characters and I don't want to display anything that long."
+            "This is a really long string that should truncate because it is longer than 50 characters and I don't want to display anything that long."
         )
 
         self.long_branch = FableBranch.objects.create(
@@ -106,4 +112,3 @@ class NurseryModelTests(TestCase):
         self.assertTemplateUsed(response, "nursery/nursery.html")
         self.assertIn("fableseed_list", response.context)
         self.assertIn(self.seed, response.context["fableseed_list"])
-        

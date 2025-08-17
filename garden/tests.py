@@ -9,18 +9,19 @@ class UserProfileTests(TestCase):
    Tests that the extended user profile fields are setup correctly when a 
    UserProfile is created.
     """
+
     def setUp(self):
         """
         Create initial test data for a user
         """
-        self.user=User.objects.create_user(username="lucytest", password="testpassword")
-
+        self.user = User.objects.create_user(
+            username="lucytest", password="testpassword")
 
     def test_user_profile_fields(self):
         """
         Test that the receiver signal creates or updates a UserProfile
         when a User instance is saved.
-        
+
         Asserts that:
         - a UserpPofile exists for the user
         - UserProfile.display_name is equal to the User's username
@@ -33,4 +34,3 @@ class UserProfileTests(TestCase):
         self.assertEqual(self.user.userprofile.bio, "Hi")
         self.assertTrue(self.user.userprofile.profile_picture)
         self.assertEqual(self.user.userprofile.fablebuds_count, 0)
-
