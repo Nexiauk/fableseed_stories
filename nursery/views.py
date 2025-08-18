@@ -223,6 +223,10 @@ def delete_view(request, type, id):
         obj = get_object_or_404(Fableseed, pk=id, author=request.user)
     elif type == "branch":
         obj = get_object_or_404(FableBranch, pk=id, author=request.user)
+        userflower = obj.reward.first()
+        if userflower and userflower.quantity >= 1:
+                userflower.quantity -= 1
+                userflower.save()
     else:
         messages.error(request, "Invalid object type!")
         return redirect("nursery")

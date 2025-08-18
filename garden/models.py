@@ -29,7 +29,7 @@ class UserFlower(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     earned_from_seed = models.ForeignKey(Fableseed, on_delete=models.CASCADE)
     earned_from_branch = models.ForeignKey(
-        FableBranch, on_delete=models.CASCADE)
+        FableBranch, on_delete=models.CASCADE, related_name="reward")
     earned_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
