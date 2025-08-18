@@ -12,7 +12,7 @@ from .forms import EditProfileForm
 def garden_view(request, id):
     page_url = "garden/mygarden.html"
     user = get_object_or_404(User, pk=id)
-    user_flowers = UserFlower.objects.filter(user=user)
+    user_flowers = UserFlower.objects.filter(user=user, quantity__gt=0)
     context = {"user": user, "user_flowers": user_flowers}
     return render(request, page_url, context)
 
