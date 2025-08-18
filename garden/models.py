@@ -70,8 +70,8 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.display_name if self.display_name else self.user.username
 
-    def user_profile_image(self):
-        return format_html('<img src="{}" style="height: 150px; width: 150px;" class="mr-auto" />', self.profile_picture.url)
+    def user_profile_image_url(self):
+        return self.profile_picture.url
 
     @property
     def get_display_name(self):

@@ -9,16 +9,36 @@ select * {
     background-color: #f2f2f2;
 }
 
-dt {
-    float: left;
-    width: 180px;
+
+@media screen and (min-width:320px) {
+    dt {
+        float: left;
+
+    }
+
+    dt::after {
+        content: "\a";
+        white-space: pre;
+    }
+
+    dd {
+        margin: 0 0 0 100px;
+        padding: 0 0 0.5em 0;
+    }
 }
 
-dt::after {
-    content: ":";
-}
+@media screen and (min-width:768px) {
+    dt {
+        float: left;
+        width: 180px;
+    }
 
-dd {
-    margin: 0 0 0 80px;
-    padding: 0 0 0.5em 0;
+    dt::after {
+        content: ":";
+    }
+
+    dd {
+        margin: 0 0 0 180px;
+        padding: 0 0 0.5em 0;
+    }
 }
