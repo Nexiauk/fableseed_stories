@@ -14,25 +14,25 @@
             width="150px" height="150px" class="mx-auto mb-2">
     </div>
 
-    <div class="column mx-auto">
+    <div class="column mx-auto mb-2">
         <dl>
-            <dt class="font-bold">Display Name:</dt>
-            <dd class="pb-3">{{user.get_display_name}}</dd>
-            <dt class="font-bold">User Bio:</dt>
-            <dd class="pb-3">{{user.userprofile.bio}}</dd>
+            <dt class="font-bold text-lg md:text-base">Display Name:</dt>
+            <dd class="pb-3 text-lg">{{user.get_display_name}}</dd>
+            <dt class="font-bold text-lg">User Bio:</dt>
+            <dd class="pb-3 text-lg">{{user.userprofile.bio}}</dd>
             {% if user.email %}
-            <dt class="font-bold">Email Address:</dt>
-            <dd class="pb-3">{{user.email}}</dd>
+            <dt class="font-bold text-lg">Email Address:</dt>
+            <dd class="pb-3 text-lg">{{user.email}}</dd>
             {% endif %}
             {%if user.first_name and user.last_name%}
-            <dt class="font-bold">Full Name:</dt>
-            <dd class="pb-3">
+            <dt class="font-bold text-lg">Full Name:</dt>
+            <dd class="pb-3 text-lg">
                 {{user.first_name}}
                 {{user.last_name}}
             </dd>
             {% endif %}
-            <dt class="font-bold">Fablebud Count:</dt>
-            <dd class="pb-3">{{user.userprofile.fablebuds_count}}</dd>
+            <dt class="font-bold text-lg">Fablebud Count:</dt>
+            <dd class="pb-3 text-lg">{{user.userprofile.fablebuds_count}}</dd>
         </dl>
     </div>
     <div class="buttons flex flex-1 justify-end mt-3"> {% if user.is_authenticated %} <a href="{% url 'edit-profile' %}"
