@@ -53,7 +53,7 @@ def create_fableseed_view(request):
             request.user.userprofile.save()
             posted_seed.save()
             messages.add_message(
-                request, messages.SUCCESS, "Your seed has been planted!"
+                request, messages.SUCCESS, "Your seed has been planted! The gardener will check it for you."
             )
             return redirect("fableseed-view", seed=posted_seed.pk)
         else:
