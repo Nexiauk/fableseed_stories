@@ -9,9 +9,9 @@ Fableseed number {{ fableseed.seed }}
 {% block content %}
 <!-- Delete confirmation modal for all Fableseed and Fablebranch delete buttons -->
 <dialog id="delete-message" class="modal">
-    <div class="modal-box">
-        <h3 class="text-lg font-bold">Warning</h3>
-        <p class="py-4">Are you sure you want to delete? This action cannot be undone.</p>
+    <div class="modal-box bg-warning">
+        <h3 class="text-lg font-bold text-warning-content">Warning</h3>
+        <p class="py-4 text-warning-content">Are you sure you want to delete? This action cannot be undone.</p>
         <div class="modal-action">
             <form method="dialog">
                 <button class="btn hover:bg-secondary hover:text-secondary-content">Close</button>
@@ -36,23 +36,26 @@ Fableseed number {{ fableseed.seed }}
 
         </div>
         <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ fableseed.created_on }}</time>
-        <div class="md:col-span-10 md:row-span-10">
+        <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
             <p>{{ fableseed.body }}</p>
             {{fableseed.flower_type.flower_image_url}}
         </div>
-        {% if user.is_authenticated and user == fableseed.author %}<div class="md:col-span-10 flex justify-end gap-2">
-            <a href="{% url 'edit-fableseed' fableseed.seed %}"
-                class="btn hover:bg-secondary hover:text-secondary-content edit">Tend Fableseed</a>
-            <button class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{fableseed.seed}}"
-                data-type="seed">Prune Fableseed</button>
-        </div>{% endif %}
+
+        <div id="fableseed-btns" class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0">
+            {% if user.is_authenticated and user == fableseed.author %}
+                <a href="{% url 'edit-fableseed' fableseed.seed %}"
+                    class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md edit">Tend Fableseed</a>
+                <button class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md delete" data-id="{{fableseed.seed}}"
+                    data-type="seed">Prune Fableseed</button>
+            {% endif %}
+        </div>
     </article>
 </section>
 
 
 <!-- Section that contains all Fablebranch replie to the Fableseed post -->
-<section class="grid sm:grid-flow-row md:grid-flow-row gap-4" id="fablebranch-replies">
+<section class="grid sm:grid-flow-row gap-4" id="fablebranch-replies">
     <!-- Iterates through all branches (replies) associated with this Fableseed -->
     {% if posted_branches %}
     {% for branch in posted_branches %}
@@ -65,16 +68,16 @@ Fableseed number {{ fableseed.seed }}
 
         </div>
         <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ branch.created_on }}</time>
-        <div class="md:col-span-10 md:row-span-10">
+        <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex justify-end gap-2">
+        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4" id="fablebranch-btns">
             {% if user.is_authenticated and user == branch.author %}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
-                class="btn hover:bg-secondary hover:text-secondary-content">Tend Fablebranch</a>
-            <a class="btn hover:bg-secondary hover:text-secondary-content delete" data-id="{{branch.branch}}"
+                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md">Tend Fablebranch</a>
+            <a class="btn hover:bg-secondary hover:text-secondary-content delete btn-sm md:btn-md" data-id="{{branch.branch}}"
                 data-type="branch">Prune Fablebranch</a>
             {% endif %}
         </div>

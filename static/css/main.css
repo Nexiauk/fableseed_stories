@@ -2411,6 +2411,9 @@
       }
     }
   }
+  .mx-0 {
+    margin-inline: calc(var(--spacing) * 0);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -2828,6 +2831,9 @@
   .justify-end {
     justify-content: flex-end;
   }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -2932,6 +2938,9 @@
   .bg-primary-content {
     background-color: var(--color-primary-content);
   }
+  .bg-warning {
+    background-color: var(--color-warning);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -2978,6 +2987,9 @@
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
   }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
   .text-center {
     text-align: center;
   }
@@ -2994,6 +3006,10 @@
   .text-6xl {
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -3030,6 +3046,12 @@
   }
   .text-primary-content {
     color: var(--color-primary-content);
+  }
+  .text-warning {
+    color: var(--color-warning);
+  }
+  .text-warning-content {
+    color: var(--color-warning-content);
   }
   .lowercase {
     text-transform: lowercase;
@@ -3110,6 +3132,21 @@
   .ease-out {
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
+  }
+  .btn-md {
+    --fontsize: 0.875rem;
+    --btn-p: 1rem;
+    --size: calc(var(--size-field, 0.25rem) * 10);
+  }
+  .btn-sm {
+    --fontsize: 0.75rem;
+    --btn-p: 0.75rem;
+    --size: calc(var(--size-field, 0.25rem) * 8);
+  }
+  .btn-xs {
+    --fontsize: 0.6875rem;
+    --btn-p: 0.5rem;
+    --size: calc(var(--size-field, 0.25rem) * 6);
   }
   .hover\:bg-base-100 {
     &:hover {
@@ -3246,6 +3283,11 @@
       grid-auto-flow: row;
     }
   }
+  .md\:justify-end {
+    @media (width >= 48rem) {
+      justify-content: flex-end;
+    }
+  }
   .md\:gap-4 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 4);
@@ -3288,6 +3330,20 @@
     @media (width >= 48rem) {
       font-size: var(--text-base);
       line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .md\:btn-md {
+    @media (width >= 48rem) {
+      --fontsize: 0.875rem;
+      --btn-p: 1rem;
+      --size: calc(var(--size-field, 0.25rem) * 10);
+    }
+  }
+  .not-visited\:md\:justify-end {
+    &:not(*:visited) {
+      @media (width >= 48rem) {
+        justify-content: flex-end;
+      }
     }
   }
   .lg\:flex {
