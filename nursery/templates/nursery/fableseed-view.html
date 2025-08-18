@@ -30,7 +30,7 @@ Fableseed number {{ fableseed.seed }}
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
         <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80" id="post-profile">
-            <p class="text-center">{{ fableseed.author.get_display_name }}</p>
+            <p class="md:text-center font-bold">{{ fableseed.author.get_display_name }}</p>
             {{ fableseed.author.userprofile.user_profile_image }}
 
 
@@ -63,7 +63,7 @@ Fableseed number {{ fableseed.seed }}
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
         id="fableseed-post">
         <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80" id="post-profile">
-            <p class="text-center">{{ branch.author }}</p>
+            <p class="md:text-center font-bold">{{ branch.author }}</p>
             {{ branch.author.userprofile.user_profile_image }}
 
         </div>
