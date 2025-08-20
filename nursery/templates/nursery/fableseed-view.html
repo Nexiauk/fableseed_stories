@@ -46,7 +46,7 @@ Fableseed number {{ fableseed.seed }}
             {% if user.is_authenticated and user == fableseed.author %}
                 <a href="{% url 'edit-fableseed' fableseed.seed %}"
                     class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md edit">Tend Fableseed</a>
-                <button class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md delete" data-id="{{fableseed.seed}}"
+                <button class="btn hover:bg-red-700 hover:text-primary-content btn-sm md:btn-md delete" data-id="{{fableseed.seed}}"
                     data-type="seed">Prune Fableseed</button>
             {% endif %}
         </div>
@@ -77,7 +77,7 @@ Fableseed number {{ fableseed.seed }}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
                 class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md">Tend Fablebranch</a>
-            <a class="btn hover:bg-secondary hover:text-secondary-content delete btn-sm md:btn-md" data-id="{{branch.branch}}"
+            <a class="btn  hover:bg-red-700 hover:text-primary-content delete btn-sm md:btn-md" data-id="{{branch.branch}}"
                 data-type="branch">Prune Fablebranch</a>
             {% endif %}
         </div>

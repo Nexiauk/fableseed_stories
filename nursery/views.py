@@ -221,6 +221,10 @@ def delete_view(request, type, id):
     """
     if type == "seed":
         obj = get_object_or_404(Fableseed, pk=id, author=request.user)
+        has_branches = obj.fablebranches.all()
+        if has_branches:
+            messages.error(request, "An established seed cannot be culled!")
+            return redirect("fableseed-view", seed=obj.pk)
     elif type == "branch":
         obj = get_object_or_404(FableBranch, pk=id, author=request.user)
         userflower = obj.reward.first()
