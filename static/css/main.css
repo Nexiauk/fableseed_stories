@@ -2966,6 +2966,9 @@
   .bg-\[url\(\/static\/images\/bg\.png\)\] {
     background-image: url(/static/images/bg.png);
   }
+  .bg-\[url\(\/static\/images\/bg1\.avif\)\] {
+    background-image: url(/static/images/bg1.avif);
+  }
   .bg-\[url\(\/static\/images\/bg1\.png\)\] {
     background-image: url(/static/images/bg1.png);
   }
@@ -2999,8 +3002,14 @@
   .bg-clip-border {
     background-clip: border-box;
   }
+  .bg-bottom {
+    background-position: bottom;
+  }
   .bg-center {
     background-position: center;
+  }
+  .bg-top {
+    background-position: top;
   }
   .mask-repeat {
     mask-repeat: repeat;
@@ -3423,6 +3432,11 @@
   .lg\:flex-row {
     @media (width >= 64rem) {
       flex-direction: row;
+    }
+  }
+  .lg\:bg-cover {
+    @media (width >= 64rem) {
+      background-size: cover;
     }
   }
   .lg\:bg-center {

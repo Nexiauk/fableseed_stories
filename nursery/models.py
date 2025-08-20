@@ -50,8 +50,8 @@ class Fableseed(models.Model):
 
     def title_trunc(self):
         return (
-            f"{self.title[:20]}..."
-            if len(self.title) > 20
+            f"{self.title[:18]}..."
+            if len(self.title) > 18
             else f"{self.title}"
         )
 
@@ -83,10 +83,6 @@ class Flower(models.Model):
 
     def __str__(self):
         return self.flower_name
-
-    def flower_image_url(self):
-        return format_html('<img src="{}" style="height: 50px; width: 50px;" />', self.flower_image.url)
-
 
 class FableBranch(models.Model):
     """

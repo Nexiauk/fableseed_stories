@@ -27,7 +27,7 @@ Nursery
                 {% for fableseed in page_obj %}
                 <tr class="clickable hover:bg-secondary hover:text-secondary-content hover:font-bold cursor-pointer"
                     data-href="{% url 'fableseed-view' fableseed.seed %}">
-                    <td class="p-2 border-t border-r border-secondary">{{ fableseed.flower_type.flower_image_url}}</td>
+                    <td class="p-2 border-t border-r border-secondary"><img src="{{ fableseed.flower_type.flower_image.url}}" alt="{{fableseed.flower_type.flower_name}}" height="50px" width="50px"></td>
                     <td class="p-4 border-t md:border-r border-secondary">
                         <div>{{ fableseed.title_trunc }}</div>
                     </td>

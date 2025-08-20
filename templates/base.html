@@ -16,20 +16,20 @@
   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
 </head>
 
-<body class="min-h-screen min-w-full max-w-full bg-primary flex flex-col bg-[url(/static/images/bg1.png)] bg-cover lg:bg-center">
+<body class="min-h-screen min-w-full max-w-full bg-primary flex flex-col bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center">
   <header class="w-full">
     <div class="navbar bg-base-200 shadow">
       <div class="navbar-start flex-1">
         <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+            <svg xmlns="https://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
           <ul tabindex="0" class="menu menu-md dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li><a href="{% url 'nursery' %}">Home</a></li>
-            <li><a>About</a></li>
+            <li><a href="">About</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
