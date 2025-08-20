@@ -2939,8 +2939,68 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-\[url\(\)\] {
+    background-image: url();
+  }
+  .bg-\[url\(\.\.\/static\/images\/flowers-background\.png\)\] {
+    background-image: url(../static/images/flowers-background.png);
+  }
+  .bg-\[url\(\.\/static\/images\/flowers-background\.png\)\] {
+    background-image: url(./static/images/flowers-background.png);
+  }
+  .bg-\[url\(\.\/static\/images\\flowers-background\.png\)\] {
+    background-image: url(./static/images\flowers-background.png);
+  }
+  .bg-\[url\(\.\/static\\images\\flowers-background\.png\)\] {
+    background-image: url(./static\images\flowers-background.png);
+  }
+  .bg-\[url\(\/img\/\)\] {
+    background-image: url(/img/);
+  }
+  .bg-\[url\(\/img\/\.jpg\)\] {
+    background-image: url(/img/.jpg);
+  }
+  .bg-\[url\(\/img\/mountains\.jpg\)\] {
+    background-image: url(/img/mountains.jpg);
+  }
+  .bg-\[url\(\/static\/images\/bg\.png\)\] {
+    background-image: url(/static/images/bg.png);
+  }
+  .bg-\[url\(\/static\/images\/bg1\.png\)\] {
+    background-image: url(/static/images/bg1.png);
+  }
+  .bg-\[url\(\/static\/images\/bg2\.png\)\] {
+    background-image: url(/static/images/bg2.png);
+  }
+  .bg-\[url\(\/static\/images\/flowers-background\.png\)\] {
+    background-image: url(/static/images/flowers-background.png);
+  }
+  .bg-\[url\(C\:\\Users\\lucys\\Documents\\vscode-projects\\fableseed_stories\\static\\images\\flowers-background\.png\)\] {
+    background-image: url(C:\Users\lucys\Documents\vscode-projects\fableseed_stories\static\images\flowers-background.png);
+  }
+  .bg-\[url\(stat\)\] {
+    background-image: url(stat);
+  }
+  .bg-\[url\(stati\)\] {
+    background-image: url(stati);
+  }
+  .bg-\[url\(static\\images\\flowers-background\.png\)\] {
+    background-image: url(static\images\flowers-background.png);
+  }
+  .bg-auto {
+    background-size: auto;
+  }
+  .bg-contain {
+    background-size: contain;
+  }
+  .bg-cover {
+    background-size: cover;
+  }
   .bg-clip-border {
     background-clip: border-box;
+  }
+  .bg-center {
+    background-position: center;
   }
   .mask-repeat {
     mask-repeat: repeat;
@@ -3122,6 +3182,13 @@
     --fontsize: 0.75rem;
     --btn-p: 0.75rem;
     --size: calc(var(--size-field, 0.25rem) * 8);
+  }
+  .hover\:bg-accent {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-accent);
+      }
+    }
   }
   .hover\:bg-base-100 {
     &:hover {
@@ -3356,6 +3423,11 @@
   .lg\:flex-row {
     @media (width >= 64rem) {
       flex-direction: row;
+    }
+  }
+  .lg\:bg-center {
+    @media (width >= 64rem) {
+      background-position: center;
     }
   }
   .lg\:text-6xl {
