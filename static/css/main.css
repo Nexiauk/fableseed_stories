@@ -2374,6 +2374,9 @@
     border-end-start-radius: var(--tabcontent-radius-es);
     border-end-end-radius: var(--tabcontent-radius-ee);
   }
+  .order-2 {
+    order: 2;
+  }
   .modal-box {
     grid-column-start: 1;
     grid-row-start: 1;
@@ -2922,6 +2925,9 @@
   }
   .flex-wrap {
     flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
   }
   .justify-center {
     justify-content: center;
@@ -3508,6 +3514,11 @@
       --size: calc(var(--size-field, 0.25rem) * 10);
     }
   }
+  .lg\:order-1 {
+    @media (width >= 64rem) {
+      order: 1;
+    }
+  }
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
@@ -3561,6 +3572,12 @@
   .lg\:bg-center {
     @media (width >= 64rem) {
       background-position: center;
+    }
+  }
+  .lg\:text-5xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
   .lg\:text-6xl {
