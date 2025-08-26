@@ -1,4 +1,13 @@
 {% load static %}
+
+{% url 'home' as home_url %}
+{% url 'nursery' as nursery_url %}
+{% url 'about' as about_url %}
+{% url 'about' as about_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_login' as login_url %}
+{% url 'mygarden' as garden_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +38,8 @@
             </svg>
           </div>
           <ul tabindex="0" class="menu menu-md dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li><a href="{% url 'nursery' %}">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'nursery' %}">Nursery</a></li>
             <li><a href="">About</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
@@ -49,7 +59,7 @@
             <source media="(min-width: 768px)"
               srcset="https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_60,h_60/v1756200831/logo_75x75_fhz04t.avif">
             <!-- Fallback Image --> <img aria-hidden="true" decoding="async" src="../static/images/logo_75x75.avif"
-              alt="Fableseed logo." min-width="40px" class="block">
+              alt="Fableseed logo." min-width="40px">
           </picture>
           <h1 class="mt-3 pr-5 lg:order-1"><a class="font-bold text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-great-vibes hover:text-base-100"
               href="{% url 'nursery' %}">Fableseed</a></h1>
@@ -59,14 +69,15 @@
       </div>
       <div class="navbar-center flex-1 justify-center hidden lg:flex-2 lg:flex">
         <ul class="menu menu-horizontal gap-4">
-          <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'nursery' %}">Home</a></li>
-          <li><a class="btn bg-primary hover:bg-base-100">About</a></li>
+          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == home_url %} active" aria-current="page {% endif %}" href="{% url 'home' %}">Home</a></li>
+          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == nursery_url %}active" aria-current="page {% endif %}" href="{% url 'nursery' %}">Nursery</a></li>
+          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == about_url %}active" aria-current="page {% endif %}">About</a></li>
           {% if user.is_authenticated %}
-          <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
-          <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'account_logout' %}">Logout</a></li>
+          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == garden_url %}active" aria-current="page {% endif %}" href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
+          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == logout_url %}active" aria-current="page {% endif %}" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
-          <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'account_signup' %}">Sign Up</a></li>
-          <li><a class="btn bg-primary hover:bg-base-100" href="{% url 'account_login' %}">Login</a></li>
+          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == signup_url %}active" aria-current="page {% endif %}" href="{% url 'account_signup' %}">Sign Up</a></li>
+          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == login_url %}active" aria-current="page {% endif %}" href="{% url 'account_login' %}">Login</a></li>
           {% endif %}
         </ul>
       </div>
