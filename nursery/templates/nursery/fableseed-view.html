@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block title %}
 <!-- Dynamically sets the page title based on the Fableseed number -->
-Fableseed number {{ fableseed.seed }}
+{% block title %}
+{{fableseed.title}}
 {% endblock %}
 
 {% block content %}
