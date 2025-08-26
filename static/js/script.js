@@ -22,3 +22,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Registering the GSAP animation plugin for split text
+gsap.registerPlugin(SplitText);
+
+
+document.fonts.ready.then(() => {
+    let split = SplitText.create(".hero-text", {
+        type: "lines",
+        autoSplit: true,
+        // onSplit: (self) => {
+        //     gsap.from(self.lines, {
+        //         yPercent: "random([-100, 100])",
+        //         rotation: "random(-30, 30)",
+        //         ease: "back.out",
+        //         // y: 100,
+        //         autoAlpha: 0,
+        //         stagger: {
+        //             amount: 0.05,
+        //             from: "random",
+        //             yoyo: true,
+        //         }
+        //     })
+        // }
+    })
+})
