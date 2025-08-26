@@ -29,31 +29,140 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 document.fonts.ready.then(() => {
-    let titleSplit = SplitText.create(".hero-title", {
-        type: "chars",
-        autoSplit: true,
-    });
-
-    let textSplit = SplitText.create(".hero-text", {
-        type: "lines",
-        autoSplit: true,
-    });
-
     let tl = gsap.timeline({
-        scrollTrigger: ".hero"
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top 80%",      // when the top of .hero hits 80% of viewport
+            end: "bottom 20%",     // optional end
+            toggleActions: "play none none none",
+        }
     })
 
-    tl.from(titleSplit.chars, {
-        opacity: 0,
-        y: 50,
-        duration: 1.5,
-        stagger: 0.2,
+    SplitText.create(".hero-title", {
+        type: "chars",
+        autoSplit: true,
+        onSplit: (self) => {
+            tl.from(self.chars, {
+                opacity: 0,
+                x: 50,
+                stagger: 0.1,
+                duration: 1.5,
+            })
+        }
     });
 
-    tl.from(textSplit.lines, {
-        opacity: 0,
-        y: 50,
-        duration: 1.5,
-        stagger: { amount: 2 },
+    SplitText.create("#para1", {
+        type: "lines",
+        autoSplit: true,
+        onSplit: (self) => {
+            tl.from(self.lines, {
+                opacity: 0,
+                y: 50,
+                stagger: 1,
+                duration: 1.5
+            }, "+=1")
+        }
     });
-})
+
+    SplitText.create("#para2", {
+        type: "lines",
+        autoSplit: true,
+        onSplit: (self) => {
+            tl.from(self.lines, {
+                opacity: 0,
+                y: 50,
+                stagger: 1,
+                duration: 1.5,
+            }, "+=2")
+        }
+    });
+
+    SplitText.create("#para3", {
+        type: "lines",
+        autoSplit: true,
+        onSplit: (self) => {
+            tl.from(self.lines, {
+                opacity: 0,
+                y: 50,
+                stagger: 1,
+                duration: 1.5,
+            }, "+=2")
+        }
+    });
+
+    SplitText.create("#para4", {
+        type: "lines",
+        autoSplit: true,
+        onSplit: (self) => {
+            tl.from(self.lines, {
+                opacity: 0,
+                y: 50,
+                stagger: 1,
+                duration: 1.5,
+            }, "+=2")
+        }
+    });
+
+    SplitText.create("#para5", {
+        type: "lines",
+        autoSplit: true,
+        onSplit: (self) => {
+            tl.from(self.lines, {
+                opacity: 0,
+                y: 50,
+                stagger: 1,
+                duration: 1.5,
+            }, "+=2")
+        }
+    });
+
+    SplitText.create("#para6", {
+        type: "lines",
+        autoSplit: true,
+        onSplit: (self) => {
+            tl.from(self.lines, {
+                opacity: 0,
+                y: 50,
+                stagger: 1,
+                duration: 1.5,
+            }, "+=2")
+        }
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// let titleSplit = SplitText.create(".hero-title", {
+//     type: "chars",
+//     autoSplit: true
+// });
+
+// let textSplit = SplitText.create(".hero-text", {
+//     type: "lines",
+//     autoSplit: true
+// });
+
+
+// tl.from(titleSplit.chars, {
+//     opacity: 0,
+//     y: 50,
+//     duration: 1.5,
+//     stagger: 0.2,
+// });
+
+// tl.from(textSplit.lines, {
+//     opacity: 0,
+//     y: 50,
+//     duration: 1.5,
+//     stagger: { amount: 2 },
+// });
