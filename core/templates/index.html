@@ -6,13 +6,11 @@ Fableseed Home Page
 {% endblock %}
 
 {% block content %}
-<section class="hero min-h-screen bg-cover bg-center rounded-xl"
-  style="background-image: url(https://res.cloudinary.com/dppks2exv/image/upload/c_fill,h_600/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif);">
-  <div class="hero-overlay opacity-60 rounded-xl"></div>
-  <div class="hero-content text-neutral-content text-center bg-base-content/50 rounded-xl">
-    <div class="max-w-xl">
+<section class="min-h-full bg-[url('https://res.cloudinary.com/dppks2exv/image/upload/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif')] bg-center md:bg-[position:90%_center] lg:bg-[position:100%_center] rounded-xl bg-cover bg-no-repeat">
+  <div class="hero-content text-neutral-content text-center bg-base-content/50 rounded-xl min-w-full min-h-full">
+    <div id="hero-content-wrapper">
       <h2 class="text-4xl md:text-5xl font-bold hero-title">Create Your Garden</h2>
-      <div class="mb-5 hero-text p-3">
+      <div class="hero-text p-3">
         <p class="pb-3 text-lg" id="para1">
           The world is a desolate wasteland.
           <br>Nothing grows here.
@@ -20,13 +18,13 @@ Fableseed Home Page
         </p>
         <p class="pb-3 text-lg" id="para2">
           You wander through the ruin and wreckage, alone.
-          <br>Until, at last, you see it —
+          <br>Until, at last, you see it
           <br>A single green shoot, struggling against the darkness and decay.
         </p>
         <p class="pb-3 text-lg" id="para3">
           <br>You give it water.
           <br>There is no response.
-          <br>There is no sun. No warmth.
+          <br>There is no sun or warmth.
         </p>
         <p class="pb-3 text-lg" id="para4">
           <br>So you begin to speak.
@@ -45,7 +43,6 @@ Fableseed Home Page
           <br>And with them, you grow the last garden at the end of the world.
         </p>
       </div>
-      <button class="btn btn-primary">Get Started</button>
     </div>
   </div>
 </section>
