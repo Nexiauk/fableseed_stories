@@ -38,15 +38,15 @@
             </svg>
           </div>
           <ul tabindex="0" class="menu menu-md dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'nursery' %}">Nursery</a></li>
-            <li><a href="">About</a></li>
+            <li class="{% if request.path == home_url %} active" aria-current="page {% endif %}"><a href="{% url 'home' %}">Home</a></li>
+            <li class="{% if request.path == nursery_url %} active" aria-current="page {% endif %}"><a href="{% url 'nursery' %}">Nursery</a></li>
+            <li class="{% if request.path == about_url %} active" aria-current="page {% endif %}"><a href="">About</a></li>
             {% if user.is_authenticated %}
-            <li><a href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
-            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            <li class="{% if request.path == garden_url %} active" aria-current="page {% endif %}"><a href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
+            <li class="{% if request.path == logout_url %} active" aria-current="page {% endif %}"><a href="{% url 'account_logout' %}">Logout</a></li>
             {% else %}
-            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li class="{% if request.path == signup_url %} active" aria-current="page {% endif %}"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+            <li class="{% if request.path == login_url %} active" aria-current="page {% endif %}"><a href="{% url 'account_login' %}">Login</a></li>
             {% endif %}
           </ul>
         </div>
