@@ -21,7 +21,7 @@ Nursery
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
+            <button class="btn btn-signup right hover:bg-secondary hover:text-secondary-content" type="submit">{% trans "Sign Up" %} &raquo;</button>
           </form>
     </section>
 {% endblock content %}
