@@ -26,7 +26,7 @@
 </head>
 
 <body
-  class="min-h-screen min-w-full max-w-full bg-primary flex flex-col bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center">
+  class="min-h-screen min-w-full max-w-full flex flex-col bg-primary {% if request.path == home_url %}bg-primary {% else%}bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center{% endif %}">
   <header class="w-full">
     <div class="navbar bg-base-200 shadow">
       <div class="navbar-start flex-3 md:flex-2 lg:flex-1 gap-2 md:gap-3">
