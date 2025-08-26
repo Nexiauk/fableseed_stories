@@ -2974,6 +2974,9 @@
   .justify-end {
     justify-content: flex-end;
   }
+  .justify-start {
+    justify-content: flex-start;
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -3516,6 +3519,11 @@
       grid-auto-flow: row;
     }
   }
+  .md\:justify-center {
+    @media (width >= 48rem) {
+      justify-content: center;
+    }
+  }
   .md\:justify-end {
     @media (width >= 48rem) {
       justify-content: flex-end;
@@ -3556,6 +3564,11 @@
   .md\:bg-\[position\:90\%_center\] {
     @media (width >= 48rem) {
       background-position: 90% center;
+    }
+  }
+  .md\:bg-\[position\:100\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 100% center;
     }
   }
   .md\:bg-left {
@@ -3649,6 +3662,11 @@
       flex-direction: row;
     }
   }
+  .lg\:justify-end {
+    @media (width >= 64rem) {
+      justify-content: flex-end;
+    }
+  }
   .lg\:bg-cover {
     @media (width >= 64rem) {
       background-size: cover;
@@ -3682,6 +3700,11 @@
   .lg\:bg-\[position\:100\%_center\] {
     @media (width >= 64rem) {
       background-position: 100% center;
+    }
+  }
+  .lg\:bg-\[position\:110\%_center\] {
+    @media (width >= 64rem) {
+      background-position: 110% center;
     }
   }
   .lg\:bg-\[position\:120\%_center\] {
