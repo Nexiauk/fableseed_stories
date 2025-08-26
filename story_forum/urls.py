@@ -22,4 +22,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("", include("garden.urls"), name='garden-urls'),
     path("", include("nursery.urls"), name='nursery-urls'),
+    path("", include("core.urls"), name='core-urls'),
 ]

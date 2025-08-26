@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'crispy_tailwind',
     'nursery',
     'garden',
+    'core',
 ]
 
 SITE_ID = 1
