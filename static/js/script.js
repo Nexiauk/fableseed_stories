@@ -25,25 +25,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Registering the GSAP animation plugin for split text
 gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 
 document.fonts.ready.then(() => {
-    let split = SplitText.create(".hero-text", {
+    let titleSplit = SplitText.create(".hero-title", {
+        type: "chars",
+        autoSplit: true,
+    });
+
+    let textSplit = SplitText.create(".hero-text", {
         type: "lines",
         autoSplit: true,
-        // onSplit: (self) => {
-        //     gsap.from(self.lines, {
-        //         yPercent: "random([-100, 100])",
-        //         rotation: "random(-30, 30)",
-        //         ease: "back.out",
-        //         // y: 100,
-        //         autoAlpha: 0,
-        //         stagger: {
-        //             amount: 0.05,
-        //             from: "random",
-        //             yoyo: true,
-        //         }
-        //     })
-        // }
+    });
+
+    let tl = gsap.timeline({
+        scrollTrigger: ".hero"
     })
+
+    tl.from(titleSplit.chars, {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        stagger: 0.2,
+    });
+
+    tl.from(textSplit.lines, {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        stagger: { amount: 2 },
+    });
 })
