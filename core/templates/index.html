@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="{% static 'js/gsap.js' %}"></script>
+{% endblock %}
 <!-- Dynamically sets the page title based on the Fableseed number -->
 {% block title %}
 Fableseed Home Page
