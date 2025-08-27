@@ -26,9 +26,9 @@
 </head>
 
 <body
-  class="min-h-screen min-w-full max-w-full flex flex-col bg-primary bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center">
+  class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url %}bg-base-300 {% else%}bg-primary{% endif %} bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center">
   <header class="w-full">
-    <div class="navbar bg-base-200 shadow">
+    <div class="navbar bg-base-200 shadow border-b border-base-100">
       <div class="navbar-start flex-3 md:flex-2 lg:flex-1 gap-2 md:gap-3">
         <div class="dropdown pr-0">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -108,7 +108,7 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="bg-base-200 mt-4 py-4"> {% if user.is_authenticated %}
+  <footer class="bg-base-200 mt-4 py-4 border-t border-base-100"> {% if user.is_authenticated %}
     <p class="text-center">You are currently logged in as {{user.get_display_name}} </p>
     {% else %}
     <p class="p-2 text-center">You are currently logged out </p>

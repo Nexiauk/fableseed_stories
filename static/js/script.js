@@ -31,8 +31,8 @@ gsap.registerPlugin(ScrollTrigger);
 document.fonts.ready.then(() => {
     let tl = gsap.timeline({
         scrollTrigger: {
-            trigger: ".hero",
-            start: "top 80%",      // when the top of .hero hits 80% of viewport
+            trigger: ".hero-content",
+            start: "top bottom",      // when the top of .hero hits 80% of viewport
             end: "bottom 20%",     // optional end
             toggleActions: "play none none none",
         }
