@@ -2303,6 +2303,21 @@
   .order-2 {
     order: 2;
   }
+  .col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+  .col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+  .col-span-12 {
+    grid-column: span 12 / span 12;
+  }
   .hero {
     display: grid;
     width: 100%;
@@ -2347,6 +2362,12 @@
     grid-column-start: 2;
     grid-row-start: 1;
     min-width: calc(0.25rem * 0);
+  }
+  .row-span-1 {
+    grid-row: span 1 / span 1;
+  }
+  .row-span-11 {
+    grid-row: span 11 / span 11;
   }
   .row-span-12 {
     grid-row: span 12 / span 12;
@@ -2882,6 +2903,9 @@
   .grid-flow-row {
     grid-auto-flow: row;
   }
+  .grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -2899,6 +2923,9 @@
   }
   .items-start {
     align-items: flex-start;
+  }
+  .items-stretch {
+    align-items: stretch;
   }
   .justify-around {
     justify-content: space-around;
@@ -3802,6 +3829,21 @@
   .lg\:order-1 {
     @media (width >= 64rem) {
       order: 1;
+    }
+  }
+  .lg\:col-span-7 {
+    @media (width >= 64rem) {
+      grid-column: span 7 / span 7;
+    }
+  }
+  .lg\:col-span-12 {
+    @media (width >= 64rem) {
+      grid-column: span 12 / span 12;
+    }
+  }
+  .lg\:row-span-12 {
+    @media (width >= 64rem) {
+      grid-row: span 12 / span 12;
     }
   }
   .lg\:mr-6 {
