@@ -27,10 +27,17 @@ class UserProfileInline(admin.StackedInline):
     model = UserProfile
     can_delete = False
     verbose_name_plural = 'Profile'
+    fk_name = 'user'
 
 
 class CustomUserAdmin(UserAdmin):
     inlines = (UserProfileInline,)
+    list_display = [
+        "userprofile__display_name",
+        "username",
+        "email",
+        "is_staff",
+    ]
 
 
 admin.site.unregister(User)
