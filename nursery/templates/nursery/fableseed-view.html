@@ -28,9 +28,9 @@
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
-        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80" id="post-profile">
-            <p class="md:text-center font-bold">{{ fableseed.author.get_display_name }}</p>
-            {{ fableseed.author.userprofile.user_profile_image }}
+        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center id="post-profile">
+            <p class="md:text-center font-bold mb-4">{{ fableseed.author.get_display_name }}</p>
+            <img src="{{fableseed.author.userprofile.user_profile_image_url}}" alt="{{fableseed.author.get_display_name}}" width="150px" height="150px">
 
 
         </div>
@@ -43,10 +43,10 @@
 
         <div id="fableseed-btns" class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0">
             {% if user.is_authenticated and user == fableseed.author %}
-                <a href="{% url 'edit-fableseed' fableseed.seed %}"
-                    class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md edit">Tend Fableseed</a>
-                <button class="btn hover:bg-red-700 hover:text-primary-content btn-sm md:btn-md delete" data-id="{{fableseed.seed}}"
-                    data-type="seed">Prune Fableseed</button>
+            <a href="{% url 'edit-fableseed' fableseed.seed %}"
+                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md edit">Tend Fableseed</a>
+            <button class="btn hover:bg-red-700 hover:text-primary-content btn-sm md:btn-md delete"
+                data-id="{{fableseed.seed}}" data-type="seed">Prune Fableseed</button>
             {% endif %}
         </div>
     </article>
@@ -61,9 +61,10 @@
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
         id="fableseed-post">
-        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80" id="post-profile">
-            <p class="md:text-center font-bold">{{ branch.author }}</p>
-            {{ branch.author.userprofile.user_profile_image }}
+        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center" id="post-profile">
+            <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
+            <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}" width="150px" height="150px">
+
 
         </div>
         <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ branch.created_on }}</time>
@@ -71,13 +72,14 @@
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4" id="fablebranch-btns">
+        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4"
+            id="fablebranch-btns">
             {% if user.is_authenticated and user == branch.author %}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
                 class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md">Tend Fablebranch</a>
-            <a class="btn hover:bg-red-700 hover:text-primary-content delete btn-sm md:btn-md" data-id="{{branch.branch}}"
-                data-type="branch">Prune Fablebranch</a>
+            <a class="btn hover:bg-red-700 hover:text-primary-content delete btn-sm md:btn-md"
+                data-id="{{branch.branch}}" data-type="branch">Prune Fablebranch</a>
             {% endif %}
         </div>
     </article>

@@ -40,7 +40,7 @@ class UserFlower(models.Model):
             return f"{self.quantity} {self.flower} earned"
         else:
             return f"{self.quantity} {self.flower}s earned"
-        
+
     def user_flower_image_url(self):
         return self.flower.flower_image.url
 
@@ -57,8 +57,10 @@ class UserProfile(models.Model):
         fablebuds_count (PositiveIntegerField): Number of fablebuds the user has.
 
     Methods:
-        __str__: if the user has a display name, it will return that, if not, it will default to their username.
-        user_profile_image: formats the url of the uploaded profile_picture into an image element with style applied.
+        __str__: if the user has a display name, it will return that, if not, it will 
+        default to their username.
+        user_profile_image_url: pulls through url of the stored image to be inserted 
+        into an img element
     """
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='userprofile')

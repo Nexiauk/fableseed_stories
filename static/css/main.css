@@ -2820,6 +2820,9 @@
   .flex-3 {
     flex: 3;
   }
+  .flex-4 {
+    flex: 4;
+  }
   .flex-shrink {
     flex-shrink: 1;
   }
@@ -2894,11 +2897,23 @@
   .items-end {
     align-items: flex-end;
   }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-around {
+    justify-content: space-around;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
   .justify-center {
     justify-content: center;
   }
   .justify-end {
     justify-content: flex-end;
+  }
+  .justify-evenly {
+    justify-content: space-evenly;
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
