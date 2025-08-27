@@ -8,14 +8,14 @@
 <section
     class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6 flex flex-col mb-3"
     id="profile-details">
-    <div class="column-12 text-center mb-2 md:mb-4" id="header-container">
+    <div class="column-12 text-center mb-2 md:mb-4 lg:mb-2" id="header-container">
         <h2 class="font-bold text-2xl">{{user.get_display_name}}'s Garden</h2>
     </div>
 
-    <div class="flex flex-col lg:flex-row mt-2 md:mt-4 mb-4" id="image-container">
-        <div class="column-12 lg:column-6 mx-auto"><img src="{{user.userprofile.user_profile_image_url}}" alt="{{user.get_display_name}}'s profile image"
+    <div class="flex flex-col mb-4" id="image-container">
+        <div class="mx-auto"><img src="{{user.userprofile.user_profile_image_url}}" alt="{{user.get_display_name}}'s profile image"
                 width="150px" height="150px" class="mx-auto mb-2"></div>
-        <div class="column-12 lg:column-6 mx-auto mb-2" id="profile-descriptors">
+        <div class="mx-auto mb-2" id="profile-descriptors">
             <dl>
                 <dt class="font-bold text-lg md:text-base">Display Name:</dt>
                 <dd class="pb-3 text-lg md:text-base">{{user.get_display_name}}</dd>
@@ -42,7 +42,7 @@
             class="btn hover:bg-red-700 hover:text-primary-content">Delete Profile</a> {% endif %}</div>
 </section>
 <section id="user-flowers"
-    class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6 flex flex-row gap-4">
+    class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6 flex flex-col md:flex-row gap-4">
     {% for flower in user_flowers %}
     <div class="column text-center mx-auto md:mx-2">
         {{flower.flower}} ({{flower.quantity}})

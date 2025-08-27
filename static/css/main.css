@@ -3067,20 +3067,8 @@
   .bg-base-100 {
     background-color: var(--color-base-100);
   }
-  .bg-base-100\/50 {
-    background-color: var(--color-base-100);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-base-100) 50%, transparent);
-    }
-  }
   .bg-base-200 {
     background-color: var(--color-base-200);
-  }
-  .bg-base-200\/50 {
-    background-color: var(--color-base-200);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-base-200) 50%, transparent);
-    }
   }
   .bg-base-300 {
     background-color: var(--color-base-300);
@@ -3091,26 +3079,8 @@
       background-color: color-mix(in oklab, var(--color-base-300) 40%, transparent);
     }
   }
-  .bg-base-300\/50 {
-    background-color: var(--color-base-300);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-base-300) 50%, transparent);
-    }
-  }
-  .bg-base-300\/60 {
-    background-color: var(--color-base-300);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-base-300) 60%, transparent);
-    }
-  }
   .bg-base-content {
     background-color: var(--color-base-content);
-  }
-  .bg-base-content\/50 {
-    background-color: var(--color-base-content);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-base-content) 50%, transparent);
-    }
   }
   .bg-primary {
     background-color: var(--color-primary);
@@ -3118,29 +3088,11 @@
   .bg-primary-content {
     background-color: var(--color-primary-content);
   }
-  .bg-primary\/50 {
-    background-color: var(--color-primary);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-primary) 50%, transparent);
-    }
-  }
   .bg-secondary {
     background-color: var(--color-secondary);
   }
   .bg-secondary-content {
     background-color: var(--color-secondary-content);
-  }
-  .bg-secondary-content\/50 {
-    background-color: var(--color-secondary-content);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-secondary-content) 50%, transparent);
-    }
-  }
-  .bg-secondary\/50 {
-    background-color: var(--color-secondary);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-secondary) 50%, transparent);
-    }
   }
   .bg-warning {
     background-color: var(--color-warning);
@@ -3148,17 +3100,8 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1000\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
-    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1000/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
-  }
-  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1000\/v1756295170\/hero4_ortgcv\.png\'\)\] {
-    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1000/v1756295170/hero4_ortgcv.png');
-  }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_2000\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_2000/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
-  }
-  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
-    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
   .bg-\[url\(\/static\/images\/bg1\.avif\)\] {
     background-image: url(/static/images/bg1.avif);
@@ -3523,11 +3466,6 @@
       margin-inline: calc(var(--spacing) * 2);
     }
   }
-  .md\:mx-auto {
-    @media (width >= 48rem) {
-      margin-inline: auto;
-    }
-  }
   .md\:mt-4 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 4);
@@ -3538,59 +3476,14 @@
       margin-bottom: calc(var(--spacing) * 4);
     }
   }
-  .md\:ml-8 {
-    @media (width >= 48rem) {
-      margin-left: calc(var(--spacing) * 8);
-    }
-  }
-  .md\:ml-10 {
-    @media (width >= 48rem) {
-      margin-left: calc(var(--spacing) * 10);
-    }
-  }
-  .md\:ml-auto {
-    @media (width >= 48rem) {
-      margin-left: auto;
-    }
-  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
     }
   }
-  .md\:w-1\/2 {
-    @media (width >= 48rem) {
-      width: calc(1/2 * 100%);
-    }
-  }
-  .md\:w-1\/3 {
-    @media (width >= 48rem) {
-      width: calc(1/3 * 100%);
-    }
-  }
   .md\:w-3\/4 {
     @media (width >= 48rem) {
       width: calc(3/4 * 100%);
-    }
-  }
-  .md\:max-w-lg {
-    @media (width >= 48rem) {
-      max-width: var(--container-lg);
-    }
-  }
-  .md\:max-w-md {
-    @media (width >= 48rem) {
-      max-width: var(--container-md);
-    }
-  }
-  .md\:max-w-sm {
-    @media (width >= 48rem) {
-      max-width: var(--container-sm);
-    }
-  }
-  .md\:max-w-xl {
-    @media (width >= 48rem) {
-      max-width: var(--container-xl);
     }
   }
   .md\:flex-2 {
@@ -3608,14 +3501,9 @@
       grid-auto-flow: row;
     }
   }
-  .md\:justify-between {
+  .md\:flex-row {
     @media (width >= 48rem) {
-      justify-content: space-between;
-    }
-  }
-  .md\:justify-center {
-    @media (width >= 48rem) {
-      justify-content: center;
+      flex-direction: row;
     }
   }
   .md\:justify-end {
@@ -3650,94 +3538,14 @@
       background-color: transparent;
     }
   }
-  .md\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_2000\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
-    @media (width >= 48rem) {
-      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_2000/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
-    }
-  }
-  .md\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_2000\/v1756295170\/hero4_ortgcv\.png\'\)\] {
-    @media (width >= 48rem) {
-      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_2000/v1756295170/hero4_ortgcv.png');
-    }
-  }
-  .md\:bg-none {
-    @media (width >= 48rem) {
-      background-image: none;
-    }
-  }
-  .md\:bg-\[position\:0\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 0% center;
-    }
-  }
-  .md\:bg-\[position\:5\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 5% center;
-    }
-  }
-  .md\:bg-\[position\:8\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 8% center;
-    }
-  }
-  .md\:bg-\[position\:10\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 10% center;
-    }
-  }
-  .md\:bg-\[position\:12\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 12% center;
-    }
-  }
-  .md\:bg-\[position\:85\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 85% center;
-    }
-  }
-  .md\:bg-\[position\:88\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 88% center;
-    }
-  }
-  .md\:bg-\[position\:89\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 89% center;
-    }
-  }
-  .md\:bg-\[position\:90\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 90% center;
-    }
-  }
   .md\:bg-\[position\:95\%_center\] {
     @media (width >= 48rem) {
       background-position: 95% center;
     }
   }
-  .md\:bg-\[position\:100\%_center\] {
-    @media (width >= 48rem) {
-      background-position: 100% center;
-    }
-  }
-  .md\:p-1 {
-    @media (width >= 48rem) {
-      padding: calc(var(--spacing) * 1);
-    }
-  }
   .md\:p-2 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 2);
-    }
-  }
-  .md\:p-3 {
-    @media (width >= 48rem) {
-      padding: calc(var(--spacing) * 3);
-    }
-  }
-  .md\:p-5 {
-    @media (width >= 48rem) {
-      padding: calc(var(--spacing) * 5);
     }
   }
   .md\:p-6 {
@@ -3750,44 +3558,14 @@
       padding-top: calc(var(--spacing) * 0);
     }
   }
-  .md\:pr-3 {
-    @media (width >= 48rem) {
-      padding-right: calc(var(--spacing) * 3);
-    }
-  }
-  .md\:pr-5 {
-    @media (width >= 48rem) {
-      padding-right: calc(var(--spacing) * 5);
-    }
-  }
   .md\:pr-10 {
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 10);
     }
   }
-  .md\:pb-1 {
-    @media (width >= 48rem) {
-      padding-bottom: calc(var(--spacing) * 1);
-    }
-  }
-  .md\:pl-3 {
-    @media (width >= 48rem) {
-      padding-left: calc(var(--spacing) * 3);
-    }
-  }
-  .md\:pl-5 {
-    @media (width >= 48rem) {
-      padding-left: calc(var(--spacing) * 5);
-    }
-  }
   .md\:text-center {
     @media (width >= 48rem) {
       text-align: center;
-    }
-  }
-  .md\:text-left {
-    @media (width >= 48rem) {
-      text-align: left;
     }
   }
   .md\:text-right {
@@ -3831,24 +3609,9 @@
       order: 1;
     }
   }
-  .lg\:col-span-7 {
+  .lg\:mb-2 {
     @media (width >= 64rem) {
-      grid-column: span 7 / span 7;
-    }
-  }
-  .lg\:col-span-12 {
-    @media (width >= 64rem) {
-      grid-column: span 12 / span 12;
-    }
-  }
-  .lg\:row-span-12 {
-    @media (width >= 64rem) {
-      grid-row: span 12 / span 12;
-    }
-  }
-  .lg\:mr-6 {
-    @media (width >= 64rem) {
-      margin-right: calc(var(--spacing) * 6);
+      margin-bottom: calc(var(--spacing) * 2);
     }
   }
   .lg\:flex {
@@ -3861,11 +3624,6 @@
       display: none;
     }
   }
-  .lg\:w-2\/5 {
-    @media (width >= 64rem) {
-      width: calc(2/5 * 100%);
-    }
-  }
   .lg\:flex-1 {
     @media (width >= 64rem) {
       flex: 1;
@@ -3876,14 +3634,14 @@
       flex: 2;
     }
   }
+  .lg\:flex-col {
+    @media (width >= 64rem) {
+      flex-direction: column;
+    }
+  }
   .lg\:flex-row {
     @media (width >= 64rem) {
       flex-direction: row;
-    }
-  }
-  .lg\:justify-end {
-    @media (width >= 64rem) {
-      justify-content: flex-end;
     }
   }
   .lg\:bg-base-300\/40 {
@@ -3904,49 +3662,9 @@
       background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_2000/v1756295170/hero4_ortgcv.png');
     }
   }
-  .lg\:bg-none {
-    @media (width >= 64rem) {
-      background-image: none;
-    }
-  }
   .lg\:bg-cover {
     @media (width >= 64rem) {
       background-size: cover;
-    }
-  }
-  .lg\:bg-\[position\:\%_center\] {
-    @media (width >= 64rem) {
-      background-position: % center;
-    }
-  }
-  .lg\:bg-\[position\:-10\%_center\] {
-    @media (width >= 64rem) {
-      background-position: -10% center;
-    }
-  }
-  .lg\:bg-\[position\:0\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 0% center;
-    }
-  }
-  .lg\:bg-\[position\:1\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 1% center;
-    }
-  }
-  .lg\:bg-\[position\:2\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 2% center;
-    }
-  }
-  .lg\:bg-\[position\:3\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 3% center;
-    }
-  }
-  .lg\:bg-\[position\:4\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 4% center;
     }
   }
   .lg\:bg-\[position\:5\%_center\] {
@@ -3954,69 +3672,9 @@
       background-position: 5% center;
     }
   }
-  .lg\:bg-\[position\:6\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 6% center;
-    }
-  }
-  .lg\:bg-\[position\:10\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 10% center;
-    }
-  }
-  .lg\:bg-\[position\:12\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 12% center;
-    }
-  }
-  .lg\:bg-\[position\:15\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 15% center;
-    }
-  }
-  .lg\:bg-\[position\:20\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 20% center;
-    }
-  }
-  .lg\:bg-\[position\:50\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 50% center;
-    }
-  }
-  .lg\:bg-\[position\:100\%_center\] {
-    @media (width >= 64rem) {
-      background-position: 100% center;
-    }
-  }
   .lg\:bg-center {
     @media (width >= 64rem) {
       background-position: center;
-    }
-  }
-  .lg\:p-4 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 4);
-    }
-  }
-  .lg\:p-5 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 5);
-    }
-  }
-  .lg\:p-6 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 6);
-    }
-  }
-  .lg\:p-7 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 7);
-    }
-  }
-  .lg\:p-8 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 8);
     }
   }
   .lg\:pt-5 {

@@ -13,7 +13,7 @@ Edit {{user.get_display_name}}'s Profile'
     class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6"
     id="create-div">
     <h2 class="mb-4 font-bold text-2xl">Edit Profile</h2>
-            <form action="" class="" method="{{ form.helper.form_method }}" id="{{ form.helper.form_id }}">
+            <form action="" class="" method="{{ form.helper.form_method }}" id="{{ form.helper.form_id }}" enctype="multipart/form-data">
                 {% crispy form %}
             </form>
 
