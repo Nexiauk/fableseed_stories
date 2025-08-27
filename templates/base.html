@@ -68,29 +68,29 @@
 
       </div>
       <div class="navbar-center flex-1 justify-center hidden lg:flex-2 lg:flex">
-        <ul class="menu menu-horizontal gap-4">
-          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == home_url %} active" aria-current="page {% endif %}" href="{% url 'home' %}">Home</a></li>
-          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == nursery_url %}active" aria-current="page {% endif %}" href="{% url 'nursery' %}">Nursery</a></li>
-          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == about_url %}active" aria-current="page {% endif %}">About</a></li>
+        <ul class="menu menu-horizontal gap-4 xl:gap-6">
+          <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == home_url %} active" aria-current="page {% endif %}" href="{% url 'home' %}">Home</a></li>
+          <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == nursery_url %}active" aria-current="page {% endif %}" href="{% url 'nursery' %}">Nursery</a></li>
+          <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == about_url %}active" aria-current="page {% endif %}">About</a></li>
           {% if user.is_authenticated %}
-          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == garden_url %}active" aria-current="page {% endif %}" href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
-          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == logout_url %}active" aria-current="page {% endif %}" href="{% url 'account_logout' %}">Logout</a></li>
+          <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == garden_url %}active" aria-current="page {% endif %}" href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
+          <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == logout_url %}active" aria-current="page {% endif %}" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
-          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == signup_url %}active" aria-current="page {% endif %}" href="{% url 'account_signup' %}">Sign Up</a></li>
-          <li><a class="btn bg-primary hover:bg-base-100 {% if request.path == login_url %}active" aria-current="page {% endif %}" href="{% url 'account_login' %}">Login</a></li>
+          <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == signup_url %}active" aria-current="page {% endif %}" href="{% url 'account_signup' %}">Sign Up</a></li>
+          <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == login_url %}active" aria-current="page {% endif %}" href="{% url 'account_login' %}">Login</a></li>
           {% endif %}
         </ul>
       </div>
-      <div class="navbar-end flex-1 justify-end hidden md:flex pr-3 md:text-sm">
+      <div class="navbar-end flex-1 justify-end hidden md:flex pr-3 md:text-xs xl:text-md">
         {% if user.is_authenticated %}
         <p>You are currently logged in as {{user.get_display_name}} </p>
         {% else %}
-        <p>You are currently logged out </p>
+        <p>You are currently logged out</p>
         {% endif %}
       </div>
     </div>
   </header>
-  <main class="container mx-auto mt-4 flex-grow px-4">
+  <main class="container mx-auto mt-4 flex-grow px-4 flex flex-col justify-center">
     {% if messages %}
     {% for message in messages %}
     <div class="text-center">
@@ -109,7 +109,7 @@
     {% endblock %}
   </main>
   <footer class="bg-base-200 mt-4 py-4 border-t border-base-100"> {% if user.is_authenticated %}
-    <p class="text-center">You are currently logged in as {{user.get_display_name}} </p>
+    <p class="text-center text-sm md:text-md">You are currently logged in as {{user.get_display_name}} </p>
     {% else %}
     <p class="p-2 text-center">You are currently logged out </p>
     {% endif %}
