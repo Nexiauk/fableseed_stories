@@ -3665,9 +3665,64 @@
       background-color: transparent;
     }
   }
+  .md\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1000\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756295170\/hero4_ortgcv\.png\'\)\] {
+    @media (width >= 48rem) {
+      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1000,f_auto,dpr_auto,q_auto,fl_progressive/v1756295170/hero4_ortgcv.png');
+    }
+  }
+  .md\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756295170\/hero4_ortgcv\.png\'\)\] {
+    @media (width >= 48rem) {
+      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto,fl_progressive/v1756295170/hero4_ortgcv.png');
+    }
+  }
+  .md\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/w_500\,f_avif\,dpr_auto\,q_auto\,fl_progressive\/v1756573111\/Fableseed_hero_image_qobjwh\.png\'\)\] {
+    @media (width >= 48rem) {
+      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/w_500,f_avif,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png');
+    }
+  }
   .md\:bg-\[url\(\/static\/images\/bg1\.avif\)\] {
     @media (width >= 48rem) {
       background-image: url(/static/images/bg1.avif);
+    }
+  }
+  .md\:bg-\[position\:\%_center\] {
+    @media (width >= 48rem) {
+      background-position: % center;
+    }
+  }
+  .md\:bg-\[position\:0\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 0% center;
+    }
+  }
+  .md\:bg-\[position\:5\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 5% center;
+    }
+  }
+  .md\:bg-\[position\:8\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 8% center;
+    }
+  }
+  .md\:bg-\[position\:10\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 10% center;
+    }
+  }
+  .md\:bg-\[position\:30\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 30% center;
+    }
+  }
+  .md\:bg-\[position\:50\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 50% center;
+    }
+  }
+  .md\:bg-\[position\:85\%_center\] {
+    @media (width >= 48rem) {
+      background-position: 85% center;
     }
   }
   .md\:bg-\[position\:95\%_center\] {
@@ -3910,6 +3965,56 @@
   .\32 xl\:min-w-7xl {
     @media (width >= 96rem) {
       min-width: var(--container-7xl);
+    }
+  }
+  .\32 xl\:bg-\[position\%_center\] {
+    @media (width >= 96rem) {
+      background-color: position% center;
+    }
+  }
+  .\32 xl\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    @media (width >= 96rem) {
+      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+    }
+  }
+  .\32 xl\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756295170\/hero4_ortgcv\.png\'\)\] {
+    @media (width >= 96rem) {
+      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto,fl_progressive/v1756295170/hero4_ortgcv.png');
+    }
+  }
+  .\32 xl\:bg-\[position\:\%_center\] {
+    @media (width >= 96rem) {
+      background-position: % center;
+    }
+  }
+  .\32 xl\:bg-\[position\:0\%_center\] {
+    @media (width >= 96rem) {
+      background-position: 0% center;
+    }
+  }
+  .\32 xl\:bg-\[position\:5\%_center\] {
+    @media (width >= 96rem) {
+      background-position: 5% center;
+    }
+  }
+  .\32 xl\:bg-\[position\:45\%_center\] {
+    @media (width >= 96rem) {
+      background-position: 45% center;
+    }
+  }
+  .\32 xl\:bg-\[position\:80\%_center\] {
+    @media (width >= 96rem) {
+      background-position: 80% center;
+    }
+  }
+  .\32 xl\:bg-\[position\:85\%_center\] {
+    @media (width >= 96rem) {
+      background-position: 85% center;
+    }
+  }
+  .\32 xl\:bg-\[position\:100\%_center\] {
+    @media (width >= 96rem) {
+      background-position: 100% center;
     }
   }
 }
