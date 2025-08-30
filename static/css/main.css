@@ -54,6 +54,7 @@
     --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --blur-lg: 16px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -2131,6 +2132,9 @@
   .sticky {
     position: sticky;
   }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
   .hero-content {
     isolation: isolate;
     display: flex;
@@ -2877,6 +2881,12 @@
   .border-collapse {
     border-collapse: collapse;
   }
+  .scale-105 {
+    --tw-scale-x: 105%;
+    --tw-scale-y: 105%;
+    --tw-scale-z: 105%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -3127,17 +3137,56 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_fill\,w_600\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756573111\/Fableseed_hero_image_qobjwh\.png\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_fill,w_600,f_auto,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_fill\,w_780\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_fill,w_780,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_fill\,w_800\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_fill,w_800,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_fill\,w_800\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756573111\/Fableseed_hero_image_qobjwh\.png\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_fill,w_800,f_auto,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_640\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_640,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_640\,f_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_640,f_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_750\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_750,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_780\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_780,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\,dpr_auto\,q_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto,dpr_auto,q_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\,dpr_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto,dpr_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\,dpr_autoq_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto,dpr_autoq_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800-1200\,f_auto\,dpr_auto\,q_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800-1200,f_auto,dpr_auto,q_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_850\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_850,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1000\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1000,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1000\,f_auto\,dpr_auto\,q_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1000,f_auto,dpr_auto,q_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
@@ -3150,6 +3199,21 @@
   }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_2000\,f_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_2000,f_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/w_500\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756573111\/Fableseed_hero_image_qobjwh\.png\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/w_500,f_auto,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/w_500\,f_avif\,dpr_auto\,q_auto\,fl_progressive\/v1756573111\/Fableseed_hero_image_qobjwh\.png\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/w_500,f_avif,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/w_600\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756573111\/Fableseed_hero_image_qobjwh\.png\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/w_600,f_auto,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/w_780\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/w_780,f_auto,dpr_auto,q_auto,fl_progressive/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
   .bg-contain {
     background-size: contain;
@@ -3362,6 +3426,10 @@
   }
   .blur {
     --tw-blur: blur(8px);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .blur-lg {
+    --tw-blur: blur(var(--blur-lg));
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .drop-shadow-md {
@@ -3607,6 +3675,11 @@
       background-position: 95% center;
     }
   }
+  .md\:object-\[95\%_center\] {
+    @media (width >= 48rem) {
+      object-position: 95% center;
+    }
+  }
   .md\:p-2 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 2);
@@ -3722,6 +3795,11 @@
       background-color: transparent;
     }
   }
+  .lg\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\,q_auto\,fl_progressive\/v1756295170\/hero4_ortgcv\.png\'\)\] {
+    @media (width >= 64rem) {
+      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto,fl_progressive/v1756295170/hero4_ortgcv.png');
+    }
+  }
   .lg\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\,q_auto\/v1756295170\/hero4_ortgcv\.png\'\)\] {
     @media (width >= 64rem) {
       background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto/v1756295170/hero4_ortgcv.png');
@@ -3755,6 +3833,11 @@
   .lg\:bg-center {
     @media (width >= 64rem) {
       background-position: center;
+    }
+  }
+  .lg\:object-\[5\%_center\] {
+    @media (width >= 64rem) {
+      object-position: 5% center;
     }
   }
   .lg\:pt-5 {
@@ -3798,6 +3881,11 @@
   .xl\:bg-\[position\:0\%_center\] {
     @media (width >= 80rem) {
       background-position: 0% center;
+    }
+  }
+  .xl\:object-\[0\%_center\] {
+    @media (width >= 80rem) {
+      object-position: 0% center;
     }
   }
   .xl\:text-6xl {
@@ -4123,6 +4211,21 @@
     --noise: 0;
   }
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -4286,6 +4389,9 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
