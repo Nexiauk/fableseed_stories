@@ -3127,11 +3127,23 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\,dpr_auto\,q_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto,dpr_auto,q_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\,dpr_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto,dpr_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800\,f_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800,f_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_800-1200\,f_auto\,dpr_auto\,q_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_800-1200,f_auto,dpr_auto,q_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1000\,f_auto\,dpr_auto\,q_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1000,f_auto,dpr_auto,q_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
+  }
+  .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\,q_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
+    background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
   }
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\/v1756215223\/Fableseed_hero_image_landscape_xpexbj\.avif\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto/v1756215223/Fableseed_hero_image_landscape_xpexbj.avif');
@@ -3708,6 +3720,11 @@
   .lg\:bg-transparent {
     @media (width >= 64rem) {
       background-color: transparent;
+    }
+  }
+  .lg\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\,q_auto\/v1756295170\/hero4_ortgcv\.png\'\)\] {
+    @media (width >= 64rem) {
+      background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto/v1756295170/hero4_ortgcv.png');
     }
   }
   .lg\:bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/c_pad\,w_1200\,f_auto\,dpr_auto\/v1756295170\/hero4_ortgcv\.png\'\)\] {
