@@ -41,9 +41,9 @@
         <div id="fableseed-btns" class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0">
             {% if user.is_authenticated and user == fableseed.author %}
             <a href="{% url 'edit-fableseed' fableseed.seed %}"
-                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md edit">Tend Fableseed</a>
+                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md edit">Tend Seed</a>
             <button class="btn hover:bg-red-700 hover:text-primary-content btn-sm md:btn-md delete"
-                data-id="{{fableseed.seed}}" data-type="seed">Prune Fableseed</button>
+                data-id="{{fableseed.seed}}" data-type="seed">Prune Seed</button>
             {% endif %}
         </div>
     </article>
@@ -75,9 +75,9 @@
             {% if user.is_authenticated and user == branch.author %}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
-                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md">Tend Fablebranch</a>
+                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md">Tend Branch</a>
             <a class="btn hover:bg-red-700 hover:text-primary-content delete btn-sm md:btn-md"
-                data-id="{{branch.branch}}" data-type="branch">Prune Fablebranch</a>
+                data-id="{{branch.branch}}" data-type="branch">Prune Branch</a>
             {% endif %}
         </div>
     </article>
