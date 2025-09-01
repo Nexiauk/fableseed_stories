@@ -7,7 +7,7 @@
 {% block content %}
 <!-- Profile details section with header, image and user information -->
 <section
-    class="md:w-3/4 max-w-3xl mx-auto h-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col "
+    class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full w-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
     id="profile-details">
     <!-- Section header displays the current user's display name -->
     <div class="text-center mb-4" id="header-container">
@@ -49,7 +49,7 @@
 </section>
 <!-- Section for earned flowers. Pulls from the user flower model -->
 <section id="user-flowers"
-    class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6 gap-4">
+    class="md:w-3/4 max-w-3xl mx-auto overflow-auto w-full h-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col">
         <div class="text-center mb-4" id="header-container">
         <h3 class="font-bold text-xl">Earned Flowers</h3>
     </div>
@@ -57,7 +57,7 @@
     <div class="flex flex-row flex-wrap" id="flower-container">
         <!-- Flower grid loops through user_flowers queryset for the current user -->
         {% for flower in user_flowers %}
-        <div class="column text-center mx-auto mb-4">
+        <div class="column text-center mx-auto mb-4 ">
             <!-- Flower name and quantity -->
             {{flower.flower}} ({{flower.quantity}})
             <!-- Flower image links back to the seed it was earned from -->
