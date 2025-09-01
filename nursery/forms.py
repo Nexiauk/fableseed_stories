@@ -1,7 +1,7 @@
 from django import forms
 from .models import Fableseed, Flower, FableBranch
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, Submit
+from crispy_forms.layout import Layout, Field, Submit, Button
 
 
 class CreateFableseed(forms.ModelForm):
@@ -23,7 +23,8 @@ class CreateFableseed(forms.ModelForm):
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700",
                   placeholder="Write your story starter here..."),
             Field("flower_type"),
-            Submit("submit", "Plant Seed", css_class="bg-primary mt-4"),
+            Submit("submit", "Plant Seed", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"),
+            Button("back", "Back", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content", onclick="history.back()"),
         )
 
 
@@ -39,7 +40,8 @@ class CreateFablebranch(forms.ModelForm):
         self.helper.form_method = "post"
         self.helper.layout = Layout(
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
-            Submit("submit", "Grow Branch", css_class="bg-primary mt-4"),
+            Submit("submit", "Grow Branch", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"),
+            Button("back", "Back", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content", onclick="history.back()"),
         )
 
 
@@ -57,6 +59,7 @@ class EditFablebranch(forms.ModelForm):
             Field("body", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Submit("submit", "Tend",
                    css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"),
+            Button("back", "Back", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content", onclick="history.back()"),
         )
 
 
@@ -79,4 +82,5 @@ class EditFableseed(forms.ModelForm):
             Field("flower_type"),
             Submit("submit", "Tend",
                    css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"),
+            Button("back", "Back", css_class="bg-primary mt-4 hover:bg-secondary hover:text-secondary-content", onclick="history.back()"),
         )
