@@ -89,6 +89,6 @@
         {% if user.is_authenticated %}
     <!-- Show button to grow a new Fablebranch only to logged-in users -->
     <div class="column mx-auto"><a href="{% url 'grow-fablebranch' fableseed.seed %}"
-            class="btn hover:bg-secondary hover:text-secondary-content">Grow a Fablebranch</a></div>{% endif %}
+            class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)]">Grow a Fablebranch</a></div>{% endif %}
 </section>
 {% endblock content %}
