@@ -30,6 +30,7 @@ def nursery_view(request):
     return render(request, page_url, context)
 
 
+
 @login_required
 def create_fableseed_view(request):
     """
@@ -43,6 +44,7 @@ def create_fableseed_view(request):
         HttpResponse: Rendered cultivation form or redirect to fableseed view on success.
     """
     page_url = "nursery/cultivate.html"
+    edit_type = "Fableseed"
     if request.method == "POST":
         form = CreateFableseed(request.POST)
         if form.is_valid():
@@ -60,7 +62,7 @@ def create_fableseed_view(request):
                                  "Error creating Fableseed")
     else:
         form = CreateFableseed()
-    return render(request, page_url, {"form": form})
+    return render(request, page_url, {"form": form, "edit_type": edit_type})
 
 
 def fableseed_view(request, seed):
@@ -102,6 +104,7 @@ def create_fablebranch_view(request, seed):
     fableseed_post = get_object_or_404(Fableseed, seed=seed)
     flower = fableseed_post.flower_type
     page_url = "nursery/cultivate.html"
+    edit_type = "Fablebranch"
     if request.method == "POST":
         form = CreateFablebranch(request.POST)
         if form.is_valid():
@@ -133,7 +136,7 @@ def create_fablebranch_view(request, seed):
                                  "Error creating Fablebranch")
     else:
         form = CreateFablebranch()
-    return render(request, page_url, {"form": form})
+    return render(request, page_url, {"form": form, "edit_type": edit_type})
 
 
 @login_required
