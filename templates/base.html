@@ -5,6 +5,7 @@
 {% url 'about' as about_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_login' as login_url %}
+{% url 'account_logout' as logout_url %}
 {% url 'mygarden' as garden_url %}
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@
             </svg>
           </button>
           <!-- Nav list and links. List items apply an active class when current page matches the link -->
-          <ul tabindex="0" class="menu menu-md dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          <ul tabindex="0" class="menu menu-lg dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li class="{% if request.path == home_url %} active" aria-current="page {% endif %}"><a
                 href="{% url 'home' %}">Home</a></li>
             <li class="{% if request.path == about_url %} active" aria-current="page {% endif %}"><a href="">About</a>
