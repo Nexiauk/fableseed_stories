@@ -4,6 +4,18 @@ select {
     cursor: pointer;
 }
 
+
+
+input[type="file"] {
+    max-width: 200px;
+    text-align: center;
+    padding: 0.5rem;
+    white-space: nowrap;
+    justify-content: center;
+}
+
+
+
 select * {
     color: #0d0d0d;
     background-color: #f2f2f2;
