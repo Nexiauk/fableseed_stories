@@ -89,7 +89,7 @@ class CrispyTailwindFieldNode(template.Node):
         "email": base_input,
         "url": base_input,
         "password": base_input,
-        "hidden": "",
+        "hidden": base_input,
         "multiplehidden": "",
         "file": "",
         "clearablefile": "",

@@ -29,6 +29,6 @@ class EditProfileForm(forms.ModelForm):
         self.helper.layout = Layout(
             Field("display_name", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Field("bio", css_class="rounded-sm p-2 mb-4 text-gray-700"),
-            Field("profile_picture", css_class="cursor-pointer btn bg-primary hover:bg-secondary hover:text-secondary-content"),
+            Field("profile_picture", css_class=" btn bg-primary hover:bg-secondary hover:text-secondary-content"),
             Submit("submit", "Submit", css_class="btn bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"),
         )
