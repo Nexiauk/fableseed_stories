@@ -48,14 +48,6 @@ class Fableseed(models.Model):
         author_name = self.author.username if self.author else "Deleted User"
         return f"{self.title} by {author_name}"
 
-    def title_trunc(self):
-        return (
-            f"{self.title[:18]}..."
-            if len(self.title) > 18
-            else f"{self.title}"
-        )
-
-
 class Flower(models.Model):
     """
     Represents flowers available in the database to associate with a fableseed.

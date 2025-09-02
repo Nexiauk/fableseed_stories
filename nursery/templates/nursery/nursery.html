@@ -1,6 +1,8 @@
 <!-- Template for rendering approved Fableseeds into a paginated table. Loops through approved Fableseed posts only. -->
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
+
 
 {% block title %}
 Nursery
@@ -38,17 +40,17 @@ Nursery
                         <img src="{{ fableseed.flower_type.flower_image.url}}" alt="{{fableseed.flower_type.flower_name}}" height="50px" width="50px"></td>
                     <td class="p-4 border-t md:border-r border-secondary">
                         <!-- Fableseed titles truncated if too long -->
-                        <div>{{ fableseed.title_trunc }}</div>
+                        <div class="truncate">{{ fableseed.title }}</div>
                     </td>
                     <!-- Author name and created date visible on small+ screens -->
                     <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.author.get_display_name }}</td>
-                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.created_on }}
+                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell truncate">{{ fableseed.created_on|naturaltime }}
                     </td>
                     <td class="p-4 border-t border-secondary hidden sm:table-cell">
                         <!-- Last edited info for the seed, only shows displayed only if it has a branch -->
                         {% if fableseed.latest_branch %}
                         <p>by {{ fableseed.latest_branch.author.get_display_name }}</p>
-                        <p class="text-sm">{{ fableseed.latest_branch.created_on }}</p>
+                        <p class="text-sm truncate">{{ fableseed.latest_branch.created_on|naturaltime }}</p>
                         {% endif %}
                     </td>
                 </tr>
@@ -61,8 +63,8 @@ Nursery
     <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            <a href="?page=1" class="btn hover:bg-secondary hover:text-secondary-content">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn hover:bg-secondary hover:text-secondary-content">Previous</a>
             {% endif %}
 
             <span class="current">
@@ -70,8 +72,8 @@ Nursery
             </span>
 
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}" class="btn hover:bg-secondary hover:text-secondary-content">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="btn hover:bg-secondary hover:text-secondary-content">Last &raquo;</a>
             {% endif %}
         </span>
     </div>
