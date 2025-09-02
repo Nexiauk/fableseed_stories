@@ -1,15 +1,22 @@
+"""
+This module contains Django unit tests for the Nursery app.
+
+Tests include:
+- Nursery page views
+- Fableseed and FableBranch model functionality
+"""
+
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from nursery.models import Fableseed, Flower, FableBranch
 
-# Create your tests here.
+from nursery.models import Fableseed, Flower, FableBranch
 
 
 class NurseryViewTests(TestCase):
     """
-    A class of tests ensuring that the Nursery page loads successfully and displays all expected content.
-
+    Tests  that the Nursery page loads successfully and
+    displays all expected content.
     """
 
     def test_nursery_html_template(self):
@@ -26,7 +33,7 @@ class NurseryViewTests(TestCase):
 
 class NurseryModelTests(TestCase):
     """
-    A class of tests to ensure that the nursery models work as expected.
+    Tests to ensure that the nursery models work as expected.
     Tests Fableseeds and Fablebranches.
 
     Verifies that the instances are created correctly,
@@ -41,7 +48,9 @@ class NurseryModelTests(TestCase):
         fablebranches to use across tests.
         """
         self.user = User.objects.create_user(
-            username="lucytest", password="testpassword")
+            username="lucytest", 
+            password="testpassword"
+            )
         self.flower = Flower.objects.create(flower_name="Lily")
         self.seed = Fableseed.objects.create(
             flower_type=self.flower,
@@ -58,7 +67,9 @@ class NurseryModelTests(TestCase):
             fablebuds_cost=1
         )
         self.longbody = (
-            "This is a really long string that should truncate because it is longer than 50 characters and I don't want to display anything that long."
+            "This is a really long string that should truncate because it is "
+            "longer than 50 characters and I don't want to display anything "
+            "that long."
         )
 
         self.long_branch = FableBranch.objects.create(
@@ -92,8 +103,10 @@ class NurseryModelTests(TestCase):
 
     def test_fablebranch_str_truncates_long_body_text(self):
         """
-        Test that the string representation of a FableBranch with a long body 
-        truncates at 50 characters, followed by ellipsis and author.
+        Test that FableBranch __str__ truncates long body text.
+
+        If the body exceeds 50 characters, it should truncate with an ellipsis
+        and include the author's username.
         """
         expected = f"{self.longbody[:50]}... by {self.user.username}"
         self.assertEqual(str(self.long_branch), expected)
@@ -101,11 +114,12 @@ class NurseryModelTests(TestCase):
     def test_fableseed_view_renders_correct_template_and_info(self):
         """
         Test that the nursery view loads correctly and provides the expected data.
-        This test performs a GET request on the nursery url and verifies:
-        - that the response code is 200; 
-        - that the nursery/nursery.html template renders the page; 
-        - that the context contains a variable named fableseed_list;
-        - that the fableseed list creates the specific seed object created for the test.
+
+        Performs a GET request on the nursery URL and verifies:
+        - HTTP response code is 200
+        - nursery/nursery.html template is used
+        - 'fableseed_list' is in context
+        - The seed created for the test is in 'fableseed_list'
         """
         response = self.client.get(reverse("nursery"))
         self.assertEqual(response.status_code, 200)

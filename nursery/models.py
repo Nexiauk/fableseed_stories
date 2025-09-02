@@ -54,7 +54,8 @@ class Fableseed(models.Model):
         User,
         on_delete=models.SET_NULL,
         null=True,
-        blank=True)
+        blank=True
+        )
     fablebuds_earnt = models.PositiveIntegerField(default=1)
 
     class Meta:
@@ -116,7 +117,8 @@ class FableBranch(models.Model):
     seed = models.ForeignKey(
         "nursery.Fableseed",
         on_delete=models.PROTECT,
-        related_name='fablebranches')
+        related_name='fablebranches'
+        )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
@@ -124,7 +126,8 @@ class FableBranch(models.Model):
         User,
         on_delete=models.SET_NULL,
         null=True, blank=True,
-        related_name="fableauthor")
+        related_name="fableauthor"
+        )
 
     class Meta:
         verbose_name = "Fablebranch"
