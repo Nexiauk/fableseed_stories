@@ -3317,6 +3317,14 @@
       }
     }
   }
+  .hover\:shadow-\[0px_0px_20px_10px_rgba\(64\,14\,55\,1\)\] {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow: 0px 0px 20px 10px var(--tw-shadow-color, rgba(64,14,55,1));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+  }
   .focus\:outline {
     &:focus {
       outline-style: var(--tw-outline-style);

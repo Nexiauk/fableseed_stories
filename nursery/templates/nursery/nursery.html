@@ -10,7 +10,7 @@ Nursery
 <!-- Nursery section shows a paginated table of all approved Fableseed seeds -->
 <section class="grid sm:grid-flow-col md:grid-flow-row gap-4 mb-4" id="nursery-table">
     <!-- 'Plant a seed' button only visible to authenticated users. Triggers the 'plant-fableseed' view -->
-    {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}" class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)]">Plant a
+    {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}" class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant a
             Seed</a></div> {% endif %}
             <!-- Table container with responsive scroll -->
     <div class="w-full h-full overflow-auto bg-base-100 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md"
