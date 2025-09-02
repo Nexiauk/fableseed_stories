@@ -2516,6 +2516,9 @@
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
+  }
   .status {
     display: inline-block;
     aspect-ratio: 1 / 1;
@@ -3048,6 +3051,9 @@
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
   }
   .menu-title {
     padding-inline: calc(0.25rem * 3);
