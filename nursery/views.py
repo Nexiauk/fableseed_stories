@@ -50,7 +50,7 @@ def create_fableseed_view(request):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "Your seed has been planted! " \
+                "Your seed has been planted! "
                 "The gardener will check it for you."
             )
             return redirect("fableseed-view", seed=posted_seed.pk)
@@ -62,10 +62,10 @@ def create_fableseed_view(request):
     else:
         form = CreateFableseed()
     return render(
-        request, 
-        page_url, 
+        request,
+        page_url,
         {"form": form, "edit_type": edit_type}
-        )
+    )
 
 
 def fableseed_view(request, seed):
@@ -113,7 +113,7 @@ def create_fablebranch_view(request, seed):
             )
             if created:
                 message_text = (
-                    f"Your plant is growing!" 
+                    f"Your plant is growing!"
                     f"Your garden now contains a {flower}"
                 )
             else:
@@ -133,10 +133,10 @@ def create_fablebranch_view(request, seed):
     else:
         form = CreateFablebranch()
     return render(
-        request, 
-        page_url, 
+        request,
+        page_url,
         {"form": form, "edit_type": edit_type}
-        )
+    )
 
 
 @login_required
@@ -152,9 +152,9 @@ def edit_fablebranch_view(request, branch_id):
 
     if request.method == "POST":
         edit_fablebranch_form = EditFablebranch(
-            request.POST, 
+            request.POST,
             instance=fablebranch
-            )
+        )
         if edit_fablebranch_form.is_valid():
             edit_fablebranch_form.save()
             messages.add_message(
@@ -163,9 +163,9 @@ def edit_fablebranch_view(request, branch_id):
                 "Your branch has been lovingly tended!"
             )
             return redirect(
-                "fableseed-view", 
+                "fableseed-view",
                 seed=fablebranch.seed.pk
-                )
+            )
         else:
             messages.add_message(
                 request,
@@ -175,10 +175,10 @@ def edit_fablebranch_view(request, branch_id):
     else:
         edit_fablebranch_form = EditFablebranch(instance=fablebranch)
     return render(
-        request, page_url, 
-        {"form": edit_fablebranch_form, 
+        request, page_url,
+        {"form": edit_fablebranch_form,
          "edit_type": edit_type}
-         )
+    )
 
 
 @login_required
@@ -194,9 +194,9 @@ def edit_fableseed_view(request, seed):
 
     if request.method == "POST":
         edit_fableseed_form = EditFableseed(
-            request.POST, 
+            request.POST,
             instance=fableseed_post
-            )
+        )
         if edit_fableseed_form.is_valid():
             edit_fableseed_form.save()
             messages.add_message(
@@ -214,10 +214,10 @@ def edit_fableseed_view(request, seed):
     else:
         edit_fableseed_form = EditFableseed(instance=fableseed_post)
     return render(
-        request, 
-        page_url, 
+        request,
+        page_url,
         {"form": edit_fableseed_form, "edit_type": edit_type}
-        )
+    )
 
 
 @login_required
