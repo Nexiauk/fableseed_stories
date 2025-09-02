@@ -4,3 +4,7 @@ from django.shortcuts import render
 def home_view(request):
     page_url = "index.html"
     return render(request, page_url)
+
+def about_view(request):
+    page_url = "about.html"
+    return render(request, page_url)
