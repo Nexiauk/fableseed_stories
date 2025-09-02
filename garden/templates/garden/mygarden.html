@@ -11,7 +11,7 @@
     class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full w-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
     id="profile-details">
     <!-- Section header displays the current user's display name -->
-    <div class="text-center mb-4" id="header-container">
+    <div class="text-center mb-4" id="profile-header">
         <h2 class="font-bold text-2xl">{{user.get_display_name}}'s Garden</h2>
     </div>
 
@@ -19,7 +19,8 @@
         <div class="mx-auto">
             <!-- Profile image pulled from the userprofile model. -->
             <img src="{{user.userprofile.user_profile_image_url}}" alt="{{user.get_display_name}}'s profile image"
-                width="150px" height="150px" class="mx-auto mb-4"></div>
+                width="150px" height="150px" class="mx-auto mb-4">
+        </div>
         <div class="mx-auto mb-2 mt-2" id="profile-descriptors">
             <!-- User information in description list (bio, email, full name, fablebud count) -->
             <dl>
@@ -44,14 +45,14 @@
         </div>
     </div>
     <!-- Buttons to edit or delete the user profile. Only shows to authenticated users -->
-    <div class="buttons flex flex-1 justify-end mt-3 gap-2"> {% if user.is_authenticated %} <a href="{% url 'edit-profile' %}"
-            class="btn hover:bg-secondary hover:text-secondary-content">Edit Profile</a> 
-            {% endif %}
+    <div class="buttons flex flex-1 justify-end mt-3 gap-2"> {% if user.is_authenticated %} <a
+            href="{% url 'edit-profile' %}" class="btn hover:bg-secondary hover:text-secondary-content">Edit Profile</a>
+        {% endif %}
 </section>
 <!-- Section for earned flowers. Pulls from the user flower model -->
 <section id="user-flowers"
     class="md:w-3/4 max-w-3xl mx-auto overflow-auto w-full h-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col">
-        <div class="text-center mb-4" id="header-container">
+    <div class="text-center mb-4" id="flower-header">
         <h3 class="font-bold text-xl">Earned Flowers</h3>
     </div>
 

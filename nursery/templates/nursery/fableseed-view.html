@@ -26,29 +26,33 @@ Title: {{fableseed.title}}
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
-        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between" id="post-profile">
+        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between"
+            id="post-profile">
             <p class="md:text-center font-bold mb-4">{{ fableseed.author.get_display_name }}</p>
-            <img src="{{fableseed.author.userprofile.user_profile_image_url}}" alt="{{fableseed.author.get_display_name}}" width="150px" height="150px">
+            <img src="{{fableseed.author.userprofile.user_profile_image_url}}"
+                alt="{{fableseed.author.get_display_name}}" width="150px" height="150px">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
 
 
         </div>
-        <time class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</time>
+        <time
+            class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</time>
         <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
             <p>{{ fableseed.body }}</p>
         </div>
 
-        <div id="fableseed-btns" class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0 flex-col md:flex-row">
+        <div id="fableseed-btns"
+            class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0 flex-col md:flex-row">
             {% if user.is_authenticated and user == fableseed.author %}
             <a href="{% url 'edit-fableseed' fableseed.seed %}"
                 class="btn hover:bg-secondary hover:text-secondary-content edit">Tend Seed</a>
-            <button class="btn hover:bg-red-700 hover:text-primary-content delete"
-                data-id="{{fableseed.seed}}" data-type="seed">Prune Seed</button>
+            <button class="btn hover:bg-red-700 hover:text-primary-content delete" data-id="{{fableseed.seed}}"
+                data-type="seed">Prune Seed</button>
             {% endif %}
         </div>
     </article>
-    
+
 </section>
 
 
@@ -60,14 +64,17 @@ Title: {{fableseed.title}}
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
         id="fableseed-post">
-        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between" id="post-profile">
+        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between"
+            id="post-profile">
             <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
-            <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}" width="150px" height="150px">
+            <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}"
+                width="150px" height="150px">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
 
 
         </div>
-        <time class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">{{ branch.created_on|date:"F jS, Y, g:i a" }}</time>
+        <time
+            class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">{{ branch.created_on|date:"F jS, Y, g:i a" }}</time>
         <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
@@ -78,8 +85,8 @@ Title: {{fableseed.title}}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
                 class="btn hover:bg-secondary hover:text-secondary-content">Tend Branch</a>
-            <a class="btn hover:bg-red-700 hover:text-primary-content delete"
-                data-id="{{branch.branch}}" data-type="branch">Prune Branch</a>
+            <a class="btn hover:bg-red-700 hover:text-primary-content delete" data-id="{{branch.branch}}"
+                data-type="branch">Prune Branch</a>
             {% endif %}
         </div>
     </article>
@@ -88,9 +95,10 @@ Title: {{fableseed.title}}
     <!-- Display a message if no Fablebranch replies exist yet -->
     <p class="text-center">No branches have grown yet. Be the first to respond!</p>
     {% endif %}
-        {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
     <!-- Show button to grow a new Fablebranch only to logged-in users -->
     <div class="column mx-auto"><a href="{% url 'grow-fablebranch' fableseed.seed %}"
-            class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Grow a Fablebranch</a></div>{% endif %}
+            class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Grow
+            a Fablebranch</a></div>{% endif %}
 </section>
 {% endblock content %}

@@ -12,9 +12,11 @@ Nursery
 <!-- Nursery section shows a paginated table of all approved Fableseed seeds -->
 <section class="grid sm:grid-flow-col md:grid-flow-row gap-4 mb-4" id="nursery-table">
     <!-- 'Plant a seed' button only visible to authenticated users. Triggers the 'plant-fableseed' view -->
-    {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}" class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant a
+    {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}"
+            class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant
+            a
             Seed</a></div> {% endif %}
-            <!-- Table container with responsive scroll -->
+    <!-- Table container with responsive scroll -->
     <div class="w-full h-full overflow-auto bg-base-100 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md"
         id="nursery">
         <!-- Fableseeds table -->
@@ -37,14 +39,18 @@ Nursery
                     data-href="{% url 'fableseed-view' fableseed.seed %}">
                     <td class="p-2 border-t border-r border-secondary">
                         <!-- Flower image associated with the Fableseed. Alt text for accessibility -->
-                        <img src="{{ fableseed.flower_type.flower_image.url}}" alt="{{fableseed.flower_type.flower_name}}" height="50px" width="50px"></td>
+                        <img src="{{ fableseed.flower_type.flower_image.url}}"
+                            alt="{{fableseed.flower_type.flower_name}}" height="50px" width="50px">
+                    </td>
                     <td class="p-4 border-t md:border-r border-secondary">
                         <!-- Fableseed titles truncated if too long -->
                         <div class="truncate">{{ fableseed.title }}</div>
                     </td>
                     <!-- Author name and created date visible on small+ screens -->
-                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">{{ fableseed.author.get_display_name }}</td>
-                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell truncate">{{ fableseed.created_on|naturaltime }}
+                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">
+                        {{ fableseed.author.get_display_name }}</td>
+                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell truncate">
+                        {{ fableseed.created_on|naturaltime }}
                     </td>
                     <td class="p-4 border-t border-secondary hidden sm:table-cell">
                         <!-- Last edited info for the seed, only shows displayed only if it has a branch -->
@@ -64,7 +70,8 @@ Nursery
         <span class="step-links">
             {% if page_obj.has_previous %}
             <a href="?page=1" class="btn hover:bg-secondary hover:text-secondary-content">&laquo; First</a>
-            <a href="?page={{ page_obj.previous_page_number }}" class="btn hover:bg-secondary hover:text-secondary-content">Previous</a>
+            <a href="?page={{ page_obj.previous_page_number }}"
+                class="btn hover:bg-secondary hover:text-secondary-content">Previous</a>
             {% endif %}
 
             <span class="current">
@@ -72,8 +79,10 @@ Nursery
             </span>
 
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}" class="btn hover:bg-secondary hover:text-secondary-content">Next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}" class="btn hover:bg-secondary hover:text-secondary-content">Last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}"
+                class="btn hover:bg-secondary hover:text-secondary-content">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}"
+                class="btn hover:bg-secondary hover:text-secondary-content">Last &raquo;</a>
             {% endif %}
         </span>
     </div>

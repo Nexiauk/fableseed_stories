@@ -48,6 +48,7 @@ class Fableseed(models.Model):
         author_name = self.author.username if self.author else "Deleted User"
         return f"{self.title} by {author_name}"
 
+
 class Flower(models.Model):
     """
     Represents flowers available in the database to associate with a fableseed.
@@ -75,6 +76,7 @@ class Flower(models.Model):
 
     def __str__(self):
         return self.flower_name
+
 
 class FableBranch(models.Model):
     """
