@@ -1,3 +1,4 @@
+<!-- Template for displaying a single Fableseed post and its Fablebranch replies. Includes delete modals and user-specific edit/delete controls. -->
 {% extends 'base.html' %}
 {% load static %}
 <!-- Dynamically sets the page title based on the Fableseed number -->
@@ -19,7 +20,7 @@
         </div>
     </div>
 </dialog>
-<!-- Section that contains the Fableseed post -->
+<!-- Main Fableseed post including title, body, author details and controls -->
 <section class="grid grid-flow-row gap-4 mb-4" id="fableseed-post">
 
     <article
@@ -35,7 +36,6 @@
         <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
             <p>{{ fableseed.body }}</p>
-            {{fableseed.flower_type.flower_image_url}}
         </div>
 
         <div id="fableseed-btns" class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0">
@@ -51,7 +51,7 @@
 </section>
 
 
-<!-- Section that contains all Fablebranch replie to the Fableseed post -->
+<!-- Section that contains all Fablebranch replies to the Fableseed post -->
 <section class="grid sm:grid-flow-row gap-4" id="fablebranch-replies">
     <!-- Iterates through all branches (replies) associated with this Fableseed -->
     {% if posted_branches %}

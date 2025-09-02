@@ -1,3 +1,4 @@
+<!-- Template that contains the main home-page information -->
 {% extends 'base.html' %}
 {% load static %}
 {% block extra_js %}
@@ -6,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="{% static 'js/gsap.js' %}"></script>
 {% endblock %}
-<!-- Dynamically sets the page title based on the Fableseed number -->
+<!-- Dynamically sets the page title -->
 {% block title %}
 Fableseed Home Page
 {% endblock %}
