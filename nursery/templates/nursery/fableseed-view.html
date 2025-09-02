@@ -3,7 +3,7 @@
 {% load static %}
 <!-- Dynamically sets the page title based on the Fableseed number -->
 {% block title %}
-{{fableseed.title}}
+Title: {{fableseed.title}}
 {% endblock %}
 
 {% block content %}
@@ -26,9 +26,10 @@
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
-        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center id="post-profile">
+        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between" id="post-profile">
             <p class="md:text-center font-bold mb-4">{{ fableseed.author.get_display_name }}</p>
             <img src="{{fableseed.author.userprofile.user_profile_image_url}}" alt="{{fableseed.author.get_display_name}}" width="150px" height="150px">
+            <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
 
 
         </div>
@@ -59,9 +60,10 @@
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
         id="fableseed-post">
-        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center" id="post-profile">
+        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between" id="post-profile">
             <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
             <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}" width="150px" height="150px">
+            <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
 
 
         </div>
