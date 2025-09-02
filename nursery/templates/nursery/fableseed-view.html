@@ -33,7 +33,7 @@ Title: {{fableseed.title}}
 
 
         </div>
-        <time class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on }}</time>
+        <time class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</time>
         <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
             <p>{{ fableseed.body }}</p>
@@ -67,7 +67,7 @@ Title: {{fableseed.title}}
 
 
         </div>
-        <time class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">{{ branch.created_on }}</time>
+        <time class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">{{ branch.created_on|date:"F jS, Y, g:i a" }}</time>
         <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
