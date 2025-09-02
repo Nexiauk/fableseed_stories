@@ -2854,6 +2854,9 @@
   .resize {
     resize: both;
   }
+  .list-none {
+    list-style-type: none;
+  }
   .appearance-none {
     appearance: none;
   }
@@ -3142,6 +3145,12 @@
   .text-wrap {
     text-wrap: wrap;
   }
+  .text-base-100 {
+    color: var(--color-base-100);
+  }
+  .text-base-200 {
+    color: var(--color-base-200);
+  }
   .text-base-300 {
     color: var(--color-base-300);
   }
@@ -3257,20 +3266,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-base-100);
-      }
-    }
-  }
-  .hover\:bg-base-300 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-base-300);
-      }
-    }
-  }
-  .hover\:bg-primary {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-primary);
       }
     }
   }
