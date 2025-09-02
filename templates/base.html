@@ -28,7 +28,7 @@
 
 <!-- Apply different background colours based on current page -->
 <body
-  class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url %}bg-base-300 {% else%}bg-primary{% endif %} md:bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center">
+  class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url or request.path == about_url %}bg-base-300 {% else%}bg-primary{% endif %} md:bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center">
   <header class="w-full">
     <div class="navbar bg-base-200 shadow border-b border-base-100">
       <div class="navbar-start flex-3 md:flex-2 lg:flex-1 gap-2 md:gap-3">
@@ -44,7 +44,7 @@
           <ul tabindex="0" class="menu menu-lg dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li class="{% if request.path == home_url %} active" aria-current="page {% endif %}"><a
                 href="{% url 'home' %}">Home</a></li>
-            <li class="{% if request.path == about_url %} active" aria-current="page {% endif %}"><a href="">About</a>
+            <li class="{% if request.path == about_url %} active" aria-current="page {% endif %}"><a href="{% url 'about' %}">About</a>
             </li>
             <li class="{% if request.path == nursery_url %} active" aria-current="page {% endif %}"><a
                 href="{% url 'nursery' %}">Nursery</a></li>
@@ -87,7 +87,7 @@
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == home_url %} active"
               aria-current="page {% endif %}" href="{% url 'home' %}">Home</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == about_url %}active"
-              aria-current="page {% endif %}">About</a></li>
+              aria-current="page {% endif %}"  href="{% url 'about' %}">About</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == nursery_url %}active"
               aria-current="page {% endif %}" href="{% url 'nursery' %}">Nursery</a></li>
           {% if user.is_authenticated %}
