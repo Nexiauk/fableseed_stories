@@ -3,7 +3,7 @@
 {% load static %}
 <!-- Page title for browser tab -->
 {% block title %}
-Cultivate
+Cultivate {{edit_type}}
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,5 @@ Cultivate
     <form method="{{ form.helper.form_method }}" id="{{ form.helper.form_id }}">
         {% crispy form %}
     </form>
-
 </section>
-
 {% endblock content %}
