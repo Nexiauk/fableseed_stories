@@ -33,17 +33,17 @@ Title: {{fableseed.title}}
 
 
         </div>
-        <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ fableseed.created_on }}</time>
+        <time class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on }}</time>
         <div class="md:col-span-10 md:row-span-10 mb-4">
-            <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
+            <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
             <p>{{ fableseed.body }}</p>
         </div>
 
-        <div id="fableseed-btns" class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0">
+        <div id="fableseed-btns" class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0 flex-col md:flex-row">
             {% if user.is_authenticated and user == fableseed.author %}
             <a href="{% url 'edit-fableseed' fableseed.seed %}"
-                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md edit">Tend Seed</a>
-            <button class="btn hover:bg-red-700 hover:text-primary-content btn-sm md:btn-md delete"
+                class="btn hover:bg-secondary hover:text-secondary-content edit">Tend Seed</a>
+            <button class="btn hover:bg-red-700 hover:text-primary-content delete"
                 data-id="{{fableseed.seed}}" data-type="seed">Prune Seed</button>
             {% endif %}
         </div>
@@ -67,18 +67,18 @@ Title: {{fableseed.title}}
 
 
         </div>
-        <time class="md:col-span-10 border-b-2 pb-2 italic text-sm">{{ branch.created_on }}</time>
+        <time class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">{{ branch.created_on }}</time>
         <div class="md:col-span-10 md:row-span-10 mb-4">
-            <h2 class="font-bold text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
+            <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4"
+        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4 flex-col md:flex-row"
             id="fablebranch-btns">
             {% if user.is_authenticated and user == branch.author %}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
-                class="btn hover:bg-secondary hover:text-secondary-content btn-sm md:btn-md">Tend Branch</a>
-            <a class="btn hover:bg-red-700 hover:text-primary-content delete btn-sm md:btn-md"
+                class="btn hover:bg-secondary hover:text-secondary-content">Tend Branch</a>
+            <a class="btn hover:bg-red-700 hover:text-primary-content delete"
                 data-id="{{branch.branch}}" data-type="branch">Prune Branch</a>
             {% endif %}
         </div>
