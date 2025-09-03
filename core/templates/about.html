@@ -8,59 +8,103 @@ About Fableseed
 {% block content %}
 <!-- Profile details section with header, image and user information -->
 <section
-    class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full w-full p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
+    class="md:w-3/4 max-w-3xl mx-auto overflow-y-auto h-[80vh] w-full p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
     id="profile-details">
-    <!-- Section header displays the current user's display name -->
-    <div class="md:text-center mb-4" id="about-header">
-        <h2 class="font-bold text-2xl">About Fableseed</h2>
-    </div>
 
     <div class="flex flex-col mb-5 mx-auto" id="about-container">
-
-        <p class="mb-2">Welcome to Fableseed, a collaborative storytelling platform, where stories grow like plants and
-            words breathe
-            life into a blooming world. <i class="fa-solid fa-earth-europe text-base-200"></i></p>
-        <p class="mb-2">In Fableseed, stories are as essential as oxygen.
-            Plant the seeds of imagination and watch your own personal garden blossom with vibrant flowers, each one
-            nurtured by the tales you and others tell.</p>
-        <p class="mb-2">These blossoms aren't just beautiful - they cradle your stories in their petals, keeping them
-            alive in the
-            last garden at the end of the world</p>
-        <h2 class="font-bold text-2xl md:text-center mt-5">The Fableseed Gardener's Manual</h2>
+        <h2 class="font-bold text-2xl md:text-center">The Fableseed Gardener's Manual</h2>
         <h3 class="italic md:text-center mb-4">A step-by-step guide to planting and growing stories</h3>
-        <ul class="list-none mb-4">
-            <li class="mb-2"> <i class="fa-solid fa-seedling text-base-200"></i> <strong>Create your gardener
-                    identity.</strong>
-                Visit your Garden and choose a display name and a profile picture, and write a small bio about yourself.
+        <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+            <li>
+                <div class="timeline-middle">
+                    <i class="fa-solid fa-seedling text-base-200"></i>
+                </div>
+                <div class="timeline-start mb-10 md:text-end">
+                    <time class="font-mono italic">Step 1</time>
+                    <div class="text-lg font-black">Create your gardener identity.</div>
+                    Visit your Garden, choose a display name and a profile picture, and write a small bio about
+                    yourself.
+                </div>
+                <hr />
             </li>
-            <li class="mb-2"> <i class="fa-solid fa-seedling text-base-200"></i> <strong>Sow seeds in the
-                    Nursery.</strong> Visit the
-                Nursery and plant a Fableseed of just a couple of lines with a title. Choose the type of flower your
-                prompt will grow into - each blossom symbolises the spirit of your story.</li>
-            <li class="mb-2"> <i class="fa-solid fa-seedling text-base-200"></i> <strong>Earn Fablebuds.</strong> Every
-                planted
-                Fableseed grants precious Fablebuds - these let you grow other people's stories.</li>
-            <li class="mb-2"> <i class="fa-solid fa-seedling text-base-200"></i> <strong>Browse and Grow.</strong>
-                Browse the Nursery
-                to discover story seeds planted by other gardeners - choose a flower to add to your profile garden.
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <i class="fa-solid fa-seedling text-base-200"></i>
+                </div>
+                <div class="timeline-end md:mb-10">
+                    <time class="font-mono italic">Step 2</time>
+                    <div class="text-lg font-black">Sow seeds in the Nursery. </div>
+                    Visit the Nursery and plant a Fableseed of just a couple of lines with a title. Choose the type of
+                    flower your prompt will grow into - each blossom symbolises the spirit of your story.
+                </div>
+                <hr />
             </li>
-            <li class="mb-2"> <i class="fa-solid fa-seedling text-base-200"></i> <strong>Spends Fablebuds to grow
-                    Fablebranches.</strong> Spend a Fablebud to add a branch to someone else's story. This ensures every
-                story
-                is nurtured with intention and gives purpose to planting your seeds.</li>
-            <li class="mb-2"> <i class="fa-solid fa-seedling text-base-200"></i> <strong>Propagate your plants.</strong>
-                Every
-                Fablebranch you write blooms that flower in your profile garden. Grow more branches to watch your
-                flowers multiply. </li>
-            <li class="mb-2"> <i class="fa-solid fa-seedling text-base-200"></i> <strong>Cultivate your garden of
-                    you.</strong> Your user profile becomes a beautiful garden - and a living record of the stories
-                you've helped grow. Clicking on a flower leads to the original Fableseed that granted you that blossom,
-                and so your garden becomes a living archive of stories.</li>
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <i class="fa-solid fa-seedling text-base-200"></i>
+                </div>
+                <div class="timeline-start mb-10 md:text-end">
+                    <time class="font-mono italic">Step 3</time>
+                    <div class="text-lg font-black">Earn Fablebuds.</div>
+                    Every planted Fableseed grants precious Fablebuds - these let you grow other people's stories.
+                </div>
+                <hr />
+            </li>
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <i class="fa-solid fa-seedling text-base-200"></i>
+                </div>
+                <div class="timeline-end md:mb-10">
+                    <time class="font-mono italic">Step 4</time>
+                    <div class="text-lg font-black">Browse and Grow.</div>
+                    Browse the Nursery to discover story seeds planted by other gardeners - choose a flower to add to
+                    your profile garden.
+                </div>
+                <hr />
+            </li>
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <i class="fa-solid fa-seedling text-base-200"></i>
+                </div>
+                <div class="timeline-start mb-10 md:text-end">
+                    <time class="font-mono italic">Step 5</time>
+                    <div class="text-lg font-black">Spends Fablebuds to grow Fablebranches.</div>
+                    Every Fablebranch you write blooms that flower in your profile garden. Grow more branches to watch
+                    your flowers multiply.
+                </div>
+                <hr />
+            </li>
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <i class="fa-solid fa-seedling text-base-200"></i>
+                </div>
+                <div class="timeline-end md:mb-10">
+                    <time class="font-mono italic">Step 6</time>
+                    <div class="text-lg font-black">Propagate your plants.</div>
+                    Every Fablebranch you write blooms that flower in your profile garden. Grow more branches to watch
+                    your flowers multiply.
+                </div>
+                <hr />
+            </li>
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <i class="fa-solid fa-seedling text-base-200"></i>
+                </div>
+                <div class="timeline-start mb-10 md:text-end">
+                    <time class="font-mono italic">Step 7</time>
+                    <div class="text-lg font-black"> Cultivate your garden of you.</div>
+                    Your user profile becomes a beautiful garden - and a living record of the stories you've helped
+                    grow. Clicking on a flower leads to the original Fableseed that granted you that blossom, and so
+                    your garden becomes a living archive of stories.
+                </div>
+            </li>
         </ul>
-        <h2 class="font-bold text-2xl md:text-center mb-2 mt-5">As stories grow, so does the world</h2>
-        <p class="text-center">Each word you write, pushes back the decay.</p>
-        <p class="text-center">Each flower you earn makes the garden stronger</p>
-        <p class="text-center">Together, we are planting something that will outlast the end.</p>
     </div>
 </section>
 {% endblock content %}

@@ -73,11 +73,6 @@ Nursery
             <a href="?page={{ page_obj.previous_page_number }}"
                 class="btn hover:bg-secondary hover:text-secondary-content">Previous</a>
             {% endif %}
-
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-
             {% if page_obj.has_next %}
             <a href="?page={{ page_obj.next_page_number }}"
                 class="btn hover:bg-secondary hover:text-secondary-content">Next</a>
@@ -85,6 +80,9 @@ Nursery
                 class="btn hover:bg-secondary hover:text-secondary-content">Last &raquo;</a>
             {% endif %}
         </span>
+                    <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
     </div>
 </section>
 
