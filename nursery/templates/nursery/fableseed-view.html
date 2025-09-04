@@ -21,13 +21,12 @@ Title: {{fableseed.title}}
     </div>
 </dialog>
 <!-- Main Fableseed post including title, body, author details and controls -->
-<section class="grid grid-flow-row gap-4 mb-4" id="fableseed-post">
+<section class="grid grid-flow-row gap-4 mb-4">
 
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
-        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between"
-            id="post-profile">
+        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between">
             <p class="md:text-center font-bold mb-4">{{ fableseed.author.get_display_name }}</p>
             <img src="{{fableseed.author.userprofile.user_profile_image_url}}"
                 alt="{{fableseed.author.get_display_name}}" width="150px" height="150px">
@@ -57,15 +56,13 @@ Title: {{fableseed.title}}
 
 
 <!-- Section that contains all Fablebranch replies to the Fableseed post -->
-<section class="grid sm:grid-flow-row gap-4" id="fablebranch-replies">
+<section class="grid sm:grid-flow-row gap-4">
     <!-- Iterates through all branches (replies) associated with this Fableseed -->
     {% if posted_branches %}
     {% for branch in posted_branches %}
     <article
-        class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4"
-        id="fableseed-post">
-        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between"
-            id="post-profile">
+        class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
+        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between">
             <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
             <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}"
                 width="150px" height="150px">
@@ -79,8 +76,7 @@ Title: {{fableseed.title}}
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4 flex-col md:flex-row"
-            id="fablebranch-btns">
+        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4 flex-col md:flex-row">
             {% if user.is_authenticated and user == branch.author %}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
