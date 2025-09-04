@@ -1,0 +1,21 @@
+<!-- Template for user-friendly 404 error messages -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Uh-Oh!
+{% endblock %}
+{% block content %}
+<!-- Profile details section with header, image and user information -->
+<section
+    class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full lg:overflow-y-auto lg:h-[80vh] w-full p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
+    id="profile-details">
+
+
+    <div class="flex flex-col mb-5 mx-auto">
+        <h2 class="font-bold text-2xl md:text-center mb-4">Uh-Oh!</h2>
+        <p>You've taken a wrong turn into the desolate wasteland.</p>
+
+    </div>
+</section>
+{% endblock content %}
