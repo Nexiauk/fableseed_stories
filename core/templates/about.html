@@ -1,4 +1,4 @@
-<!-- Template for viewing a user's profile information and earned flowers, with edit controls and links to the original Fableseed posts where their branches grew  -->
+<!-- Template for viewing Fableseed About information as a timeline of steps  -->
 {% extends 'base.html' %}
 {% load static %}
 
@@ -6,13 +6,10 @@
 About Fableseed
 {% endblock %}
 {% block content %}
-<!-- Profile details section with header, image and user information -->
+<!-- About section with header, sub-title and Fableseed steps as a timeline -->
 <section
-    class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full lg:overflow-y-auto lg:h-[80vh] w-full p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
-    id="profile-details">
-
-
-    <div class="flex flex-col mb-5 mx-auto" id="about-container">
+    class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full lg:overflow-y-auto lg:h-[80vh] w-full p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col">
+    <div class="flex flex-col mb-5 mx-auto">
         <h2 class="font-bold text-2xl md:text-center">The Fableseed Gardener's Manual</h2>
         <h3 class="italic md:text-center mb-4">A step-by-step guide to planting and growing stories</h3>
         <p class="mb-3">Welcome to Fableseed, a collaborative storytelling platform, where stories grow like plants and
@@ -31,18 +28,10 @@ About Fableseed
                 <div class="timeline-middle">
                     <i class="fa-solid fa-seedling text-base-200 text-xl hidden md:block"></i>
                 </div>
-                <!-- <div class="timeline-end mx-auto hidden md:block">
-                    <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1756925706/5_fwtusv.png" alt="Gardener"
-                        class="w-32 hidden md:block" />
-                </div> -->
                 <hr />
             </li>
             <li>
                 <hr />
-                <!-- <div class="timeline-start mx-auto hidden md:block ">
-                    <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1756925706/8_bsw0sf.png" alt="Gardener"
-                        class="w-32 hidden md:block" />
-                </div> -->
                                 <div class="timeline-middle">
                     <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
                 </div>
@@ -65,19 +54,10 @@ About Fableseed
                                 <div class="timeline-middle">
                     <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
                 </div>
-                <!-- <div class="timeline-end mx-auto hidden md:block">
-                    <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1756925706/7_txrbwo.png" alt="Gardener"
-                        class="w-32 hidden md:block" />
-                </div> -->
                 <hr />
             </li>
             <li>
                 <hr />
-
-                <!-- <div class="timeline-start mx-auto hidden md:block">
-                    <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1756925706/5_fwtusv.png" alt="Gardener"
-                        class="w-32 hidden md:block" />
-                </div> -->
                                 <div class="timeline-middle">
                     <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
                 </div>
@@ -101,19 +81,11 @@ About Fableseed
                                 <div class="timeline-middle">
                     <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
                 </div>
-                <!-- <div class="timeline-end mx-auto hidden md:block">
-                    <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1756925706/8_bsw0sf.png" alt="Gardener"
-                        class="w-32 hidden md:block" />
-                </div> -->
                 <hr />
             </li>
             <li>
                 <hr />
 
-                <!-- <div class="timeline-start mx-auto hidden md:block">
-                    <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1756925706/7_txrbwo.png" alt="Gardener"
-                        class="w-32 hidden md:block" />
-                </div> -->
                                 <div class="timeline-middle">
                     <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
                 </div>
@@ -138,10 +110,6 @@ About Fableseed
                                 <div class="timeline-middle">
                     <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
                 </div>
-                <!-- <div class="timeline-end mx-auto hidden md:block">
-                    <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1756925706/5_fwtusv.png" alt="Gardener"
-                        class="w-32 hidden md:block" />
-                </div> -->
                 <hr />
             </li>
         </ul>
