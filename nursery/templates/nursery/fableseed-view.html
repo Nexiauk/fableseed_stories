@@ -21,8 +21,8 @@ Title: {{fableseed.title}}
     </div>
 </dialog>
 <!-- Main Fableseed post including title, body, author details and controls -->
-<div class="grid grid-flow-row gap-4 mb-4">
-
+<section class="grid grid-flow-row gap-4 mb-4">
+    <h2 class="text-center text-4xl font-merriweather">{{ fableseed.title}} </h2>
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
@@ -32,8 +32,6 @@ Title: {{fableseed.title}}
             <img src="{{fableseed.author.userprofile.user_profile_image_url}}"
                 alt="{{fableseed.author.get_display_name}}" width="150" height="150">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
-
-
         </div>
         <span
             class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</span>
@@ -53,24 +51,22 @@ Title: {{fableseed.title}}
         </div>
     </article>
 
-</div>
+
 
 
 <!-- Section that contains all Fablebranch replies to the Fableseed post -->
-<div class="grid sm:grid-flow-row gap-4">
+
     <!-- Iterates through all branches (replies) associated with this Fableseed -->
     {% if posted_branches %}
     {% for branch in posted_branches %}
     <article
-        class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
+        class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto odd:bg-primary-content odd:text-base-300 even:bg-secondary-content rounded-xl bg-clip-border odd:drop-shadow-secondary-content even:drop-shadow-primary-content drop-shadow-md container p-4">
         <div
-            class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between">
+            class="md:row-span-12 md:border-1 {% if forloop.counter|divisibleby:2 %} border-primary-content {% else %} border-base-300 {% endif %} rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between">
             <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
             <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}"
                 width="150" height="150">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
-
-
         </div>
         <span class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">
             {{ branch.created_on|date:"F jS, Y, g:i a" }}

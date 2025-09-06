@@ -30,7 +30,8 @@
 
 <!-- Apply different background colours based on current page -->
 <body
-  class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url or request.path == about_url %}bg-base-300 {% else%}bg-primary{% endif %} md:bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover lg:bg-center">
+  class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url or request.path == about_url %}bg-base-300 {% else%}bg-primary{% endif %} 
+  md:bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover">
   <header class="w-full">
     <div class="navbar bg-base-200 shadow border-b border-base-100">
       <div class="navbar-start flex-3 md:flex-2 lg:flex-1 gap-2 md:gap-3">
@@ -44,21 +45,21 @@
           </button>
           <!-- Nav list and links. List items apply an active class when current page matches the link -->
           <ul tabindex="0" class="menu menu-lg dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li class="{% if request.path == home_url %} active" aria-current="page {% endif %}"><a
+            <li class="{% if request.path == home_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'home' %}">Home</a></li>
-            <li class="{% if request.path == about_url %} active" aria-current="page {% endif %}"><a href="{% url 'about' %}">About</a>
+            <li class="{% if request.path == about_url %} active" aria-current="page{% endif %}"><a href="{% url 'about' %}">About</a>
             </li>
-            <li class="{% if request.path == nursery_url %} active" aria-current="page {% endif %}"><a
+            <li class="{% if request.path == nursery_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'nursery' %}">Nursery</a></li>
             {% if user.is_authenticated %}
-            <li class="{% if request.path == garden_url %} active" aria-current="page {% endif %}"><a
+            <li class="{% if request.path == garden_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
-            <li class="{% if request.path == logout_url %} active" aria-current="page {% endif %}"><a
+            <li class="{% if request.path == logout_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'account_logout' %}">Logout</a></li>
             {% else %}
-            <li class="{% if request.path == signup_url %} active" aria-current="page {% endif %}"><a
+            <li class="{% if request.path == signup_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'account_signup' %}">Sign Up</a></li>
-            <li class="{% if request.path == login_url %} active" aria-current="page {% endif %}"><a
+            <li class="{% if request.path == login_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'account_login' %}">Login</a></li>
             {% endif %}
           </ul>
@@ -87,21 +88,21 @@
       <div class="navbar-center flex-1 justify-center hidden lg:flex-2 lg:flex">
         <ul class="menu menu-horizontal gap-4 xl:gap-6">
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == home_url %} active"
-              aria-current="page {% endif %}" href="{% url 'home' %}">Home</a></li>
+              aria-current="page{% endif %}" href="{% url 'home' %}">Home</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == about_url %}active"
-              aria-current="page {% endif %}"  href="{% url 'about' %}">About</a></li>
+              aria-current="page{% endif %}"  href="{% url 'about' %}">About</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == nursery_url %}active"
-              aria-current="page {% endif %}" href="{% url 'nursery' %}">Nursery</a></li>
+              aria-current="page{% endif %}" href="{% url 'nursery' %}">Nursery</a></li>
           {% if user.is_authenticated %}
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == garden_url %}active"
-              aria-current="page {% endif %}" href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
+              aria-current="page{% endif %}" href="{% url 'mygarden' id=user.id %}">My Garden</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == logout_url %}active"
-              aria-current="page {% endif %}" href="{% url 'account_logout' %}">Logout</a></li>
+              aria-current="page{% endif %}" href="{% url 'account_logout' %}">Logout</a></li>
           {% else %}
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == signup_url %}active"
               aria-current="page {% endif %}" href="{% url 'account_signup' %}">Sign Up</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == login_url %}active"
-              aria-current="page {% endif %}" href="{% url 'account_login' %}">Login</a></li>
+              aria-current="page{% endif %}" href="{% url 'account_login' %}">Login</a></li>
           {% endif %}
         </ul>
       </div>

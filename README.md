@@ -660,10 +660,14 @@ The crispy form was wrapped in form tags, which doubled it up. Removed the form 
 
 fableseed-view.html - No errors or warnings to show.
 Initial errors were as follows: 
-Bad value 150px set on img elements. Removed px.
+Bad value for height and width set on img elements. Removed px.
 Time element wasn't in correct format (ISO8601), so added date:"c" for proper output
 Sections do not have headings - changed them to divs as they don't need headings.
 
+nursery.html - No errors or warnings to show.
+Initial errors were as follows:
+Bad value for height and width on img elements. Removed px
+Trailing space on aria-curren page - removed the space.
 
 
 
@@ -745,6 +749,7 @@ Index.html
 * Help styling the file input type - [Stack Overflow](https://stackoverflow.com/questions/572768/styling-an-input-type-file-button)  
 * Website for generating a CSS glow effect, also generates Tailwind CSS classes - [notchtools.com](https://notchtools.com/css-glow-generator)  
 * OKLCH colour picker for some of the Daisy UI theme colours - [oklch.com](https://oklch.com/#0.9612,0,0,100)
+* Couldn't get profile area borders on fablebranch replies to alternate colours. ChatGPT helped me by suggesting n if statement: {% if forloop.counter|divisibleby:2 %} border-base-300 {% else %} border-primary-content {% endif %}. Worked really well.
 
 
 ## **Interesting Bugs**
