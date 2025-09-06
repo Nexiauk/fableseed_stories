@@ -666,8 +666,16 @@ Sections do not have headings - changed them to divs as they don't need headings
 
 nursery.html - No errors or warnings to show.
 Initial errors were as follows:
-Bad value for height and width on img elements. Removed px
+Bad value for height and width on img elements. Removed px.
 Trailing space on aria-curren page - removed the space.
+
+404.html - No errors or warnings to show.
+500.html - No errors or warnings to show.
+
+mygarden.html - No errors or warnings to show.
+Initial errors were as follows:
+Bad value for height and width on img elements. Removed px.
+Unclosed Div - this was the div containing the edit profile button.
 
 
 
