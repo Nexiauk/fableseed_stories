@@ -17,37 +17,40 @@ STATUS = ((0, "Pending"), (1, "Approved"))
 
 
 class Fableseed(models.Model):
-    """Represents a story seed created by a user, associated with a flower type.
+    """
+    Represents a story seed created by a user.
 
     Attributes:
         seed (AutoField): Primary key identifier for the seed.
         flower_type (ForeignKey): Reference to the associated flower object.
         title (CharField): Title of the fable seed.
-        body (CharField): Story prompt written by the user.
-        approval_status (IntegerField): Indicates if the seed has been approved by admin.
-            Default is 0 (Pending).
+        body (CharField): Story prompt for the fable seed.
+        approval_status (IntegerField): Indicates if the seed is approved.
+            Defaults to 0 (Pending).
         created_on (DateTimeField): Timestamp when the seed was created.
         edited_on (DateTimeField): Timestamp when the seed was last edited.
         author (ForeignKey): Reference to the user who created the seed.
-        fablebuds_earned (PositiveIntegerField): Number of fablebuds earned by the seed.
-            Default is 1.
+        fablebuds_earnt (PositiveIntegerField): Number of fablebuds earned.
+            Defaults to 1.
 
     Meta:
-        ordering: Seeds are sorted by creation date descending (newest first).
+        ordering: Seeds are sorted by creation date descending.
 
     Methods:
-        __str__: Returns a string representation of the seed including title and author.
+        __str__(): Returns a string representation with title and author.
     """
 
     seed = models.AutoField(primary_key=True)
     flower_type = models.ForeignKey(
         "nursery.Flower",
-        on_delete=models.PROTECT)
+        on_delete=models.PROTECT
+        )
     title = models.CharField(max_length=130)
     body = models.CharField(max_length=255)
     approval_status = models.IntegerField(
         choices=STATUS,
-        default=0)
+        default=0
+        )
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(
@@ -55,7 +58,7 @@ class Fableseed(models.Model):
         on_delete=models.SET_NULL,
         null=True,
         blank=True
-        )
+    )
     fablebuds_earnt = models.PositiveIntegerField(default=1)
 
     class Meta:
@@ -67,13 +70,13 @@ class Fableseed(models.Model):
 
 
 class Flower(models.Model):
-    """Represents flowers available in the database to associate with a Fableseed.
+    """Flowers associated with a Fableseed.
 
     Attributes:
         flower (AutoField): Primary key identifier for the flower.
         flower_name (CharField): The name of the flower.
         flower_image (CloudinaryField): Image representation of the flower.
-        fablebuds_cost (PositiveIntegerField): Cost in fablebuds to use the flower.
+        fablebuds_cost (PositiveIntegerField): Fablebuds cost for the flower.
 
     Meta:
         ordering: Flowers are sorted by flower name ascending.
@@ -110,7 +113,7 @@ class FableBranch(models.Model):
         verbose_name_plural: Plural name of the model.
 
     Methods:
-        __str__: Returns a string representation of the branch, truncated to 50 characters.
+        __str__: Returns a string representation of the branch.
     """
 
     branch = models.AutoField(primary_key=True)
@@ -118,7 +121,7 @@ class FableBranch(models.Model):
         "nursery.Fableseed",
         on_delete=models.PROTECT,
         related_name='fablebranches'
-        )
+    )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     edited_on = models.DateTimeField(auto_now=True)
@@ -127,14 +130,14 @@ class FableBranch(models.Model):
         on_delete=models.SET_NULL,
         null=True, blank=True,
         related_name="fableauthor"
-        )
+    )
 
     class Meta:
         verbose_name = "Fablebranch"
         verbose_name_plural = "Fablebranches"
 
     def __str__(self):
-        """Return a string representation of the fable branch.
+        """Return a string representation of the fablebranch.
 
         Truncates body to 50 characters if longer, appends author display name.
         """

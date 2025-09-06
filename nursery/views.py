@@ -23,7 +23,12 @@ def nursery_view(request):
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     for seed in page_obj:
-        latest_branch = seed.fablebranches.all().order_by("-created_on").first()
+        latest_branch = (
+            seed.fablebranches
+            .all()
+            .order_by("-created_on")
+            .first()
+        )
         seed.latest_branch = latest_branch
     context = {"page_obj": page_obj}
     page_url = "nursery/nursery.html"
