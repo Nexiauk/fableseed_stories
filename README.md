@@ -1,4 +1,4 @@
-# Fableseed README {#fableseed-readme}
+# Fableseed README
 
 Insert Image
 
@@ -67,7 +67,6 @@ This collaborative storytelling forum has been created as a project during my [C
 * [Media](#media)
 
 ## **Welcome to Fableseed**
-
 A collaborative storytelling platform where stories grow like plants and words breathe life into a blooming world. Users plant seeds of stories (i.e. story starters), and other users add branches (chapters/replies) to grow the story. Each story “grows” like a plant, with branching paths and twists with each piece of user-generated creativity. Think mini-Wattpad meets Choose-Your-Own-Adventure — with full CRUD built in.
 
 In Fableseed, stories are as essential as oxygen.
@@ -75,7 +74,6 @@ In Fableseed, stories are as essential as oxygen.
 Plant the seeds of imagination and watch your garden blossom with vibrant flowers, each one nurtured by the tales you and others tell. These blossoms aren’t just beautiful — they cradle your stories in their petals, keeping them alive in the garden at the end of the world.
 
 #### Fableseed Poem
-
 The world is a desolate wasteland.  
 Nothing grows here.  
 Nothing thrives.
@@ -102,7 +100,6 @@ From it, you gather seeds.
 And with them, you grow the last garden at the end of the world. {#and-with-them,-you-grow-the-last-garden-at-the-end-of-the-world.}
 
 ## **Inspiration**
-
 I’m a person who likes to read and write, and who tries to come up with creative ways to get others to enjoy reading and writing, too. My passion for stories and storytelling began with books when I was a kid, but then extended into online, collaborative storytelling forums when I was a teenager. This lasted until I was almost 30, when life got super busy.
 
 10 years later my life finally settled down a bit, but when I poked about on the net I discovered that those collaborative storytelling platforms didn’t exist anymore. All I could find were fan fiction sites - there’s nothing wrong with fan fiction sites, I just wanted to find a place where I could make my own characters and evolve them within a shared story world.
@@ -118,10 +115,7 @@ My prompt: “The task is to create something like a restaurant booking system, 
 ChatGPT immediately suggested I create a collaborative storytelling forum and that was that: Fableseed was born.
 
 ## **Fableseed Goals**
-
 **Fableseed** is more than a web development project — it's a creative platform designed to inspire, connect, and empower users through collaborative storytelling. While it meets the technical and educational criteria of a CRUD-based web application using Django, Python, JavaScript, HTML/CSS, and SQL, its value extends far beyond the brief.
-
----
 
 1. **Inspire Collaborative Creativity**  
     Provide a calm, imaginative space where users co-create branching stories, encouraging meaningful creative expression in a fast-paced digital world.
@@ -144,35 +138,25 @@ ChatGPT immediately suggested I create a collaborative storytelling forum and th
 7. **Deliver a Whimsical, Emotional User Experience**  
     Stand out with a unique, metaphor-rich interface that feels magical, hopeful, and emotionally resonant — more than just a functional app.
 
-
-
 **In summary**, *Fableseed* is a technically sound, narratively rich, and emotionally engaging platform that fulfils academic requirements **while also addressing real-world needs**: creativity, collaboration, and connection in a time when those things are more vital than ever.
 
 ## **User Experience (UX)**
-
 ### *Types of Users*
-
 #### Primary User Types
-
 * Young or Beginner Writers - Gentle, non-judgmental space for emerging voices and playful exploration.  
 * Experienced Writers - Low-pressure creative outlet for storytelling practice and experimentation.  
 * Writers of All Abilities - Inclusive collaboration and community-driven creativity.  
 * Casual & Social Users - People who enjoy prompts, shared writing, or cosy creativity without pressure.  
 * Reflective Users - Those using writing as self-care, or drawn to the calming metaphor of growing stories.
 
----
-
 #### Secondary / Future Users
-
 * Educational Users - Teachers and students using Fableseed in learning environments.  
 * Gamified & Puzzle-Oriented Users - Players and interactive fiction fans interested in story-unlocking mechanics.
 
 ### *User Stories* {#user-stories}
-
 I used a [Github Kanban Board](https://github.com/users/Nexiauk/projects/8) to track my user stories and development tasks and help keep me on track.
 
 #### Guests {#guests}
-
 Prospective users who want to browse the forum, read some content and see if they want to join up. Guests shouldn’t be able to create content and have limited access to posted content.
 
 As a guest:
@@ -182,7 +166,6 @@ As a guest:
 * I should be able to easily register for an account if I want to
 
 #### **Writers**
-
 Logged-in users who can create fableseeds, grow branches, and achieve rewards for doing so.
 
 As a writer:
@@ -197,8 +180,8 @@ As a writer:
 * I want to be delete my own Fableseeds and Fablebranches
 
 #### **Admin**
-
-Can also participate as writers, but also have the ability to approve/reject Fableseeds
+* Can also participate as writers
+* Also have the ability to approve/reject Fableseeds
 
 As Admin
 
@@ -207,9 +190,7 @@ As Admin
 * I want the ability to add new flowers in the admin interface
 
 ## **Design**
-
 * **Flowers and literature**
-
 [A Guide to Studying Flower Symbolism in Literature — Petal & Poem \- HK's Top Luxury Florist](https://www.petalandpoem.com/floral-thoughts/a-guide-to-studying-flower-symbolism-in-literature#:~:text=Flowers%20often%20align%20with%20overarching,the%20fleeting%20nature%20of%20life.)
 
 Flowers and storytelling are inextricably intertwined, from the healing powers of The Secret Garden, to the whimsy of Hobbits smoking pipeweed, to the rose slowly decaying in Beauty and the Beast. Flowers and plantlife feature heavily in fiction not only as background details, but to convey emotion, as symbolism, as well as forming plot devices and connections in overarching themes.
@@ -217,7 +198,6 @@ Flowers and storytelling are inextricably intertwined, from the healing powers o
 This is why the theme of a garden and growing flowers from stories makes sense as a concept and will allow for emotive imagery and a complementary colour scheme.
 
 * **Flowers and symbolism**
-
 [List of plants with symbolism - Wikipedia](https://en.wikipedia.org/wiki/List_of_plants_with_symbolism)
 
 [Floriography: The Secret Language of Flowers in the Victorian Era — Planterra Conservatory](https://planterraevents.com/blog/floriography-secret-language-flowers-victorian-era)
@@ -231,7 +211,7 @@ Four flowers emerged from the list:
 * Lotus - *an aquatic plant, doesn’t fit the imagined terrain*  
 * Rainflower - *lovely, but very tiny*  
 * Spider lily - *not very nice looking*  
-* **Tulip - *beautiful, elegant, one of my favourite flowers (\!)***
+* **Tulip - *beautiful, elegant, one of my favourite flowers***
 
 ![][image1]
 
@@ -244,24 +224,19 @@ Purple tulips represent royalty and rebirth, black tulips represent power and st
 * **Queen of Night tulips are** known for their rich purple-black colour.  
   ![][image4]
 
-#### Colour Palette {#colour-palette}
+#### Colour Palette
 
 Using [Adobe Colour](https://color.adobe.com/) I plugged an image of each tulip into the [Extract Theme](https://color.adobe.com/create/image) tool and generated a palette of colours.
 
 **Black Hero**
-
 ![][image5]
 
 **Black Parrot 1**
-
 ![][image6]
-
 **Queen of Night**
-
 ![][image7]
 
 **Black Parrot 2**
-
 ![][image8]
 
 I decided to go with the **Black Parrot 1** for its balanced mix of greens and purples, with a lighter colour suitable for text. I also took Woodsmoke (almost black) from **Black Parrot 2.**
@@ -269,85 +244,74 @@ I decided to go with the **Black Parrot 1** for its balanced mix of greens and p
 [Colorkit](https://colorkit.co/color/6830c1/) was used to find the closest matching Tailwind colours.
 
 ![][image9]
-
 **Claret:** #730E3D  
 **RGB:** 115, 14, 61  
 **Closest Tailwind Colour:** pink-900  
 **oklch(0.3683 0.1374 359.46)**
 
 ![][image10]
-
 **Eggplant:** #400E37  
 **RGB:** 64, 14, 55  
 **Closest Tailwind Colour:** brown-900  
 oklch(0.15 0.25 336.06)
 
 ![][image11]
-
 **Black Smoke:** #0D0D0D  
 **RGB:** 13, 13, 13  
 **Closest Tailwind Colour:** Black  
-oklch(0.1591 0 0\)
+oklch(0.1591 0 0)
 
 ![][image12]
-
-**Deep Green:** \#045911  
+**Deep Green:** #045911  
 **RGB:** 4, 89, 17  
 **Closest Tailwind Colour:**   
 green-900  
 oklch(0.4037 0.1274 144.22)
 
 ![][image13]
-
-**Leafy Green:** \#55A605  
+**Leafy Green:** #55A605  
 **RGB:** 85,166, 5   
 **Closest Tailwind Colour:** light-green-800  
 oklch(0.6477 0.1888 135.3)
 
 ![][image14]
-
-**White Smoke:** \#F2F2F2  
+**White Smoke:** #F2F2F2  
 **RGB:** 242, 242, 242  
 **Closest Tailwind Colour:** grey-100  
-oklch(0.9612 0 0\)
+oklch(0.9612 0 0)
 
-#### 
-
-#### Colour Accessibility  {#colour-accessibility}
-
+#### Colour Accessibility
 According to [Adobe colour’s accessibility](https://color.adobe.com/create/color-accessibility) tool, the Black Parrot theme was colour blind safe. 
 
 [Adobe’s colour contract checker](https://color.adobe.com/create/color-contrast-analyzer) showed the following colour pairings to be accessible:
 
-* **\#730E3D** and \#F2F2F2  
-* **\#0D0D0D** and \#F2F2F2  
-* **\#045911** and \#F2F2F2  
-* **\#400E37** and \#F2F2F2  
-* **\#55A605** and **0D0D0D**  
-* **\#55A605** AND **\#400E37**  
-* **\#55A605** and **\#730E3D** \- only for font 18pt and above and actionable icons and graphics
+* **#730E3D** and #F2F2F2  
+* **#0D0D0D** and #F2F2F2  
+* **#045911** and #F2F2F2  
+* **#400E37** and #F2F2F2  
+* **#55A605** and **0D0D0D**  
+* **#55A605** AND **#400E37**  
+* **#55A605** and **#730E3D** - only for font 18pt and above and actionable icons and graphics
 
 The colour scheme gave me a wide variety of pairings to work with, allowing versatility within Fableseed.
 
-#### DaisyUI Custom Theme Creator {#daisyui-custom-theme-creator}
-
+#### DaisyUI Custom Theme Creator
 I decided to add the [Daisy UI](https://daisyui.com/) Tailwind plugin to my build as it provides useful component class names to help with writing less code and building faster. The [DaisyUI theme generator](https://daisyui.com/theme-generator/?lang=en) generates CSS from preset themes to add to your main Tailwind import css file, but you can also use it to generate your own custom colour scheme and it will even show whether your foreground and background colours are WCAG AAA compatible. Below are screenshots of my theme in the generator:
 
 ![][image15]
 
 ![][image16]
 
-#### Imagery {#imagery}
-
-I searched the internet with a clear image in mind of a flower growing from a post-apocalyptic city. My first inspiration came from this photo from an article about flowers that grow after wildfires. \- [see credits section](#credits)
+#### Imagery
+I searched the internet with a clear image in mind of a flower growing from a post-apocalyptic city. My first inspiration came from this photo from an article about flowers that grow after wildfires. - [see credits section](#credits)
 
 ![][image17]
 
-My second inspiration came from this image of a small shoot growing out of a cracked city street. \- [see credits section](#credits)
+My second inspiration came from this image of a small shoot growing out of a cracked city street. - [see credits section](#credits)
 
 [![][image18]](https://www.freepik.com/free-ai-image/plant-growing-from-soil_268350286.htm)
 
-I found this image of a tulip that I wanted to use as the basis for my hero image \- [see credits section](#credits)
+I found this image of a tulip that I wanted to use as the basis for my hero image - [see credits section](#credits)
 
 ![][image19]
 
@@ -358,20 +322,13 @@ I used [Adobe Firefly](https://www.adobe.com/products/firefly.html) to generate 
 I used one of the generated images to create a portrait and a landscape hero image.
 
 * Portrait Hero Image
-
 ![][image20]
 
 * Landscape Hero Image
-
 ![][image21]
 
 * Edited version for responsive styling
-
 ![][image22]
-
-##### 
-
-##### 
 
 I used [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) to grab the tulip by itself to plug back into Firefly so I could create a logo out of it using the following prompt and settings:
 
@@ -394,7 +351,6 @@ The images for the different flower types were created in Canva using flowers of
 ![][image25]![][image26]![][image27]![][image28]![][image29]![][image30]![][image31]![][image32]![][image33]![][image34]![][image35]![][image36]
 
 #### Typography {#typography}
-
 I used two sites to search for fonts and compare them against each other:
 
 [https://fontjoy.com/](https://fontjoy.com/)
@@ -410,23 +366,18 @@ The set I came up with is listed below:
 Great Vibes is high contrast vs Merriweather Sans and Inclusive Sans \- this was a purposeful choice as high contrast typography pairing can be used to improve readability, establish visual hierarchy, and create interest.
 
 *  **Great Vibes**
-
 I wanted a flowing, plantlike script for Fableseed’s main title/logo font, however it also needed to be legible and readable. Lots of flowing and calligraphy fonts have partial letters (the top of an ‘S’ missing) or badly formed letters (‘e’ sometimes looks like ‘a’) or even added flicks and flourishes that make a capital ‘F’ look like a weirdly-shaped capital ‘E’.
 
 I fell in love with the font called Fondamento, but couldn’t get over how the capital ‘F’ looked:
-
 ![][image37]
 
 The Great Vibes font is nicely formed and easy to read at a larger font size. It only has one style, which isn’t a problem as I only want to use it exactly as it is and for only two words \- ‘Fableseed’ and ‘Garden’.
-
 ![][image38]
 
 * **Merriweather Sans**
-
 A sans-serif font known for its readability on screens, particularly at smaller sizes, and its traditional feel. With italics applied, double storey letters become single storey letters, ideal for people with specific learning difficulties. It’s traditional in style, despite the modern shapes it has adopted.
 
 * **Inclusive Sans**
-
 Inclusive Sans is a text font designed for accessibility and readability. It fits very cohesively with Merriweather as they are both San-serif, so it also contrasts well with the title/logo font, Great Vibes.
 
 I’d also looked at Raleway as a choice for the sub-headings, as it also changes double storey letters into single storey with italics applied. So, I had a chat with ChatGPT about the suitability and feel of the scheme with each sub-heading font applied.
@@ -435,165 +386,124 @@ ChatGPT gave me some useful insights, which can be found at this link: [ChatGPT 
 
 ![][image39]
 
-#### Wireframes {#wireframes}
-
+#### Wireframes
 I was inspired by collaborative storytelling platforms that I used to frequent on Proboards and FreeForums. [Here is a link to Event Horizon,](https://eventhorizon.freeforums.net/) a site I created myself more than 10 years ago. I wanted to keep the same sort of boxy, table-style vibe that freeforums and proboards have as a sort of homage, as well as it being a neat way to display many Fableseeds and their content.
 
 ![][image40]
 
-#### End product design changes {#end-product-design-changes}
+#### End product design changes
 
-#### 
-
-## **Features** {#features}
-
-### *Users* {#users}
-
+## **Features**
+### *Users*
 * Register/login/logout
-
 * User profile: “My Garden” showing stories planted or contributed to  
   * Add Display Name, Profile picture, Bio  
   * Edit profile
 
-### *Stories* {#stories}
-
-* Users create a **Story Seed** (title \+ intro)
-
+### *Stories*
+* Users create a **Story Seed** (title + intro)
 * Story seeds approved by admin
-
 * Others can contribute **Branches** (replies on seed threads)
-
 * Admin approval system for seeds
 
-
-### *Incentivisation System* {#incentivisation-system}
-
+### *Incentivisation System*
 * Creating a story seed grants \+1 Fablebud {#creating-a-story-seed-grants-+1-fablebud}
-
 * Spend \+1 Fablebud to add a chapter (branch)
-
 * Each branch grants \+1 flower
-
 * Flower quantity increases with each branch posted
 
-### *Responsiveness* {#responsiveness}
+### *Responsiveness*
 
-### *Header* {#header}
+### *Header*
 
-### *Footer* {#footer}
+### *Footer*
 
-### *Animations* {#animations}
+### *Animations*
 
-### *Nursery Page* {#nursery-page}
+### *Nursery Page*
 
-### *User Garden* {#user-garden}
+### *User Garden*
 
-##  **Security Features** {#deployment-security}
-
-### *Authentication & User Management* {#deployment-security}
-
+##  **Security Features**
+### *Authentication & User Management*
 * Django Allauth is used to handle user registration, login, logout, and account management.  
 * Provides built-in security features such as password hashing, email verification, and session handling.  
 * Ensures only authenticated users can create and manage their own Fableseeds, FableBranches, and Profiles.  
 * Guests have read-only access and cannot create, edit, or delete records.
 
 ### *Access Control*
-
-* Actions such as creating, editing, and deleting Fableseeds and FableBranches, and editing Profiles, are protected with @login\_required on Django views.  
-* Buttons and UI elements for these actions are only rendered for authenticated users (if user.is\_authenticated).  
+* Actions such as creating, editing, and deleting Fableseeds and FableBranches, and editing Profiles, are protected with @login_required on Django views.  
+* Buttons and UI elements for these actions are only rendered for authenticated users (if user.is_authenticated).  
 * Guests cannot perform restricted actions even if they try to access the URLs directly.  
 * This ensures proper access control and prevents unauthorized modifications.
 
-##  {#deployment-security}
 
-### *Permissions & Roles* {#deployment-security}
-
+### *Permissions & Roles*
 Users:
-
 *  Can create, edit, and delete their own Fableseeds and FableBranches, and edit their own Profiles (cannot delete them).
 
 Admins:
-
 * Can create, edit, and delete any Fableseed or FableBranch.  
 * Can create, edit, and delete Flowers and manage user Flowers.  
 * Can approve Seeds and delete users.
 
 Guests: 
-
 * Can view content but cannot create, edit, or delete.  
 * Seeds with existing Branches cannot be deleted by regular users, protecting relational integrity.
 
-##  {#deployment-security}
-
-### 
-
-### *Environment Variables* {#deployment-security}
-
+### *Environment Variables*
 * Sensitive data is stored securely in an env.py file, which is hidden via .gitignore.  
 * Keys and settings stored in env.py include:  
-* SECRET\_KEY (Django project key)  
-* DATABASE\_URL (PostgreSQL database connection)  
-* CLOUDINARY\_URL (media storage)  
+* SECRET_KEY (Django project key)  
+* DATABASE_URL (PostgreSQL database connection)  
+* CLOUDINARY_URL (media storage)  
 * .venv (virtual environment) is also excluded from GitHub, ensuring no dependencies or system files are exposed.
 
-##  {#deployment-security}
-
-### *Deployment Security* {#deployment-security}
-
+### *Deployment Security*
 * DEBUG mode is disabled in production.  
 * No passwords, API keys, or sensitive information are ever committed to the repository.  
 * All environment-specific settings are managed securely via env.py.
 
-## 
-
-## 
-
-## **Future Features** {#future-features}
-
+## **Future Features**
 * Filter by: most grown stories, newest seeds, flowers
-
 * Search by: specific flowers
-
-*  Visual story tree (JS or D3.js)
-
+* Visual story tree (JS or D3.js)
 * Word count goals per chapter (live JS tracker)
-
 * “Garden Stats” page: most popular authors/stories
-
-*  ‘Like’ system grants additional flowers of that type
-
+* ‘Like’ system grants additional flowers of that type
 * Seasonal events
-
 * WYSIWYG text editor for colours, fonts and effects
 
 
 Each flower icon in profile gardens could:
-
 * **Bloom open on hover** with a tooltip (“Luna Lily: Symbol of quiet magic”)
-
 * **Link to a filtered view** of authored branches for that flower type
-
 * Visually change as you collect more (e.g. 1–3 is a bud, 4–7 is a full bloom, 8 \+ is a golden sparkle version)
-
 * A sample **JavaScript animation** to make flowers bloom on like
 
-## 
-
-## **Database Schema** {#database-schema}
-
+## **Fableseed Application – Models and Data Relationships**
+### *Entity Relationship Diagram*
 This Entity Relationship Diagram for Fableseed was created using [Mermaid](https://mermaid.js.org/)’s built-in ERD diagramming tool. [ChatGPT](https://openai.com/index/chatgpt/) was used to help me understand the syntax and symbols used, as well as to double check my logic.
-
-### *Entity Relationship Diagram* {#entity-relationship-diagram}
 
 ![][image41]
 
-### 
+### *Overview*
+This module contains the Django models for the **Fableseed** application, a storytelling platform where users create story seeds, branch stories, and earn flower rewards.  
 
-### *Model Relationship Declaration* {#model-relationship-declaration}
+**Models included:**
+- **Fableseed**: Story seeds created by users.  
+- **Flower**: Flowers associated with seeds and rewards.  
+- **FableBranch**: Branching replies to seeds.  
+- **UserProfile**: Extended user information for display purposes.  
+- **UserFlower**: Tracks flowers earned by users from seeds and branches.  
 
-**USER ||--|| USER\_PROFILE : "has profile"**  
+The project uses Django’s built-in `User` model extended via a `UserProfile`.
+
+### *Model Relationships (ERD Notation)*
+
+**USER ||--|| USER_PROFILE : "has profile"**  
 Each user has exactly one profile.  
-The profile stores extended info like display name, picture, and bio, while the base `USER` holds login credentials.
+The profile stores extended info like display name, picture, and bio, while the base USER holds login credentials nad name.
 
 ---
 
@@ -603,13 +513,13 @@ The profile stores extended info like display name, picture, and bio, while the 
 
 ---
 
-**USER ||--|{ FABLE\_BRANCH : "writes"**  
+**USER ||--|{ FABLE_BRANCH : "writes"**  
  One user can write many Fable Branches.  
 Each branch is a continuation of a story. A user can write different branches for different stories.
 
 ---
 
-**FABLESEED ||--|{ FABLE\_BRANCH : "has branches"**  
+**FABLESEED ||--|{ FABLE_BRANCH : "has branches"**  
 One Fableseed can grow into many branches.  
 Each seed can sprout multiple paths (storylines), like chapters or what-if versions of a story.
 
@@ -621,156 +531,136 @@ Each seed can sprout multiple paths (storylines), like chapters or what-if versi
 
 ---
 
-**USER ||--|{ USER\_FLOWER : "earns"**  
+**USER ||--|{ USER_FLOWER : "earns"**  
  Each user can earn many flowers.  
  Flowers represent rewards or achievements tied to that user.
 
 ---
 
-**FLOWERS ||--|{ USER\_FLOWER : "is earned as"**  
+**FLOWERS ||--|{ USER_FLOWER : "is earned as"**  
  Each flower type can be earned by many users.  
  For example, a tulip might be earned by multiple users, tracked through a USER\_FLOWER record.
 
 ---
 
-**FABLE\_BRANCH ||--|{ USER\_FLOWER : "earns flower"**  
- A Fable Branch can earn a flower.  
- When someone writes a branch, it earns a flower as a reward — this connects the branch to a specific USER\_FLOWER earned.
+**FABLE_BRANCH ||--|{ USER_FLOWER : "earns flower"**  
+A branch can reward one flower type, but multiple users can earn it, with quantity tracked per user.
 
-### *Model Fields* {#model-fields}
+ ---
+**Explanation:**
+- Each **user** has exactly **one profile** (`USER_PROFILE`).  
+- A **user** can write many **Fableseeds** and **FableBranches**.  
+- Each **Fableseed** can grow into multiple **FableBranches**.  
+- Each **Fableseed** is assigned exactly **one flower type**, shared across seeds.  
+- Users can earn multiple flowers (`USER_FLOWER`) as rewards.  
+- Each **flower** type can be earned by many users.  
+- A **FableBranch** can earn exactly **one flower type**, with the quantity stored in `USER_FLOWER`.  
+### *Model Fields*
 
-USER **{**
+**USER**
+| Field | Type | Notes |
+|-------|------|------|
+| id | int PK | Primary key |
+| username | CharField | Unique login name |
+| email | EmailField | Validated email |
+| password | CharField | Password hash |
+---
+**USER_PROFILE**
+| Field | Type | Notes |
+|-------|------|------|
+| id | int PK | Primary key |
+| user_id | int FK | One-to-one link to `USER` |
+| display_name | CharField | Name displayed in the app |
+| profile_picture | CloudinaryField | User avatar |
+| bio | TextField | Short biography |
+| fablebuds_count | PositiveIntegerField | User’s reward points |
+---
+**FABLESEED**
+| Field | Type | Notes |
+|-------|------|------|
+| seed | AutoField PK | Primary key |
+| flower_type | FK | References `FLOWERS` (PROTECT) |
+| title | CharField | Story seed title |
+| body | CharField | Story prompt |
+| approval_status | BooleanField | Pending or Approved |
+| created_on | DateTimeField | Auto timestamp |
+| edited_on | DateTimeField | Auto timestamp |
+| author | FK | References `USER` (SET_NULL on deletion) |
+| fablebuds_earnt | PositiveIntegerField | Reward points earned by seed |
+---
+**FABLE_BRANCH**
+| Field | Type | Notes |
+|-------|------|------|
+| branch | AutoField PK | Primary key |
+| seed | FK | References `FABLESEED` (PROTECT) |
+| body | TextField | Story content |
+| created_on | DateTimeField | Auto timestamp |
+| edited_on | DateTimeField | Auto timestamp |
+| author | FK | References `USER` (SET_NULL on deletion) |
+| fablebuds_cost | PositiveIntegerField | **Deprecated** — now determined by flower type |
+---
+**FLOWERS**
+| Field | Type | Notes |
+|-------|------|------|
+| flower | AutoField PK | Primary key |
+| flower_name | CharField | Name of the flower |
+| flower_image | CloudinaryField | Image of the flower |
+| fablebuds_cost | PositiveIntegerField | Cost of the flower in fablebuds |
+---
+**USER_FLOWER**
+| Field | Type | Notes |
+|-------|------|------|
+| id | AutoField PK | Primary key |
+| user_id | FK | References `USER` |
+| flower_id | FK | References `FLOWERS` |
+| quantity | PositiveIntegerField | Number of this flower earned by the user |
+| earned_from_seed_id | FK | References `FABLESEED` |
+| earned_from_branch_id | FK | References `FABLE_BRANCH` |
+| earned_on | DateTimeField | Timestamp of earning |
+---
 
-        int id PK
-
-        string username "CharField:unique"
-
-        string email "EmailField:EmailValidator"
-
-        string password "CharField"
-
-    **}**
-
-    USER\_PROFILE **{**
-
-        int id PK
-
-        int user\_id FK "OneToOne: USER.id"
-
-        string display\_name "CharField"
-
-        string profile\_picture "ImageField"
-
-        string bio "TextField"
-
-        int fablebuds\_count "PositiveIntegerField"
-
-    **}**
-
-    FABLESEED **{**
-
-        int seed\_id PK
-
-        int flower\_id FK "References FLOWERS.flower\_id"
-
-        string title "CharField"
-
-        string body "TextField"
-
-        boolean approval\_status "BooleanField"
-
-        datetime created\_on "DateTimeField"
-
-        datetime edited\_on "DateTimeField"
-
-        int author\_id FK "References USER.id; display USER.username"
-
-        int fablebuds\_earnt "PositiveIntegerField"
-
-    **}**
-
-    FABLE\_BRANCH **{**
-
-        int branch\_id PK
-
-        int seed\_id FK "References FABLESEED.seed\_id"
-
-        string body "TextField"
-
-        datetime created\_on "DateTimeField"
-
-        datetime edited\_on "DateTimeField"
-
-        int author\_id FK "References USER.id; display USER.username"
-
-        int fablebuds\_cost "PositiveIntegerField"
-
-    **}**
-
-    FLOWERS **{**
-
-        int flower\_id PK
-
-        string flower\_name "CharField"
-
-        string flower\_image "ImageField"
-
-    **}**
-
-    USER\_FLOWER **{**
-
-        int id PK
-
-        int user\_id FK "References USER.id"
-
-        int flower\_id FK "References FLOWERS.flower\_id"
-
-        int quantity "PositiveIntegerField"
-
-        int earned\_from\_seed\_id FK "References FABLESEED.seed\_id"
-
-        int earned\_from\_branch\_id FK "References FABLE\_BRANCH.branch\_id"
-
-        datetime earned\_on "DateTimeField"
-
-    **}**
-
-   
-
-### *Cardinalities* {#cardinalities}
+### *Cardinalities Table*
 
 | Relationship | Type | Meaning |
-| ----- | ----- | ----- |
-| USER → USER\_PROFILE | 1..1 to 1..1 | Each user has exactly one profile. Each profile belongs to one user. |
-| USER → FABLESEED | 1..1 to 0..\* | A user can write many seeds. Each seed must have one author. |
-| USER → FABLE\_BRANCH | 1..1 to 0..\* | A user can write many branches. Each branch must have one author. |
-| FABLESEED → FABLE\_BRANCH | 1..1 to 0..\* | A seed can have many branches. Each branch belongs to one seed. |
-| FABLESEED → FLOWERS | 1..1 to 0..\* | Every seed is assigned exactly one flower type. A flower type can be assigned to many seeds. |
-| USER → USER\_FLOWER | 1..1 to 0..\* | A user can earn many flowers. Each flower record belongs to one user. |
-| FLOWERS → USER\_FLOWER | 1..1 to 0..\* | A flower type can be earned many times by different users. Each user-flower record relates to one flower type. |
-| FABLE\_BRANCH → USER\_FLOWER | 1..1 to 0..\* | A branch can reward many flowers. Each earned flower record references the branch it came from. |
+|--------------|------|---------|
+| USER → USER_PROFILE | 1..1 to 1..1 | Each user has exactly one profile. |
+| USER → FABLESEED | 1..1 to 0..* | A user can write many seeds. Each seed has one author. |
+| USER → FABLE_BRANCH | 1..1 to 0..* | A user can write many branches. Each branch has one author. |
+| FABLESEED → FABLE_BRANCH | 1..1 to 0..* | A seed can have many branches. Each branch belongs to one seed. |
+| FABLESEED → FLOWERS | 1..1 to 0..* | Each seed must have one flower type. A flower type can belong to many seeds. |
+| USER → USER_FLOWER | 1..1 to 0..* | A user can earn many flowers. Each earned flower belongs to one user. |
+| FLOWERS → USER_FLOWER | 1..1 to 0..* | A flower type can be earned by many users. |
+| FABLE_BRANCH → USER_FLOWER | 1..1 to 0..1 | A branch can earn one flower type. Quantity is tracked per user. |
+
+---
+
+### *Design Notes*
+
+- **User model**: Used Django’s built-in `User` model extended via `UserProfile` for extra fields.  
+- **Author deletion**: Seeds and branches remain if a user deletes their account. The author is displayed as **“Deleted User”**.  
+- **Flower cost**: The `fablebuds_cost` field in `FABLE_BRANCH` was removed; cost is now determined by the associated flower to ensure consistency and scalability.  
+- **FableBranch rewards**: Each branch earns **one flower type**, but multiple users can earn it. Quantity is stored in `USER_FLOWER`.  
 
 I ended up using Django’s built-in user model and extending it with a user profile model with extra fields. This was purely by accident as at the time I didn’t know you couldn’t extend the user model if you’d already migrated, which I had.
 
 Halfway through development, I realised that storing `fablebuds_cost` on `FABLE_BRANCH` was redundant. The cost should be determined by the flower type, so that rarer flowers are more valuable and the system remains consistent and scalable.
 
-## 
 
-## **Testing** {#testing}
+## **Testing**
 
-### *User Story Testing* {#user-story-testing}
+### *User Story Testing*
 
-### *Automated Testing* {#automated-testing}
+### *Automated Testing*
 
-#### The W3C Markup Validation Service {#the-w3c-markup-validation-service}
+#### The W3C Markup Validation Service
 
-#### The W3C CSS Validation Service {#the-w3c-css-validation-service}
+#### The W3C CSS Validation Service
 
-#### The JSHint Validation Service {#the-jshint-validation-service}
+#### The JSHint Validation Service
 
-#### The WAVE Webb Accessibility Evaluation Tool {#the-wave-webb-accessibility-evaluation-tool}
+#### The WAVE Webb Accessibility Evaluation Tool
 
-#### Chrome Lighthouse {#chrome-lighthouse}
+#### Chrome Lighthouse
 
 Mobile Results
 
@@ -782,14 +672,13 @@ Desktop Results
 Index.html  
 ![][image43]
 
-### *Manual Testing* {#manual-testing}
+### *Manual Testing*
 
-### *Unit Tests* {#unit-tests}
+### *Unit Tests*
 
 ## 
 
-## **Technology used** {#technology-used}
-
+## **Technology used**
 * [Adobe Color](https://color.adobe.com/)  
 * [Adobe Firefly](https://www.adobe.com/uk/products/firefly.html)  
 * [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)  
@@ -811,41 +700,41 @@ Index.html
 * [Tailwind CSS](https://tailwindcss.com/)  
 * [Whitenoise](https://whitenoise.readthedocs.io/en/stable/django.html)
 
-## **Coding help** {#coding-help}
+## **Coding help**
 
-* Verbose names for models in the admin site \- [Django Model Admin Display](https://unfoldai.com/django-model-admin-display-name/#:~:text=Model%20instance%20display%20names,-The%20simplest%20way&text=When%20Django%20renders%20this%20model,see%20the%20actual%20country%20name.)  
+* Verbose names for models in the admin site - [Django Model Admin Display](https://unfoldai.com/django-model-admin-display-name/#:~:text=Model%20instance%20display%20names,-The%20simplest%20way&text=When%20Django%20renders%20this%20model,see%20the%20actual%20country%20name.)  
 * Help understanding returning Django model data to my website [Django model data display](https://medium.com/@justp1x3l/return-django-model-data-to-our-website-98d1e12b854d)  
 * Help putting together unit tests [GeeksforGeeks Python unit test tutorial](http://geeksforgeeks.org/python/unit-testing-python-unittest/)  
 * Help displaying images in admin model for flowers [dev.to](https://dev.to/vijaysoni007/how-to-show-images-of-the-model-in-django-admin-5hk4)  
-* Help with Tailwind tables \- [Materialtailwind.com](https://www.material-tailwind.com/docs/html/table)  
-* Help with Tailwind media query classes \- [StackOverflow](https://stackoverflow.com/questions/67446381/how-in-tailwindcss-table-hide-column-on-small-devices)  
+* Help with Tailwind tables - [Materialtailwind.com](https://www.material-tailwind.com/docs/html/table)  
+* Help with Tailwind media query classes - [StackOverflow](https://stackoverflow.com/questions/67446381/how-in-tailwindcss-table-hide-column-on-small-devices)  
 * Help understanding how to make a page for individual fableseed posts after clicking on a link \- [mostlypython.com](https://www.mostlypython.com/django-from-first-principles-part-10/)  
 * Help understanding how to extend the user model and connect it up when a new user is created [medium.com](https://medium.com/@karimdhrif4444/mastering-user-management-comprehensive-guide-to-extending-djangos-user-model-51c2ccd793d4)  
-* Help creating a stacked inline user profile added to the base user model \- [learndjango.com](https://learndjango.com/tutorials/django-userprofile-model)  
-* Help with redirecting a user to another view on submission of a form \- [geeksforgeeks](https://www.geeksforgeeks.org/python/django-redirects/)  
-* Help with querying and getting parameters in a url \- [djangocentral](https://djangocentral.com/capturing-query-parameters-of-requestget-in-django/)  
-* Help on how to build a crispy forms helper layout to style form fields with tailwind classes \- [BugBytes](https://www.youtube.com/watch?v=g-5tuE2d6JI)  
-* Django login/logout tutorial \- [learndjango.com](https://learndjango.com/tutorials/django-login-and-logout-tutorial)  
-* Extending django allauth forms \- [geeksforgeeks](https://www.geeksforgeeks.org/python/python-extending-and-customizing-django-allauth/)  
-* Styling dt and dd tags in a description list, used on the mygarden page \- [geeksforgeeks](https://www.geeksforgeeks.org/css/how-to-write-dt-and-dd-element-on-the-same-line-using-css/)  
-* Help understanding how create functionality to edit profiles \- [dev.to](https://dev.to/earthcomfy/django-update-user-profile-33ho)  
-* Help understanding GSAP SplitText \- [GSAP](https://gsap.com/docs/v3/Plugins/SplitText/)  
-* Help styling the file input type \- [Stack Overflow](https://stackoverflow.com/questions/572768/styling-an-input-type-file-button)  
-* Website for generating a CSS glow effect, also generates Tailwind CSS classes \- [notchtools.com](https://notchtools.com/css-glow-generator)  
-* OKLCH colour picker for some of the Daisy UI theme colours \- [oklch.com](https://oklch.com/#0.9612,0,0,100)
+* Help creating a stacked inline user profile added to the base user model - [learndjango.com](https://learndjango.com/tutorials/django-userprofile-model)  
+* Help with redirecting a user to another view on submission of a form - [geeksforgeeks](https://www.geeksforgeeks.org/python/django-redirects/)  
+* Help with querying and getting parameters in a url - [djangocentral](https://djangocentral.com/capturing-query-parameters-of-requestget-in-django/)  
+* Help on how to build a crispy forms helper layout to style form fields with tailwind classes - [BugBytes](https://www.youtube.com/watch?v=g-5tuE2d6JI)  
+* Django login/logout tutorial - [learndjango.com](https://learndjango.com/tutorials/django-login-and-logout-tutorial)  
+* Extending django allauth forms - [geeksforgeeks](https://www.geeksforgeeks.org/python/python-extending-and-customizing-django-allauth/)  
+* Styling dt and dd tags in a description list, used on the mygarden page - [geeksforgeeks](https://www.geeksforgeeks.org/css/how-to-write-dt-and-dd-element-on-the-same-line-using-css/)  
+* Help understanding how create functionality to edit profiles - [dev.to](https://dev.to/earthcomfy/django-update-user-profile-33ho)  
+* Help understanding GSAP SplitText - [GSAP](https://gsap.com/docs/v3/Plugins/SplitText/)  
+* Help styling the file input type - [Stack Overflow](https://stackoverflow.com/questions/572768/styling-an-input-type-file-button)  
+* Website for generating a CSS glow effect, also generates Tailwind CSS classes - [notchtools.com](https://notchtools.com/css-glow-generator)  
+* OKLCH colour picker for some of the Daisy UI theme colours - [oklch.com](https://oklch.com/#0.9612,0,0,100)
 
 
-  ## **Interesting Bugs** {#interesting-bugs}
+## **Interesting Bugs**
 
 * Discovered that the crispy forms helper layout couldn’t or wouldn’t target the select dropdown box of database flowers. Ended up styling that myself in a custom.css file after trawling through crispy layout templates for far longer than necessary.  
-* Gitignore in .venv wasn’t hiding [env.py](http://env.py) \- I had this setup from a codealong project from code institute. Added files to project level gitignore and ran git rm \-r cached to stop git from tracking and then changed my env variables and secret key.  
-* Profile image not updating when user edits via the form \- needed enctype=multipart/form-data hard-coding on the template rather than through the form in [forms.py](http://forms.py)  
-* Couldn’t figure out how to style the file input field on the edit profile for. Ended up with a a mix of styling via the Crispy forms helper layout and styling input\[type="file"\] directly in custom.css to make the file picker look like a properly styled button.  
+* Gitignore in .venv wasn’t hiding [env.py](http://env.py) - I had this setup from a codealong project from code institute. Added files to project level gitignore and ran git rm -r cached to stop git from tracking and then changed my env variables and secret key.  
+* Profile image not updating when user edits via the form - needed enctype=multipart/form-data hard-coding on the template rather than through the form in [forms.py](http://forms.py)  
+* Couldn’t figure out how to style the file input field on the edit profile for. Ended up with a a mix of styling via the Crispy forms helper layout and styling input[type="file"] directly in custom.css to make the file picker look like a properly styled button.  
 * 
 
-  ## **Credits** {#credits}
+## **Credits**
 
-### *Media* {#media}
+### *Media*
 
 * [Bas Meeuws \- Tulip \#17](https://www.the-low-countries.com/article/the-seventeenth-century-tulip-field-of-bas-meeuws/)  
 * [Smokedsystem.com \- wildfire flowers](https://smokedsystem.com/which-flowers-often-appear-after-a-wildfire/)  
