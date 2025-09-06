@@ -2,8 +2,8 @@
 This module contains Django unit tests for the Nursery app.
 
 Tests include:
-- Nursery page views
-- Fableseed and FableBranch model functionality
+- Nursery page views.
+- Fableseed and FableBranch model functionality.
 """
 
 from django.test import TestCase
@@ -15,14 +15,15 @@ from nursery.models import Fableseed, Flower, FableBranch
 
 class NurseryViewTests(TestCase):
     """
-    Tests  that the Nursery page loads successfully and
-    displays all expected content.
+    Tests  that the Nursery page loads successfully.
+    Ensure template displays all expected content.
     """
 
     def test_nursery_html_template(self):
         """
-        Test that the nursery page loads successfully,
-        uses the correct template, and contains expected text.
+        Test that the nursery page loads successfully.
+        Ensure it uses the correct template.
+        Test that the template contains expected text.
         Returns an HTTP 200 response.
         """
         response = self.client.get(reverse("nursery"))
@@ -36,21 +37,20 @@ class NurseryModelTests(TestCase):
     Tests to ensure that the nursery models work as expected.
     Tests Fableseeds and Fablebranches.
 
-    Verifies that the instances are created correctly,
-    their fields contain expected values, and their string representations behave
-    as expected, including truncation.
+    Verifies that the instances are created correctly.
+    Test fields contain expected values.
+    Ensure string representations behave as expected.
 
     """
 
     def setUp(self):
         """
-        Create initial test data for users, flowers, fableseeds and 
-        fablebranches to use across tests.
+        Create initial test data to use across tests.
         """
         self.user = User.objects.create_user(
-            username="lucytest", 
+            username="lucytest",
             password="testpassword"
-            )
+        )
         self.flower = Flower.objects.create(flower_name="Lily")
         self.seed = Fableseed.objects.create(
             flower_type=self.flower,
@@ -81,8 +81,8 @@ class NurseryModelTests(TestCase):
 
     def test_fableseed_creation_and_str(self):
         """
-        Test that a Fableseed instance is created with expected field values
-          and that its string representation returns correctly.
+        Test that a Fableseed instance is created with expected field values.
+        Test that its string representation returns correctly.
         """
         self.assertEqual(self.seed.title, "My 1st Fableseed")
         self.assertTrue(self.seed.approval_status)
@@ -92,8 +92,8 @@ class NurseryModelTests(TestCase):
 
     def test_fablebranch_creation_and_str(self):
         """
-        Test that a Fablebranch instance is created with expected field values
-        and that its string representation returns the full body and author.
+        Test that a Fablebranch instance is created with expected field values.
+        Test that string representation returns the full body and author.
         """
         self.assertEqual(self.branch.seed, self.seed)
         self.assertEqual(self.branch.body, "Story text goes here")
@@ -105,15 +105,14 @@ class NurseryModelTests(TestCase):
         """
         Test that FableBranch __str__ truncates long body text.
 
-        If the body exceeds 50 characters, it should truncate with an ellipsis
-        and include the author's username.
+        If the body exceeds 50 characters, it should truncate.
         """
         expected = f"{self.longbody[:50]}... by {self.user.username}"
         self.assertEqual(str(self.long_branch), expected)
 
     def test_fableseed_view_renders_correct_template_and_info(self):
         """
-        Test that the nursery view loads correctly and provides the expected data.
+        Test that nursery view loads correctly and provides expected data.
 
         Performs a GET request on the nursery URL and verifies:
         - HTTP response code is 200

@@ -62,15 +62,14 @@ class UserProfile(models.Model):
     Attributes:
         user (OneToOneField): Links to the Django User.
         display_name (CharField): Name shown publicly for the user.
-        profile_picture (CloudinaryField): User's profile image stored in Cloudinary.
+        profile_picture (CloudinaryField): Profile image stored in Cloudinary.
         bio (TextField): User's biography.
-        fablebuds_count (PositiveIntegerField): Number of fablebuds the user has.
+        fablebuds_count (PositiveIntegerField): Fablebuds quantity.
 
     Methods:
-        __str__: if the user has a display name, it will return that. 
+        __str__: if the user has a display name, it will return that.
         If not, it will default to their username.
-        user_profile_image_url: pulls through url of the stored image to be inserted 
-        into an img element
+        user_profile_image_url: Custom method for image url.
     """
     user = models.OneToOneField(
         User,
