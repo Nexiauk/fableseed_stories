@@ -3115,6 +3115,9 @@
   .appearance-none {
     appearance: none;
   }
+  .grid-flow-col {
+    grid-auto-flow: column;
+  }
   .grid-flow-row {
     grid-auto-flow: row;
   }
@@ -3271,11 +3274,32 @@
   .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dppks2exv\/image\/upload\/w_500\,f_avif\,dpr_auto\,q_auto\,fl_progressive\/v1756573111\/Fableseed_hero_image_qobjwh\.png\'\)\] {
     background-image: url('https://res.cloudinary.com/dppks2exv/image/upload/w_500,f_avif,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png');
   }
+  .bg-\[url\(\/static\/images\/bg1\.avif\)\] {
+    background-image: url(/static/images/bg1.avif);
+  }
+  .bg-\[url\(\/static\/images\/logo\.avif\)\] {
+    background-image: url(/static/images/logo.avif);
+  }
+  .bg-\[url\(\/static\/images\/logo_\.avif\)\] {
+    background-image: url(/static/images/logo_.avif);
+  }
+  .bg-\[url\(\/static\/images\/logo_75\.avif\)\] {
+    background-image: url(/static/images/logo_75.avif);
+  }
+  .bg-\[url\(\/static\/images\/logo_75x75\.avif\)\] {
+    background-image: url(/static/images/logo_75x75.avif);
+  }
+  .bg-none {
+    background-image: none;
+  }
   .bg-contain {
     background-size: contain;
   }
   .bg-cover {
     background-size: cover;
+  }
+  .bg-fixed {
+    background-attachment: fixed;
   }
   .bg-clip-border {
     background-clip: border-box;
@@ -3285,6 +3309,12 @@
   }
   .bg-no-repeat {
     background-repeat: no-repeat;
+  }
+  .bg-repeat {
+    background-repeat: repeat;
+  }
+  .bg-repeat-y {
+    background-repeat: repeat-y;
   }
   .mask-repeat {
     mask-repeat: repeat;
@@ -3761,6 +3791,21 @@
       grid-auto-flow: row;
     }
   }
+  .sm\:bg-\[url\(\/static\/images\/bg1\.avif\)\] {
+    @media (width >= 40rem) {
+      background-image: url(/static/images/bg1.avif);
+    }
+  }
+  .sm\:bg-contain {
+    @media (width >= 40rem) {
+      background-size: contain;
+    }
+  }
+  .sm\:bg-cover {
+    @media (width >= 40rem) {
+      background-size: cover;
+    }
+  }
   .md\:col-span-10 {
     @media (width >= 48rem) {
       grid-column: span 10 / span 10;
@@ -3863,9 +3908,29 @@
       background-image: url(/static/images/bg1.avif);
     }
   }
+  .md\:bg-contain {
+    @media (width >= 48rem) {
+      background-size: contain;
+    }
+  }
+  .md\:bg-cover {
+    @media (width >= 48rem) {
+      background-size: cover;
+    }
+  }
+  .md\:bg-fixed {
+    @media (width >= 48rem) {
+      background-attachment: fixed;
+    }
+  }
   .md\:bg-\[position\:5\%_center\] {
     @media (width >= 48rem) {
       background-position: 5% center;
+    }
+  }
+  .md\:bg-repeat-y {
+    @media (width >= 48rem) {
+      background-repeat: repeat-y;
     }
   }
   .md\:p-2 {
@@ -4012,6 +4077,11 @@
       background-size: cover;
     }
   }
+  .lg\:bg-fixed {
+    @media (width >= 64rem) {
+      background-attachment: fixed;
+    }
+  }
   .lg\:bg-\[position\:5\%_center\] {
     @media (width >= 64rem) {
       background-position: 5% center;
@@ -4020,6 +4090,26 @@
   .lg\:bg-center {
     @media (width >= 64rem) {
       background-position: center;
+    }
+  }
+  .lg\:bg-repeat {
+    @media (width >= 64rem) {
+      background-repeat: repeat;
+    }
+  }
+  .lg\:bg-repeat-round {
+    @media (width >= 64rem) {
+      background-repeat: round;
+    }
+  }
+  .lg\:bg-repeat-space {
+    @media (width >= 64rem) {
+      background-repeat: space;
+    }
+  }
+  .lg\:bg-repeat-y {
+    @media (width >= 64rem) {
+      background-repeat: repeat-y;
     }
   }
   .lg\:pt-5 {
@@ -4060,9 +4150,24 @@
       gap: calc(var(--spacing) * 6);
     }
   }
+  .xl\:bg-contain {
+    @media (width >= 80rem) {
+      background-size: contain;
+    }
+  }
+  .xl\:bg-cover {
+    @media (width >= 80rem) {
+      background-size: cover;
+    }
+  }
   .xl\:bg-\[position\:0\%_center\] {
     @media (width >= 80rem) {
       background-position: 0% center;
+    }
+  }
+  .xl\:bg-repeat-y {
+    @media (width >= 80rem) {
+      background-repeat: repeat-y;
     }
   }
   .xl\:text-6xl {

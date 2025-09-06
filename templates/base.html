@@ -31,7 +31,12 @@
 <!-- Apply different background colours based on current page -->
 <body
   class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url or request.path == about_url %}bg-base-300 {% else%}bg-primary{% endif %} 
-  md:bg-[url(/static/images/bg1.avif)] bg-contain lg:bg-cover">
+  sm:bg-[url(/static/images/bg1.avif)] 
+         {% if request.resolver_match.url_name == 'fableseed-view' %}
+            sm:bg-contain md:bg-cover lg:bg-fixed md:bg-repeat-y
+         {% else %}
+            sm:bg-contain
+         {% endif %} lg:bg-cover lg:bg-center">
   <header class="w-full">
     <div class="navbar bg-base-200 shadow border-b border-base-100">
       <div class="navbar-start flex-3 md:flex-2 lg:flex-1 gap-2 md:gap-3">
