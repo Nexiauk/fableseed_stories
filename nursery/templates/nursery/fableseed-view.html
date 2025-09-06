@@ -21,21 +21,22 @@ Title: {{fableseed.title}}
     </div>
 </dialog>
 <!-- Main Fableseed post including title, body, author details and controls -->
-<section class="grid grid-flow-row gap-4 mb-4">
+<div class="grid grid-flow-row gap-4 mb-4">
 
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
-        <div class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between">
+        <div
+            class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between">
             <p class="md:text-center font-bold mb-4">{{ fableseed.author.get_display_name }}</p>
             <img src="{{fableseed.author.userprofile.user_profile_image_url}}"
-                alt="{{fableseed.author.get_display_name}}" width="150px" height="150px">
+                alt="{{fableseed.author.get_display_name}}" width="150" height="150">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
 
 
         </div>
-        <time
-            class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</time>
+        <span
+            class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</span>
         <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
             <p>{{ fableseed.body }}</p>
@@ -52,26 +53,28 @@ Title: {{fableseed.title}}
         </div>
     </article>
 
-</section>
+</div>
 
 
 <!-- Section that contains all Fablebranch replies to the Fableseed post -->
-<section class="grid sm:grid-flow-row gap-4">
+<div class="grid sm:grid-flow-row gap-4">
     <!-- Iterates through all branches (replies) associated with this Fableseed -->
     {% if posted_branches %}
     {% for branch in posted_branches %}
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-primary-content text-base-300 rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
-        <div class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between">
+        <div
+            class="md:row-span-12 md:border-1 border-base-300 rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between">
             <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
             <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}"
-                width="150px" height="150px">
+                width="150" height="150">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
 
 
         </div>
-        <time
-            class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">{{ branch.created_on|date:"F jS, Y, g:i a" }}</time>
+        <span class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">
+            {{ branch.created_on|date:"F jS, Y, g:i a" }}
+        </span>
         <div class="md:col-span-10 md:row-span-10 mb-4">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
             <p>{{ branch.body }}</p>
@@ -96,5 +99,5 @@ Title: {{fableseed.title}}
     <div class="column mx-auto"><a href="{% url 'grow-fablebranch' fableseed.seed %}"
             class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Grow
             a Fablebranch</a></div>{% endif %}
-</section>
+</div>
 {% endblock content %}

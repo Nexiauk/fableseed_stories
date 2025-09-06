@@ -653,7 +653,19 @@ Halfway through development, I realised that storing `fablebuds_cost` on `FABLE_
 ### *Automated Testing*
 
 #### The W3C Markup Validation Service
-cultivate.html - 
+cultivate.html - No errors or warnings to show.
+Initial erors were as follows:
+Hamburger icon svg urls included https, when it should be http. Hamburger icon lives in base.html so corrected it there.
+The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
+
+fableseed-view.html - No errors or warnings to show.
+Initial errors were as follows: 
+Bad value 150px set on img elements. Removed px.
+Time element wasn't in correct format (ISO8601), so added date:"c" for proper output
+Sections do not have headings - changed them to divs as they don't need headings.
+
+
+
 
 #### The W3C CSS Validation Service
 
