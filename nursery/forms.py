@@ -1,6 +1,6 @@
 """
 Django forms for creating and editing Fableseed and FableBranch objects.
-Includes forms for planting seeds, growing branches, and editing existing content.
+Forms for planting seeds, growing branches, and editing content.
 """
 
 from django import forms
@@ -42,7 +42,9 @@ class CreateFableseed(forms.ModelForm):
                 "back",
                 "Back",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
                 onclick="history.back()"
             ),
@@ -50,7 +52,9 @@ class CreateFableseed(forms.ModelForm):
                 "submit",
                 "Plant Seed",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
             ),
         )
@@ -79,7 +83,9 @@ class CreateFablebranch(forms.ModelForm):
                 "back",
                 "Back",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
                 onclick="history.back()"
             ),
@@ -87,7 +93,9 @@ class CreateFablebranch(forms.ModelForm):
                 "submit",
                 "Grow Branch",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
             ),
         )
@@ -116,7 +124,9 @@ class EditFablebranch(forms.ModelForm):
                 "back",
                 "Back",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
                 onclick="history.back()"
             ),
@@ -124,7 +134,9 @@ class EditFablebranch(forms.ModelForm):
                 "submit",
                 "Tend",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
             ),
         )
@@ -161,7 +173,9 @@ class EditFableseed(forms.ModelForm):
                 "back",
                 "Back",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
                 onclick="history.back()"
             ),
@@ -169,7 +183,9 @@ class EditFableseed(forms.ModelForm):
                 "submit",
                 "Tend",
                 css_class=(
-                    "bg-primary mt-4 hover:bg-secondary hover:text-secondary-content"
+                    "bg-primary mt-4 "
+                    "hover:bg-secondary "
+                    "hover:text-secondary-content"
                 ),
             ),
         )

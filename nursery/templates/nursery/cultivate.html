@@ -10,13 +10,10 @@ Cultivate {{edit_type}}
 {% block content %}
 <!-- Form for creating/editing Fableseeds and Fablebranches. Form is dynamic and handles both Fableseeds and Branches depending on context. -->
 <section
-    class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md p-4 md:p-6"
-    id="create-div">
+    class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md p-4 md:p-6">
     <!-- Dynamic heading shows the type of entity being cultivated (Seed or Branch) -->
     <h2 class="mb-4 font-bold text-2xl">Cultivate {{edit_type}}</h2>
     <!-- Form for creating or editing Fableseeds or branches. Uses Crispy Forms for rendering and styling fields. ID and method pulled from form.helper-->
-    <form method="{{ form.helper.form_method }}" id="{{ form.helper.form_id }}">
         {% crispy form %}
-    </form>
 </section>
 {% endblock content %}

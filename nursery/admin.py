@@ -10,7 +10,7 @@ class FlowerAdmin(admin.ModelAdmin):
 
     def flower_image_url(self, obj):
         return format_html(
-            '<img src="{}" style="height: 50px; width: 50px;" />', 
+            '<img src="{}" style="height: 50px; width: 50px;" />',
             obj.flower_image.url
             )
 
