@@ -653,6 +653,8 @@ Halfway through development, I realised that storing `fablebuds_cost` on `FABLE_
 ### *Automated Testing*
 
 #### The W3C Markup Validation Service
+I used the text input method to validate the HTML of each page. I copied the fully rendered HTML from the browser’s page source, ensuring that all Django template variables were resolved before checking.
+
 cultivate.html - No errors or warnings to show.
 Initial erors were as follows:
 Hamburger icon svg urls included https, when it should be http. Hamburger icon lives in base.html so corrected it there.
@@ -680,6 +682,12 @@ Unclosed Div - this was the div containing the edit profile button.
 edit-profile.html - No errors or warnings to show.
 Initial errors were as follows:
 The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
+
+index.html - No errors or warnings to show.
+No initial errors.
+
+about.html - No errors or warnings to show.
+No initial errors.
 
 
 
