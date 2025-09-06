@@ -26,6 +26,7 @@ class EditProfileForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_id = "edit-profile"
         self.helper.form_method = "post"
+        self.helper.form_enctype = 'multipart/form-data'
         self.helper.layout = Layout(
             Field("display_name", css_class="rounded-sm p-2 mb-4 text-gray-700"),
             Field("bio", css_class="rounded-sm p-2 mb-4 text-gray-700"),

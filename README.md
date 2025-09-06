@@ -677,6 +677,10 @@ Initial errors were as follows:
 Bad value for height and width on img elements. Removed px.
 Unclosed Div - this was the div containing the edit profile button.
 
+edit-profile.html - No errors or warnings to show.
+Initial errors were as follows:
+The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
+
 
 
 #### The W3C CSS Validation Service
