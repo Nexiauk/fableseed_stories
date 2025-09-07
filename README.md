@@ -856,7 +856,13 @@ Final results for both:
 * Gitignore in .venv wasn’t hiding [env.py](http://env.py) - I had this setup from a codealong project from code institute. Added files to project level gitignore and ran git rm -r cached to stop git from tracking and then changed my env variables and secret key.  
 * Profile image not updating when user edits via the form - needed enctype=multipart/form-data hard-coding on the template rather than through the form in [forms.py](http://forms.py)  
 * Couldn’t figure out how to style the file input field on the edit profile for. Ended up with a a mix of styling via the Crispy forms helper layout and styling input[type="file"] directly in custom.css to make the file picker look like a properly styled button.  
-* 
+* Chrome Lighthouse performance score on index.html was poor on mobile and okay on desktop - it came back with lots of suggestions and errors I didn't understand. After using ChatGPT to help me understand what was going on, I made the following changes:
+    * Added GZip middleware to settings.py for response compression
+    * Added whitenoise compressed static storage config to serve compressed static files with caching. 
+    * Removed font awesome link from base.html and replaced with an extra_css block, then served font awesome link only on pages that actually use it - about.html and nursery.html. 
+    * Added preconnect links to google fonts in the head of base.html to allow the fonts to immediately load. 
+
+All these measures massively improved google lighthouse performance on mobile and desktop
 
 ## **Credits**
 
