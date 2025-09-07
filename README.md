@@ -793,7 +793,18 @@ and 'django.middleware.gzip.GZipMiddleware', to middleware in settings.py as it 
 Best practice is on the low side due to cookies set by Cloudinary.
 *Desktop Results*
 A good first try, network despondency tree could be improved my creating an extra css block on base.html and using that for font awesome on only the pages that use font awesome icons. I also added preconnect liks for google fonts in the head of base.html to let the fonts start downloading straightaway. These measures improved desktop and mobile performance.
-Final results for both:
+*Final results for both:*
+
+Accessibility at 95 is due to the use of aria labelling by GSAP animation library. I have split paragraph text and aria shouldn't be applied to paragraphs.
+
+**about.html**
+*Mobile results*
+*Desktop results*
+
+**Nursery.html**
+*Mobile results*
+1st result - performance low due to file format and size of plant images. Resized, changed format, replaced on cloudinary and performance improved on 2nd screenshot.
+*Desktop results*
 
 
 
