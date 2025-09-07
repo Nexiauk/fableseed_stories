@@ -716,6 +716,7 @@ ___
 
 
 #### The W3C CSS Validation Service
+The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) reports errors for @layer and @property. These are not actual mistakes -  they are rules that are part of modern CSS features: Cascade Layers (@layer) for organizing groups of CSS rules, and CSS Houdini (@property) for creating animatable, typed custom properties. Current W3C validation tools do not yet recognize these newer specifications, but all modern browsers support them.
 
 #### The JSHint Validation Service
 I used [JSHint Validation Service](https://jshint.com/) to check my JavaScript files.
