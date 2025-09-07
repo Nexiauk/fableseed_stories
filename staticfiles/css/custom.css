@@ -1,3 +1,4 @@
+/* Styling for form inputs that Crispy Tailwind doesn't support */
 select {
     padding: 0.5rem;
     border-radius: 0.25rem;
@@ -9,11 +10,21 @@ select * {
     background-color: #f2f2f2;
 }
 
+input[type="file"] {
+    max-width: 200px;
+    text-align: center;
+    padding: 0.5rem;
+    white-space: nowrap;
+    justify-content: center;
+}
+
+/* Class applied to a nav-link button when request.path matches the url variable for that page */
 .active {
     background-color:#045911;
     border-radius: 0.5rem;
 }
 
+/* Responsive styling for the MyGarden profile description list and items */
 @media screen and (min-width:768px) {
     dt {
         float: left;

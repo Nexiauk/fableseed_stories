@@ -1,3 +1,4 @@
+/* global gsap, SplitText, ScrollTrigger */
 // Registering the GSAP animation plugins for split text and Scroll Trigger
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +12,7 @@ document.fonts.ready.then(() => {
             end: "bottom 20%",     // optional end
             toggleActions: "play none none none",
         }
-    })
+    });
 
     SplitText.create(".hero-title", {
         type: "chars",
@@ -22,7 +23,7 @@ document.fonts.ready.then(() => {
                 x: 50,
                 stagger: 0.1,
                 duration: 1.5,
-            })
+            });
         }
     });
 
@@ -35,7 +36,7 @@ document.fonts.ready.then(() => {
                 y: 50,
                 stagger: 1,
                 duration: 1.5
-            }, "+=1")
+            }, "+=1");
         }
     });
 
@@ -48,7 +49,7 @@ document.fonts.ready.then(() => {
                 y: 50,
                 stagger: 1,
                 duration: 1.5,
-            }, "+=2")
+            }, "+=2");
         }
     });
 
@@ -61,7 +62,7 @@ document.fonts.ready.then(() => {
                 y: 50,
                 stagger: 1,
                 duration: 1.5,
-            }, "+=2")
+            }, "+=2");
         }
     });
 
@@ -74,7 +75,7 @@ document.fonts.ready.then(() => {
                 y: 50,
                 stagger: 1,
                 duration: 1.5,
-            }, "+=2")
+            }, "+=2");
         }
     });
 
@@ -87,7 +88,7 @@ document.fonts.ready.then(() => {
                 y: 50,
                 stagger: 1,
                 duration: 1.5,
-            }, "+=2")
+            }, "+=2");
         }
     });
 
@@ -100,7 +101,7 @@ document.fonts.ready.then(() => {
                 y: 50,
                 stagger: 1,
                 duration: 1.5,
-            }, "+=2")
+            }, "+=2");
         }
     });
 
