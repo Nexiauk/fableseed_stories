@@ -655,54 +655,94 @@ Halfway through development, I realised that storing `fablebuds_cost` on `FABLE_
 #### The W3C Markup Validation Service
 I used the text input method to validate the HTML of each page. I copied the fully rendered HTML from the browser’s page source, ensuring that all Django template variables were resolved before checking.
 
-cultivate.html - No errors or warnings to show.
+**cultivate.html**<br>
+*No errors or warnings to show.*<br>
 Initial erors were as follows:
-Hamburger icon svg urls included https, when it should be http. Hamburger icon lives in base.html so corrected it there.
-The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
+* Hamburger icon svg urls included https, when it should be http. Hamburger icon lives in base.html so corrected it there.
+* The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
+---
 
-fableseed-view.html - No errors or warnings to show.
+**fableseed-view.html**<br>
+*No errors or warnings to show.*<br>
 Initial errors were as follows: 
-Bad value for height and width set on img elements. Removed px.
-Time element wasn't in correct format (ISO8601), so added date:"c" for proper output
-Sections do not have headings - changed them to divs as they don't need headings.
+* Bad value for height and width set on img elements. Removed px.
+* Time element wasn't in correct format (ISO8601), so added date:"c" for proper output
+* Sections do not have headings - added headings.
+---
 
-nursery.html - No errors or warnings to show.
+**nursery.html** <br>
+*No errors or warnings to show.*
+Initial errors were as follows:<br>
+* Bad value for height and width on img elements. Removed px.
+* Trailing space on aria-curren page - removed the space.
+---
+
+**404.html**<br>
+*No errors or warnings to show.*
+
+---
+
+**500.html**<br>
+*No errors or warnings to show.*
+
+---
+
+**mygarden.html**<br>
+*No errors or warnings to show.*<br>
 Initial errors were as follows:
-Bad value for height and width on img elements. Removed px.
-Trailing space on aria-curren page - removed the space.
+* Bad value for height and width on img elements. Removed px.
+* Unclosed Div - this was the div containing the edit profile button.
+---
 
-404.html - No errors or warnings to show.
-500.html - No errors or warnings to show.
-
-mygarden.html - No errors or warnings to show.
+**edit-profile.html**<br>
+*No errors or warnings to show.*<br>
 Initial errors were as follows:
-Bad value for height and width on img elements. Removed px.
-Unclosed Div - this was the div containing the edit profile button.
+* The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
+---
 
-edit-profile.html - No errors or warnings to show.
-Initial errors were as follows:
-The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
-
-index.html - No errors or warnings to show.
+**index.html**<br>
+*No errors or warnings to show.*
 No initial errors.
 
-about.html - No errors or warnings to show.
+---
+
+**about.html**<br>
+*No errors or warnings to show.*
 No initial errors.
+
+___
+
 
 
 
 #### The W3C CSS Validation Service
 
 #### The JSHint Validation Service
+I used [JSHint Validation Service](https://jshint.com/) to check my JavaScript files.
+
+**script.js**<br>
+*Passed with no errors.*<br>
+Initial errors related only to missins semi-colons, which has been rectified.
+
+---
+
+**gsap.js**<br>
+*Passed with no errors.*<br>
+Initial errors related to missing semicolons and undefined variables for gsap, SplitText and ScrollTrigger, so added /* global gsap, SplitText, ScrollTrigger */ at the top of the file to prevent the error, as the global variables are loaded via CDN.
+
+---
+
 #### CI Python Linter
-https://pep8ci.herokuapp.com/
-Nursery - models.py - All clear, no errors found
-Nursery - views.py - All clear, no errors found
-Nursery - urls.py - All clear, no errors found
-Nursery - tests.py - All cleaar, no errors found
-Nursery - forms.py - All clear, no errors found
-Nursery - apps.py - All clear, no errors found
-Nursery - admin.py - All clear, no errors found
+I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/), along with the [VS Code autopep8 formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8#:~:text=The%20autopep8%20extension%20for%20Visual,how%20to%20customize%20this%20extension.&text=Customize%20autopep8%3A%20You%20can%20customize,args%20setting.) to ensure that my python files met [PEP8](https://peps.python.org/pep-0008/) standards.
+All initial checks came back with errors, such as trailing spaces and lines that were too long. The list below is for the final check of each file.
+
+* Nursery - models.py - *All clear, no errors found*
+* Nursery - views.py - *All clear, no errors found*
+* Nursery - urls.py - *All clear, no errors found*
+* Nursery - tests.py - *All cleaar, no errors found*
+* Nursery - forms.py - *All clear, no errors found*
+* Nursery - apps.py - *All clear, no errors found*
+* Nursery - admin.py - *All clear, no errors found*
 
 
 #### The WAVE Webb Accessibility Evaluation Tool
