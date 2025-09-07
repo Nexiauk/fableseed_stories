@@ -758,6 +758,13 @@ All initial checks came back with errors, such as trailing spaces and lines that
 
 **nursery.html**
 1 error relating to an empty table header. Rectified this by adding a font awesome icon.
+0 errors.
+
+**view-fableseed.html**
+0 errors
+
+**cultivate.html**
+0 errors
 
 **login.html**
 0 errors
@@ -768,16 +775,26 @@ All initial checks came back with errors, such as trailing spaces and lines that
 **mygarden.html**
 0 errors
 
+**edit-profile.html**
+0 errors
+
+**404.html**
+0 errors
+
+**500.html**
+This page is a duplicate of 400.html
+
 #### Chrome Lighthouse
 
-Mobile Results
+**Index.html**
+*Mobile Results*
+Performance was at 80, so added STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" to settings.py, as it serves compressed static files with cashing
+and 'django.middleware.gzip.GZipMiddleware', to middleware in settings.py as it compresses responses like HTML, JSON and sometimes CSS/JS.
+Best practice is on the low side due to cookies set by Cloudinary.
+*Desktop Results*
+A good first try, network despondency tree could be improved my creating an extra css block on base.html and using that for font awesome on only the pages that use font awesome icons. I also added preconnect liks for google fonts in the head of base.html to let the fonts start downloading straightaway. These measures improved desktop and mobile performance.
+Final results for both:
 
-Index.html  
-
-
-Desktop Results
-
-Index.html  
 
 
 ### *Manual Testing*

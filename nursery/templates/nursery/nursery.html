@@ -1,6 +1,9 @@
 <!-- Template for rendering approved Fableseeds into a paginated table. Loops through approved Fableseed posts only. -->
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css %}
+  <script src="https://kit.fontawesome.com/0b96933893.js" crossorigin="anonymous"></script>
+  {% endblock %}
 <!-- Django filters for adding a human touch to data - used for dates in the nursery table -->
 {% load humanize %}
 
@@ -24,7 +27,7 @@ Nursery
         <table id="fableseed-list" class="table-fixed w-full min-w-max text-left">
             <thead>
                 <tr>
-                    <th class="w-17 icon border-b border-r border-secondary bg-base-300 text-center"><i class="fa-solid fa-seedling text-primary-content text-xl"></i></th>
+                    <th class="w-17 icon border-b border-r border-secondary bg-base-300 text-center" aria-label="Delete"><i class="fa-solid fa-seedling text-primary-content text-xl" aria-hidden="true"></i></th>
                     <th class="p-2 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
                     <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
                     <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Date created
