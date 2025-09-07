@@ -2,7 +2,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path("nursery/", views.nursery_view, name="nursery"),
+    path("", views.nursery_view, name="nursery"),
     path("accounts/", include("allauth.urls")),
     path(
         "fableseed-view/<int:seed>/",

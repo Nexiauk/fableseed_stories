@@ -11,7 +11,7 @@ Nursery
 {% block content %}
 <!-- Nursery section shows a paginated table of all approved Fableseed seeds -->
 <section class="grid grid-flow-row gap-4 mb-4" id="nursery-table">
-    <h2 class="text-center text-4xl font-merriweather">The Nursery</h2>
+    <h2 class="text-center text-4xl font-merriweather"></h2>
     <!-- 'Plant a seed' button only visible to authenticated users. Triggers the 'plant-fableseed' view -->
     {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}"
             class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant
@@ -24,7 +24,7 @@ Nursery
         <table id="fableseed-list" class="table-fixed w-full min-w-max text-left">
             <thead>
                 <tr>
-                    <th class="w-17 icon border-b border-r border-secondary bg-base-300"></th>
+                    <th class="w-17 icon border-b border-r border-secondary bg-base-300 text-center"><i class="fa-solid fa-seedling text-primary-content text-xl"></i></th>
                     <th class="p-2 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
                     <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
                     <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Date created

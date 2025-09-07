@@ -716,7 +716,9 @@ ___
 
 
 #### The W3C CSS Validation Service
-The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) reports errors for @layer and @property. These are not actual mistakes -  they are rules that are part of modern CSS features: Cascade Layers (@layer) for organizing groups of CSS rules, and CSS Houdini (@property) for creating animatable, typed custom properties. Current W3C validation tools do not yet recognize these newer specifications, but all modern browsers support them.
+The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) reports errors for @layer and @property. These are not actual mistakes -  they are rules that are part of modern CSS features: Cascade Layers (@layer) for organizing groups of CSS rules, and CSS Houdini (@property) for creating animatable, typed custom properties. Current W3C validation tools do not yet recognize these newer specifications, but all modern browsers support them.<br>
+
+There were no other warnings or errors - all clear.
 
 #### The JSHint Validation Service
 I used [JSHint Validation Service](https://jshint.com/) to check my JavaScript files.
@@ -747,6 +749,24 @@ All initial checks came back with errors, such as trailing spaces and lines that
 
 
 #### The WAVE Webb Accessibility Evaluation Tool
+
+**index.html**
+0 errors
+
+**about.html**
+0 errors
+
+**nursery.html**
+1 error relating to an empty table header. Rectified this by adding a font awesome icon.
+
+**login.html**
+0 errors
+
+**signup.html**
+0 errors
+
+**mygarden.html**
+0 errors
 
 #### Chrome Lighthouse
 
