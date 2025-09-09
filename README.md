@@ -788,11 +788,11 @@ This page is a duplicate of 400.html
 
 **Index.html**
 *Mobile Results*
-Performance was at 80, so added STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" to settings.py, as it serves compressed static files with cashing
-and 'django.middleware.gzip.GZipMiddleware', to middleware in settings.py as it compresses responses like HTML, JSON and sometimes CSS/JS.
+Performance was at 80, so added STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" to settings.py, as it serves compressed static files with caching
+and, 'django.middleware.gzip.GZipMiddleware' to middleware in settings.py as it compresses responses like HTML, JSON and sometimes CSS/JS.
 Best practice is on the low side due to cookies set by Cloudinary.
 *Desktop Results*
-A good first try, network despondency tree could be improved my creating an extra css block on base.html and using that for font awesome on only the pages that use font awesome icons. I also added preconnect liks for google fonts in the head of base.html to let the fonts start downloading straightaway. These measures improved desktop and mobile performance.
+Initial tests indicated that etwork despondency tree could be improved - created an extra css block on base.html and used that for font awesome on only the pages that use font awesome icons. I also added preconnect links for google fonts in the head of base.html, to let the fonts start downloading straightaway instead of waiting for the stylesheets to load. These measures improved desktop and mobile performance.
 *Final results for both:*
 
 Accessibility at 95 is due to the use of aria labelling by GSAP animation library. I have split paragraph text and aria shouldn't be applied to paragraphs.
@@ -803,9 +803,43 @@ Accessibility at 95 is due to the use of aria labelling by GSAP animation librar
 
 **Nursery.html**
 *Mobile results*
-1st result - performance low due to file format and size of plant images. Resized, changed format, replaced on cloudinary and performance improved on 2nd screenshot.
+Performance low due to file format and size of plant images. Resized, changed format, replaced on cloudinary and performance improved.
 *Desktop results*
 
+**view-fableseed.html**
+*Mobile results*
+Best practice score adversely impacted by the cloudinary cookies, which are abundant on this page due to the use of the placeholder imager that is stored on cloudinary and used for all profiles that haven't selected their own profile image.
+*Desktop results*
+
+**cultivate.html**
+*Mobile results*
+*Desktop results*
+
+**login.html**
+*Mobile results*
+*Desktop results*
+
+**signup.html**
+*Mobile results*
+*Desktop results*
+
+**mygarden.html**
+*Mobile results*
+*Desktop results*
+
+**edit-profile.html**
+*Mobile results*
+*Desktop results*
+
+**404.html**
+*Mobile results*
+*Desktop results*
+
+**500.html**
+*Mobile results*
+*Desktop results*
+
+Best Practice score was relatively low on all pages across mobile and desktop, worse on desktop than on mobile. This came directly from the fact that Cloudinary assets come from res.cloudinary.com, a 3rd party domain, and Chrome is phasing out third party cookies. My images load fine and give good perofmrance, but I can't fix Cloudinary's cookie headers because its on their CDN configuration. I tried adding CLOUDINARY_STORAGE = {'SECURE': True,} to settings.py, but it didn't help in the slightest and adversely affected the performance of the pages, so I took it back out again. I double-checked my images by opening them up in a new tab to look at their urls, and they are being delivered securely by https and appear as 'Allowed" in the trust and safety section of Best Practice. I think for a future project I would look into an alternative image-hosting site which doesn't cause these best practice issues.
 
 
 ### *Manual Testing*
