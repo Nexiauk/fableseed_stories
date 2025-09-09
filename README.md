@@ -389,16 +389,24 @@ ChatGPT gave me some useful insights, which can be found at this link: [ChatGPT 
 #### Wireframes
 I was inspired by collaborative storytelling platforms that I used to frequent on Proboards and FreeForums. [Here is a link to Event Horizon,](https://eventhorizon.freeforums.net/) a site I created myself more than 10 years ago. I wanted to keep the same sort of boxy, table-style vibe that freeforums and proboards have as a sort of homage, as well as it being a neat way to display many Fableseeds and their content.
 
+I started by creating my wireframes on a Canva whiteboard just so I could be as messy as I liked and move things about. I then transferred these into a [Canva website mockup](https://www.canva.com/design/DAGyZh0LIn0/oZaWEPu1ycptgKwQmzO8Mw/view?utm_content=DAGyZh0LIn0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3a80639be5) for mobile and desktop.
+
+
 ![][image40]
 
 #### End product design changes
+I think my end product is very representative of my original wireframe design. I had a very clear image of the vibrant colour scheme I wanted to use and the style of site I wanted to create. The Fableseed list is purposefully a table rather than something more modern, like cards, as a nostalgic throwback, although I hope my table is better looking and prettier than the original Proboards ones.
+
+The only significant change to the end product was the background image that I overlaid my background colour with. It just felt like it was missing a pretty *something* and that something turned out to be flowers - which is part of Fableseed's core mechanics. I found a frame I liked in Canva, made it transparent, 'glued' several iterations of the frame together and rotated it to sit nicely on desktop. I've purposefully chosen to hide it on mobile to leave the design uncluttered on smaller screens. It's also layered over a different coloured-background on index.html, but that darker background was part of the original design as a striking entry into the site.
+
+I also decided that I wanted to explore GSAP animations. It's something I wanted to do in my last project and didn't get a chance, so I introduced SplitText and Scrolltrigger for a slowly unfolding storybook feel. The only issue I have with this is that GSAP automatically applies aria hidden to the elements and aria hidden shouldn't be paired with paragraphs, so this gives errors for accessibility. I tried changing to divs instead but the layout was silly and still produced the errors, probably because lighthouse has decided that the aria-hidden is unnecessary or prohibitive to screen-readers, even though the aria-hidden is removed as the elements appear.
 
 ## **Features**
 ### *Users*
 * Register/login/logout
 * User profile: “My Garden” showing stories planted or contributed to  
-  * Add Display Name, Profile picture, Bio  
-  * Edit profile
+  * Display Name, Profile picture, Bio  
+  * Edit profile, which allows an image change by the user.
 
 ### *Stories*
 * Users create a **Story Seed** (title + intro)
@@ -407,12 +415,20 @@ I was inspired by collaborative storytelling platforms that I used to frequent o
 * Admin approval system for seeds
 
 ### *Incentivisation System*
-* Creating a story seed grants \+1 Fablebud {#creating-a-story-seed-grants-+1-fablebud}
-* Spend \+1 Fablebud to add a chapter (branch)
-* Each branch grants \+1 flower
-* Flower quantity increases with each branch posted
+* Each branch posted on a a Fableseed with a previously uncollected flower, grants that flower to the user's garden
+* Flower quantity increases by +1 with each branch posted
+* +1 Fablebud granted to the user's profile
+* Fablebud spend to post branches - not currently implemented.
 
 ### *Responsiveness*
+Fableseed has been built mobile-first and is responsive on screen sizes from 320px through to 2560px. Tailwind breakpoints have been applied to classes across many different elements to ensure that they look good, are legible, and resize nicely. 
+* I did a lot of experimentation with trying to get the background overlay image looking nice.
+* The navigation menu collapses on mobile and tablet and opens via a burger icon.
+* The nursery table hides all of the columns aside from Flower and title on mobile, which is all you really need to get going on Fableseed, especially as the autho and created info is on the fableseed view.
+* Fableseeds and Fablebranches have a stacked internal layout on mobile, inclusive of the Tend and Prune buttons.
+* My Garden also stacks the profile area on mobile and implements flex on the Earned flowers section.
+* The timeline on the About page alternates steps from left to right on tablets and up, but on mobile it all sits on the same side to make full use of the smaller space.
+* Crispy Forms has been used and allowed to handle form responsiveness across devices. I have used the Crispy form helper layout in forms.py to apply additional styling
 
 ### *Header*
 
@@ -423,6 +439,8 @@ I was inspired by collaborative storytelling platforms that I used to frequent o
 ### *Nursery Page*
 
 ### *User Garden*
+
+### *About Page*
 
 ##  **Security Features**
 ### *Authentication & User Management*
