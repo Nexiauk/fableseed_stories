@@ -67,7 +67,7 @@ This collaborative storytelling forum has been created as a project during my [C
 * [Media](#media)
 
 ## **Welcome to Fableseed**
-A collaborative storytelling platform where stories grow like plants and words breathe life into a blooming world. Users plant seeds of stories (i.e. story starters), and other users add branches (chapters/replies) to grow the story. Each story “grows” like a plant, with branching paths and twists with each piece of user-generated creativity. Think mini-Wattpad meets Choose-Your-Own-Adventure — with full CRUD built in.
+A collaborative storytelling platform where stories grow like plants and words breathe life into a blooming world. Users plant seeds of stories (story starters), and other users add branches (replies) to grow the story. Each story “grows” like a plant, with branching paths and twists with each piece of user-generated creativity. Think mini-Wattpad meets Choose-Your-Own-Adventure — with full CRUD built in.
 
 In Fableseed, stories are as essential as oxygen.
 
@@ -102,15 +102,15 @@ And with them, you grow the last garden at the end of the world. {#and-with-them
 ## **Inspiration**
 I’m a person who likes to read and write, and who tries to come up with creative ways to get others to enjoy reading and writing, too. My passion for stories and storytelling began with books when I was a kid, but then extended into online, collaborative storytelling forums when I was a teenager. This lasted until I was almost 30, when life got super busy.
 
-10 years later my life finally settled down a bit, but when I poked about on the net I discovered that those collaborative storytelling platforms didn’t exist anymore. All I could find were fan fiction sites - there’s nothing wrong with fan fiction sites, I just wanted to find a place where I could make my own characters and evolve them within a shared story world.
+10 years later my life finally settled down a bit, but when I poked about on the net I discovered that those collaborative storytelling platforms didn’t exist anymore. All I could find were fan fiction sites - there’s nothing wrong with fan fiction sites, I just wanted to find a place where I could make my own stories and evolve them within a shared world.
 
-So when it came time to start my 3rd project as part of Code Institute’s Level 5 in Webb App Development, I had an inkling of what I wanted to create but not the confidence to plough ahead. I figured I probably needed to do something a bit more sensible this time around, something that addresses a customer need, or solves a business problem, that shows how diverse I can be across different sectors and industries.
+So when it came time to start my 3rd project as part of Code Institute’s Level 5 in Web App Development, I had an inkling of what I wanted to create but not the confidence to plough ahead. I figured I probably needed to do something a bit more sensible this time around, something that addresses a customer need, or solves a business problem, that shows how diverse I can be across different sectors and industries.
 
-I settled on an induction booking system for the library I work in \- we were using Microsoft bookings and I thought maybe I could create something more customisable to our needs. But I sat at my computer and, instead of planning out the models for a booking system, I sat dreaming about my storytelling platform. How I could use it with my students in the Gameracy programme to get them reading, and writing stories based on small prompts. How they could use those stories and characters in their own games they were creating using [TWINE](https://twinery.org/).
+I settled on an induction booking system for the library I work in - we were using Microsoft bookings and I thought maybe I could create something more customisable to our needs. But I sat at my computer and, instead of planning out the models for a booking system, I sat dreaming about my storytelling platform. How I could use it with my students in the Gameracy programme to get them reading, and writing stories based on small prompts. How they could use those stories and characters in their own games they were creating using [TWINE](https://twinery.org/).
 
-To stop the madness, I plugged the project criteria into ChatGPT and asked it to make suggestions on projects based on those criteria and the short timeframe, as well as taking into account the style and inspiration behind [Lila’s Lost Words](https://nexiauk.github.io/Lila/). 
+To stop the madness, I plugged the project criteria into ChatGPT and asked it to make suggestions on projects based on the criteria and the short timeframe, as well as taking into account the style and inspiration behind [Lila’s Lost Words](https://nexiauk.github.io/Lila/). 
 
-My prompt: “The task is to create something like a restaurant booking system, or a reddit style news site, as the project has to showcase CRUD capabilities but I don't want to create something that boring\!”
+My prompt: “The task is to create something like a restaurant booking system, or a reddit style news site, as the project has to showcase CRUD capabilities but I don't want to create something that boring!”
 
 ChatGPT immediately suggested I create a collaborative storytelling forum and that was that: Fableseed was born.
 
@@ -153,10 +153,10 @@ ChatGPT immediately suggested I create a collaborative storytelling forum and th
 * Educational Users - Teachers and students using Fableseed in learning environments.  
 * Gamified & Puzzle-Oriented Users - Players and interactive fiction fans interested in story-unlocking mechanics.
 
-### *User Stories* {#user-stories}
+### *User Stories*
 I used a [Github Kanban Board](https://github.com/users/Nexiauk/projects/8) to track my user stories and development tasks and help keep me on track.
 
-#### Guests {#guests}
+#### Guests
 Prospective users who want to browse the forum, read some content and see if they want to join up. Guests shouldn’t be able to create content and have limited access to posted content.
 
 As a guest:
@@ -224,7 +224,7 @@ Purple tulips represent royalty and rebirth, black tulips represent power and st
 * **Queen of Night tulips are** known for their rich purple-black colour.  
   ![][image4]
 
-#### Colour Palette
+#### **Colour Palette**
 
 Using [Adobe Colour](https://color.adobe.com/) I plugged an image of each tulip into the [Extract Theme](https://color.adobe.com/create/image) tool and generated a palette of colours.
 
@@ -233,13 +233,14 @@ Using [Adobe Colour](https://color.adobe.com/) I plugged an image of each tulip 
 
 **Black Parrot 1**
 ![][image6]
+
 **Queen of Night**
 ![][image7]
 
 **Black Parrot 2**
 ![][image8]
 
-I decided to go with the **Black Parrot 1** for its balanced mix of greens and purples, with a lighter colour suitable for text. I also took Woodsmoke (almost black) from **Black Parrot 2.**
+I decided to go with **Black Parrot 1** for its balanced mix of greens and purples, with a lighter colour suitable for text. I also took Woodsmoke (almost black) from **Black Parrot 2.**
 
 [Colorkit](https://colorkit.co/color/6830c1/) was used to find the closest matching Tailwind colours.
 
@@ -280,7 +281,7 @@ oklch(0.6477 0.1888 135.3)
 **Closest Tailwind Colour:** grey-100  
 oklch(0.9612 0 0)
 
-#### Colour Accessibility
+#### **Colour Accessibility**
 According to [Adobe colour’s accessibility](https://color.adobe.com/create/color-accessibility) tool, the Black Parrot theme was colour blind safe. 
 
 [Adobe’s colour contract checker](https://color.adobe.com/create/color-contrast-analyzer) showed the following colour pairings to be accessible:
@@ -302,7 +303,7 @@ I decided to add the [Daisy UI](https://daisyui.com/) Tailwind plugin to my buil
 
 ![][image16]
 
-#### Imagery
+#### **Imagery**
 I searched the internet with a clear image in mind of a flower growing from a post-apocalyptic city. My first inspiration came from this photo from an article about flowers that grow after wildfires. - [see credits section](#credits)
 
 ![][image17]
@@ -378,7 +379,7 @@ The Great Vibes font is nicely formed and easy to read at a larger font size. It
 A sans-serif font known for its readability on screens, particularly at smaller sizes, and its traditional feel. With italics applied, double storey letters become single storey letters, ideal for people with specific learning difficulties. It’s traditional in style, despite the modern shapes it has adopted.
 
 * **Inclusive Sans**
-Inclusive Sans is a text font designed for accessibility and readability. It fits very cohesively with Merriweather as they are both San-serif, so it also contrasts well with the title/logo font, Great Vibes.
+A text font designed for accessibility and readability. It fits cohesively with Merriweather as they are both San-serif, so it also contrasts well with the title/logo font, Great Vibes.
 
 I’d also looked at Raleway as a choice for the sub-headings, as it also changes double storey letters into single storey with italics applied. So, I had a chat with ChatGPT about the suitability and feel of the scheme with each sub-heading font applied.
 
@@ -386,7 +387,7 @@ ChatGPT gave me some useful insights, which can be found at this link: [ChatGPT 
 
 ![][image39]
 
-#### Wireframes
+#### **Wireframes**
 I was inspired by collaborative storytelling platforms that I used to frequent on Proboards and FreeForums. [Here is a link to Event Horizon,](https://eventhorizon.freeforums.net/) a site I created myself more than 10 years ago. I wanted to keep the same sort of boxy, table-style vibe that freeforums and proboards have as a sort of homage, as well as it being a neat way to display many Fableseeds and their content.
 
 I started by creating my wireframes on a Canva whiteboard just so I could be as messy as I liked and move things about. I then transferred these into a [Canva website mockup](https://www.canva.com/design/DAGyZh0LIn0/oZaWEPu1ycptgKwQmzO8Mw/view?utm_content=DAGyZh0LIn0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3a80639be5) for mobile and desktop.
@@ -399,7 +400,7 @@ I think my end product is very representative of my original wireframe design. I
 
 The only significant change to the end product was the background image that I overlaid my background colour with. It just felt like it was missing a pretty *something* and that something turned out to be flowers - which is part of Fableseed's core mechanics. I found a frame I liked in Canva, made it transparent, 'glued' several iterations of the frame together and rotated it to sit nicely on desktop. I've purposefully chosen to hide it on mobile to leave the design uncluttered on smaller screens. It's also layered over a different coloured-background on index.html, but that darker background was part of the original design as a striking entry into the site.
 
-I also decided that I wanted to explore GSAP animations. It's something I wanted to do in my last project and didn't get a chance, so I introduced SplitText and Scrolltrigger for a slowly unfolding storybook feel. The only issue I have with this is that GSAP automatically applies aria hidden to the elements and aria hidden shouldn't be paired with paragraphs, so this gives errors for accessibility. I tried changing to divs instead but the layout was silly and still produced the errors, probably because lighthouse has decided that the aria-hidden is unnecessary or prohibitive to screen-readers, even though the aria-hidden is removed as the elements appear.
+I also decided that I wanted to explore GSAP animations. It's something I wanted to do in my last project and didn't get a chance, so I introduced SplitText and Scrolltrigger for a slowly unfolding storybook feel on the homepage. The only issue I have with this is that GSAP automatically applies aria hidden to the elements and aria hidden shouldn't be paired with paragraphs, so this gives errors for accessibility. I tried changing to divs instead but the layout was silly and still produced the errors, probably because lighthouse has decided that the aria-hidden is unnecessary or prohibitive to screen-readers, even though the aria-hidden is removed as the elements appear.
 
 ## **Features**
 ### *Users*
@@ -412,7 +413,6 @@ I also decided that I wanted to explore GSAP animations. It's something I wanted
 * Users create a **Story Seed** (title + intro)
 * Story seeds approved by admin
 * Others can contribute **Branches** (replies on seed threads)
-* Admin approval system for seeds
 
 ### *Incentivisation System*
 * Each branch posted on a a Fableseed with a previously uncollected flower, grants that flower to the user's garden
@@ -424,7 +424,7 @@ I also decided that I wanted to explore GSAP animations. It's something I wanted
 Fableseed has been built mobile-first and is responsive on screen sizes from 320px through to 2560px. Tailwind breakpoints have been applied to classes across many different elements to ensure that they look good, are legible, and resize nicely. 
 * I did a lot of experimentation with trying to get the background overlay image looking nice.
 * The navigation menu collapses on mobile and tablet and opens via a burger icon.
-* The nursery table hides all of the columns aside from Flower and title on mobile, which is all you really need to get going on Fableseed, especially as the autho and created info is on the fableseed view.
+* The nursery table hides all of the columns aside from Flower and title on mobile, which is all you really need to get going on Fableseed, especially as the author and created info is on the fableseed view.
 * Fableseeds and Fablebranches have a stacked internal layout on mobile, inclusive of the Tend and Prune buttons.
 * My Garden also stacks the profile area on mobile and implements flex on the Earned flowers section.
 * The timeline on the About page alternates steps from left to right on tablets and up, but on mobile it all sits on the same side to make full use of the smaller space.
@@ -459,6 +459,7 @@ Fableseed has been built mobile-first and is responsive on screen sizes from 320
 ### *Permissions & Roles*
 Users:
 *  Can create, edit, and delete their own Fableseeds and FableBranches, and edit their own Profiles (cannot delete them).
+* Seeds with existing Branches cannot be deleted by regular users, protecting relational integrity.
 
 Admins:
 * Can create, edit, and delete any Fableseed or FableBranch.  
@@ -467,14 +468,13 @@ Admins:
 
 Guests: 
 * Can view content but cannot create, edit, or delete.  
-* Seeds with existing Branches cannot be deleted by regular users, protecting relational integrity.
 
 ### *Environment Variables*
 * Sensitive data is stored securely in an env.py file, which is hidden via .gitignore.  
 * Keys and settings stored in env.py include:  
-* SECRET_KEY (Django project key)  
-* DATABASE_URL (PostgreSQL database connection)  
-* CLOUDINARY_URL (media storage)  
+    * SECRET_KEY (Django project key)  
+    * DATABASE_URL (PostgreSQL database connection)  
+    * CLOUDINARY_URL (media storage)  
 * .venv (virtual environment) is also excluded from GitHub, ensuring no dependencies or system files are exposed.
 
 ### *Deployment Security*
@@ -483,6 +483,8 @@ Guests:
 * All environment-specific settings are managed securely via env.py.
 
 ## **Future Features**
+* Fully working Fablebud economy system
+* Full history list of Fableseeds and Fablebranches on the user profile
 * Filter by: most grown stories, newest seeds, flowers
 * Search by: specific flowers
 * Visual story tree (JS or D3.js)
@@ -506,7 +508,7 @@ This Entity Relationship Diagram for Fableseed was created using [Mermaid](https
 ![][image41]
 
 ### *Overview*
-This module contains the Django models for the **Fableseed** application, a storytelling platform where users create story seeds, branch stories, and earn flower rewards.  
+This section contains the Django models for the **Fableseed** application, a storytelling platform where users create story seeds, branch stories, and earn flower rewards.  
 
 **Models included:**
 - **Fableseed**: Story seeds created by users.  
@@ -521,7 +523,7 @@ The project uses Django’s built-in `User` model extended via a `UserProfile`.
 
 **USER ||--|| USER_PROFILE : "has profile"**  
 Each user has exactly one profile.  
-The profile stores extended info like display name, picture, and bio, while the base USER holds login credentials nad name.
+USER_PROFILE stores extended info like display name, picture, and bio, while the base USER holds login credentials and name.
 
 ---
 
@@ -566,13 +568,13 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 
  ---
 **Explanation:**
-- Each **user** has exactly **one profile** (`USER_PROFILE`).  
+- Each **user** has exactly **one profile**  
 - A **user** can write many **Fableseeds** and **FableBranches**.  
 - Each **Fableseed** can grow into multiple **FableBranches**.  
 - Each **Fableseed** is assigned exactly **one flower type**, shared across seeds.  
-- Users can earn multiple flowers (`USER_FLOWER`) as rewards.  
+- Users can earn multiple flowers as rewards.  
 - Each **flower** type can be earned by many users.  
-- A **FableBranch** can earn exactly **one flower type**, with the quantity stored in `USER_FLOWER`.  
+- A **FableBranch** can earn exactly **one flower type**, but the quantity can be increased by further branches of the same flower type.  
 ### *Model Fields*
 
 **USER**
@@ -587,7 +589,7 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 | Field | Type | Notes |
 |-------|------|------|
 | id | int PK | Primary key |
-| user_id | int FK | One-to-one link to `USER` |
+| user| int FK | One-to-one link to `USER` |
 | display_name | CharField | Name displayed in the app |
 | profile_picture | CloudinaryField | User avatar |
 | bio | TextField | Short biography |
@@ -617,7 +619,7 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 | author | FK | References `USER` (SET_NULL on deletion) |
 | fablebuds_cost | PositiveIntegerField | **Deprecated** — now determined by flower type |
 ---
-**FLOWERS**
+**FLOWER**
 | Field | Type | Notes |
 |-------|------|------|
 | flower | AutoField PK | Primary key |
@@ -629,27 +631,12 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 | Field | Type | Notes |
 |-------|------|------|
 | id | AutoField PK | Primary key |
-| user_id | FK | References `USER` |
-| flower_id | FK | References `FLOWERS` |
+| user | FK | References `USER` (CASCADE on deletion)|
+| flower | FK | References `FLOWERS` (PROTECT on deletion) |
 | quantity | PositiveIntegerField | Number of this flower earned by the user |
-| earned_from_seed_id | FK | References `FABLESEED` |
-| earned_from_branch_id | FK | References `FABLE_BRANCH` |
+| earned_from_seed | FK | References `FABLESEED` (CASCADE on deletion) |
+| earned_from_branch | FK | References `FABLE_BRANCH` (CASCADE on deletion) |
 | earned_on | DateTimeField | Timestamp of earning |
----
-
-### *Cardinalities Table*
-
-| Relationship | Type | Meaning |
-|--------------|------|---------|
-| USER → USER_PROFILE | 1..1 to 1..1 | Each user has exactly one profile. |
-| USER → FABLESEED | 1..1 to 0..* | A user can write many seeds. Each seed has one author. |
-| USER → FABLE_BRANCH | 1..1 to 0..* | A user can write many branches. Each branch has one author. |
-| FABLESEED → FABLE_BRANCH | 1..1 to 0..* | A seed can have many branches. Each branch belongs to one seed. |
-| FABLESEED → FLOWERS | 1..1 to 0..* | Each seed must have one flower type. A flower type can belong to many seeds. |
-| USER → USER_FLOWER | 1..1 to 0..* | A user can earn many flowers. Each earned flower belongs to one user. |
-| FLOWERS → USER_FLOWER | 1..1 to 0..* | A flower type can be earned by many users. |
-| FABLE_BRANCH → USER_FLOWER | 1..1 to 0..1 | A branch can earn one flower type. Quantity is tracked per user. |
-
 ---
 
 ### *Design Notes*
@@ -669,19 +656,64 @@ Halfway through development, I realised that storing `fablebuds_cost` on `FABLE_
 ### *User Story Testing*
 
 ### *Automated Testing*
+#### **Garden App test**
+* Test that the extended user profile fields are setup correctly when a user UserProfile is created. 
+    * Includes initial test data for a user.
+    * Tests that the receiver signal creates or updates a userProfile when a User instance is created.
+    * Assertions:
+        * A UserProfile exists for the user.
+        * display_name is equal to the user’s username ("lucytest").
+        * bio defaults to the string "Hi".
+        * profile_picture is set (not empty/None → must be truthy).
+        * fablebuds_count defaults to 0.
+    * **Test passed.**
 
-#### The W3C Markup Validation Service
+#### **Nursery App tests**
+* Initial single test to ensure the Nursery page loads successfully and the template displays all expected content.
+    * Test the page loads successfully
+    * Ensure it uses correct template
+    * test that the template contains expected text
+    * Returns an HTTP response
+    * Assertions:
+        * response.status_code is 200
+        * Template used is nusery/nursery.html
+        * Page contains the text "test content2
+    * **Test passed.**
+
+* Multiple tests to ensure the Nursery models work as expected.
+    * Tests Fableseeds and Fablebranches
+    * Verifies that the instances are created correctly
+    * Test fields contain expected values
+    * Ensure string representations behave as expected
+    * Includes initial test data for use across multiple tests
+    * Assertions:
+        * Fableseed instance has a title, body, approval status and fablebuds earnt
+        * Fablebranch instance has a body, author and fablebuds cost
+        * string representation for fableseed returns "title by username"
+        * string represnetation for fablebranch returns "body by username"
+        * Verifies if a Fablebranch body exceeds 50 characters for truncation
+        * Fablebranch string representation truncated with "...by username"
+        * GET request to the nursery URL returns HTTP200
+        * The correct template nursery/nursery.html is used
+        * Context contains fableseed_list
+        * Predefined Fableseed created in setup is included in fableseed_list
+    * **All tests passed**
+
+
+#### **The W3C Markup Validation Service**
 I used the text input method to validate the HTML of each page. I copied the fully rendered HTML from the browser’s page source, ensuring that all Django template variables were resolved before checking.
 
 **cultivate.html**<br>
-*No errors or warnings to show.*<br>
+*No errors or warnings to show.*
+
 Initial erors were as follows:
 * Hamburger icon svg urls included https, when it should be http. Hamburger icon lives in base.html so corrected it there.
-* The crispy form was wrapped in form tags, which doubled it up. Removed the form tags.
+* The crispy form was wrapped in form tags, which doubled it up once rendered. Removed the form tags.
 ---
 
-**fableseed-view.html**<br>
-*No errors or warnings to show.*<br>
+**fableseed-view.html**
+*No errors or warnings to show.*
+
 Initial errors were as follows: 
 * Bad value for height and width set on img elements. Removed px.
 * Time element wasn't in correct format (ISO8601), so added date:"c" for proper output
@@ -697,11 +729,13 @@ Initial errors were as follows:<br>
 
 **404.html**<br>
 *No errors or warnings to show.*
+No initial errors.
 
 ---
 
 **500.html**<br>
 *No errors or warnings to show.*
+No initial errors.
 
 ---
 
@@ -709,7 +743,7 @@ Initial errors were as follows:<br>
 *No errors or warnings to show.*<br>
 Initial errors were as follows:
 * Bad value for height and width on img elements. Removed px.
-* Unclosed Div - this was the div containing the edit profile button.
+* Unclosed Div - this was the div containing the edit profile button. Fixed it.
 ---
 
 **edit-profile.html**<br>
@@ -733,30 +767,34 @@ ___
 
 
 
-#### The W3C CSS Validation Service
+#### **The W3C CSS Validation Service**
 The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) reports errors for @layer and @property. These are not actual mistakes -  they are rules that are part of modern CSS features: Cascade Layers (@layer) for organizing groups of CSS rules, and CSS Houdini (@property) for creating animatable, typed custom properties. Current W3C validation tools do not yet recognize these newer specifications, but all modern browsers support them.<br>
 
 There were no other warnings or errors - all clear.
 
-#### The JSHint Validation Service
+#### **The JSHint Validation Service**
 I used [JSHint Validation Service](https://jshint.com/) to check my JavaScript files.
 
+---
 **script.js**<br>
-*Passed with no errors.*<br>
+*Passed with no errors.*
+
 Initial errors related only to missins semi-colons, which has been rectified.
 
 ---
 
 **gsap.js**<br>
-*Passed with no errors.*<br>
+*Passed with no errors.*
+
 Initial errors related to missing semicolons and undefined variables for gsap, SplitText and ScrollTrigger, so added /* global gsap, SplitText, ScrollTrigger */ at the top of the file to prevent the error, as the global variables are loaded via CDN.
 
 ---
 
-#### CI Python Linter
+#### **CI Python Linter**
 I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/), along with the [VS Code autopep8 formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8#:~:text=The%20autopep8%20extension%20for%20Visual,how%20to%20customize%20this%20extension.&text=Customize%20autopep8%3A%20You%20can%20customize,args%20setting.) to ensure that my python files met [PEP8](https://peps.python.org/pep-0008/) standards.
 All initial checks came back with errors, such as trailing spaces and lines that were too long. The list below is for the final check of each file.
 
+---
 * Nursery - models.py - *All clear, no errors found*
 * Nursery - views.py - *All clear, no errors found*
 * Nursery - urls.py - *All clear, no errors found*
@@ -764,107 +802,191 @@ All initial checks came back with errors, such as trailing spaces and lines that
 * Nursery - forms.py - *All clear, no errors found*
 * Nursery - apps.py - *All clear, no errors found*
 * Nursery - admin.py - *All clear, no errors found*
+---
+Garden
+
+---
+Core
+
+---
 
 
 #### The WAVE Webb Accessibility Evaluation Tool
 
-**index.html**
+**index.html**<br>
 0 errors
 
-**about.html**
+**about.html**<br>
 0 errors
 
-**nursery.html**
-1 error relating to an empty table header. Rectified this by adding a font awesome icon.
-0 errors.
+**nursery.html**<br>
+0 errors.<br>
+1 initial error relating to an empty table header. Rectified this by adding a font awesome icon and marking it as aria-hidden=true<br>
 
-**view-fableseed.html**
+**view-fableseed.html**<br>
 0 errors
 
-**cultivate.html**
+**cultivate.html**<br>
 0 errors
 
-**login.html**
+**login.html**<br>
 0 errors
 
-**signup.html**
+**signup.html**<br>
 0 errors
 
-**mygarden.html**
+**mygarden.html**<br>
 0 errors
 
-**edit-profile.html**
+**edit-profile.html**<br>
 0 errors
 
-**404.html**
+**404.html**<br>
 0 errors
 
-**500.html**
+**500.html**<br>
 This page is a duplicate of 400.html
 
-#### Chrome Lighthouse
+#### **Chrome Lighthouse**
 
 **Index.html**
+
 *Mobile Results*
+
 Performance was at 80, so added STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" to settings.py, as it serves compressed static files with caching
 and, 'django.middleware.gzip.GZipMiddleware' to middleware in settings.py as it compresses responses like HTML, JSON and sometimes CSS/JS.
 Best practice is on the low side due to cookies set by Cloudinary.
+
 *Desktop Results*
+
 Initial tests indicated that etwork despondency tree could be improved - created an extra css block on base.html and used that for font awesome on only the pages that use font awesome icons. I also added preconnect links for google fonts in the head of base.html, to let the fonts start downloading straightaway instead of waiting for the stylesheets to load. These measures improved desktop and mobile performance.
 *Final results for both:*
 
 Accessibility at 95 is due to the use of aria labelling by GSAP animation library. I have split paragraph text and aria shouldn't be applied to paragraphs.
 
+---
+
 **about.html**
 *Mobile results*
 *Desktop results*
 
+---
+
 **Nursery.html**
+
 *Mobile results*
+
 Performance low due to file format and size of plant images. Resized, changed format, replaced on cloudinary and performance improved.
+
 *Desktop results*
+
+---
 
 **view-fableseed.html**
+
 *Mobile results*
+
 Best practice score adversely impacted by the cloudinary cookies, which are abundant on this page due to the use of the placeholder imager that is stored on cloudinary and used for all profiles that haven't selected their own profile image.
+
 *Desktop results*
+
+---
 
 **cultivate.html**
+
 *Mobile results*
+
 *Desktop results*
+
+---
 
 **login.html**
+
 *Mobile results*
+
 *Desktop results*
+
+---
 
 **signup.html**
+
 *Mobile results*
+
 *Desktop results*
+
+---
 
 **mygarden.html**
+
 *Mobile results*
+
 *Desktop results*
+
+---
 
 **edit-profile.html**
+
 *Mobile results*
+
 *Desktop results*
+
+---
 
 **404.html**
+
 *Mobile results*
+
 *Desktop results*
+
+---
 
 **500.html**
+
 *Mobile results*
+
 *Desktop results*
 
-Best Practice score was relatively low on all pages across mobile and desktop, worse on desktop than on mobile. This came directly from the fact that Cloudinary assets come from res.cloudinary.com, a 3rd party domain, and Chrome is phasing out third party cookies. My images load fine and give good perofmrance, but I can't fix Cloudinary's cookie headers because its on their CDN configuration. I tried adding CLOUDINARY_STORAGE = {'SECURE': True,} to settings.py, but it didn't help in the slightest and adversely affected the performance of the pages, so I took it back out again. I double-checked my images by opening them up in a new tab to look at their urls, and they are being delivered securely by https and appear as 'Allowed" in the trust and safety section of Best Practice. I think for a future project I would look into an alternative image-hosting site which doesn't cause these best practice issues.
+---
+
+Best Practice score was relatively low on all pages across mobile and desktop, worse on desktop than on mobile. This came directly from the fact that Cloudinary assets come from res.cloudinary.com, a 3rd party domain, and Chrome is phasing out third party cookies. My images load fine and give good performance, but I can't fix Cloudinary's cookie headers because its on their CDN configuration. I tried adding CLOUDINARY_STORAGE = {'SECURE': True,} to settings.py, but it didn't help in the slightest and adversely affected the performance of the pages, so I took it back out again. I double-checked my images by opening them up in a new tab to look at their urls, and they are being delivered securely by https and appear as 'Allowed" in the trust and safety section of Best Practice. I think for a future project I would look into an alternative image-hosting site which doesn't cause these best practice issues.
 
 
 ### *Manual Testing*
+I tested my site on Chrome, Edge, FireFox and Safari. 
+* **Chrome** <br>Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px. 
+    * All nav links work on all pages
+    * All external links open in a new browser window
+    * The layout reflows and changes as expected across different screen sizes
+    * The background image appears and disappears as it should on different screen sizes
+    * The logo text always links back to the home page from every other page
+    * Hover colours work as expected on laptops and desktops
+    * All required form fields have to be filled in
+    * The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+* **Edge** <br>Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px. 
+    * All nav and footer links work on all pages
+    * All external links open in a new browser window
+    * The layout reflows and changes as expected across different screen sizes
+    * The background image appears and disappears as it should on different screen sizes
+    * The logo text always links back to the home page from every other page
+    * Hover colours work as expected on laptops and desktops
+    * All required form fields have to be filled in
+    * The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+* **FireFox** <br>Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px. 
+    * All nav and footer links work on all pages
+    * All external links open in a new browser window
+    * The layout reflows and changes as expected across different screen sizes
+    * The background image appears and disappears as it should on different screen sizes
+    * The logo text always links back to the home page from every other page
+    * Hover colours work as expected on laptops and desktops
+    * All required form fields have to be filled in
+    * The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+* **Safari** <br> Tested on an iPhone SE 2023
+    * The burger nav dropdown works as expected on all pages, expanding, collapsing and disappearing as it should
+    * All nav links work on all pages
+    * All active nav-links display in the appropriate colour on the appropriate page
+    * All required form fields have to be filled in
+    * The logo text takes you back to the home page from every page
 
-### *Unit Tests*
-
-## 
 
 ## **Technology used**
 * [Adobe Color](https://color.adobe.com/)  
