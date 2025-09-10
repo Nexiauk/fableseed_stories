@@ -6,15 +6,17 @@
 Uh-Oh!
 {% endblock %}
 {% block content %}
-<!-- Profile details section with header, image and user information -->
+<!-- User-friendly text and image with a button that uses the browser's history to go back. -->
 <section
     class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full lg:overflow-y-auto lg:h-[80vh] p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content">
     <div class="mb-5 mx-auto text-center">
         <h2 class="font-bold text-2xl md:text-center mb-4">Uh-Oh!</h2>
         <p class="mb-4">You've taken a wrong turn into the desolate wasteland.</p>
-<img src="https://res.cloudinary.com/dppks2exv/image/upload/v1757014258/go-back-error_zrvr7f.avif" alt="Go back now!" class="rounded-xl">
-   <button class="btn hover:bg-secondary hover:text-secondary-content mt-4" onclick="history.back()">Go Back</button>
+        <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1757014258/go-back-error_zrvr7f.avif"
+            alt="Go back now!" class="rounded-xl">
+        <button class="btn hover:bg-secondary hover:text-secondary-content mt-4" onclick="history.back()">Go
+            Back</button>
     </div>
- 
+
 </section>
 {% endblock content %}

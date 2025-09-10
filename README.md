@@ -915,10 +915,15 @@ Best Practice score was relatively low on all pages across mobile and desktop, w
 
 ## **Interesting Bugs**
 
+* I didn't realise that before you deploy to Heroku, you can extend the built-in User model to add extra fields. This is difficult to do after deploying to Heroku, which I'd already done. I ended up creating a separate user-profile model and learning about signals. The garden app has a signals.py file with a receiver decorator that runs a function every time a user is saved. It will only run when the built-in User model is saved. The function checks if the user has a userprofile and if not, creates a userprofile for them.
+
+
 * Discovered that the crispy forms helper layout couldn’t or wouldn’t target the select dropdown box of database flowers. Ended up styling that myself in a custom.css file after trawling through crispy layout templates for far longer than necessary.  
-* Gitignore in .venv wasn’t hiding [env.py](http://env.py) - I had this setup from a codealong project from code institute. Added files to project level gitignore and ran git rm -r cached to stop git from tracking and then changed my env variables and secret key.  
-* Profile image not updating when user edits via the form - needed enctype=multipart/form-data hard-coding on the template rather than through the form in [forms.py](http://forms.py)  
-* Couldn’t figure out how to style the file input field on the edit profile for. Ended up with a a mix of styling via the Crispy forms helper layout and styling input[type="file"] directly in custom.css to make the file picker look like a properly styled button.  
+
+* Crispy was styling my form fields in such a way that the text was barely visible. Found a file in the .venv Crispy Tailwind library called tailwind_field.py that allowed me to direcly customise the form field base styling. Big win, I thought - until I deployed to Heroku and it had reverted! Turned out I'd forgotten that the changes made in .venv to libraries and suchlike don't push through to github and therefore do not deploy to Heroku - Heroku installs the software anew. I had to create and initialise a templatetags folder and copy tailwind_field.py over so that the base_layout config I'd defined for the styling of crispy form fields was used once deployed on Heroku.
+* Gitignore in .venv wasn’t hiding [env.py](http://env.py) - I had this setup from a codealong project from code institute. Added files to project level gitignore instead and ran git rm -r cached to stop git from tracking and then changed my env variables and secret key. Traces of the old database url and secret key and cloudinary url are in the commit history, but are no longer active or relevant.
+* Profile images weren't updating when a user edited via the edit-profile form - needed enctype=multipart/form-data hard-coding on the template rather than through the form in [forms.py](http://forms.py)  
+* Couldn’t figure out how to style the file input field on the edit profile form. Ended up with a mix of styling via the Crispy forms helper layout and styling input[type="file"] directly in custom.css to make the file picker look like a properly styled button.  
 * Chrome Lighthouse performance score on index.html was poor on mobile and okay on desktop - it came back with lots of suggestions and errors I didn't understand. After using ChatGPT to help me understand what was going on, I made the following changes:
     * Added GZip middleware to settings.py for response compression
     * Added whitenoise compressed static storage config to serve compressed static files with caching. 

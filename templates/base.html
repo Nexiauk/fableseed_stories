@@ -24,17 +24,20 @@
   <!-- Tailwind output CSS file and custom overrides -->
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
-{% block extra_css %}
-{% endblock %}
+  <!-- Preconnect links for Google fonts so they can start immediately loading instead of waiting for the CSS file imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@1,700&display=swap"
+    rel="stylesheet">
+  {% block extra_css %}
+  {% endblock %}
 
 </head>
 
-<!-- Apply different background colours based on current page -->
-<body
-  class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url %}bg-base-300 {% else%}bg-primary{% endif %} 
+<!-- Body class applies different background colours based on the current page url -->
+
+<body class="min-h-screen min-w-full max-w-full flex flex-col {% if request.path == home_url %}bg-base-300 {% else%}bg-primary{% endif %} 
   sm:bg-[url(/static/images/bg1.avif)] 
          {% if request.resolver_match.url_name == 'fableseed-view' %}
             md:bg-contain md:bg-repeat-y
@@ -56,7 +59,8 @@
           <ul tabindex="0" class="menu menu-lg dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li class="{% if request.path == home_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'home' %}">Home</a></li>
-            <li class="{% if request.path == about_url %} active" aria-current="page{% endif %}"><a href="{% url 'about' %}">About</a>
+            <li class="{% if request.path == about_url %} active" aria-current="page{% endif %}"><a
+                href="{% url 'about' %}">About</a>
             </li>
             <li class="{% if request.path == nursery_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'nursery' %}">Nursery</a></li>
@@ -87,19 +91,19 @@
             <img src="../static/images/logo_75x75.avif" alt="Fableseed logo" class="w-20 h-auto" width="120" height="93"
               decoding="async">
           </picture>
-          <!-- Logo text acts as main site header on all pages - links to the home page -->
+          <!-- Logo text acts as main site header on all pages. Links to the home page -->
           <h1 class="mt-3 lg:order-1"><a
               class="font-bold text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-great-vibes hover:text-base-100"
               href="{% url 'home' %}">Fableseed</a></h1>
         </div>
       </div>
-<!-- Horizontal nav-links are hidden on mobile and tablet screen, appear at larger breakpoints -->
+      <!-- Horizontal nav-links are hidden on mobile and tablet screen, appear at larger breakpoints -->
       <div class="navbar-center flex-1 justify-center hidden lg:flex-2 lg:flex">
         <ul class="menu menu-horizontal gap-4 xl:gap-6">
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == home_url %} active"
               aria-current="page{% endif %}" href="{% url 'home' %}">Home</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == about_url %}active"
-              aria-current="page{% endif %}"  href="{% url 'about' %}">About</a></li>
+              aria-current="page{% endif %}" href="{% url 'about' %}">About</a></li>
           <li><a class="btn lg:btn-sm xl:btn-md bg-primary hover:bg-base-100 {% if request.path == nursery_url %}active"
               aria-current="page{% endif %}" href="{% url 'nursery' %}">Nursery</a></li>
           {% if user.is_authenticated %}
@@ -128,7 +132,7 @@
   <!-- Main container for all page content to keep styling consistent. Applies mx-auto to the home-page so it looks nice on bigger screens.  -->
   <main
     class="container mx-auto mt-4 flex-grow px-4 flex flex-col {% if request.path == home_url %}justify-center{% endif %}">
-    <!-- Display Django messages (ERROR/SUCCESS) with ARIA for accessibility) -->
+    <!-- Display Django messages (ERROR/SUCCESS) with ARIA for accessibility -->
     {% if messages %}
     {% for message in messages %}
     <div class="text-center">
@@ -142,7 +146,7 @@
     </div>
     {% endfor %}
     {% endif %}
-<!-- Page-specific content to be inserted here -->
+    <!-- Page-specific content to be inserted here -->
     {% block content %}
     {% endblock %}
   </main>
@@ -156,7 +160,7 @@
   <!-- Extra JavaScript block for page-specific JS -->
   {% block extra_js %}
   {% endblock %}
-  <!-- Custom JS scripts for interactivity -->
+  <!-- Custom JS scripts for interactivity and modals -->
   <script src="{% static 'js/script.js' %}"></script>
 </body>
 
