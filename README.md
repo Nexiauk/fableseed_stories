@@ -1056,7 +1056,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 All these measures massively improved google lighthouse performance on mobile and desktop
 
 * GSAP animations weren't working on FireFox and the poem text was flickering briefly into view before disappearing completely, causing a layout shift that was jarring. I worked on this with ChatGPT by firstly setting all of the poem paragraphs and the hero title to visibility: hidden, then made the GSAP JS set it to visible again. I also set hero-content overflow to hidden. This stopped the flickering and the layout shift, which had been subtl on Chrome, but very noticeable on FireFox.
-I then used requestAnimationFrame in the GSAP JS to the wait for the browser to finish layout and painting, and prevent Firefox from miscalculating line positions. Animations now work in all browsers and no weird flickering or shifts occur. I was concerned that because the poem is hidden, if the JavaScript failed then the hero poem just wouldn't exist at all, so I created a block called extra_head and added page specific noscript fallback for the hero poem.
+I then used requestAnimationFrame in the GSAP JS to wait for the browser to finish layout and painting, and prevent Firefox from miscalculating line positions. Animations now work in all browsers and no weird flickering or shifts occur. I was concerned that because the poem is hidden, if the JavaScript failed then the hero poem just wouldn't exist at all, so I created a block called extra_head and added page specific noscript fallback for the hero poem.
 
 ## **Credits**
 
