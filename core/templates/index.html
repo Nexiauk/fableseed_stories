@@ -1,6 +1,24 @@
 <!-- Template that contains the main home-page hero information -->
 {% extends 'base.html' %}
 {% load static %}
+  <!-- Page-specific noscript fallback for hero text -->
+{% block extra_head %}
+  <noscript>
+    <style>
+      .hero-title,
+      #para1,
+      #para2,
+      #para3,
+      #para4,
+      #para5,
+      #para6 {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    </style>
+  </noscript>
+{% endblock %}
+
 <!-- GSAP Javascript for SplitText and Scrolltrigger animations -->
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -36,22 +54,22 @@ Fableseed Home Page
             <br>Struggling against the darkness.
           </p>
           <p class="pb-5 text-lg leading-tight" id="para3">
-            <br>You give it water.
+            You give it water.
             <br>There is no response.
             <br>There is no sun or warmth.
           </p>
           <p class="pb-5 text-lg leading-tight" id="para4">
-            <br>So you begin to speak.
+            So you begin to speak.
             <br>You tell it tall tales, fantasy fables, silly stories.
             <br>Legends, parables, and yarns spun from nothing but hope.
           </p>
           <p class="pb-5 text-lg leading-tight" id="para5">
-            <br>The more stories you share, the taller it grows.
+            The more stories you share, the taller it grows.
             <br>The stronger it becomes.
             <br>Until one day, <span class="text-secondary font-bold">it blooms</span>.
           </p>
           <p class="pb-5 text-lg leading-tight" id="para6">
-            <br>A single, impossible flower —
+            A single, impossible flower —
             born of imagination.
             <br>From it, you gather seeds.
             <br>And with them, you grow <span class="text-secondary font-bold">the last garden at the end of the world</span>.

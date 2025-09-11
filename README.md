@@ -859,10 +859,11 @@ Best practice is on the low side due to cookies set by Cloudinary.
 
 *Desktop Results*
 
-Initial tests indicated that etwork despondency tree could be improved - created an extra css block on base.html and used that for font awesome on only the pages that use font awesome icons. I also added preconnect links for google fonts in the head of base.html, to let the fonts start downloading straightaway instead of waiting for the stylesheets to load. These measures improved desktop and mobile performance.
+Initial tests indicated that network despondency tree could be improved - created an extra css block on base.html and used that for font awesome on only the pages that use font awesome icons. I also added preconnect links for google fonts in the head of base.html, to let the fonts start downloading straightaway instead of waiting for the stylesheets to load. These measures improved desktop and mobile performance.
 *Final results for both:*
 
 Accessibility at 95 is due to the use of aria labelling by GSAP animation library. I have split paragraph text and aria shouldn't be applied to paragraphs.
+Set the hero title and all the poem paragraphs to visibility: hidden and inserted lines into the JavaScript to make them visible again after the split was applie - this got the accessibility score to 100
 
 ---
 
@@ -1053,6 +1054,9 @@ I tested my site on Chrome, Edge, FireFox and Safari.
     * Added preconnect links to google fonts in the head of base.html to allow the fonts to immediately load. 
 
 All these measures massively improved google lighthouse performance on mobile and desktop
+
+* GSAP animations weren't working on FireFox and the poem text was flickering briefly into view before disappearing completely, causing a layout shift that was jarring. I worked on this with ChatGPT by firstly setting all of the poem paragraphs and the hero title to visibility: hidden, then made the GSAP JS set it to visible again. I also set hero-content overflow to hidden. This stopped the flickering and the layout shift, which had been subtl on Chrome, but very noticeable on FireFox.
+I then used requestAnimationFrame in the GSAP JS to the wait for the browser to finish layout and painting, and prevent Firefox from miscalculating line positions. Animations now work in all browsers and no weird flickering or shifts occur. I was concerned that because the poem is hidden, if the JavaScript failed then the hero poem just wouldn't exist at all, so I created a block called extra_head and added page specific noscript fallback for the hero poem.
 
 ## **Credits**
 

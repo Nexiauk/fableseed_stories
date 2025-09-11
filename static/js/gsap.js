@@ -1,108 +1,138 @@
 /* global gsap, SplitText, ScrollTrigger */
-// Registering the GSAP animation plugins for split text and Scroll Trigger
-gsap.registerPlugin(SplitText);
-gsap.registerPlugin(ScrollTrigger);
+
+// Registering the GSAP animation plugins
+// SplitText: allows splitting text into characters, words, or lines for animation
+// ScrollTrigger: triggers animations when elements enter/exit the viewport
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
+// Wait until all fonts are loaded before running animations
+// This ensures SplitText measures lines correctly, especially in Firefox
 document.fonts.ready.then(() => {
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".hero-content",
-            start: "top bottom",      // when the top of .hero hits 80% of viewport
-            end: "bottom 20%",     // optional end
-            toggleActions: "play none none none",
-        }
-    });
 
-    SplitText.create(".hero-title", {
-        type: "chars",
-        autoSplit: true,
-        onSplit: (self) => {
-            tl.from(self.chars, {
-                opacity: 0,
-                x: 50,
-                stagger: 0.1,
-                duration: 1.5,
-            });
-        }
-    });
+    // Use requestAnimationFrame to wait for the browser to finish layout and painting
+    // Prevents Firefox from miscalculating line positions
+    requestAnimationFrame(() => {
 
-    SplitText.create("#para1", {
-        type: "lines",
-        autoSplit: true,
-        onSplit: (self) => {
-            tl.from(self.lines, {
-                opacity: 0,
-                y: 50,
-                stagger: 1,
-                duration: 1.5
-            }, "+=1");
-        }
-    });
+        // Create a timeline for all hero animations
+        // Attach a ScrollTrigger so animations play on scroll
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".hero-content", // element that triggers the timeline
+                start: "top bottom",      // start when top of trigger hits bottom of viewport
+                end: "bottom 20%",        // optional end position
+                toggleActions: "play none none none", // play on enter, do nothing else
+            }
+        });
 
-    SplitText.create("#para2", {
-        type: "lines",
-        autoSplit: true,
-        onSplit: (self) => {
-            tl.from(self.lines, {
-                opacity: 0,
-                y: 50,
-                stagger: 1,
-                duration: 1.5,
-            }, "+=2");
-        }
-    });
+        // Animate the hero title character by character
+        SplitText.create(".hero-title", {
+            type: "chars", // split text into individual characters
+            onSplit: (self) => {
+                // Reveal the parent container
+                gsap.set(".hero-title", { visibility: "visible" });
 
-    SplitText.create("#para3", {
-        type: "lines",
-        autoSplit: true,
-        onSplit: (self) => {
-            tl.from(self.lines, {
-                opacity: 0,
-                y: 50,
-                stagger: 1,
-                duration: 1.5,
-            }, "+=2");
-        }
-    });
+                // Animate each character from opacity 0 and x offset
+                tl.from(self.chars, {
+                    opacity: 0,   // start invisible
+                    x: 50,        // start offset on x-axis
+                    stagger: 0.1, // animate characters one after another
+                    duration: 1.5 // duration per character
+                });
+            }
+        });
 
-    SplitText.create("#para4", {
-        type: "lines",
-        autoSplit: true,
-        onSplit: (self) => {
-            tl.from(self.lines, {
-                opacity: 0,
-                y: 50,
-                stagger: 1,
-                duration: 1.5,
-            }, "+=2");
-        }
-    });
+        // Animate paragraph 1 line by line
+        SplitText.create("#para1", {
+            type: "lines",   // split paragraph into lines
+            autoSplit: true, // automatically handle line breaks
+            onSplit: (self) => {
+                // Reveal the parent paragraph
+                gsap.set("#para1", { visibility: "visible" });
 
-    SplitText.create("#para5", {
-        type: "lines",
-        autoSplit: true,
-        onSplit: (self) => {
-            tl.from(self.lines, {
-                opacity: 0,
-                y: 50,
-                stagger: 1,
-                duration: 1.5,
-            }, "+=2");
-        }
-    });
+                // Animate lines from opacity 0 and y offset
+                tl.from(self.lines, {
+                    opacity: 0,
+                    y: 50,
+                    stagger: 1,    // animate lines sequentially
+                    duration: 1.5
+                }, "+=1");          // start 1 second later in timeline
+            }
+        });
 
-    SplitText.create("#para6", {
-        type: "lines",
-        autoSplit: true,
-        onSplit: (self) => {
-            tl.from(self.lines, {
-                opacity: 0,
-                y: 50,
-                stagger: 1,
-                duration: 1.5,
-            }, "+=2");
-        }
-    });
+        // Animate paragraph 2 line by line
+        SplitText.create("#para2", {
+            type: "lines",
+            autoSplit: true,
+            onSplit: (self) => {
+                gsap.set(self.lines, { visibility: "visible" });
+                tl.from(self.lines, {
+                    opacity: 0,
+                    y: 50,
+                    stagger: 1,
+                    duration: 1.5,
+                }, "+=2"); // add 2-second delay in timeline
+            }
+        });
 
+        // Animate paragraph 3 line by line
+        SplitText.create("#para3", {
+            type: "lines",
+            autoSplit: true,
+            onSplit: (self) => {
+                gsap.set(self.lines, { visibility: "visible" });
+                tl.from(self.lines, {
+                    opacity: 0,
+                    y: 50,
+                    stagger: 1,
+                    duration: 1.5,
+                }, "+=2");
+            }
+        });
+
+        // Animate paragraph 4 line by line
+        SplitText.create("#para4", {
+            type: "lines",
+            autoSplit: true,
+            onSplit: (self) => {
+                gsap.set(self.lines, { visibility: "visible" });
+                tl.from(self.lines, {
+                    opacity: 0,
+                    y: 50,
+                    stagger: 1,
+                    duration: 1.5,
+                }, "+=2");
+            }
+        });
+
+        // Animate paragraph 5 line by line
+        SplitText.create("#para5", {
+            type: "lines",
+            autoSplit: true,
+            onSplit: (self) => {
+                gsap.set(self.lines, { visibility: "visible" });
+                tl.from(self.lines, {
+                    opacity: 0,
+                    y: 50,
+                    stagger: 1,
+                    duration: 1.5,
+                }, "+=2");
+            }
+        });
+
+        // Animate paragraph 6 line by line
+        SplitText.create("#para6", {
+            type: "lines",
+            autoSplit: true,
+            onSplit: (self) => {
+                gsap.set(self.lines, { visibility: "visible" });
+                tl.from(self.lines, {
+                    opacity: 0,
+                    y: 50,
+                    stagger: 1,
+                    duration: 1.5,
+                }, "+=2");
+            }
+        });
+    });
 });
