@@ -56,6 +56,7 @@ This collaborative storytelling forum has been created as a project during my [C
     * [The W3C Markup Validation Service](#the-w3c-markup-validation-service)
     * [The W3C CSS Validation Service](#the-w3c-css-validation-service)
     * [The JSHint Validation Service](#the-jshint-validation-service)
+    * [The Code Institute Python Linter](#ci-python-linter)
     * [The WAVE Webb Accessibility Evaluation Tool](#the-wave-webb-accessibility-evaluation-tool)
     * [Chrome Lighthouse](#chrome-lighthouse)
     * [Manual Testing](#manual-testing)
@@ -803,8 +804,15 @@ All initial checks came back with errors, such as trailing spaces and lines that
 * Nursery - apps.py - *All clear, no errors found*
 * Nursery - admin.py - *All clear, no errors found*
 ---
-Garden
-
+* Garden - models.py - *All clear, no errors found*
+* Garden - views.py
+* Garden - urls.py
+* Garden - tests.py
+* Garden - forms.py
+* Garden - apps.py
+* Garden - admin.py
+* Garden - signals.py
+* Garden - tailwind_field.py
 ---
 Core
 
@@ -813,38 +821,38 @@ Core
 
 #### The WAVE Webb Accessibility Evaluation Tool
 
-**index.html**<br>
+* **index.html**<br>
 0 errors
 
-**about.html**<br>
+* **about.html**<br>
 0 errors
 
-**nursery.html**<br>
+* **nursery.html**<br>
 0 errors.<br>
 1 initial error relating to an empty table header. Rectified this by adding a font awesome icon and marking it as aria-hidden=true<br>
 
-**view-fableseed.html**<br>
+* **view-fableseed.html**<br>
 0 errors
 
-**cultivate.html**<br>
+* **cultivate.html**<br>
 0 errors
 
-**login.html**<br>
+* **login.html**<br>
 0 errors
 
-**signup.html**<br>
+* **signup.html**<br>
 0 errors
 
-**mygarden.html**<br>
+* **mygarden.html**<br>
 0 errors
 
-**edit-profile.html**<br>
+* **edit-profile.html**<br>
 0 errors
 
-**404.html**<br>
+* **404.html**<br>
 0 errors
 
-**500.html**<br>
+* **500.html**<br>
 This page is a duplicate of 400.html
 
 #### **Chrome Lighthouse**

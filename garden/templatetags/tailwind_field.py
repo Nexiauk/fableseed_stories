@@ -139,7 +139,8 @@ class CrispyTailwindFieldNode(template.Node):
 
         # There are special django widgets that wrap actual widgets,
         # such as forms.widgets.MultiWidget, admin.widgets.RelatedFieldWidgetWrapper
-        widgets = getattr(field.field.widget, "widgets", [getattr(field.field.widget, "widget", field.field.widget)])
+        widgets = getattr(field.field.widget, "widgets", [getattr(
+            field.field.widget, "widget", field.field.widget)])
 
         if isinstance(attrs, dict):
             attrs = [attrs] * len(widgets)
@@ -159,13 +160,15 @@ class CrispyTailwindFieldNode(template.Node):
 
             # Added additional code for Tailwind if class has not been passed in via the tag in the template
             if template_pack == "tailwind" and '"class"' not in attr.keys():
-                css_container = context.get("css_container", self.default_container)
+                css_container = context.get(
+                    "css_container", self.default_container)
                 if css_container:
                     css = " " + css_container.get_input_class(field)
                     css_class += css
                 if field.errors:
                     error_border_class = css_container.error_border
-                    css_class = re.sub(r"border-\S+", error_border_class, css_class)
+                    css_class = re.sub(
+                        r"border-\S+", error_border_class, css_class)
 
             widget.attrs["class"] = css_class
 
@@ -176,12 +179,15 @@ class CrispyTailwindFieldNode(template.Node):
 
             # classes passed in via the template are added here
             for attribute_name, attribute in attr.items():
-                attribute_name = template.Variable(attribute_name).resolve(context)
+                attribute_name = template.Variable(
+                    attribute_name).resolve(context)
 
                 if attribute_name in widget.attrs:
-                    widget.attrs[attribute_name] += " " + template.Variable(attribute).resolve(context)
+                    widget.attrs[attribute_name] += " " + \
+                        template.Variable(attribute).resolve(context)
                 else:
-                    widget.attrs[attribute_name] = template.Variable(attribute).resolve(context)
+                    widget.attrs[attribute_name] = template.Variable(
+                        attribute).resolve(context)
 
         return str(field)
 
@@ -216,8 +222,10 @@ def crispy_addon(field, append="", prepend="", form_show_labels=True):
         {% crispy_addon form.my_field append=".00" %}
     """
     if field:
-        context = Context({"field": field, "form_show_errors": True, "form_show_labels": form_show_labels})
-        template = loader.get_template("%s/layout/prepended_appended_text.html" % get_template_pack())
+        context = Context(
+            {"field": field, "form_show_errors": True, "form_show_labels": form_show_labels})
+        template = loader.get_template(
+            "%s/layout/prepended_appended_text.html" % get_template_pack())
         context["crispy_prepended_text"] = prepend
         context["crispy_appended_text"] = append
 

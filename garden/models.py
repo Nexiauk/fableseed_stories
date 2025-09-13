@@ -46,12 +46,19 @@ class UserFlower(models.Model):
         ordering = ["flower"]
 
     def __str__(self):
+        """
+        Return a human-readable string for the UserFlower instance.
+        Pluralises the flower name if quantity > 1.
+        """
         if self.quantity == 1:
             return f"{self.quantity} {self.flower} earned"
         else:
             return f"{self.quantity} {self.flower}s earned"
 
     def user_flower_image_url(self):
+        """
+        Returns the URL of the associated flower's image.
+        """
         return self.flower.flower_image.url
 
 
@@ -85,18 +92,31 @@ class UserProfile(models.Model):
     fablebuds_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
+        """
+        Return a string representation of the user profile.
+        Uses display_name if available, otherwise falls back to the username.
+        """
         return self.display_name if self.display_name else self.user.username
 
     def user_profile_image_url(self):
+        """
+        Returns the URL of the user's profile picture.
+        """
         return self.profile_picture.url
 
     @property
     def get_display_name(self):
+        """
+        Provides the display name of the user.
+        If the UserProfile does not exist, returns the username.
+        """
         try:
             return self.userprofile.display_name
         except UserProfile.DoesNotExist:
             return self.username
-    User.add_to_class(
+
+
+User.add_to_class(
         'get_display_name',
-        get_display_name
+        UserProfile.get_display_name
     )
