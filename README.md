@@ -805,7 +805,7 @@ All initial checks came back with errors, such as trailing spaces and lines that
 * Nursery - admin.py - *All clear, no errors found*
 ---
 * Garden - models.py - *All clear, no errors found*
-* Garden - views.py
+* Garden - views.py - *All clear, no errors found*
 * Garden - urls.py
 * Garden - tests.py
 * Garden - forms.py
