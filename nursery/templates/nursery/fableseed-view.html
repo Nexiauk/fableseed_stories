@@ -22,7 +22,12 @@ Title: {{fableseed.title}}
 </dialog>
 <!-- Main Fableseed post including title, body, author details and controls -->
 <section class="grid grid-flow-row gap-4 mb-4">
-    <h2 class="text-center text-4xl font-merriweather">{{ fableseed.title}} </h2>
+<div class="flex items-center justify-center gap-2 flex-col text-center md:flex-row">
+  <h2 class="text-4xl font-merriweather">{{ fableseed.title }}</h2>
+  <img src="{{ fableseed.flower_type.flower_image.url }}"
+       alt="{{ fableseed.flower_type.flower_name }}"
+       height="50" width="50" class="h-12 w-12">
+</div>
     <article
         class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
@@ -33,6 +38,7 @@ Title: {{fableseed.title}}
                 alt="{{fableseed.author.get_display_name}}" width="150" height="150">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
         </div>
+        
         <span
             class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</span>
         <div class="md:col-span-10 md:row-span-10 mb-4">
@@ -80,8 +86,8 @@ Title: {{fableseed.title}}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"
                 class="btn hover:bg-secondary hover:text-secondary-content">Tend Branch</a>
-            <a class="btn hover:bg-red-700 hover:text-primary-content delete" data-id="{{branch.branch}}"
-                data-type="branch">Prune Branch</a>
+            <button class="btn hover:bg-red-700 hover:text-primary-content delete" data-id="{{branch.branch}}"
+                data-type="branch">Prune Branch</button>
             {% endif %}
         </div>
     </article>
