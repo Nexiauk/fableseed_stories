@@ -1,3 +1,14 @@
+"""
+Models for the Fableseed application's user and garden system.
+
+Defines models related to user profiles and the flowers they earn:
+
+- UserFlower: Tracks flowers earned by users from seeds and branches.
+- UserProfile: Stores extended profile information for each user,
+  including display name, profile picture, bio, and fablebuds count.
+
+Includes helper methods for string representations and image URLs.
+"""
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -8,19 +19,8 @@ class UserFlower(models.Model):
     """
     Represents flowers earned by a user in the Fableseed ecosystem.
 
-    Attributes:
-        user (ForeignKey): Reference to the user who earned the flowers.
-        flower (ForeignKey): Reference to the type of flower earned.
-        quantity (PositiveIntegerField): Number of flowers earned.
-        earned_from_seed (ForeignKey): Seed that generated the flowers.
-        earned_from_branch (ForeignKey): Branch that generated the flowers.
-        earned_on (DateTimeField): Timestamp when the flowers were earned.
-
     Meta:
         ordering: Querysets order by flower.
-
-    Methods:
-        __str__: Returns a string describing the flowers earned.
     """
     user = models.ForeignKey(
         User,
@@ -65,18 +65,6 @@ class UserFlower(models.Model):
 class UserProfile(models.Model):
     """
     Stores profile information for a user in the Fableseed app.
-
-    Attributes:
-        user (OneToOneField): Links to the Django User.
-        display_name (CharField): Name shown publicly for the user.
-        profile_picture (CloudinaryField): Profile image stored in Cloudinary.
-        bio (TextField): User's biography.
-        fablebuds_count (PositiveIntegerField): Fablebuds quantity.
-
-    Methods:
-        __str__: if the user has a display name, it will return that.
-        If not, it will default to their username.
-        user_profile_image_url: Custom method for image url.
     """
     user = models.OneToOneField(
         User,

@@ -1,3 +1,14 @@
+"""
+Views for the Nursery app in the Fableseed project.
+
+Provides functionality for:
+- Displaying a paginated list of approved Fableseed objects (nursery view)
+- Creating, viewing, and editing Fableseed and FableBranch objects
+- Managing user interactions with Fableseed branches and flowers
+- Deleting Fableseed or FableBranch objects with user feedback
+
+All actions that modify content require the user to be logged in.
+"""
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib import messages

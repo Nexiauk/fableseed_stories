@@ -6,7 +6,6 @@ Models:
 - Flower: Flowers associated with seeds.
 - FableBranch: Branching replies to seeds.
 """
-
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
@@ -20,24 +19,8 @@ class Fableseed(models.Model):
     """
     Represents a story seed created by a user.
 
-    Attributes:
-        seed (AutoField): Primary key identifier for the seed.
-        flower_type (ForeignKey): Reference to the associated flower object.
-        title (CharField): Title of the fable seed.
-        body (CharField): Story prompt for the fable seed.
-        approval_status (IntegerField): Indicates if the seed is approved.
-            Defaults to 0 (Pending).
-        created_on (DateTimeField): Timestamp when the seed was created.
-        edited_on (DateTimeField): Timestamp when the seed was last edited.
-        author (ForeignKey): Reference to the user who created the seed.
-        fablebuds_earnt (PositiveIntegerField): Number of fablebuds earned.
-            Defaults to 1.
-
     Meta:
         ordering: Seeds are sorted by creation date descending.
-
-    Methods:
-        __str__(): Returns a string representation with title and author.
     """
 
     seed = models.AutoField(primary_key=True)
@@ -70,19 +53,8 @@ class Fableseed(models.Model):
 
 
 class Flower(models.Model):
-    """Flowers associated with a Fableseed.
-
-    Attributes:
-        flower (AutoField): Primary key identifier for the flower.
-        flower_name (CharField): The name of the flower.
-        flower_image (CloudinaryField): Image representation of the flower.
-        fablebuds_cost (PositiveIntegerField): Fablebuds cost for the flower.
-
-    Meta:
-        ordering: Flowers are sorted by flower name ascending.
-
-    Methods:
-        __str__: Returns a string representation of the flower name.
+    """
+    Flowers associated with a Fableseed.
     """
 
     flower = models.AutoField(primary_key=True)
@@ -98,22 +70,12 @@ class Flower(models.Model):
 
 
 class FableBranch(models.Model):
-    """Represents a branching reply to the Fableseed.
-
-    Attributes:
-        branch (AutoField): Primary key identifier for the fable branch.
-        seed (ForeignKey): Links to the Fableseed that the branch replies to.
-        body (TextField): Story content written by the user.
-        created_on (DateTimeField): Timestamp when the branch was created.
-        edited_on (DateTimeField): Timestamp when the branch was last edited.
-        author (ForeignKey): Reference to the user who created the branch.
+    """
+    Represents a branching reply to the Fableseed.
 
     Meta:
         verbose_name: Singular name of the model.
         verbose_name_plural: Plural name of the model.
-
-    Methods:
-        __str__: Returns a string representation of the branch.
     """
 
     branch = models.AutoField(primary_key=True)
@@ -137,8 +99,8 @@ class FableBranch(models.Model):
         verbose_name_plural = "Fablebranches"
 
     def __str__(self):
-        """Return a string representation of the fablebranch.
-
+        """
+        Return a string representation of the fablebranch.
         Truncates body to 50 characters if longer, appends author display name.
         """
         try:

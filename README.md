@@ -809,10 +809,10 @@ All initial checks came back with errors, such as trailing spaces and lines that
 * Garden - urls.py - *All clear, no errors found*
 * Garden - tests.py - *All clear, no errors found*
 * Garden - forms.py - *All clear, no errors found*
-* Garden - apps.py
-* Garden - admin.py
-* Garden - signals.py
-* Garden - tailwind_field.py
+* Garden - apps.py - *All clear, no errors found*
+* Garden - admin.py - *All clear, no errors found*
+* Garden - signals.py - *All clear, no errors found*
+* Garden - tailwind_field.py - *All clear, no errors found*
 ---
 Core
 

@@ -1,3 +1,12 @@
+"""
+URL configuration for the Nursery app.
+
+Defines URL patterns for:
+- Viewing the nursery homepage
+- User account management via allauth
+- Viewing, creating, editing, and pruning Fableseed and FableBranch objects
+"""
+
 from django.urls import path, include
 from . import views
 

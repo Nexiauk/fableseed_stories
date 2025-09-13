@@ -1,6 +1,14 @@
-# This file is currently copied directly from django-crispy-forms
-# Changes to core form are highlighted. These are to add additional input classes
-# to meet requirements of Tailwind
+"""
+Custom Tailwind form field styles for Django Crispy Forms.
+
+This file was copied from the 'crispy_tailwind' library in the virtual
+environment and modified to override the default Tailwind input styling.
+It defines base input classes and default styles for form fields, ensuring
+consistent Tailwind styling across forms.
+
+Only the base_input and default_styles have been adjusted to meet project
+requirements.
+"""
 
 import re
 
@@ -78,7 +86,8 @@ def pairwise(iterable):
 
 class CrispyTailwindFieldNode(template.Node):
     base_input = (
-        "bg-white focus:outline-none border border-gray-300 rounded-sm p-2 mb-4 block w-full "
+        "bg-white focus:outline-none border "
+        "border-gray-300 rounded-sm p-2 mb-4 block w-full "
         "appearance-none leading-normal text-gray-700"
     )
 
@@ -103,7 +112,8 @@ class CrispyTailwindFieldNode(template.Node):
         "selectmultiple": "",
         "checkboxselectmultiple": "",
         "multi": "",
-        "splitdatetime": "text-gray-700 bg-white focus:outline border border-gray-300 leading-normal px-4 "
+        "splitdatetime": "text-gray-700 bg-white focus:outline "
+        "border border-gray-300 leading-normal px-4 "
         "appearance-none rounded-lg py-2 focus:outline-none mr-2",
         "splithiddendatetime": "",
         "selectdate": "",
@@ -134,11 +144,13 @@ class CrispyTailwindFieldNode(template.Node):
         except template.VariableDoesNotExist:
             html5_required = False
 
-        # If template pack has been overridden in FormHelper we can pick it from context
+        # If template pack has been overridden in FormHelper
+        # we can pick it from context
         template_pack = context.get("template_pack", TEMPLATE_PACK)
 
         # There are special django widgets that wrap actual widgets,
-        # such as forms.widgets.MultiWidget, admin.widgets.RelatedFieldWidgetWrapper
+        # such as forms.widgets.MultiWidget,
+        # admin.widgets.RelatedFieldWidgetWrapper
         widgets = getattr(field.field.widget, "widgets", [getattr(
             field.field.widget, "widget", field.field.widget)])
 
@@ -158,7 +170,8 @@ class CrispyTailwindFieldNode(template.Node):
             else:
                 css_class = class_name
 
-            # Added additional code for Tailwind if class has not been passed in via the tag in the template
+            # Added additional code for Tailwind if class
+            # has not been passed in via the tag in the template
             if template_pack == "tailwind" and '"class"' not in attr.keys():
                 css_container = context.get(
                     "css_container", self.default_container)
@@ -173,7 +186,8 @@ class CrispyTailwindFieldNode(template.Node):
             widget.attrs["class"] = css_class
 
             # HTML5 required attribute
-            if html5_required and field.field.required and "required" not in widget.attrs:
+            if (html5_required and field.field.required
+                    and "required" not in widget.attrs):
                 if field.field.widget.__class__.__name__ != "RadioSelect":
                     widget.attrs["required"] = "required"
 
@@ -223,7 +237,10 @@ def crispy_addon(field, append="", prepend="", form_show_labels=True):
     """
     if field:
         context = Context(
-            {"field": field, "form_show_errors": True, "form_show_labels": form_show_labels})
+            {"field": field,
+             "form_show_errors": True,
+             "form_show_labels": form_show_labels}
+        )
         template = loader.get_template(
             "%s/layout/prepended_appended_text.html" % get_template_pack())
         context["crispy_prepended_text"] = prepend

@@ -1,3 +1,12 @@
+"""
+Views for the Garden app.
+
+Provides functionality for:
+- Displaying a user's garden with their earned flowers
+- Editing the logged-in user's profile
+
+All profile editing actions require the user to be logged in.
+"""
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -16,13 +25,6 @@ def garden_view(request, id):
     Retrieves the user by ID and fetches all flowers the user has earned
     with quantity greater than zero. Renders the 'mygarden.html' template
     with the user and their flowers.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-        id (int): The primary key of the user whose garden is displayed.
-
-    Returns:
-        HttpResponse: Rendered garden page with user and flowers context.
     """
     page_url = "garden/mygarden.html"
     user = get_object_or_404(User, pk=id)
@@ -45,12 +47,6 @@ def edit_profile_view(request):
     - POST: Validates the submitted form and updates the profile.
     Displays success or error messages using Django's messages framework.
     Redirects to the user's garden page on success.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: Rendered edit profile page with the form context.
     """
     page_url = "garden/edit-profile.html"
     profile = request.user.userprofile

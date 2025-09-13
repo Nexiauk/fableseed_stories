@@ -1,8 +1,14 @@
+"""
+Unit tests for the Fableseed application's user profile functionality.
+
+Tests include:
+- Automatic creation of a UserProfile when a User is created.
+- Default values for UserProfile fields such as display_name, bio,
+  profile_picture, and fablebuds_count.
+"""
 from django.test import TestCase
 from django.contrib.auth.models import User
 
-
-# Create your tests here.
 
 class UserProfileTests(TestCase):
     """

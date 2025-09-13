@@ -1,3 +1,11 @@
+"""
+Forms for user signup and profile editing in the Fableseed app.
+
+Includes:
+- CustomSignupForm: Extends allauth SignupForm to include display_name.
+- EditProfileForm: Allows editing of a user's display name, bio, and profile picture.
+"""
+
 from allauth.account.forms import SignupForm
 from django import forms
 from .models import UserProfile
@@ -9,25 +17,12 @@ class CustomSignupForm(SignupForm):
     """
     Custom signup form that extends allauth's SignupForm to include
     a 'display_name' field and save it to the associated UserProfile.
-
-    Attributes:
-        display_name (CharField): Public name displayed for the user.
-
-    Methods:
-        save(request): Saves the user and updates the UserProfile with the
-                       cleaned display_name.
     """
     display_name = forms.CharField(max_length=70, label="Display Name")
 
     def save(self, request):
         """
         Save the user and assign the display_name to the related UserProfile.
-
-        Args:
-            request (HttpRequest): The HTTP request object.
-
-        Returns:
-            User: The newly created user instance.
         """
         user = super().save(request)
         user.userprofile.display_name = self.cleaned_data["display_name"]
@@ -39,13 +34,6 @@ class EditProfileForm(forms.ModelForm):
     """
     Form for editing an existing user's profile.
 
-    Attributes:
-        Meta: Specifies the model and fields included in the form.
-        helper (FormHelper): Configures Crispy Forms layout and styling.
-
-    Methods:
-        __init__(*args, **kwargs): Initializes the form and applies
-        Crispy Forms styling and layout.
     """
     class Meta:
         model = UserProfile

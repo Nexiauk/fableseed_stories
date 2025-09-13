@@ -2,7 +2,6 @@
 Django forms for creating and editing Fableseed and FableBranch objects.
 Forms for planting seeds, growing branches, and editing content.
 """
-
 from django import forms
 from .models import Fableseed, Flower, FableBranch
 from crispy_forms.helper import FormHelper
@@ -21,6 +20,13 @@ class CreateFableseed(forms.ModelForm):
         fields = ("title", "body", "flower_type")
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form with Crispy Forms helper and layout.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+        """
         super().__init__(*args, **kwargs)
         self.fields["flower_type"].label = "Flower Type"
         self.helper = FormHelper()
@@ -70,6 +76,13 @@ class CreateFablebranch(forms.ModelForm):
         fields = ("body",)
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form with Crispy Forms helper and layout.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+        """
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = "create-fablebranch"
@@ -111,6 +124,13 @@ class EditFablebranch(forms.ModelForm):
         fields = ("body",)
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form with Crispy Forms helper and layout.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+        """
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = "edit-fablebranch"
@@ -145,7 +165,7 @@ class EditFablebranch(forms.ModelForm):
 class EditFableseed(forms.ModelForm):
     """
     Form for editing an existing Fableseed.
-    Allows editing title, body, and flower type fields.
+    Allows editing of title, body, and flower type fields.
     """
     flower_type = forms.ModelChoiceField(queryset=Flower.objects.all())
 
@@ -154,6 +174,13 @@ class EditFableseed(forms.ModelForm):
         fields = ("title", "body", "flower_type")
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form with Crispy Forms helper and layout.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+        """
         super().__init__(*args, **kwargs)
         self.fields["flower_type"].label = "Flower Type"
         self.helper = FormHelper()

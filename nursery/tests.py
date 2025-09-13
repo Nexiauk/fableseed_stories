@@ -5,7 +5,6 @@ Tests include:
 - Nursery page views.
 - Fableseed and FableBranch model functionality.
 """
-
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -40,7 +39,6 @@ class NurseryModelTests(TestCase):
     Verifies that the instances are created correctly.
     Test fields contain expected values.
     Ensure string representations behave as expected.
-
     """
 
     def setUp(self):
