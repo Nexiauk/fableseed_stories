@@ -796,6 +796,9 @@ I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/), along 
 All initial checks came back with errors, such as trailing spaces and lines that were too long. The list below is for the final check of each file.
 
 ---
+settings.py - *All clear, no errors found*
+urls.py - *All clear, no errors found*
+---
 * Nursery - models.py - *All clear, no errors found*
 * Nursery - views.py - *All clear, no errors found*
 * Nursery - urls.py - *All clear, no errors found*
@@ -814,7 +817,14 @@ All initial checks came back with errors, such as trailing spaces and lines that
 * Garden - signals.py - *All clear, no errors found*
 * Garden - tailwind_field.py - *All clear, no errors found*
 ---
-Core
+* Core - views.py - *All clear, no errors found*
+* Core - models.py - No content
+* Core - urls.py - *All clear, no errors found*
+* Core - tests.py - No content
+* Core - forms.py - No content
+* Core - apps.py - *All clear, no errors found*
+* Core - admin.py - No content
+
 
 ---
 
