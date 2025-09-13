@@ -44,7 +44,7 @@ This collaborative storytelling forum has been created as a project during my [C
     * [Environment Variables](#deployment-security)
     * [Deployment Security](#deployment-security)
 * [Future Features](#future-features)
-* [Data and Models]
+* [Models and Data Relationships](#Models-and-Data-Relationships)
     * [Database Schema](#database-schema)
     * [Entity Relationship Diagram](#entity-relationship-diagram)
     * [Model Relationship Declaration](#model-relationship-declaration)
@@ -419,7 +419,7 @@ I also decided that I wanted to explore GSAP animations. It's something I wanted
 * Each branch posted on a a Fableseed with a previously uncollected flower, grants that flower to the user's garden
 * Flower quantity increases by +1 with each branch posted
 * +1 Fablebud granted to the user's profile
-* Fablebud spend to post branches - not currently implemented.
+* Fablebud spend to post branches - ***not currently implemented.***
 
 ### *Responsiveness*
 Fableseed has been built mobile-first and is responsive on screen sizes from 320px through to 2560px. Tailwind breakpoints have been applied to classes across many different elements to ensure that they look good, are legible, and resize nicely. 
@@ -502,7 +502,7 @@ Each flower icon in profile gardens could:
 * Visually change as you collect more (e.g. 1–3 is a bud, 4–7 is a full bloom, 8 \+ is a golden sparkle version)
 * A sample **JavaScript animation** to make flowers bloom on like
 
-## **Fableseed Application – Models and Data Relationships**
+## **Models and Data Relationships**
 ### *Entity Relationship Diagram*
 This Entity Relationship Diagram for Fableseed was created using [Mermaid](https://mermaid.js.org/)’s built-in ERD diagramming tool. [ChatGPT](https://openai.com/index/chatgpt/) was used to help me understand the syntax and symbols used, as well as to double check my logic.
 
@@ -691,7 +691,7 @@ Logged-in users who can create fableseeds, grow branches, and achieve rewards fo
 * I want to interact with the Fableseeds and Fablebranches in the same way as as a writer
 *Admin users can interact on the forum in the same way as regular users.*
 * I also want the additional ability to easily approve or reject Fableseeds
-*Admin users have the ability to approve Fableseeds so they appear in the Nursery table - this is handled through the Django Admin interface and includes the ability to quickly multi-select Fableseeds and approve en masse. They can also delete via the admin interface.*
+*Admin users have the ability to approve Fableseeds so they appear in the Nursery table - this is handled through the Django Admin interface and includes the ability to quickly multi-select Fableseeds and approve en masse. They can filter by pending, approved, or all. They can also delete via the admin interface.*
 * I want the ability to add new flowers in the admin interface
 *Admin users have the ability to add/edit/delete Flowers/User Flowers/Fableseeds/Fablebranches/Users all via the Django admin interface*
 
