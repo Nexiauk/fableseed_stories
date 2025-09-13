@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const dataTarget = btn.getAttribute("data-id");
             const dataType = btn.getAttribute("data-type");
             deleteMessage.showModal();
-            deleteConfirm.href = `/prune/${dataType}/${dataTarget}/`;
+            deleteConfirm.href = `/nursery/prune/${dataType}/${dataTarget}/`;
         });
     });
 });
