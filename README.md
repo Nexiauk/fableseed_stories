@@ -656,6 +656,45 @@ Halfway through development, I realised that storing `fablebuds_cost` on `FABLE_
 
 ### *User Story Testing*
 
+#### **Guests**
+
+* I want to be able to browse the forum (read-only) and view some story content to see if it’s something I want to participate in  
+*Guests have read-only access to the Nursery and Fableseeds/Fablebranches. They can peruse at lesiure and read what they like, but can only particpate if they sign up as a user.*
+* I should be able to view some information on how the story forum works and what it’s about  
+*The About page is a step-by-step guide about how to get started on the forum, including amending their profile.*
+* I should be able to easily register for an account if I want to  
+*The Sign Up button is always available in the nav bar, as is login/logout and there is a clear message in the navbar/footer about current login status.*
+
+
+#### **Writers**
+Logged-in users who can create fableseeds, grow branches, and achieve rewards for doing so.
+
+* I want to easily post a new Fableseed story prompt with minimal effort or complication  
+*The Nursery has a clearly visible 'Plant a Seed' button that directs through to an easy-to-use 'Cultivate' form, keeping the process nice and straightforward.*
+* I want the ability to browse through posted Fableseeds, to decide where I want to grow some new branches  
+*The Nursery page displays a list of approved Fableseeds in a clear, simple layout, ordered by newest created. Each row has an image of the flower it will grow, the author's name, the date it was created made easy-to-read by humanize, and the last date it was edited with a Fablebranch. It is also paginated so that the table doesn't grow unwieldy and the page stays nice and compact.*
+* I want to see at a glance what type of flower I’ll gain, if I branch from a specific Fableseed prompt  
+*The Fableseed's row in the Nursery table includes a column that shows the flower-type associated with that seed. Clicking on the Fableseed row takes you to a page which also shows the flower type next to the Fableseed title*
+* I want the ability to grow a branch directly from a story prompt  
+*The Fableseed detail page has a handy 'Grow a Fablebranch' button, that leads to an easy-to-use 'Cultivate' form.
+* I want to see the flowers I’ve earned in my user profile  
+*The user's personal profile garden includes an 'Earned Flowers' section, that shows an image of every flower earned by a Fablebranch reply, and a quantity for each type of flower. The flowers themselves are clickable and route back to the first Fableseed where that flower was earned.*
+* I want to see my Fablebud balance in my user profile  
+*The user's profile garden shows a field for Fablebud Count, which updates every time they post a new Fableseed*
+* I want to edit my own Fableseeds and Fablebranches to correct errors and spelling or grammar  
+* I want to be delete my own Fableseeds and Fablebranches  
+*Every Fableseed and Fablebranch posted by the logged-in user shows a 'Tend...' and a 'Prune...' button, allowing edits to be made and Seeds/branches to be deleted. A Fableseed cannot be deleted if it has already been branched, to preserve story and data integrity.*
+
+
+#### **Admin**
+
+* I want to interact with the Fableseeds and Fablebranches in the same way as as a writer
+*Admin users can interact on the forum in the same way as regular users.*
+* I also want the additional ability to easily approve or reject Fableseeds
+*Admin users have the ability to approve Fableseeds so they appear in the Nursery table - this is handled through the Django Admin interface and includes the ability to quickly multi-select Fableseeds and approve en masse. They can also delete via the admin interface.*
+* I want the ability to add new flowers in the admin interface
+*Admin users have the ability to add/edit/delete Flowers/User Flowers/Fableseeds/Fablebranches/Users all via the Django admin interface*
+
 ### *Automated Testing*
 #### **Garden App test**
 * Test that the extended user profile fields are setup correctly when a user UserProfile is created. 
@@ -780,24 +819,27 @@ I used [JSHint Validation Service](https://jshint.com/) to check my JavaScript f
 **script.js**<br>
 *Passed with no errors.*
 
-Initial errors related only to missins semi-colons, which has been rectified.
+Initial errors related only to missing semi-colons, which has been rectified.
 
 ---
 
 **gsap.js**<br>
 *Passed with no errors.*
 
-Initial errors related to missing semicolons and undefined variables for gsap, SplitText and ScrollTrigger, so added /* global gsap, SplitText, ScrollTrigger */ at the top of the file to prevent the error, as the global variables are loaded via CDN.
+Initial errors related to missing semicolons and undefined variables for gsap, SplitText and ScrollTrigger, so added 
+>/* global gsap, SplitText, ScrollTrigger */ 
+
+at the top of the file to prevent the error, as the global variables are loaded via CDN.
 
 ---
 
 #### **CI Python Linter**
 I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/), along with the [VS Code autopep8 formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8#:~:text=The%20autopep8%20extension%20for%20Visual,how%20to%20customize%20this%20extension.&text=Customize%20autopep8%3A%20You%20can%20customize,args%20setting.) to ensure that my python files met [PEP8](https://peps.python.org/pep-0008/) standards.
-All initial checks came back with errors, such as trailing spaces and lines that were too long. The list below is for the final check of each file.
+All initial checks came back with errors, such as trailing spaces and lines that were too long. The list below is for the final check of each file. I also added docstrings to the files both at the module-level, and for every class and method to ensure pep8 compliance.
 
 ---
-settings.py - *All clear, no errors found*
-urls.py - *All clear, no errors found*
+* settings.py - *All clear, no errors found*
+* urls.py - *All clear, no errors found*
 ---
 * Nursery - models.py - *All clear, no errors found*
 * Nursery - views.py - *All clear, no errors found*
@@ -825,9 +867,7 @@ urls.py - *All clear, no errors found*
 * Core - apps.py - *All clear, no errors found*
 * Core - admin.py - No content
 
-
 ---
-
 
 #### The WAVE Webb Accessibility Evaluation Tool
 

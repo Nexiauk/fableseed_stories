@@ -186,8 +186,11 @@ class CrispyTailwindFieldNode(template.Node):
             widget.attrs["class"] = css_class
 
             # HTML5 required attribute
-            if (html5_required and field.field.required
-                    and "required" not in widget.attrs):
+            if (
+                html5_required
+                and field.field.required
+                and "required" not in widget.attrs
+            ):
                 if field.field.widget.__class__.__name__ != "RadioSelect":
                     widget.attrs["required"] = "required"
 
