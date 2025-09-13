@@ -37,7 +37,8 @@ class UserFlower(models.Model):
     )
     earned_from_branch = models.ForeignKey(
         FableBranch,
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
+        null=True,
         related_name="reward"
     )
     earned_on = models.DateTimeField(auto_now_add=True)

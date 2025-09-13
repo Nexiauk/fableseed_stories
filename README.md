@@ -1046,6 +1046,16 @@ I tested my site on Chrome, Edge, FireFox and Safari.
     * All required form fields have to be filled in
     * The logo text takes you back to the home page from every page
 
+* Tested that Fableseeds create properly and display the right data from the user profile, the Fableseed model, and the Flower model
+* Tested that Fableseeds can be edited and that the content changes on the screen correctly
+* Tested that Fableseeds can be deleted, and the correct Fableseed has been deleted
+* Tested that Fableseeds cannot be deleted if they have any branches associated with them
+* Tested that Fablebranches create properly and display the correct data from the user profile and the Fablebranch model
+* Tested that newly created Fablebranches attach to the correct Fableseed
+* Tested that Fablebranches can be edited and that the content changes on the screen correctly
+* Tested that Fablebranches can be deleted, and that the flower amount decreases appropriately.
+* Tested that when the original Fablebranch
+
 
 ## **Technology used**
 * [Adobe Color](https://color.adobe.com/)  

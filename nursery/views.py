@@ -253,9 +253,12 @@ def delete_view(request, type, id):
             return redirect("fableseed-view", seed=obj.pk)
     elif type == "branch":
         obj = get_object_or_404(FableBranch, pk=id, author=request.user)
-        userflower = obj.reward.first()
-        if userflower and userflower.quantity >= 1:
+        userflower = UserFlower.objects.get(user=request.user, flower=obj.seed.flower_type)
+        if userflower:
             userflower.quantity -= 1
+        if userflower.quantity <= 0:
+            userflower.delete()
+        else:
             userflower.save()
     else:
         messages.error(

@@ -78,4 +78,9 @@ class FableseedAdmin(admin.ModelAdmin):
             return obj.flower_type.flower_image
 
 
-admin.site.register(FableBranch)
+@admin.register(FableBranch)
+class FableBranchAdmin(admin.ModelAdmin):
+    list_display = (
+            "seed",
+            "author",
+        )
