@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 
 class UserProfileTests(TestCase):
     """
-   Tests that the extended user profile fields are setup correctly when a 
-   UserProfile is created.
+    Tests that the extended user profile fields are setup correctly when a
+    UserProfile is created.
     """
 
     def setUp(self):
@@ -15,7 +15,9 @@ class UserProfileTests(TestCase):
         Create initial test data for a user
         """
         self.user = User.objects.create_user(
-            username="lucytest", password="testpassword")
+            username="lucytest",
+            password="testpassword"
+        )
 
     def test_user_profile_fields(self):
         """
@@ -23,7 +25,7 @@ class UserProfileTests(TestCase):
         when a User instance is saved.
 
         Asserts that:
-        - a UserpPofile exists for the user
+        - a UserProfile exists for the user
         - UserProfile.display_name is equal to the User's username
         - UserProfile.bio has defaults to the string "Hi"
         - UserProfile.profile_picture is set(truthy)
