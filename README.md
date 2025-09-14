@@ -470,7 +470,7 @@ Fableseeds are planted from the nursery view - pressing the Plant a Seed button 
 
 After posting a Fableseed, a helpful message is shown in green with a theme-appropriate message.
 
-The title of the Fableseed-view is taken directly from the Fableseed title written by the user and displays an inline image of the flower they chose to associate with it, giving potential branchers an indicative clue of what flower they will receive. When there are no branches, a conditional message is shown encouraging the logged-in user to be the first to reply. The Grow a Branch button is at the bottom of the screen because users should always read through the story thread before replying.
+The title of the Fableseed-view is taken directly from the Fableseed title written by the user and displays an inline image of the flower they chose to associate with it, giving potential branchers an indicative clue of what flower they will receive. When there are no branches, a conditional message is shown encouraging the logged-in user to be the first to reply. The Grow a Branch button is at the bottom of the screen because users should always read through the story thread before replying. It has inverted shadow and glow effects on hover, the same as Plant a Fableseed.
 
 The logged-in user who created the Fableseed can Tend(edit) or Prune(delete) as needed. However, once a branch exists, seeds can no longer be pruned to retain story integrity.
 
@@ -478,6 +478,17 @@ After posting a Fablebranch, a helpful message will appear in green with a theme
 The logged-in user who created the Fablebranch can Tend/Prune as desired - if they prune, the quantity of that flower will decrease in the user's garden, once the quantity reaches 0, the flower will disappear completely.
 
 Pruning generates a modal that makes sure you want to carry out the intended action. Once confirmed, a message informs the user that a pruning action has taken place and they are returned to the nursery table.
+
+![Cultivate Fableseeds version of the form](./docs/screenshots/cultivate-fableseed.png)
+![Cultivate Fableseeds version of the form](./docs/screenshots/cultivate-form-branch.png)
+![Message received after posting a Fableseed](./docs/screenshots/messages.png) 
+![Grow a Brnach button](./docs/screenshots/grow-branch-button.png)
+![Grow a branch button with hover effects](./docs/screenshots/grow-branch-button-hover.png)
+![Message received after posting a Fablebranch](./docs/screenshots/messages2.png)
+![Prune and tend buttons](./docs/screenshots/prune-tend.png) 
+![Prune and tend buttons](./docs/screenshots/prune-modal.png) 
+![Message received after pruning a branch.](./docs/screenshots/messages3.png) 
+
 
 ### *User Garden*
 The user garden populates automatically with the logged-in user's detail in the head, as well as forming part of the page's title. It shows the display name, a bio tagline, the user's email address if they entered it (optional), their full name as entered, and their fablebud count. They can edit their profile and change the display name, bio and profile picture via the edit-profile form. The description list stacks on mobile phones to make best user of the space.
