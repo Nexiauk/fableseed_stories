@@ -65,8 +65,6 @@ This collaborative storytelling forum has been created as a project during my [C
 * [Coding help](#coding-help)
 * [Interesting Bugs](#interesting-bugs)
 * [Deployment](#deployment)
-    * [Creating a Fork](#creating-a-fork)
-    * [Cloning a repository](#cloning-a-repository)
 * [Credits](#credits)
 * [Media](#media)
 
@@ -222,64 +220,64 @@ Four flowers emerged from the list:
 Purple tulips represent royalty and rebirth, black tulips represent power and strength. I wanted to include black because I liked the idea of the power and strength of words, as well as it being representative of the apocalyptic devastation the flowers and stories are fighting back against.
 
 * **Black Hero tulip**, with colours ranging from a dark maroon through mahogany to midnight black.  
-  ![][image2]  
+  ![Black hero tulip](./docs/screenshots/black-hero-tulip.png) 
 * **Black Parrot tulip** is a blackish purple tulip that is exotic and full of drama \- it looks a little less like a tulip but in a good way. It is one of the darkest tulips available.  
-  ![][image3]  
+  ![Black parrot tulip](./docs/screenshots/black-parrot-tulip.png) 
 * **Queen of Night tulips are** known for their rich purple-black colour.  
-  ![][image4]
+  ![Queen of night tulip](./docs/screenshots/queen-of-night.png) 
 
 #### **Colour Palette**
 
 Using [Adobe Colour](https://color.adobe.com/) I plugged an image of each tulip into the [Extract Theme](https://color.adobe.com/create/image) tool and generated a palette of colours.
 
-**Black Hero**
-![][image5]
+**Black Hero**  
+![Black hero tulip colour palette](./docs/screenshots/palette-black-hero.png) 
 
-**Black Parrot 1**
-![][image6]
+**Black Parrot 1**  
+![Black parrot tulip colour palette](./docs/screenshots/palette-black-parrot.png) 
 
-**Queen of Night**
-![][image7]
+**Queen of Night**  
+![Queen of night tulip colour palette](./docs/screenshots/palette-queen.png) 
 
-**Black Parrot 2**
-![][image8]
+**Black Parrot 2**  
+![Black parrot tulip 2nd colour palette](./docs/screenshots/palette-black-parrot2.png) 
 
 I decided to go with **Black Parrot 1** for its balanced mix of greens and purples, with a lighter colour suitable for text. I also took Woodsmoke (almost black) from **Black Parrot 2.**
 
 [Colorkit](https://colorkit.co/color/6830c1/) was used to find the closest matching Tailwind colours.
 
-![][image9]
+![Claret-coloured sample](./docs/screenshots/claret.png)  
 **Claret:** #730E3D  
 **RGB:** 115, 14, 61  
 **Closest Tailwind Colour:** pink-900  
 **oklch(0.3683 0.1374 359.46)**
 
-![][image10]
+![Eggplant-coloured sample](./docs/screenshots/eggplant.png)  
 **Eggplant:** #400E37  
 **RGB:** 64, 14, 55  
 **Closest Tailwind Colour:** brown-900  
 oklch(0.15 0.25 336.06)
 
-![][image11]
+![Black smoke-coloured sample](./docs/screenshots/black-smoke.png)  
 **Black Smoke:** #0D0D0D  
 **RGB:** 13, 13, 13  
 **Closest Tailwind Colour:** Black  
 oklch(0.1591 0 0)
 
-![][image12]
+![Deep green-coloured sample](./docs/screenshots/deep-green.png)  
 **Deep Green:** #045911  
 **RGB:** 4, 89, 17  
 **Closest Tailwind Colour:**   
 green-900  
 oklch(0.4037 0.1274 144.22)
 
-![][image13]
+![Leafy green-coloured sample](./docs/screenshots/leafy-green.png)  
 **Leafy Green:** #55A605  
 **RGB:** 85,166, 5   
 **Closest Tailwind Colour:** light-green-800  
 oklch(0.6477 0.1888 135.3)
 
-![][image14]
+![White smoke-coloured sample](./docs/screenshots/white-smoke.png)  
 **White Smoke:** #F2F2F2  
 **RGB:** 242, 242, 242  
 **Closest Tailwind Colour:** grey-100  
@@ -303,22 +301,21 @@ The colour scheme gave me a wide variety of pairings to work with, allowing vers
 #### DaisyUI Custom Theme Creator
 I decided to add the [Daisy UI](https://daisyui.com/) Tailwind plugin to my build as it provides useful component class names to help with writing less code and building faster. The [DaisyUI theme generator](https://daisyui.com/theme-generator/?lang=en) generates CSS from preset themes to add to your main Tailwind import css file, but you can also use it to generate your own custom colour scheme and it will even show whether your foreground and background colours are WCAG AAA compatible. Below are screenshots of my theme in the generator:
 
-![][image15]
-
-![][image16]
+![Daisy UI-generated theme](./docs/screenshots/daisy-theme.png)
+![Daisy UI-generated colour palette](./docs/screenshots/daisy-palette.png)
 
 #### **Imagery**
 I searched the internet with a clear image in mind of a flower growing from a post-apocalyptic city. My first inspiration came from this photo from an article about flowers that grow after wildfires. - [see credits section](#credits)
 
-![][image17]
+![Wildfire flower](./docs/screenshots/wildfire-flower.png)
 
 My second inspiration came from this image of a small shoot growing out of a cracked city street. - [see credits section](#credits)
 
-[![][image18]](https://www.freepik.com/free-ai-image/plant-growing-from-soil_268350286.htm)
+![Flower growing out of decay](./docs/screenshots/flower-decay.png)
 
 I found this image of a tulip that I wanted to use as the basis for my hero image - [see credits section](#credits)
 
-![][image19]
+![Tulip flower](./docs/screenshots/hero-tulip.png)
 
 I used [Adobe Firefly](https://www.adobe.com/products/firefly.html) to generate a scene of a tulip growing out of a devastated cityscape, using this particular tulip as a composition reference.
 
@@ -326,14 +323,14 @@ I used [Adobe Firefly](https://www.adobe.com/products/firefly.html) to generate 
 
 I used one of the generated images to create a portrait and a landscape hero image.
 
-* Portrait Hero Image
-![][image20]
+* Portrait Hero Image  
+![Hero image, portrait](./docs/screenshots/hero-portrait.png)
 
-* Landscape Hero Image
-![][image21]
+* Landscape Hero Image  
+![Hero image, landscape](./docs/screenshots/hero-landscape.png)
 
-* Edited version for responsive styling
-![][image22]
+* Edited version for responsive styling  
+![Hero image, responsive](./docs/screenshots/hero-responsive.png)
 
 I used [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) to grab the tulip by itself to plug back into Firefly so I could create a logo out of it using the following prompt and settings:
 
@@ -343,13 +340,13 @@ I used [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) to gr
 
 * Generated Image:
 
-![][image23]
+![Logo image of a tulip growing from a book](./docs/screenshots/logo-initial.png)
 
 I used Photoshop again to crop and re-colour the design to match Fableseed’s colour palette, using masking techniques and the re-colour tool.
 
 * Logo image:
 
-![][image24]
+![Final version of the logo](./docs/screenshots/logo-final.png)
 
 The images for the different flower types were created in Canva using flowers of a similar art style. Where a matching flower image didn’t exist, I created one and ended up with 12 images I was very happy with.
 
@@ -551,6 +548,7 @@ Guests:
     * DATABASE_URL (PostgreSQL database connection)  
     * CLOUDINARY_URL (media storage)  
 * .venv (virtual environment) is also excluded from GitHub, ensuring no dependencies or system files are exposed.
+* This sensitive configuration is stored in config vars in Heroku
 
 ### *Deployment Security*
 * DEBUG mode is disabled in production.  
@@ -1306,15 +1304,18 @@ I then used requestAnimationFrame in the GSAP JS to wait for the browser to fini
 ### Installing Requirements
 1. Create a virtual environment in your local project folder.  
 2. Activate the virtual environment.  
-3. Install all required dependencies using the `requirements.txt` file.  
+3. Install all required dependencies using the `requirements.txt` file using `pip install -r requirements.txt`  
 4. Verify installation by running the project locally.  
 
 ### Preparing the Project
 1. Ensure your Django project has a `requirements.txt` with all dependencies listed.  
 2. Ensure your project has a `Procfile` at the root, specifying how Heroku should run the app.  
 3. Make sure `ALLOWED_HOSTS` in `settings.py` includes your Heroku app domain.  
-4. Ensure static files are configured for production (for example, using WhiteNoise).  
-5. Set `DEBUG = False` in `settings.py` for production. 
+4. Ensure static files are configured for production (for example, using WhiteNoise).
+5. Ensure `dj-database-url` is listed in `requirements.txt` so it is installed automatically.
+6. Your `settings.py` should use `dj-database-url` to read the `DATABASE_URL` environment variable.  
+  This ensures Django connects to the correct database in both local and Heroku environments.  
+7. Set `DEBUG = False` in `settings.py` for production. 
 
 ### Creating an `env.py` File
 1. In your local project directory, create a file named `env.py`.  
