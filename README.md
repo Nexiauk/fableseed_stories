@@ -957,7 +957,8 @@ I used the [WAVE web accessibility evaluation tool](https://wave.webaim.org/) to
 * **nursery.html**<br>
 0 errors.  
 1 initial error relating to an empty table header. Rectified this by adding a font awesome icon and marking it as aria-hidden=true  
-![Results for nurery.html](./docs/testing/nursery-page.png)
+![Results for nursery.html](./docs/testing/nursery.png) 
+![Results for nursery.html](./docs/testing/nursery-page.png)
 
 * **view-fableseed.html**<br>
 0 errors  
@@ -1011,84 +1012,113 @@ Set the hero title and all the poem paragraphs to visibility: hidden and inserte
 ---
 
 **about.html**
-*Mobile results*
-*Desktop results*
+
+*Mobile results*  
+![Mobile lighthouse results for the about page](./docs/testing/about-page-mobile-lighthouse.png)
+
+*Desktop results*  
+![Desktop lighthouse results for the about page](./docs/testing/404-page-desktop.png)
 
 ---
 
 **Nursery.html**
 
-*Mobile results*
+Performance and Best Practice low due to file format and size of plant images. Resized, changed format, replaced on cloudinary and the scores improved.
 
-Performance low due to file format and size of plant images. Resized, changed format, replaced on cloudinary and performance improved.
+*Mobile results*  
+![Mobile lighthouse results for the nursery page](./docs/testing/nursery-mobile1.png)
+![Mobile lighthouse results for the nursery page](./docs/testing/nursery-mobile2.png)
 
-*Desktop results*
+*Desktop results*  
+![Desktop lighthouse results for the nursery page](./docs/testing/nursery-desktop.png) 
+![Desktop lighthouse results for the nursery page](./docs/testing/404-page-desktop.png)
+
+
 
 ---
 
 **view-fableseed.html**
 
-*Mobile results*
-
 Best practice score adversely impacted by the cloudinary cookies, which are abundant on this page due to the use of the placeholder imager that is stored on cloudinary and used for all profiles that haven't selected their own profile image.
 
-*Desktop results*
+*Mobile results*  
+![Mobile lighthouse results for the view fableseed page](./docs/testing/view-fableseed-mobile.png)
+
+*Desktop results*  
+![Desktop lighthouse results for the view fableseed page](./docs/testing/view-fableseed-desktop.png)
+
 
 ---
 
 **cultivate.html**
 
-*Mobile results*
+*Mobile results*  
+![Mobile lighthouse results for the cultivate page](./docs/testing/cultivate-form-mobile-lighthouse.png)
 
-*Desktop results*
+*Desktop results*  
+![Desktop lighthouse results for the cultivate page](./docs/testing/cultivate-form-desktop-lighthouse.png)
+
 
 ---
 
 **login.html**
 
-*Mobile results*
+*Mobile results*  
+![Mobile lighthouse results for the login page](./docs/testing/login-mobile.png)
 
-*Desktop results*
+*Desktop results*  
+![Desktop lighthouse results for the login page](./docs/testing/login-desktop.png)
+
+
+---
+
+**logout.html**
+
+*Mobile results*  
+![Mobile lighthouse results for the logout page](./docs/testing/logout-mobile.png)
+
+*Desktop results*  
+![Desktop lighthouse results for the logout page](./docs/testing/logout-desktop.png)
 
 ---
 
 **signup.html**
 
-*Mobile results*
+*Mobile results*  
+![Mobile lighthouse results for the signup page](./docs/testing/signup-mobile.png)
 
-*Desktop results*
+*Desktop results*  
+![Desktop lighthouse results for the signup page](./docs/testing/signup-desktop.png)
 
 ---
 
 **mygarden.html**
 
-*Mobile results*
+*Mobile results*  
+![Mobile lighthouse results for the My Garden page](./docs/testing/mygarden-mobile.png)
 
-*Desktop results*
+*Desktop results*  
+![Desktop lighthouse results for the My Garden page](./docs/testing/mygarden-desktop.png)
 
 ---
 
 **edit-profile.html**
 
-*Mobile results*
+*Mobile results*  
+![Mobile lighthouse results for the edit-profile page](./docs/testing/edit-profile-mobile-lighthouse.png)
 
-*Desktop results*
+*Desktop results*  
+![Desktop lighthouse results for the edit-profile page](./docs/testing/edit-profile-desktop-lighthouse.png)
 
 ---
 
 **404.html**
 
-*Mobile results*
+*Mobile results*  
+![Mobile lighthouse results for the 404 page](./docs/testing/404-page-mobile.png)
 
-*Desktop results*
-
----
-
-**500.html**
-
-*Mobile results*
-
-*Desktop results*
+*Desktop results*  
+![Desktop lighthouse results for the 404 page](./docs/testing/404-page-desktop.png)
 
 ---
 
