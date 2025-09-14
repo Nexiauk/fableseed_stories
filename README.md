@@ -44,7 +44,7 @@ This collaborative storytelling forum has been created as a project during my [C
     * [Environment Variables](#deployment-security)
     * [Deployment Security](#deployment-security)
 * [Future Features](#future-features)
-* [Models and Data Relationships](#Models-and-Data-Relationships)
+* [Models and Data Relationships](#models-and-data-relationships)
     * [Database Schema](#database-schema)
     * [Entity Relationship Diagram](#entity-relationship-diagram)
     * [Model Relationship Declaration](#model-relationship-declaration)
@@ -456,7 +456,7 @@ I have introduced [GSAP](https://gsap.com/) animations on the home page, to give
 The nursery page is formatted in a table, which shows Fableseed posts approved by admin. It includes headers for: Seed Title, Author, Date Created, and Last Edited, which references the last time a branch was created on that seed post. The rows highlight on hover using JavaScript, and the whole row is clickable for opening up the fableseed-view.
 The table also includes a column that shows an image of the flower type associated with that seed. Logged-in users can create a new Fableseed by clicking on the Plant a Seed button, which will open the cultive form. The plant a seed button has inverting glow and shadow effects.
 
-The nursery table includes pagination functionality so that the table doesn't grow huge and unwieldy. truncation also exists on the Seed title column so that as the screen size changes, long titles don't affect the layout adversely.
+The nursery table includes pagination functionality so that the table doesn't grow huge and unwieldy. Truncation also exists on the Seed title column so that as the screen size changes, long titles don't affect the layout adversely.
 
 ![The nursery page](./docs/screenshots/nursery-page.png)  
 ![Fableseed row hover](./docs/screenshots/nursery-page2.png)  
@@ -491,11 +491,11 @@ Pruning generates a modal that makes sure you want to carry out the intended act
 
 
 ### *User Garden*
-The user garden populates automatically with the logged-in user's detail in the head, as well as forming part of the page's title. It shows the display name, a bio tagline, the user's email address if they entered it (optional), their full name as entered, and their fablebud count. They can edit their profile and change the display name, bio and profile picture via the edit-profile form. The description list stacks on mobile phones to make best user of the space.
+The user garden populates automatically with the logged-in user's detail in the heading, as well as forming part of the page's title. It shows the display name, a bio tagline, the user's email address if they entered it (optional), their full name as entered, and their fablebud count. They can edit their profile and change the display name, bio and profile picture via the edit-profile form. The description list stacks on mobile phones to make best use of the space.
 
-The earned flowers area collects all flowers earned from branching a flower associated with a fableseed for the firsst time. The quantity of the flower increases as more branches are written on seeds of that same flower type.
+The earned flowers area collects all flowers earned from branching a flower associated with a fableseed for the first time. The quantity of the flower increases as more branches are written on seeds of that same flower type.
 
-The flower images have a hover effect, showing they are clickable - they link back to the fableseed that the user first branches of that flower type.
+The flower images have a hover effect, showing they are clickable - they link back to the fableseed that the user first branched of that flower type.
 
 ![Garden page on desktop view](./docs/screenshots/garden1.png)
 ![Garden page on mobile view](./docs/screenshots/garden2.png)  
@@ -504,9 +504,9 @@ The flower images have a hover effect, showing they are clickable - they link ba
 ### *About Page*
 The about page features a timeline of steps that feature in the Fableseed Gardener's Manual. It includes font awesome icons of seedlings and is contained in a scrollbox so that the socials bar can be kept always visible on larger screen sizes.
 
-The timeline alternates from left to right from table size up. On mobiles the timeline items stack on top of each other on the right of the bar and seedlings to make best use of the space.
+The timeline alternates from left to right from tablet size up. On mobiles the timeline items stack on top of each other on the right of the bar and seedlings to make best use of the space.
 
-the socials bar features links to active profiles and have a nice hover effect. The links open in a new tab.
+The socials bar features links to active profiles and have a nice hover effect. The links open in a new tab.
 
 ![About page on desktop view](./docs/screenshots/about-page1.png)
 ![About page on mobile view](./docs/screenshots/about-page2.png)
@@ -577,7 +577,7 @@ Each flower icon in profile gardens could:
 ### *Entity Relationship Diagram*
 This Entity Relationship Diagram for Fableseed was created using [Mermaid](https://mermaid.js.org/)’s built-in ERD diagramming tool. [ChatGPT](https://openai.com/index/chatgpt/) was used to help me understand the syntax and symbols used, as well as to double check my logic.
 
-![][image41]
+![Fableseed ERD chart created in Mermaid](./docs/screenshots/Fableseed%20ERD-Mermaid%20Chart.png)
 
 ### *Overview*
 This section contains the Django models for the **Fableseed** application, a storytelling platform where users create story seeds, branch stories, and earn flower rewards.  
@@ -617,7 +617,7 @@ Each seed can sprout multiple paths (storylines), like chapters or what-if versi
 
 ---
 
-**FABLESEED ||--|| FLOWERS : "assigned flower"**  
+**FABLESEED |{--|| FLOWER : "assigned flower"**  
  Every Fableseed must be assigned exactly one flower type.  
  This flower is the "reward type" for the story seed. Different seeds may share the same flower type.
 
@@ -629,7 +629,7 @@ Each seed can sprout multiple paths (storylines), like chapters or what-if versi
 
 ---
 
-**FLOWERS ||--|{ USER_FLOWER : "is earned as"**  
+**FLOWER ||--|{ USER_FLOWER : "is earned as"**  
  Each flower type can be earned by many users.  
  For example, a tulip might be earned by multiple users, tracked through a USER\_FLOWER record.
 
@@ -645,8 +645,9 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 - Each **Fableseed** can grow into multiple **FableBranches**.  
 - Each **Fableseed** is assigned exactly **one flower type**, shared across seeds.  
 - Users can earn multiple flowers as rewards.  
-- Each **flower** type can be earned by many users.  
+- Each **Flower** type can be earned by many users.  
 - A **FableBranch** can earn exactly **one flower type**, but the quantity can be increased by further branches of the same flower type.  
+
 ### *Model Fields*
 
 **USER**
@@ -661,7 +662,7 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 | Field | Type | Notes |
 |-------|------|------|
 | id | int PK | Primary key |
-| user| int FK | One-to-one link to `USER` |
+| user| int FK | One-to-one link to `USER` (CASCADE) |
 | display_name | CharField | Name displayed in the app |
 | profile_picture | CloudinaryField | User avatar |
 | bio | TextField | Short biography |
@@ -671,13 +672,13 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 | Field | Type | Notes |
 |-------|------|------|
 | seed | AutoField PK | Primary key |
-| flower_type | FK | References `FLOWERS` (PROTECT) |
+| flower_type | FK | References `FLOWER` (PROTECT) |
 | title | CharField | Story seed title |
 | body | CharField | Story prompt |
 | approval_status | BooleanField | Pending or Approved |
 | created_on | DateTimeField | Auto timestamp |
 | edited_on | DateTimeField | Auto timestamp |
-| author | FK | References `USER` (SET_NULL on deletion) |
+| author | FK | References `USER` (SET_NULL) |
 | fablebuds_earnt | PositiveIntegerField | Reward points earned by seed |
 ---
 **FABLE_BRANCH**
@@ -688,7 +689,7 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 | body | TextField | Story content |
 | created_on | DateTimeField | Auto timestamp |
 | edited_on | DateTimeField | Auto timestamp |
-| author | FK | References `USER` (SET_NULL on deletion) |
+| author | FK | References `USER` (SET_NULL) |
 | fablebuds_cost | PositiveIntegerField | **Deprecated** — now determined by flower type |
 ---
 **FLOWER**
@@ -703,11 +704,11 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 | Field | Type | Notes |
 |-------|------|------|
 | id | AutoField PK | Primary key |
-| user | FK | References `USER` (CASCADE on deletion)|
-| flower | FK | References `FLOWERS` (PROTECT on deletion) |
+| user | FK | References `USER` (CASCADE)|
+| flower | FK | References `FLOWER` (PROTECT) |
 | quantity | PositiveIntegerField | Number of this flower earned by the user |
-| earned_from_seed | FK | References `FABLESEED` (CASCADE on deletion) |
-| earned_from_branch | FK | References `FABLE_BRANCH` (CASCADE on deletion) |
+| earned_from_seed | FK | References `FABLESEED` (CASCADE) |
+| earned_from_branch | FK | References `FABLE_BRANCH` (SET_NULL) |
 | earned_on | DateTimeField | Timestamp of earning |
 ---
 
@@ -721,6 +722,8 @@ A branch can reward one flower type, but multiple users can earn it, with quanti
 I ended up using Django’s built-in user model and extending it with a user profile model with extra fields. This was purely by accident as at the time I didn’t know you couldn’t extend the user model if you’d already migrated, which I had.
 
 Halfway through development, I realised that storing `fablebuds_cost` on `FABLE_BRANCH` was redundant. The cost should be determined by the flower type, so that rarer flowers are more valuable and the system remains consistent and scalable.
+
+I made an end-development change to USER_FLOWER -> earned_from_branch. it was originally set to cascade ond letion, but needed setting to null to preserve user flower record integrity while other branches of the same flower type existed.
 
 
 ## **Testing**
@@ -812,7 +815,7 @@ Logged-in users who can create fableseeds, grow branches, and achieve rewards fo
 
 
 #### **The W3C Markup Validation Service**
-I used the text input method to validate the HTML of each page. I copied the fully rendered HTML from the browser’s page source, ensuring that all Django template variables were resolved before checking.
+I used the text input method on the [W3C Markup Validation Service](https://validator.w3.org/) to validate the HTML of each page. I copied the fully rendered HTML from the browser’s page source, ensuring that all Django template variables were resolved before checking.
 
 **cultivate.html**<br>
 *No errors or warnings to show.*
@@ -822,7 +825,7 @@ Initial erors were as follows:
 * The crispy form was wrapped in form tags, which doubled it up once rendered. Removed the form tags.
 ---
 
-**fableseed-view.html**
+**fableseed-view.html**  
 *No errors or warnings to show.*
 
 Initial errors were as follows: 
@@ -839,13 +842,13 @@ Initial errors were as follows:<br>
 ---
 
 **404.html**<br>
-*No errors or warnings to show.*
+*No errors or warnings to show.*  
 No initial errors.
 
 ---
 
 **500.html**<br>
-*No errors or warnings to show.*
+*No errors or warnings to show.*  
 No initial errors.
 
 ---
@@ -864,13 +867,13 @@ Initial errors were as follows:
 ---
 
 **index.html**<br>
-*No errors or warnings to show.*
+*No errors or warnings to show.*  
 No initial errors.
 
 ---
 
 **about.html**<br>
-*No errors or warnings to show.*
+*No errors or warnings to show.*  
 No initial errors.
 
 ___
@@ -881,7 +884,7 @@ ___
 #### **The W3C CSS Validation Service**
 The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) reports errors for @layer and @property. These are not actual mistakes -  they are rules that are part of modern CSS features: Cascade Layers (@layer) for organizing groups of CSS rules, and CSS Houdini (@property) for creating animatable, typed custom properties. Current W3C validation tools do not yet recognize these newer specifications, but all modern browsers support them.<br>
 
-There were no other warnings or errors - all clear.
+*There were no other warnings or errors - all clear.*
 
 #### **The JSHint Validation Service**
 I used [JSHint Validation Service](https://jshint.com/) to check my JavaScript files.
@@ -941,37 +944,48 @@ All initial checks came back with errors, such as trailing spaces and lines that
 ---
 
 #### The WAVE Webb Accessibility Evaluation Tool
+I used the [WAVE web accessibility evaluation tool](https://wave.webaim.org/) to check the accessibility of my pages and forms. Results and screenshots below.
 
 * **index.html**<br>
-0 errors
+0 errors  
+![Results for index.html](./docs/testing/index-page.png)
 
 * **about.html**<br>
-0 errors
+0 errors  
+![Results for about.html](./docs/testing/about.html.png)
 
 * **nursery.html**<br>
-0 errors.<br>
-1 initial error relating to an empty table header. Rectified this by adding a font awesome icon and marking it as aria-hidden=true<br>
+0 errors.  
+1 initial error relating to an empty table header. Rectified this by adding a font awesome icon and marking it as aria-hidden=true  
+![Results for nurery.html](./docs/testing/nursery-page.png)
 
 * **view-fableseed.html**<br>
-0 errors
+0 errors  
+![Results for view-fableseed.html](./docs/testing/view-fableseed.png)
 
 * **cultivate.html**<br>
-0 errors
+0 errors  
+![Results for cultivate.html](./docs/testing/cultivate.png)
 
 * **login.html**<br>
-0 errors
+0 errors  
+![Results for login.html](./docs/testing/login.png)
 
 * **signup.html**<br>
-0 errors
+0 errors  
+![Results for signup.html](./docs/testing/signup.png)
 
 * **mygarden.html**<br>
-0 errors
+0 errors  
+![Results for mygarden.html](./docs/testing/mygarden.png)
 
 * **edit-profile.html**<br>
-0 errors
+0 errors  
+![Results for edit-profile.html](./docs/testing/edit-profile.png)
 
 * **404.html**<br>
-0 errors
+0 errors  
+![Results for index.html](./docs/testing/404.png)
 
 * **500.html**<br>
 This page is a duplicate of 400.html
