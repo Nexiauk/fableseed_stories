@@ -432,12 +432,34 @@ Fableseed has been built mobile-first and is responsive on screen sizes from 320
 * Crispy Forms has been used and allowed to handle form responsiveness across devices. I have used the Crispy form helper layout in forms.py to apply additional styling
 
 ### *Header*
+The header contains the Fableseed logo and title, along with navlinks that display as a horizontal list on large screens and above, and a collapsed dropdown list on mobiles and tablets. The nav links have hover and active states, where the colour changes, and they resize nicely across all screen sizes. The Fableseed title is clickable and navigates users back to the homepage at all times.  The logo is purely for decoration and branding.
+
+![Header on desktop](./docs/screenshots/header-desktop.png)
+
+![Header on mobile](./docs/screenshots/header-mobile.png)
+
+![Header on mobile](./docs/screenshots/header-mobile-menu.png)
 
 ### *Footer*
+The footer contains information on the user's current login status. It will show who you are currently logged in as, or that you are currently logged out.
+
+![Footer login status](./docs/screenshots/footer.png)
+![Footer logout status](./docs/screenshots/footer2.png)
 
 ### *Animations*
+I have introduced [GSAP](https://gsap.com/) animations on the home page, to give the opening poem the effect of text unfolding a line at a time. There is a fallback in place in case the JavaScript fails, that the whole poem will still display, as its the main hero text. This particular effect was constructed using a GSAP timeline that uses SplitText and Scrolltrigger, with the poem parts initially being set to hidden and the JS revealing it as the timeline progresses.
+
+![Animations during the transitions](./docs/screenshots/animations1.png)
+![Full poem showing](./docs/screenshots/animations2.png)
 
 ### *Nursery Page*
+The nursery page is formatted in a table, which shows Fableseed posts approved by admin. It includes headers for: Seed Title, Author, Date Created, and Last Edited, which references the last time a branch was created on that seed post. The rows highlight on hover using JavaScript, and the whole row is clickable for opening up the fableseed-view.
+The table also includes a column that shows an image of the flower type associated with that seed. Logged-in users can create a new Fableseed by clicking on the Plant a Seed button, which will open the cultive form. The plant a seed button has inverting glow and shadow effects.
+
+![The nursery page](./docs/screenshots/nursery-page.png)
+![Fableseed row hover](./docs/screenshots/nursery-page2.png)
+![Plant seed button](./docs/screenshots/plant-seed.png)
+![Plant seed button](./docs/screenshots/plant-2.png)
 
 ### *User Garden*
 
