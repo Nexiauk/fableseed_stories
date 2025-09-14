@@ -1042,6 +1042,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 * **Safari** <br> Tested on an iPhone SE 2023
     * The burger nav dropdown works as expected on all pages, expanding, collapsing and disappearing as it should
     * All nav links work on all pages
+    * All external links open in a new browser window
     * All active nav-links display in the appropriate colour on the appropriate page
     * All required form fields have to be filled in
     * The logo text takes you back to the home page from every page
@@ -1052,9 +1053,24 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 * Tested that Fableseeds cannot be deleted if they have any branches associated with them
 * Tested that Fablebranches create properly and display the correct data from the user profile and the Fablebranch model
 * Tested that newly created Fablebranches attach to the correct Fableseed
+* Tested that branching on a new flower for the first time creates a user flower record that displays an image and quantity on the user profile garden
+* Tested that branching on subsequent seeds of the same flower type increments that flower type on the user's profile garden
 * Tested that Fablebranches can be edited and that the content changes on the screen correctly
-* Tested that Fablebranches can be deleted, and that the flower amount decreases appropriately.
-* Tested that when the original Fablebranch
+* Tested that Fablebranches can be deleted, and are removed from view
+* Tested that when Fablebranches are deleted, the flower quantity on the user profile reduces by 1.
+* Tested that when the original Fablebranch is deleted, the user flower is removed. Found out that if the original branch is deleted before subsequent branches, it removes the user flower despite the quantity being greater than 1 - [see interesting bugs section](#interesting-bugs)
+* Tested that the correct flowers appear in the user's garden profile after branching on a fableseed
+* Tested that the flower on the user profile links back to the original fableseed it was generated from
+* Tested that the flower on the user profile links back to the original fableseed it was generated from, even if the branch that created the user flower record has been deleted/set to null
+* Tested that users can edit their display name and bio, and that the information updates on submit
+* Tested that users can update their profile pictures, and that the picture updates on submit and appears on Fableseeds and Fablebranches
+* Tested that form validation works on the signup form and doesn't allow submission with empty fields
+* Tested that the placeholder profile image displays immediately on a new user's profile garden
+* Tested that Planting Fableseeds and Growing Fablebranches isn't available to logged-out users
+* Tested that wherever it shows an author, it uses the display name instead of the username
+* Tested that growing a new branch shoes a'Last Edited' date on the nursery table that matches the Fablebranch creation date
+* Tested that removing all branches from a seed, removes the last edited date from the nursery table
+
 
 
 ## **Technology used**
@@ -1101,7 +1117,10 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 * Help styling the file input type - [Stack Overflow](https://stackoverflow.com/questions/572768/styling-an-input-type-file-button)  
 * Website for generating a CSS glow effect, also generates Tailwind CSS classes - [notchtools.com](https://notchtools.com/css-glow-generator)  
 * OKLCH colour picker for some of the Daisy UI theme colours - [oklch.com](https://oklch.com/#0.9612,0,0,100)
-* Couldn't get profile area borders on fablebranch replies to alternate colours. ChatGPT helped me by suggesting n if statement: {% if forloop.counter|divisibleby:2 %} border-base-300 {% else %} border-primary-content {% endif %}. Worked really well.
+* Couldn't get profile area borders on fablebranch replies to alternate colours. ChatGPT helped me by suggesting an if statement: 
+> {% if forloop.counter|divisibleby:2 %} border-base-300 {% else %} border-primary-content {% endif %}. 
+
+This fix worked really well.
 
 
 ## **Interesting Bugs**
@@ -1125,6 +1144,8 @@ All these measures massively improved google lighthouse performance on mobile an
 
 * GSAP animations weren't working on FireFox and the poem text was flickering briefly into view before disappearing completely, causing a layout shift that was jarring. I worked on this with ChatGPT by firstly setting all of the poem paragraphs and the hero title to visibility: hidden, then made the GSAP JS set it to visible again. I also set hero-content overflow to hidden. This stopped the flickering and the layout shift, which had been subtl on Chrome, but very noticeable on FireFox.
 I then used requestAnimationFrame in the GSAP JS to wait for the browser to finish layout and painting, and prevent Firefox from miscalculating line positions. Animations now work in all browsers and no weird flickering or shifts occur. I was concerned that because the poem is hidden, if the JavaScript failed then the hero poem just wouldn't exist at all, so I created a block called extra_head and added page specific noscript fallback for the hero poem.
+
+* When posting a branch on a Fableseed that relates to a flower the user doesn't have yet, it creates a userflower record. Subsequent branches of that flower type increase the quantity of that flower on the user flower record. When deleting branches, any aside from the original branch were decreasing the quantity as per the view, but deleting the original branch deleted the user flower record entirely, despite the user having a quantity of flowers greater than 1. I had to adjust the user flower model field earned_from_branch to set null on delete, and set null to true, then change my delete view to decrement the userflower quantity when a fablebranch is deleted, and delete the userflower record only if the quantity reaches 0. Less of a bug, more of a last-minute headache that has now been solved.
 
 ## **Credits**
 

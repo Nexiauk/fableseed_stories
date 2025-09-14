@@ -29,13 +29,13 @@ Title: {{fableseed.title}}
        height="50" width="50" class="h-12 w-12">
 </div>
     <article
-        class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
+        class="grid sm:grid-flow-row md:grid-flow-col md:grid-cols-[200px_1fr] md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
         <div
             class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between">
             <p class="md:text-center font-bold mb-4">{{ fableseed.author.get_display_name }}</p>
             <img src="{{fableseed.author.userprofile.user_profile_image_url}}"
-                alt="{{fableseed.author.get_display_name}}" width="150" height="150">
+                alt="{{fableseed.author.get_display_name}}" width="150" height="150" class="w-[150px] h-[150px] object-cover">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
         </div>
         
@@ -57,29 +57,26 @@ Title: {{fableseed.title}}
         </div>
     </article>
 
-
-
-
 <!-- Section that contains all Fablebranch replies to the Fableseed post -->
-
-    <!-- Iterates through all branches (replies) associated with this Fableseed -->
+    <!-- Iterates through all branches (replies) associated with this Fableseed, styles odd and even branch replies alternating colours. -->
     {% if posted_branches %}
     {% for branch in posted_branches %}
     <article
-        class="grid sm:grid-flow-row md:grid-flow-col md:gap-4 w-full h-full overflow-auto odd:bg-primary-content odd:text-base-300 even:bg-secondary-content rounded-xl bg-clip-border odd:drop-shadow-secondary-content even:drop-shadow-primary-content drop-shadow-md container p-4">
+        class="grid sm:grid-flow-row md:grid-flow-col md:grid-cols-[200px_1fr] md:gap-4 w-full h-full overflow-auto odd:bg-primary-content odd:text-base-300 even:bg-secondary-content rounded-xl bg-clip-border odd:drop-shadow-secondary-content even:drop-shadow-primary-content drop-shadow-md container p-4">
+        <!-- Uses forloop counter logic to change the border colour in keeping with the alternating background colours-->
         <div
             class="md:row-span-12 md:border-1 {% if forloop.counter|divisibleby:2 %} border-primary-content {% else %} border-base-300 {% endif %} rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between">
             <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
             <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}"
-                width="150" height="150">
+                width="150" height="150" class="w-[150px] h-[150px] object-cover">
             <p class="md:text-center mt-4">{{ fableseed.author.userprofile.bio }}</p>
         </div>
         <span class="md:col-span-10 border-b-2 mt-4 md:mt-0 pb-2 italic text-sm">
             {{ branch.created_on|date:"F jS, Y, g:i a" }}
         </span>
-        <div class="md:col-span-10 md:row-span-10 mb-4">
+        <div class="md:col-span-10 md:row-span-10 mb-4 w-full">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
-            <p>{{ branch.body }}</p>
+            <p class=" min-w-0 break-words whitespace-normal">{{ branch.body }}</p>
         </div>
         <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4 flex-col md:flex-row">
             {% if user.is_authenticated and user == branch.author %}
