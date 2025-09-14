@@ -456,14 +456,52 @@ I have introduced [GSAP](https://gsap.com/) animations on the home page, to give
 The nursery page is formatted in a table, which shows Fableseed posts approved by admin. It includes headers for: Seed Title, Author, Date Created, and Last Edited, which references the last time a branch was created on that seed post. The rows highlight on hover using JavaScript, and the whole row is clickable for opening up the fableseed-view.
 The table also includes a column that shows an image of the flower type associated with that seed. Logged-in users can create a new Fableseed by clicking on the Plant a Seed button, which will open the cultive form. The plant a seed button has inverting glow and shadow effects.
 
-![The nursery page](./docs/screenshots/nursery-page.png)
-![Fableseed row hover](./docs/screenshots/nursery-page2.png)
+The nursery table includes pagination functionality so that the table doesn't grow huge and unwieldy. truncation also exists on the Seed title column so that as the screen size changes, long titles don't affect the layout adversely.
+
+![The nursery page](./docs/screenshots/nursery-page.png)  
+![Fableseed row hover](./docs/screenshots/nursery-page2.png)  
 ![Plant seed button](./docs/screenshots/plant-seed.png)
-![Plant seed button](./docs/screenshots/plant-2.png)
+![Plant seed button](./docs/screenshots/plant-2.png)  
+![Pagination controls](./docs/screenshots/pagination.png)  
+![Truncated titles on the Title column](./docs/screenshots/truncation.png)
+
+### *Fableseeds and Fablebranches*
+Fableseeds are planted from the nursery view - pressing the Plant a Seed button generates the cultivate form. The cultivate form is used for both Fableseeds and Fablebranches, and will update the title on the field accordingly as well as picking up the appropriate form in the background.
+
+After posting a Fableseed, a helpful message is shown in green with a theme-appropriate message.
+
+The title of the Fableseed-view is taken directly from the Fableseed title written by the user and displays an inline image of the flower they chose to associate with it, giving potential branchers an indicative clue of what flower they will receive. When there are no branches, a conditional message is shown encouraging the logged-in user to be the first to reply. The Grow a Branch button is at the bottom of the screen because users should always read through the story thread before replying.
+
+The logged-in user who created the Fableseed can Tend(edit) or Prune(delete) as needed. However, once a branch exists, seeds can no longer be pruned to retain story integrity.
+
+After posting a Fablebranch, a helpful message will appear in green with a theme-appropriate message that automatically picks up what type of flower you have grown in your garden.
+The logged-in user who created the Fablebranch can Tend/Prune as desired - if they prune, the quantity of that flower will decrease in the user's garden, once the quantity reaches 0, the flower will disappear completely.
+
+Pruning generates a modal that makes sure you want to carry out the intended action. Once confirmed, a message informs the user that a pruning action has taken place and they are returned to the nursery table.
 
 ### *User Garden*
+The user garden populates automatically with the logged-in user's detail in the head, as well as forming part of the page's title. It shows the display name, a bio tagline, the user's email address if they entered it (optional), their full name as entered, and their fablebud count. They can edit their profile and change the display name, bio and profile picture via the edit-profile form. The description list stacks on mobile phones to make best user of the space.
+
+The earned flowers area collects all flowers earned from branching a flower associated with a fableseed for the firsst time. The quantity of the flower increases as more branches are written on seeds of that same flower type.
+
+The flower images have a hover effect, showing they are clickable - they link back to the fableseed that the user first branches of that flower type.
+
+![Garden page on desktop view](./docs/screenshots/garden1.png)
+![Garden page on mobile view](./docs/screenshots/garden2.png)  
+![Hover effect on flower images](./docs/screenshots/flower-hover.png)
 
 ### *About Page*
+The about page features a timeline of steps that feature in the Fableseed Gardener's Manual. It includes font awesome icons of seedlings and is contained in a scrollbox so that the socials bar can be kept always visible on larger screen sizes.
+
+The timeline alternates from left to right from table size up. On mobiles the timeline items stack on top of each other on the right of the bar and seedlings to make best use of the space.
+
+the socials bar features links to active profiles and have a nice hover effect. The links open in a new tab.
+
+![About page on desktop view](./docs/screenshots/about-page1.png)
+![About page on mobile view](./docs/screenshots/about-page2.png)
+![Socials bar hover effect](./docs/screenshots/socials-bar.png)
+
+
 
 ##  **Security Features**
 ### *Authentication & User Management*
