@@ -1070,6 +1070,8 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 * Tested that wherever it shows an author, it uses the display name instead of the username
 * Tested that growing a new branch shoes a'Last Edited' date on the nursery table that matches the Fablebranch creation date
 * Tested that removing all branches from a seed, removes the last edited date from the nursery table
+* Tested that a really long word wouldn't break the Fablebranch article - it did, had to add a break class
+* Tested that Fablebranch content doesn't break layout when the posts are very long. It did, it squished the profile area down to the smallest it could possibly be, so added an additional class to the article that keeps the profile area at a fixed size on medium and above screens.
 
 
 

@@ -32,7 +32,7 @@ Title: {{fableseed.title}}
         class="grid sm:grid-flow-row md:grid-flow-col md:grid-cols-[200px_1fr] md:gap-4 w-full h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4">
         <!-- Main Fableseed post content including author info, creation date, title, body, and flower image -->
         <div
-            class="row-span-12 md:border-1 border-primary-content rounded-xl md:p-2 max-h-80 flex flex-4 flex-col items-center justify-between">
+            class="row-span-12 sm:border-1 border-primary-content rounded-xl sm:p-2 max-h-80 flex flex-4 flex-col items-center justify-between">
             <p class="md:text-center font-bold mb-4">{{ fableseed.author.get_display_name }}</p>
             <img src="{{fableseed.author.userprofile.user_profile_image_url}}"
                 alt="{{fableseed.author.get_display_name}}" width="150" height="150" class="w-[150px] h-[150px] object-cover">
@@ -47,7 +47,7 @@ Title: {{fableseed.title}}
         </div>
 
         <div id="fableseed-btns"
-            class="md:col-span-10 flex justify-center md:justify-end gap-2 mt-4 mx-auto md:mx-0 flex-col md:flex-row">
+            class="md:col-span-10 flex mx-auto sm:mx-0 justify-center sm:justify-end gap-2 mt-4 flex-col sm:flex-row">
             {% if user.is_authenticated and user == fableseed.author %}
             <a href="{% url 'edit-fableseed' fableseed.seed %}"
                 class="btn hover:bg-secondary hover:text-secondary-content edit">Tend Seed</a>
@@ -65,7 +65,7 @@ Title: {{fableseed.title}}
         class="grid sm:grid-flow-row md:grid-flow-col md:grid-cols-[200px_1fr] md:gap-4 w-full h-full overflow-auto odd:bg-primary-content odd:text-base-300 even:bg-secondary-content rounded-xl bg-clip-border odd:drop-shadow-secondary-content even:drop-shadow-primary-content drop-shadow-md container p-4">
         <!-- Uses forloop counter logic to change the border colour in keeping with the alternating background colours-->
         <div
-            class="md:row-span-12 md:border-1 {% if forloop.counter|divisibleby:2 %} border-primary-content {% else %} border-base-300 {% endif %} rounded-xl md:p-2 max-h-80 flex flex-col items-center justify-between">
+            class="md:row-span-12 sm:border-1 {% if forloop.counter|divisibleby:2 %}border-primary-content{% else %} border-base-300 {% endif %} rounded-xl sm:p-2 max-h-80 flex flex-col items-center justify-between">
             <p class="md:text-center font-bold pb-4">{{ branch.author.get_display_name }}</p>
             <img src="{{branch.author.userprofile.user_profile_image_url}}" alt="{{branch.author.get_display_name}}"
                 width="150" height="150" class="w-[150px] h-[150px] object-cover">
@@ -76,9 +76,9 @@ Title: {{fableseed.title}}
         </span>
         <div class="md:col-span-10 md:row-span-10 mb-4 w-full">
             <h2 class="font-bold md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
-            <p class=" min-w-0 break-words whitespace-normal">{{ branch.body }}</p>
+            <p class="break-words">{{ branch.body }}</p>
         </div>
-        <div class="md:col-span-10 flex mx-auto md:mx-0  justify-center md:justify-end gap-2 mt-4 flex-col md:flex-row">
+        <div class="md:col-span-10 flex mx-auto sm:mx-0 justify-center sm:justify-end gap-2 mt-4 flex-col sm:flex-row">
             {% if user.is_authenticated and user == branch.author %}
             <!-- Show edit and delete buttons only to the author of this Fablebranch -->
             <a href="{% url 'edit-fablebranch' branch.branch %}"

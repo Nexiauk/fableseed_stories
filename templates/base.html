@@ -48,7 +48,7 @@
 <!-- Body class applies different background colours based on the current page url -->
 
 <body class="min-h-screen flex flex-col {% if request.path == home_url %}bg-base-300 {% else%}bg-primary{% endif %} 
-  sm:bg-[url(/static/images/bg1.avif)] md:bg-[length:100%_auto] md:bg-repeat-y md:bg-top">
+  sm:bg-[url(/static/images/bg1.avif)] sm:bg-[length:100%_auto] sm:bg-repeat-y sm:bg-top">
   <header class="w-full">
     <div class="navbar bg-base-200 shadow border-b border-base-100">
       <div class="navbar-start flex-3 md:flex-2 lg:flex-1 gap-2 md:gap-3">
