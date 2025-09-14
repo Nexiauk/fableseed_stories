@@ -1204,6 +1204,7 @@ I tested my site on Chrome, Edge, FireFox and Safari.
 * Tested that removing all branches from a seed, removes the last edited date from the nursery table
 * Tested that a really long word wouldn't break the Fablebranch article - it did, had to add a break class
 * Tested that Fablebranch content doesn't break layout when the posts are very long. It did, it squished the profile area down to the smallest it could possibly be, so added an additional class to the article that keeps the profile area at a fixed size on medium and above screens.
+* Tested that Fablebranches cannot br grown while Fableseeds aren't approved.
 
 
 
