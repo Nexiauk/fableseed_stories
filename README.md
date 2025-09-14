@@ -215,7 +215,7 @@ Four flowers emerged from the list:
 * Spider lily - *not very nice looking*  
 * **Tulip - *beautiful, elegant, one of my favourite flowers***
 
-![][image1]
+![List of tulip colour meanings](./docs/screenshots/tulip-meanings.png)
 
 Purple tulips represent royalty and rebirth, black tulips represent power and strength. I wanted to include black because I liked the idea of the power and strength of words, as well as it being representative of the apocalyptic devastation the flowers and stories are fighting back against.
 
@@ -350,7 +350,7 @@ I used Photoshop again to crop and re-colour the design to match Fableseed’s c
 
 The images for the different flower types were created in Canva using flowers of a similar art style. Where a matching flower image didn’t exist, I created one and ended up with 12 images I was very happy with.
 
-![][image25]![][image26]![][image27]![][image28]![][image29]![][image30]![][image31]![][image32]![][image33]![][image34]![][image35]![][image36]
+![Image of the twelve different flower types](./docs/screenshots/flowers.png)
 
 #### Typography {#typography}
 I used two sites to search for fonts and compare them against each other:
@@ -371,10 +371,10 @@ Great Vibes is high contrast vs Merriweather Sans and Inclusive Sans \- this was
 I wanted a flowing, plantlike script for Fableseed’s main title/logo font, however it also needed to be legible and readable. Lots of flowing and calligraphy fonts have partial letters (the top of an ‘S’ missing) or badly formed letters (‘e’ sometimes looks like ‘a’) or even added flicks and flourishes that make a capital ‘F’ look like a weirdly-shaped capital ‘E’.
 
 I fell in love with the font called Fondamento, but couldn’t get over how the capital ‘F’ looked:
-![][image37]
+![Fableseed in Fondamento font type](./docs/screenshots/fondamento.png)
 
 The Great Vibes font is nicely formed and easy to read at a larger font size. It only has one style, which isn’t a problem as I only want to use it exactly as it is and for only two words \- ‘Fableseed’ and ‘Garden’.
-![][image38]
+![Fableseed in great Vibes font type](./docs/screenshots/great-vibes.png)
 
 * **Merriweather Sans**
 A sans-serif font known for its readability on screens, particularly at smaller sizes, and its traditional feel. With italics applied, double storey letters become single storey letters, ideal for people with specific learning difficulties. It’s traditional in style, despite the modern shapes it has adopted.
@@ -386,15 +386,13 @@ I’d also looked at Raleway as a choice for the sub-headings, as it also change
 
 ChatGPT gave me some useful insights, which can be found at this link: [ChatGPT Font discussion](https://chatgpt.com/share/686a52b0-61a4-8005-9e36-e24e77b2c71d). It also produced code to use in [CodePen](https://codepen.io/Nexiauk/pen/JodgNvy), allowing me to look at both options together. This is ultimately what helped me to decide on Merriweather vs Raleway. It simply looked nicer.
 
-![][image39]
+![Codepen of the different fonts in a scheme](./docs/screenshots/codepen.png)
 
 #### **Wireframes**
 I was inspired by collaborative storytelling platforms that I used to frequent on Proboards and FreeForums. [Here is a link to Event Horizon,](https://eventhorizon.freeforums.net/) a site I created myself more than 10 years ago. I wanted to keep the same sort of boxy, table-style vibe that freeforums and proboards have as a sort of homage, as well as it being a neat way to display many Fableseeds and their content.
+![Screenshot of Event Horizonf orum](./docs/screenshots/event-horizon.png)
 
 I started by creating my wireframes on a Canva whiteboard just so I could be as messy as I liked and move things about. I then transferred these into a [Canva website mockup](https://www.canva.com/design/DAGyZh0LIn0/oZaWEPu1ycptgKwQmzO8Mw/view?utm_content=DAGyZh0LIn0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3a80639be5) for mobile and desktop.
-
-
-![][image40]
 
 #### End product design changes
 I think my end product is very representative of my original wireframe design. I had a very clear image of the vibrant colour scheme I wanted to use and the style of site I wanted to create. The Fableseed list is purposefully a table rather than something more modern, like cards, as a nostalgic throwback, although I hope my table is better looking and prettier than the original Proboards ones.
