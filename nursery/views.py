@@ -91,10 +91,12 @@ def fableseed_view(request, seed):
     fableseed_post = get_object_or_404(Fableseed, seed=seed)
     flower = fableseed_post.flower_type
     branches_list = fableseed_post.fablebranches.all().order_by("created_on")
+    can_grow = request.user.is_authenticated and fableseed_post.approval_status == 1
     context = {
         "fableseed": fableseed_post,
         "posted_branches": branches_list,
         "flower": flower,
+        "can_grow": can_grow,
     }
     page_url = "nursery/fableseed-view.html"
     return render(request, page_url, context)

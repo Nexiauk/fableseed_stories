@@ -2,7 +2,7 @@
 
 Insert Image
 
-View the live project here
+[View the live project here](https://fableseed-stories-03975cdde75d.herokuapp.com/)
 
 This collaborative storytelling forum has been created as a project during my [Code Institute](https://codeinstitute.net/) Level 5 Web App Development course.
 
