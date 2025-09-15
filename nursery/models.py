@@ -28,7 +28,7 @@ class Fableseed(models.Model):
         "nursery.Flower",
         on_delete=models.PROTECT
         )
-    title = models.CharField(max_length=130)
+    title = models.CharField(max_length=60)
     body = models.CharField(max_length=255)
     approval_status = models.IntegerField(
         choices=STATUS,

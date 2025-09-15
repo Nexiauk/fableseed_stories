@@ -35,6 +35,13 @@ input[type="file"] {
   overflow: hidden;
 }
 
+/* Custom CSS for Merriweather font so it appears on mobile */
+.font-merriweather {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 
 /* Responsive styling for the MyGarden profile description list and items */
 @media screen and (min-width:768px) {
