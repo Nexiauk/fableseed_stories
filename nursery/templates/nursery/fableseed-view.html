@@ -42,7 +42,7 @@ Title: {{fableseed.title}}
         <span
             class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</span>
         <div class="md:col-span-10 md:row-span-10 mb-4">
-            <h2 class="font-bold text-lg md:text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h2>
+            <h3 class="font-bold text-lg md:text-xl pb-2 pt-4 md:pt-0">{{ fableseed.title }}</h3>
             <p>{{ fableseed.body }}</p>
         </div>
 
@@ -75,7 +75,7 @@ Title: {{fableseed.title}}
             {{ branch.created_on|date:"F jS, Y, g:i a" }}
         </span>
         <div class="md:col-span-10 md:row-span-10 mb-4 w-full">
-            <h2 class="font-bold text-lg md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h2>
+            <h3 class="font-bold text-lg md:text-xl pb-2 pt-4 md:pt-0 italic">Re: {{ fableseed.title }}</h3>
             <p class="break-words">{{ branch.body }}</p>
         </div>
         <div class="md:col-span-10 flex mx-auto sm:mx-0 justify-center sm:justify-end gap-2 mt-4 flex-row">
