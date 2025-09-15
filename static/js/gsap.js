@@ -20,7 +20,6 @@ document.fonts.ready.then(() => {
             scrollTrigger: {
                 trigger: ".hero-content", // element that triggers the timeline
                 start: "top bottom",      // start when top of trigger hits bottom of viewport
-                end: "bottom 20%",        // optional end position
                 toggleActions: "play none none none", // play on enter, do nothing else
             }
         });
@@ -38,25 +37,22 @@ document.fonts.ready.then(() => {
                     x: 50,        // start offset on x-axis
                     stagger: 0.1, // animate characters one after another
                     duration: 1.5 // duration per character
-                });
+                }, 0);
             }
         });
 
         // Animate paragraph 1 line by line
         SplitText.create("#para1", {
-            type: "lines",   // split paragraph into lines
-            autoSplit: true, // automatically handle line breaks
+            type: "lines",
+            autoSplit: true,
             onSplit: (self) => {
-                // Reveal the parent paragraph
                 gsap.set("#para1", { visibility: "visible" });
-
-                // Animate lines from opacity 0 and y offset
                 tl.from(self.lines, {
                     opacity: 0,
                     y: 50,
-                    stagger: 1,    // animate lines sequentially
-                    duration: 1.5
-                }, "+=1");          // start 1 second later in timeline
+                    stagger: 1,
+                    duration: 1.5,
+                }, 1);
             }
         });
 
@@ -65,13 +61,13 @@ document.fonts.ready.then(() => {
             type: "lines",
             autoSplit: true,
             onSplit: (self) => {
-                gsap.set(self.lines, { visibility: "visible" });
+                gsap.set("#para2", { visibility: "visible" });
                 tl.from(self.lines, {
                     opacity: 0,
                     y: 50,
                     stagger: 1,
                     duration: 1.5,
-                }, "+=2"); // add 2-second delay in timeline
+                }, 6); // add 2-second delay in timeline
             }
         });
 
@@ -80,13 +76,13 @@ document.fonts.ready.then(() => {
             type: "lines",
             autoSplit: true,
             onSplit: (self) => {
-                gsap.set(self.lines, { visibility: "visible" });
+                gsap.set("#para3", { visibility: "visible" });
                 tl.from(self.lines, {
                     opacity: 0,
                     y: 50,
                     stagger: 1,
                     duration: 1.5,
-                }, "+=2");
+                }, 12);
             }
         });
 
@@ -95,13 +91,13 @@ document.fonts.ready.then(() => {
             type: "lines",
             autoSplit: true,
             onSplit: (self) => {
-                gsap.set(self.lines, { visibility: "visible" });
+                gsap.set("#para4", { visibility: "visible" });
                 tl.from(self.lines, {
                     opacity: 0,
                     y: 50,
                     stagger: 1,
                     duration: 1.5,
-                }, "+=2");
+                }, 18);
             }
         });
 
@@ -110,13 +106,13 @@ document.fonts.ready.then(() => {
             type: "lines",
             autoSplit: true,
             onSplit: (self) => {
-                gsap.set(self.lines, { visibility: "visible" });
+                gsap.set("#para5", { visibility: "visible" });
                 tl.from(self.lines, {
                     opacity: 0,
                     y: 50,
                     stagger: 1,
                     duration: 1.5,
-                }, "+=2");
+                }, 24);
             }
         });
 
@@ -125,14 +121,15 @@ document.fonts.ready.then(() => {
             type: "lines",
             autoSplit: true,
             onSplit: (self) => {
-                gsap.set(self.lines, { visibility: "visible" });
+                gsap.set("#para6", { visibility: "visible" });
                 tl.from(self.lines, {
                     opacity: 0,
                     y: 50,
                     stagger: 1,
                     duration: 1.5,
-                }, "+=2");
+                }, 30);
             }
         });
+        ScrollTrigger.refresh();
     });
 });

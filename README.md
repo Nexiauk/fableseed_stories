@@ -99,7 +99,7 @@ Until one day, it blooms.
 A single, impossible flower — born of imagination.  
 From it, you gather seeds.
 
-And with them, you grow the last garden at the end of the world. {#and-with-them,-you-grow-the-last-garden-at-the-end-of-the-world.}
+And with them, you grow the last garden at the end of the world.
 
 ## **Inspiration**
 I’m a person who likes to read and write, and who tries to come up with creative ways to get others to enjoy reading and writing, too. My passion for stories and storytelling began with books when I was a kid, but then extended into online, collaborative storytelling forums when I was a teenager. This lasted until I was almost 30, when life got super busy.
@@ -156,7 +156,7 @@ ChatGPT immediately suggested I create a collaborative storytelling forum and th
 * Gamified & Puzzle-Oriented Users - Players and interactive fiction fans interested in story-unlocking mechanics.
 
 ### *User Stories*
-I used a [Github Kanban Board](https://github.com/users/Nexiauk/projects/8) to track my user stories and development tasks and help keep me on track.
+I used a [Github Kanban Board](https://github.com/users/Nexiauk/projects/8/views/2) to track my user stories and development tasks and help keep me on track.
 
 #### Guests
 Prospective users who want to browse the forum, read some content and see if they want to join up. Guests shouldn’t be able to create content and have limited access to posted content.
