@@ -60,7 +60,7 @@ class EditProfileForm(forms.ModelForm):
             ),
             Field("bio",
                   css_class="rounded-sm p-2 mb-4 text-gray-700 "
-                  "2xl:text-2xl"
+                  "2xl:text-2xl 2xl:mb-6"
                   ),
             Field("profile_picture",
                   css_class=(
@@ -73,7 +73,7 @@ class EditProfileForm(forms.ModelForm):
                    css_class=(
                        "btn bg-primary mt-4 "
                        "hover:bg-secondary hover:text-secondary-content"
-                       " 2xl:btn-xl 2xl:ml-4"
+                       " 2xl:btn-xl 2xl:ml-4 2xl:mt-6"
                        )
                    ),
         )
