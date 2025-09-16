@@ -15,10 +15,10 @@ Nursery
 {% block content %}
 <!-- Nursery section shows a paginated table of all approved Fableseed seeds -->
 <section class="grid grid-flow-row gap-4 mb-4" id="nursery-table">
-    <h2 class="text-center text-4xl 2xl:text-5xl">The Nursery</h2>
+    <h2 class="text-center text-4xl 2xl:text-5xl 2xl:mb-4 2xl:mt-4">The Nursery</h2>
     <!-- 'Plant a seed' button only visible to authenticated users. Triggers the 'plant-fableseed' view -->
     {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}"
-            class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant
+            class="btn 2xl:btn-xl hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant
             a
             Seed</a></div> {% endif %}
     <!-- Table container with responsive scroll -->
@@ -49,19 +49,19 @@ Nursery
                     </td>
                     <td class="p-4 border-t md:border-r border-secondary">
                         <!-- Fableseed titles truncated if too long -->
-                        <div class="truncate">{{ fableseed.title }}</div>
+                        <div class="truncate 2xl:text-2xl">{{ fableseed.title }}</div>
                     </td>
                     <!-- Author name and created date visible on small+ screens -->
-                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell">
+                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell 2xl:text-2xl">
                         {{ fableseed.author.get_display_name }}</td>
-                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell truncate">
+                    <td class="p-4 border-t border-r border-secondary hidden sm:table-cell truncate 2xl:text-2xl">
                         {{ fableseed.created_on|naturaltime }}
                     </td>
-                    <td class="p-4 border-t border-secondary hidden sm:table-cell">
+                    <td class="p-4 border-t border-secondary hidden sm:table-cell 2xl:text-2xl">
                         <!-- Last edited info for the seed, only shows displayed only if it has a branch -->
                         {% if fableseed.latest_branch %}
                         <p>by {{ fableseed.latest_branch.author.get_display_name }}</p>
-                        <p class="text-sm truncate">{{ fableseed.latest_branch.created_on|naturaltime }}</p>
+                        <p class="text-sm truncate 2xl:text-xl">{{ fableseed.latest_branch.created_on|naturaltime }}</p>
                         {% endif %}
                     </td>
                 </tr>
