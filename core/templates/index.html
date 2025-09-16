@@ -1,22 +1,22 @@
 <!-- Template that contains the main home-page hero information -->
 {% extends 'base.html' %}
 {% load static %}
-  <!-- Page-specific noscript fallback for hero text -->
+<!-- Page-specific noscript fallback for hero text -->
 {% block extra_head %}
-  <noscript>
-    <style>
-      .hero-title,
-      #para1,
-      #para2,
-      #para3,
-      #para4,
-      #para5,
-      #para6 {
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-    </style>
-  </noscript>
+<noscript>
+  <style>
+    .hero-title,
+    #para1,
+    #para2,
+    #para3,
+    #para4,
+    #para5,
+    #para6 {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  </style>
+</noscript>
 {% endblock %}
 
 <!-- GSAP Javascript for SplitText and Scrolltrigger animations -->
@@ -32,55 +32,63 @@ Fableseed Home Page
 {% endblock %}
 
 {% block content %}
-<section class="flex justify-center ">
-  <div class="border-1 border-accent min-h-full w-full lg:max-w-4xl xl:max-w-5xl 2xl:min-w-7xl bg-[url('https://res.cloudinary.com/dppks2exv/image/upload/w_500,f_avif,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png')]
+<section class="flex justify-center">
+  <div
+    class="border-1 border-accent min-h-full w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-[1800px] bg-[url('https://res.cloudinary.com/dppks2exv/image/upload/w_500,f_avif,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png')]
   md:bg-[url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto,fl_progressive/v1756295170/hero4_ortgcv.png')]
   lg:bg-[url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_1200,f_auto,dpr_auto,q_auto,fl_progressive/v1756295170/hero4_ortgcv.png')]
+  2xl:bg-[url('https://res.cloudinary.com/dppks2exv/image/upload/c_pad,w_2000,f_auto,dpr_auto,q_auto,fl_progressive/v1756295170/hero4_ortgcv.png')]
   bg-center md:bg-[position:5%_center]  lg:bg-[position:5%_center]  xl:bg-[position:0%_center] rounded-xl bg-cover bg-no-repeat">
-<!-- Hero content that contains a header, a hero image, a responsive overlay and an animated poem using GSAP -->
+    <!-- Hero content that contains a header, a hero image, a responsive overlay and an animated poem using GSAP -->
     <div
-      class="hero-content text-primary-content text-center md:text-right rounded-xl min-h-full w-full md:justify-end p-0 bg-base-300/40 lg:bg-transparent">
-      <div id="hero-content-wrapper" class="bg-base-300/40 md:bg-transparent lg:bg-base-300/40 rounded-xl md:pr-10 lg:text-center lg:pr-0">
-        <h2 class="text-4xl md:text-5xl font-bold hero-title pt-5 pb-2 leading-relaxed md:leading-tight">Grow Your <span class="text-secondary text-5xl font-great-vibes font-bold md:text-6xl">Garden</span></h2>
+      class="hero-content text-primary-content text-center md:text-right rounded-xl h-full w-full md:justify-end p-0 bg-base-300/40 lg:bg-transparent 2xl:ml-auto 2xl:w-[35vw] ">
+      <div id="hero-content-wrapper"
+        class="bg-base-300/40 md:bg-transparent lg:bg-base-300/40 rounded-xl md:pr-10 lg:text-center lg:pr-0 2xl:h-full 2xl:w-[95%]">
+        <h2
+          class="text-4xl md:text-5xl 2xl:text-[6rem] font-bold hero-title pt-5 pb-2 leading-relaxed md:leading-tight">
+          Grow Your <span
+            class="text-secondary text-5xl font-great-vibes font-bold md:text-6xl 2xl:text-[6rem]">Garden</span></h2>
         <div class="hero-text pt-3 lg:pt-5 p-3">
-          <p class="pb-5 text-lg leading-tight" id="para1">
+          <p class="pb-5 text-lg leading-tight 2xl:text-4xl" id="para1">
             The world is a desolate wasteland.
             <br>Nothing grows here.
             <br>Nothing thrives.
           </p>
-          <p class="pb-5 text-lg leading-tight" id="para2">
+          <p class="pb-5 text-lg leading-tight 2xl:text-4xl" id="para2">
             You wander through the ruin and wreckage, alone.
             <br>Until you see a single <span class="text-secondary font-bold">green shoot</span> in the decay.
             <br>Struggling against the darkness.
           </p>
-          <p class="pb-5 text-lg leading-tight" id="para3">
+          <p class="pb-5 text-lg leading-tight 2xl:text-4xl" id="para3">
             You give it water.
             <br>There is no response.
             <br>There is no sun or warmth.
           </p>
-          <p class="pb-5 text-lg leading-tight" id="para4">
+          <p class="pb-5 text-lg leading-tight 2xl:text-4xl" id="para4">
             So you begin to speak.
             <br>You tell it tall tales, fantasy fables, silly stories.
             <br>Legends, parables, and yarns spun from nothing but hope.
           </p>
-          <p class="pb-5 text-lg leading-tight" id="para5">
+          <p class="pb-5 text-lg leading-tight 2xl:text-4xl" id="para5">
             The more stories you share, the taller it grows.
             <br>The stronger it becomes.
             <br>Until one day, <span class="text-secondary font-bold">it blooms</span>.
           </p>
-          <p class="pb-5 text-lg leading-tight" id="para6">
+          <p class="pb-5 text-lg leading-tight 2xl:text-4xl" id="para6">
             A single, impossible flower —
             born of imagination.
             <br>From it, you gather seeds.
-            <br>And with them, you grow <span class="text-secondary font-bold">the last garden at the end of the world</span>.
+            <br>And with them, you grow <span class="text-secondary font-bold">the last garden at the end of the
+              world</span>.
           </p>
 
         </div>
         <!-- Div element that contains a button with a high z-index, so it behaves as expected around the GSAP animation -->
-                  <div class="z-10 relative mb-4">
-            <a href="{% url 'about' %}"
-              class="btn hover:bg-secondary hover:text-secondary-content border border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Start Growing...</a>
-          </div>
+        <div class="z-10 relative mb-4">
+          <a href="{% url 'about' %}"
+            class="btn 2xl:btn-xl hover:bg-secondary hover:text-secondary-content border border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Start
+            Growing...</a>
+        </div>
       </div>
     </div>
   </div>
