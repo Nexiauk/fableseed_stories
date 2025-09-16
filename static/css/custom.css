@@ -35,7 +35,7 @@ input[type="file"] {
   overflow: hidden;
 }
 
-/* Responsive styling for the MyGarden profile description list and items */
+/* Responsive styling for the MyGarden profile description list and items at breakpoint 768px */
 @media screen and (min-width:768px) {
     dt {
         float: left;
@@ -48,6 +48,7 @@ input[type="file"] {
     }
 }
 
+/* Responsive styling for the MyGarden profile description list and items at breakpoint 2560px */
 @media screen and (min-width:2560px) {
     dl {
         width: 650px;

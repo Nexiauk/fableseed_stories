@@ -17,7 +17,7 @@ Nursery
 <section class="grid grid-flow-row gap-4 mb-4" id="nursery-table">
     <h2 class="text-center text-4xl 2xl:text-5xl 2xl:mb-4 2xl:mt-4">The Nursery</h2>
     <!-- 'Plant a seed' button only visible to authenticated users. Triggers the 'plant-fableseed' view -->
-    {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}"
+    {% if user.is_authenticated %} <div class="column mx-auto 2xl:mb-2"><a href="{% url 'plant-fableseed' %}"
             class="btn 2xl:btn-xl hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant
             a
             Seed</a></div> {% endif %}

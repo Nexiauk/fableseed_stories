@@ -57,3 +57,10 @@
     font-family: var(--font-inclusive-sans)
   }
 }
+/* Styling for Crispy form field labels at breakpoint 2xl (2560px) */
+label[for="id_body"],
+label[for="id_title"],
+label[for="id_email"],
+label[for="id_flower_type"] {
+  @apply 2xl:text-2xl 2xl:mb-1;
+}
