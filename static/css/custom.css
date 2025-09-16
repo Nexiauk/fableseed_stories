@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Styling for form inputs that Crispy Tailwind doesn't support */
 select {
     padding: 0.5rem;
@@ -15,24 +22,31 @@ input[type="file"] {
     text-align: center;
     padding: 0.5rem;
     white-space: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 /* Class applied to a nav-link button when request.path matches the url variable for that page */
 .active {
-    background-color:#045911;
+    background-color: #045911;
     border-radius: 0.5rem;
 }
 
 /* Visibility hidden applied so that SplitText can safely wrap the hero text in spans/divs without showing unstyled or jumping text */
 .hero-title,
-#para1, #para2, #para3, #para4, #para5, #para6 {
-  visibility: hidden;
+#para1,
+#para2,
+#para3,
+#para4,
+#para5,
+#para6 {
+    visibility: hidden;
 }
 
 /* Applied to stop the temporary expansion caused by SplitText spans */
 .hero-content {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* Responsive styling for the MyGarden profile description list and items at breakpoint 768px */
@@ -63,5 +77,10 @@ input[type="file"] {
     dd {
         margin: 0 0 0 250px;
         padding: 0 0 0.8 0;
+    }
+
+    /* Breakpoint specific sizing for the choose file button on the edit profile page */
+    input[type="file"] {
+        max-width: 250px;
     }
 }

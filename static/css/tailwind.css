@@ -61,7 +61,10 @@
 label[for="id_body"],
 label[for="id_title"],
 label[for="id_email"],
-label[for="id_flower_type"] {
+label[for="id_flower_type"],
+label[for="id_bio"],
+label[for="id_profile_picture"],
+label[for="id_display_name"] {
   @apply 2xl:text-2xl 2xl:mb-1;
 }
 
@@ -92,5 +95,9 @@ label[for="id_flower_type"] {
 /* Help text on the signup form - styling applied to first last child */
 #id_password1_helptext ul li:last-child {
   @apply mb-6;
+}
+
+#id_profile_picture {
+  @apply 2xl:btn-lg 2xl:ml-4;
 }
 
