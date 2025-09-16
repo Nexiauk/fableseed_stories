@@ -250,7 +250,7 @@ I decided to go with **Black Parrot 1** for its balanced mix of greens and purpl
 **Claret:** #730E3D  
 **RGB:** 115, 14, 61  
 **Closest Tailwind Colour:** pink-900  
-**oklch(0.3683 0.1374 359.46)**
+oklch(0.3683 0.1374 359.46)
 
 ![Eggplant-coloured sample](./docs/screenshots/eggplant.png)  
 **Eggplant:** #400E37  
@@ -352,7 +352,7 @@ The images for the different flower types were created in Canva using flowers of
 
 ![Image of the twelve different flower types](./docs/screenshots/flowers.png)
 
-#### Typography {#typography}
+#### Typography
 I used two sites to search for fonts and compare them against each other:
 
 [https://fontjoy.com/](https://fontjoy.com/)
