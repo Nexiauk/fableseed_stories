@@ -109,6 +109,6 @@ label[for="id_display_name"] {
 
 /* Separate styling for the options inside the flower type select dropdown on the Cultivate Fableseed form.*/
 #id_flower_type option {
-  @apply 2xl:text-md
+  @apply 2xl:text-lg
 }
 

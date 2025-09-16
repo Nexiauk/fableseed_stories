@@ -8,13 +8,13 @@ Uh-Oh!
 {% block content %}
 <!-- User-friendly text and image with a button that uses the browser's history to go back. -->
 <section
-    class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full lg:overflow-y-auto p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content">
-    <div class="mb-5 mx-auto text-center">
-        <h2 class="font-bold text-2xl md:text-center mb-4">Uh-Oh!</h2>
-        <p class="mb-4">You've taken a wrong turn into the desolate wasteland.</p>
+    class="md:w-3/4 max-w-3xl 2xl:max-w-6/8 mx-auto overflow-auto h-full lg:overflow-y-auto p-5 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content 2xl:mt-4">
+    <div class="mb-5 mx-auto text-center flex flex-col justify-center items-center">
+        <h2 class="font-bold text-2xl 2xl:text-5xl md:text-center mb-4 2xl:mb-6 2xl:pt-4">Uh-Oh!</h2>
+        <p class="mb-4 2xl:text-3xl 2xl:mb-6 2xl:pt-4">You've taken a wrong turn into the desolate wasteland.</p>
         <img src="https://res.cloudinary.com/dppks2exv/image/upload/v1757014258/go-back-error_zrvr7f.avif"
             alt="Go back now!" class="rounded-xl">
-        <button class="btn hover:bg-secondary hover:text-secondary-content mt-4" onclick="history.back()">Go
+        <button class="btn 2xl:btn-xl hover:bg-secondary hover:text-secondary-content mt-4 2xl:mt-6" onclick="history.back()">Go
             Back</button>
     </div>
 
