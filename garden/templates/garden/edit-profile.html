@@ -1,8 +1,10 @@
 <!-- Template for editing a user's profile. Extends base.html and uses Crispy Forms for rendering. -->
 {% extends 'base.html' %}
+<!-- Load Crispy Forms tags for rendering forms with styling -->
+<!-- Load static for serving static files like CSS/JS/images -->
 {% load crispy_forms_tags %}
 {% load static %}
-<!-- Page title for browser tab -->
+<!-- Page title set dynamically for browser tab based on the logged-in user's display name -->
 {% block title %}
 Edit {{user.get_display_name}}'s Profile
 {% endblock %}
@@ -12,7 +14,7 @@ Edit {{user.get_display_name}}'s Profile
 <section
     class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6"
     id="create-div">
-    <!-- Header showing user's display name. -->
+    <!-- Header showing user's display name, dynamically set based on user's display name -->
     <h2 class="mb-4 font-bold text-2xl">Edit {{user.get_display_name}}'s Profile</h2>
     <!-- Form for editing user profile. Uses Crispy Forms for rendering and styling fields. ID and method pulled from form.helper. enctype set to allow file uploads for profile pictures.-->
         {% crispy form %}

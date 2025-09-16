@@ -1,6 +1,7 @@
 <!-- Template for viewing a user's profile information and earned flowers, with edit controls and links to the original Fableseed posts where their branches grew  -->
 {% extends 'base.html' %}
 {% load static %}
+<!-- Dynamically sets the browser tab title based on the user's display name -->
 
 {% block title %}
 {{user.get_display_name}}'s Garden
@@ -23,6 +24,7 @@
         </div>
         <div class="mx-auto mb-2 mt-2" id="profile-descriptors">
             <!-- User information in description list (bio, email, full name, fablebud count) -->
+             <!-- Conditional rendering used for email and full name if values exist -->
             <dl>
                 <dt class="font-bold text-lg 2xl:text-3xl md:text-base">Display Name:</dt>
                 <dd class="pb-3 text-lg 2xl:text-3xl md:text-base">{{user.get_display_name}}</dd>
@@ -44,12 +46,12 @@
             </dl>
         </div>
     </div>
-    <!-- Buttons to edit or delete the user profile. Only shows to authenticated users -->
+    <!-- Buttons to edit the user profile. Only shows to authenticated user -->
     <div class="buttons flex flex-1 justify-end mt-3 gap-2"> {% if user.is_authenticated %} <a
             href="{% url 'edit-profile' %}" class="btn 2xl:btn-xl hover:bg-secondary hover:text-secondary-content">Edit Profile</a>
         {% endif %}</div>
 </section>
-<!-- Section for earned flowers. Pulls from the user flower model -->
+<!-- Section displaying flowers earned by the user. Each flower links back to the original Fableseed it was earned from -->
 <section id="user-flowers"
     class="md:w-3/4 max-w-3xl 2xl:max-w-3/4 mx-auto overflow-auto w-full h-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col">
     <div class="text-center mb-4" id="flower-header">
@@ -57,10 +59,10 @@
     </div>
 
     <div class="flex flex-row flex-wrap" id="flower-container">
-        <!-- Flower grid loops through user_flowers queryset for the current user -->
+<!-- Loop through user_flowers queryset; display flower name, quantity, and clickable image linking to source Fableseed -->
         {% for flower in user_flowers %}
+        <!-- Each flower displayed with image and quantity; hover effect applied for visual feedback -->
         <div class="column text-center mx-auto mb-4">
-            <!-- Flower name and quantity -->
             <p class="mb-2 2xl:text-2xl">{{flower.flower}} ({{flower.quantity}})</p>
             <!-- Flower image links back to the seed it was earned from -->
             <a href="{% url 'fableseed-view' flower.earned_from_seed.pk %}"><img src="{{flower.user_flower_image_url}}"
