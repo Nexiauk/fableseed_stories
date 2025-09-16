@@ -15,7 +15,7 @@ Nursery
 {% block content %}
 <!-- Nursery section shows a paginated table of all approved Fableseed seeds -->
 <section class="grid grid-flow-row gap-4 mb-4" id="nursery-table">
-    <h2 class="text-center text-4xl">The Nursery</h2>
+    <h2 class="text-center text-4xl 2xl:text-5xl">The Nursery</h2>
     <!-- 'Plant a seed' button only visible to authenticated users. Triggers the 'plant-fableseed' view -->
     {% if user.is_authenticated %} <div class="column mx-auto"><a href="{% url 'plant-fableseed' %}"
             class="btn hover:bg-secondary hover:text-secondary-content border-1 border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Plant
@@ -29,11 +29,11 @@ Nursery
             <thead>
                 <tr>
                     <th class="w-17 icon border-b border-r border-secondary bg-base-300 text-center" aria-label="Delete"><i class="fa-solid fa-seedling text-primary-content text-xl" aria-hidden="true"></i></th>
-                    <th class="p-2 border-b md:border-r border-secondary bg-base-300">Seed Title</th>
-                    <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Author</th>
-                    <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell">Date created
+                    <th class="p-2 border-b md:border-r border-secondary bg-base-300 2xl:text-2xl">Seed Title</th>
+                    <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell 2xl:text-2xl">Author</th>
+                    <th class="p-2 border-b border-r border-secondary bg-base-300 hidden sm:table-cell 2xl:text-2xl">Date created
                     </th>
-                    <th class="p-2 border-b border-secondary bg-base-300 hidden sm:table-cell">Last Edited</th>
+                    <th class="p-2 border-b border-secondary bg-base-300 hidden sm:table-cell 2xl:text-2xl">Last Edited</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,9 +80,9 @@ Nursery
             {% endif %}
             {% if page_obj.has_next %}
             <a href="?page={{ page_obj.next_page_number }}"
-                class="btn hover:bg-secondary hover:text-secondary-content">Next</a>
+                class="btn 2xl:btn-lg hover:bg-secondary hover:text-secondary-content">Next</a>
             <a href="?page={{ page_obj.paginator.num_pages }}"
-                class="btn hover:bg-secondary hover:text-secondary-content">Last &raquo;</a>
+                class="btn 2xl:btn-lg hover:bg-secondary hover:text-secondary-content">Last &raquo;</a>
             {% endif %}
         </span>
                     <span class="current">

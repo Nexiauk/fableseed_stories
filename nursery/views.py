@@ -30,7 +30,7 @@ def nursery_view(request):
     Annotates each seed with its latest branch.
     """
     fableseed_list = Fableseed.objects.filter(approval_status=1)
-    paginator = Paginator(fableseed_list, 7)
+    paginator = Paginator(fableseed_list, 10)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     for seed in page_obj:

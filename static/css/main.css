@@ -4227,6 +4227,12 @@
       line-height: var(--tw-leading, var(--text-8xl--line-height));
     }
   }
+  .\32 xl\:text-lg {
+    @media (width >= 130rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
   .\32 xl\:text-xl {
     @media (width >= 130rem) {
       font-size: var(--text-xl);
@@ -4236,6 +4242,13 @@
   .\32 xl\:text-\[6rem\] {
     @media (width >= 130rem) {
       font-size: 6rem;
+    }
+  }
+  .\32 xl\:btn-lg {
+    @media (width >= 130rem) {
+      --fontsize: 1.125rem;
+      --btn-p: 1.25rem;
+      --size: calc(var(--size-field, 0.25rem) * 12);
     }
   }
   .\32 xl\:btn-xl {
