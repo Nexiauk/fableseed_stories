@@ -136,7 +136,7 @@
   </header>
   <!-- Main container for all page content to keep styling consistent. Applies mx-auto to the home-page so it looks nice on bigger screens.  -->
   <main
-    class="container mx-auto mt-4 flex-grow px-4 flex flex-col {% if request.path == home_url %}justify-center{% endif %}">
+    class="container mx-auto mt-4 flex-grow px-4 flex flex-col {% if request.path == home_url %}2xl:mt-8  justify-center 2xl:justify-start{% endif %}">
     <!-- Display Django messages (ERROR/SUCCESS) with ARIA for accessibility -->
     {% if messages %}
     {% for message in messages %}
