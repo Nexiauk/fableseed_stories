@@ -1,6 +1,7 @@
 <!-- Template for viewing Fableseed About information as a timeline of steps  -->
 {% extends 'base.html' %}
 {% load static %}
+<!-- Include FontAwesome kit for timeline and social media icons -->
 {% block extra_css %}
 <script src="https://kit.fontawesome.com/0b96933893.js" crossorigin="anonymous"></script>
 {% endblock %}
@@ -8,18 +9,26 @@
 About Fableseed
 {% endblock %}
 {% block content %}
-<!-- About section with header, sub-title and Fableseed steps as a timeline -->
+<!-- Main About section contains header, sub-title, introductory text, and a vertical timeline of steps -->
 <section class="flex flex-col justify-center items-center h-full md:w-3/4 max-w-3xl 2xl:max-w-3/4 mx-auto">
+    <!-- Scrollable card container for the timeline, with responsive height, padding, rounded corners, and drop shadows -->
     <div
         class="mx-auto overflow-auto lg:overflow-y-auto lg:h-[70vh] w-full p-5 mb-6 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content">
         <div class="flex flex-col mb-2 2xl:mb-1">
+            <!-- Section title and sub-title -->
             <h2 class="font-bold text-2xl md:text-center 2xl:text-5xl 2xl:pt-4">The Fableseed Gardener's Manual</h2>
-            <h3 class="italic md:text-center 2xl:text-4xl mb-4 2xl:mb-6 2xl:pb-4">A step-by-step guide to planting and growing stories</h3>
-            <p class="mb-3 2xl:mb-6 2xl:text-2xl 2xl:pb-4">Welcome to Fableseed, a collaborative storytelling platform, where stories grow like plants and
-                words breathe life into a blooming world. In Fableseed, stories are as essential as oxygen. Plant the seeds
+            <h3 class="italic md:text-center 2xl:text-4xl mb-4 2xl:mb-6 2xl:pb-4">A step-by-step guide to planting and
+                growing stories</h3>
+            <!-- Introductory text explaining Fableseed concept and the gardening metaphor -->
+            <p class="mb-3 2xl:mb-6 2xl:text-2xl 2xl:pb-4">Welcome to Fableseed, a collaborative storytelling platform,
+                where stories grow like plants and
+                words breathe life into a blooming world. In Fableseed, stories are as essential as oxygen. Plant the
+                seeds
                 of imagination and watch your own personal garden blossom with vibrant flowers, each one nurtured by the
-                tales you and others tell. These blossoms aren't just beautiful - they cradle your stories in their petals,
+                tales you and others tell. These blossoms aren't just beautiful - they cradle your stories in their
+                petals,
                 keeping them alive in the last garden at the end of the world</p>
+                <!-- Timeline of steps: each <li> represents a step in using Fableseed -->
             <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                 <li>
                     <div class="timeline-start md:text-end mb-3">
@@ -44,7 +53,8 @@ About Fableseed
                         <h4 class="font-mono italic 2xl:text-3xl">Step 2</h4>
                         <div class="text-lg font-black 2xl:text-2xl">Sow seeds in the Nursery. </div>
                         <p class="2xl:text-2xl">
-                            Visit the Nursery and plant a Fableseed of just a couple of lines with a title. Choose the type of
+                            Visit the Nursery and plant a Fableseed of just a couple of lines with a title. Choose the
+                            type of
                             flower your prompt will grow into - each blossom symbolises the spirit of your story.
                         </p>
                     </div>
@@ -55,7 +65,8 @@ About Fableseed
                     <div class="timeline-start md:text-end mb-3">
                         <h4 class="font-mono italic 2xl:text-3xl">Step 3</h4>
                         <div class="text-lg font-black 2xl:text-2xl">Earn Fablebuds.</div>
-                        <p class="2xl:text-2xl">Every planted Fableseed grants precious Fablebuds - these let you grow other people's stories.</p>
+                        <p class="2xl:text-2xl">Every planted Fableseed grants precious Fablebuds - these let you grow
+                            other people's stories.</p>
                     </div>
                     <div class="timeline-middle">
                         <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
@@ -71,7 +82,8 @@ About Fableseed
                         <h4 class="font-mono italic 2xl:text-3xl">Step 4</h4>
                         <div class="text-lg font-black 2xl:text-2xl">Browse and Grow.</div>
                         <p class="2xl:text-2xl">
-                            Browse the Nursery to discover story seeds planted by other gardeners - choose a flower to add to
+                            Browse the Nursery to discover story seeds planted by other gardeners - choose a flower to
+                            add to
                             your profile garden.
                         </p>
                     </div>
@@ -82,7 +94,8 @@ About Fableseed
                     <div class="timeline-start md:text-end mb-3">
                         <h4 class="font-mono italic 2xl:text-3xl">Step 5</h4>
                         <div class="text-lg font-black 2xl:text-2xl">Spends Fablebuds to grow Fablebranches.</div>
-                        <p class="2xl:text-2xl">Fablebuds gathered from planting Fableseeds, can be used to propagate Fablebranches.</p>
+                        <p class="2xl:text-2xl">Fablebuds gathered from planting Fableseeds, can be used to propagate
+                            Fablebranches.</p>
                     </div>
                     <div class="timeline-middle">
                         <i class="fa-solid fa-seedling text-base-200 text-xl"></i>
@@ -98,7 +111,8 @@ About Fableseed
                         <h4 class="font-mono italic 2xl:text-3xl">Step 6</h4>
                         <div class="text-lg font-black 2xl:text-2xl">Propagate your plants.</div>
                         <p class="2xl:text-2xl">
-                            Every Fablebranch you write blooms that flower in your profile garden. Grow more branches to watch
+                            Every Fablebranch you write blooms that flower in your profile garden. Grow more branches to
+                            watch
                             your flowers multiply.
                         </p>
                     </div>
@@ -106,13 +120,15 @@ About Fableseed
                 </li>
                 <li>
                     <hr>
-    
+
                     <div class="timeline-start md:text-end mb-3">
                         <h4 class="font-mono italic 2xl:text-3xl">Step 7</h4>
                         <div class="text-lg font-black 2xl:text-2xl"> Cultivate your garden of you.</div>
                         <p class="2xl:text-2xl">
-                            Your user profile becomes a beautiful garden - and a living record of the stories you've helped
-                            grow. Clicking on a flower leads to the original Fableseed that granted you that blossom, and so
+                            Your user profile becomes a beautiful garden - and a living record of the stories you've
+                            helped
+                            grow. Clicking on a flower leads to the original Fableseed that granted you that blossom,
+                            and so
                             your garden becomes a living archive of stories.
                         </p>
                     </div>
@@ -124,8 +140,15 @@ About Fableseed
             </ul>
         </div>
     </div>
-        <div class="flex flex-row w-full p-6 mb-1 md:p-6 2xl:p-8 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content mx-auto justify-around items-center lg:text-xl 2xl:text-4xl"><a href="https://github.com/Nexiauk" target="_blank" aria-label="GitHub profile"><i class="fa-brands fa-github text-base-200 fa-2xl hover:text-secondary cursor-pointer"></i></a>
-        <a href="https://www.linkedin.com/in/lucy-sears-b3b714246/" target="_blank" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin text-base-200 fa-2xl hover:text-secondary cursor-pointer"></i></a>
-    <a href="https://www.facebook.com/lucy.sears.5/" target="_blank" aria-label="Facebook profile"><i class="fa-brands fa-facebook text-base-200 fa-2xl hover:text-secondary cursor-pointer"></i></a></div>
+    <!-- Social media links for profile: GitHub, LinkedIn, Facebook. Aria-label used for screen reader accessibility -->
+    <div
+        class="flex flex-row w-full p-6 mb-1 md:p-6 2xl:p-8 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content mx-auto justify-around items-center lg:text-xl 2xl:text-4xl">
+        <a href="https://github.com/Nexiauk" target="_blank" aria-label="GitHub profile"><i
+                class="fa-brands fa-github text-base-200 fa-2xl hover:text-secondary cursor-pointer"></i></a>
+        <a href="https://www.linkedin.com/in/lucy-sears-b3b714246/" target="_blank" aria-label="LinkedIn profile"><i
+                class="fa-brands fa-linkedin text-base-200 fa-2xl hover:text-secondary cursor-pointer"></i></a>
+        <a href="https://www.facebook.com/lucy.sears.5/" target="_blank" aria-label="Facebook profile"><i
+                class="fa-brands fa-facebook text-base-200 fa-2xl hover:text-secondary cursor-pointer"></i></a>
+    </div>
 </section>
 {% endblock content %}

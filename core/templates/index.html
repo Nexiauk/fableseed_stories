@@ -1,7 +1,7 @@
 <!-- Template that contains the main home-page hero information -->
 {% extends 'base.html' %}
 {% load static %}
-<!-- Page-specific noscript fallback for hero text -->
+<!-- Noscript fallback for hero text visibility when JavaScript is disabled -->
 {% block extra_head %}
 <noscript>
   <style>
@@ -19,7 +19,7 @@
 </noscript>
 {% endblock %}
 
-<!-- GSAP Javascript for SplitText and Scrolltrigger animations -->
+<!-- GSAP and plugins for animating hero poem text with ScrollTrigger and SplitText -->
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
@@ -32,6 +32,7 @@ Fableseed Home Page
 {% endblock %}
 
 {% block content %}
+<!-- Hero section: responsive background images for different screen sizes, with centered content overlay -->
 <section class="flex justify-center">
   <div
     class="border-1 border-accent min-h-full w-full lg:max-w-4xl xl:max-w-5xl 2xl:max-w-[1800px] bg-[url('https://res.cloudinary.com/dppks2exv/image/upload/w_500,f_avif,dpr_auto,q_auto,fl_progressive/v1756573111/Fableseed_hero_image_qobjwh.png')]
@@ -42,8 +43,10 @@ Fableseed Home Page
     <!-- Hero content that contains a header, a hero image, a responsive overlay and an animated poem using GSAP -->
     <div
       class="hero-content text-primary-content text-center md:text-right rounded-xl h-full w-full md:justify-end p-0 bg-base-300/40 lg:bg-transparent 2xl:ml-auto 2xl:w-[35vw] ">
+      <!-- Wrapper for hero text and call-to-action button; background transparency varies by screen size -->
       <div id="hero-content-wrapper"
         class="bg-base-300/40 md:bg-transparent lg:bg-base-300/40 rounded-xl md:pr-10 lg:text-center lg:pr-0 2xl:h-full 2xl:w-[95%]">
+        <!-- GSAP animated poem starts here -->
         <h2
           class="text-4xl md:text-5xl 2xl:text-[6rem] font-bold hero-title pt-5 pb-2 leading-relaxed md:leading-tight">
           Grow Your <span
@@ -83,7 +86,7 @@ Fableseed Home Page
           </p>
 
         </div>
-        <!-- Div element that contains a button with a high z-index, so it behaves as expected around the GSAP animation -->
+        <!-- Div element that contains a button with a high z-index to ensure it appears above GSAP animations -->
         <div class="z-10 relative mb-5 2xl:mb-7">
           <a href="{% url 'about' %}"
             class="btn 2xl:btn-xl 2xl:text-2xl hover:bg-secondary hover:text-secondary-content border border-base-100 shadow-[0px_0px_20px_5px_rgba(85,166,5,0.6)] hover:shadow-[0px_0px_20px_10px_rgba(64,14,55,1)]">Start
