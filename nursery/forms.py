@@ -37,7 +37,7 @@ class CreateFableseed(forms.ModelForm):
                 "title",
                 css_class=(
                     "rounded-sm p-2 mb-4 text-gray-700 "
-                    "2xl:text-2xl"
+                    "2xl:text-2xl 2xl:mb-6"
                 ),
                 placeholder="Enter your Fableseed title here..."
             ),
@@ -45,7 +45,7 @@ class CreateFableseed(forms.ModelForm):
                 "body",
                 css_class=(
                     "rounded-sm p-2 mb-4 text-gray-700 "
-                    "2xl:text-2xl"
+                    "2xl:text-2xl 2xl:mb-6"
                 ),
                 placeholder="Write your story starter here..."
             ),
@@ -57,7 +57,7 @@ class CreateFableseed(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl"
+                    " 2xl:btn-xl 2xl:mt-6"
                 ),
                 onclick="history.back()"
             ),
@@ -68,7 +68,7 @@ class CreateFableseed(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl 2xl:ml-4"
+                    " 2xl:btn-xl 2xl:ml-4 2xl:mt-6"
                 ),
             ),
         )
@@ -102,7 +102,7 @@ class CreateFablebranch(forms.ModelForm):
                     "rounded-sm "
                     "p-2 mb-4 "
                     "text-gray-700 "
-                    "2xl:text-2xl"
+                    "2xl:text-2xl 2xl:mb-6"
                 ),
             ),
             Button(
@@ -112,7 +112,7 @@ class CreateFablebranch(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl"
+                    " 2xl:btn-xl 2xl:mt-6"
                 ),
                 onclick="history.back()"
             ),
@@ -123,7 +123,7 @@ class CreateFablebranch(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl 2xl:ml-4"
+                    " 2xl:btn-xl 2xl:ml-4 2xl:mt-6"
                 ),
             ),
         )
@@ -155,7 +155,7 @@ class EditFablebranch(forms.ModelForm):
                 "body",
                 css_class=(
                     "rounded-sm p-2 mb-4 text-gray-700 "
-                    "2xl:text-2xl"
+                    "2xl:text-2xl 2xl:mb-6"
                            ),
             ),
             Button(
@@ -165,7 +165,7 @@ class EditFablebranch(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl"
+                    " 2xl:btn-xl 2xl:mt-6"
                 ),
                 onclick="history.back()"
             ),
@@ -176,7 +176,7 @@ class EditFablebranch(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl 2xl:ml-4"
+                    " 2xl:btn-xl 2xl:ml-4 2xl:mt-6"
                 ),
             ),
         )
@@ -211,14 +211,14 @@ class EditFableseed(forms.ModelForm):
                 "title",
                 css_class=(
                     "rounded-sm p-2 mb-4 text-gray-700 "
-                    "2xl:text-2xl"
+                    "2xl:text-2xl 2xl:mb-6"
                     ),
             ),
             Field(
                 "body",
                 css_class=(
                     "rounded-sm p-2 mb-4 text-gray-700 "
-                    "2xl:text-2xl"
+                    "2xl:text-2xl 2xl:mb-6"
                            ),
             ),
             Field("flower_type"),
@@ -229,7 +229,7 @@ class EditFableseed(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl"
+                    " 2xl:btn-xl 2xl:mt-6"
                 ),
                 onclick="history.back()"
             ),
@@ -240,7 +240,7 @@ class EditFableseed(forms.ModelForm):
                     "bg-primary mt-4 "
                     "hover:bg-secondary "
                     "hover:text-secondary-content"
-                    " 2xl:btn-xl 2xl:ml-4"
+                    " 2xl:btn-xl 2xl:ml-4 2xl:mt-6"
                 ),
             ),
         )

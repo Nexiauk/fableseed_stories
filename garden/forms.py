@@ -3,7 +3,7 @@ Forms for user signup and profile editing in the Fableseed app.
 
 Includes:
 - CustomSignupForm: Extends allauth SignupForm to include display_name.
-- EditProfileForm: Allows editing of a user's display name, bio, and profile picture.
+- EditProfileForm: Allows editing of user's display name, bio, profile picture.
 """
 
 from allauth.account.forms import SignupForm

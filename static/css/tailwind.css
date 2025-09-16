@@ -97,7 +97,18 @@ label[for="id_display_name"] {
   @apply mb-6;
 }
 
+/* Styling file selector button on the edit-profile form */
 #id_profile_picture {
   @apply 2xl:btn-lg 2xl:ml-4;
+}
+
+/* Styling for the flower type select dropdown on the Cultivate Fableseed form */
+#id_flower_type {
+  @apply 2xl:text-2xl;
+}
+
+/* Separate styling for the options inside the flower type select dropdown on the Cultivate Fableseed form.*/
+#id_flower_type option {
+  @apply 2xl:text-md
 }
 

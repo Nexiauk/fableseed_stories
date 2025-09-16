@@ -76,7 +76,7 @@ input[type="file"] {
 
     dd {
         margin: 0 0 0 250px;
-        padding: 0 0 0.8 0;
+        padding: 0 0 0.8em 0;
     }
 
     /* Breakpoint specific sizing for the choose file button on the edit profile page */
