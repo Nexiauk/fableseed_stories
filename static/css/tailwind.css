@@ -41,6 +41,7 @@
   --font-great-vibes: "Great Vibes", cursive, sans-serif; 
   --font-merriweather: "Merriweather Sans", sans-serif; 
   --font-inclusive-sans: "Inclusive Sans", sans-serif; 
+  --breakpoint-2xl: 130rem;
 }
 
 /* Global base style as part of them theme */
