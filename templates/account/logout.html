@@ -8,15 +8,15 @@
 {% endblock head_title %}
 {% block content %}
     <section class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6">
-        <h2 class="mb-4 font-bold text-2xl">{% trans "Sign Out" %}</h2>
-            <p class="mb-4">Are you sure you want to sign out?</p>
+        <h2 class="mb-4 font-bold text-2xl 2xl:text-5xl 2xl:mb-6">{% trans "Sign Out" %}</h2>
+            <p class="mb-4 2xl:text-2xl 2xl:mb-6">Are you sure you want to sign out?</p>
           <form class="logout" id="logout_form" method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {{ form | crispy}}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button class="btn btn-signout right hover:bg-secondary hover:text-secondary-content" type="submit">{% trans "Sign Out" %} &raquo;</button>
+            <button class="btn 2xl:btn-xl btn-signout right hover:bg-secondary hover:text-secondary-content" type="submit">{% trans "Sign Out" %} &raquo;</button>
           </form>
     </section>
 {% endblock content %}

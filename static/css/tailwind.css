@@ -46,7 +46,7 @@
 
 /* Global base style as part of them theme */
 @layer base {
-  /* Global styling set for table headers */
+  /* Global styling set for table headers and heading2 */
   th, h2 {
     font-family: var(--font-merriweather);
     font-weight: 700;
@@ -64,3 +64,33 @@ label[for="id_email"],
 label[for="id_flower_type"] {
   @apply 2xl:text-2xl 2xl:mb-1;
 }
+
+/* Styling for Django allauth forms at breakpoint 2xl (2560px) */
+/* Form inputs */
+#signup_form input,
+#login_form input {
+  @apply rounded-md p-2 mb-4 text-base 2xl:text-2xl 2xl:mb-6;
+}
+
+/* Form labels */
+#signup_form label,
+#login_form label {
+  @apply 2xl:text-2xl 2xl:mb-1;
+}
+
+/* Help text on the login and sign up forms */
+#id_password1_helptext ul li,
+#id_password_helptext a {
+  @apply 2xl:text-2xl;
+}
+
+/* Help text on the signup form - styling applied to first list child */
+#id_password1_helptext ul li:first-child {
+  @apply mt-6;
+}
+
+/* Help text on the signup form - styling applied to first last child */
+#id_password1_helptext ul li:last-child {
+  @apply mb-6;
+}
+

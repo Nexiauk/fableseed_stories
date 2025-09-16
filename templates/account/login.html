@@ -10,15 +10,15 @@
 {% block content %}
 
     <section class="md:w-3/4 max-w-3xl mx-auto h-full overflow-auto bg-base-100 text-primary-content rounded-xl bg-clip-border drop-shadow-secondary-content drop-shadow-md container p-4 md:p-6">
-        <h2 class="mb-4 font-bold text-2xl">{% trans "Sign In" %}</h2>
-            <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please <a class="underline hover:text-secondary-content" href="{{ signup_url }}">sign up first</a>.{% endblocktrans %}</p>
+        <h2 class="mb-4 font-bold text-2xl 2xl:text-5xl 2xl:mb-6">{% trans "Sign In" %}</h2>
+            <p class="mb-4 2xl:text-2xl 2xl:mb-6">{% blocktrans %}If you have not created an account yet, then please <a class="underline hover:text-secondary-content" href="{{ signup_url }}">sign up first</a>.{% endblocktrans %}</p>
           <form class="login" id="login_form" method="post" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ form | crispy}}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button class="btn btn-signin right hover:bg-secondary hover:text-secondary-content" type="submit">{% trans "Sign In" %} &raquo;</button>
+            <button class="btn 2xl:btn-xl btn-signin right hover:bg-secondary hover:text-secondary-content" type="submit">{% trans "Sign In" %} &raquo;</button>
           </form>
     </section>
     {% endblock content %}
