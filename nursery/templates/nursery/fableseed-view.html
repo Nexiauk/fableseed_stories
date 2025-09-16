@@ -21,8 +21,9 @@ Title: {{fableseed.title}}
         </div>
     </div>
 </dialog>
-<!-- Main Fableseed post including title, body, author details and controls in a grid layout with main post at top and branches below -->
+<!-- Main Fableseed post view including title, body, author details and controls in a grid layout with main post at top and branches below -->
 <section class="grid grid-flow-row gap-4 mb-4">
+    <!-- Fableseed title and image for the page -->
     <div class="flex items-center justify-center gap-2 flex-col text-center md:flex-row">
         <h2 class="text-4xl order-2 2xl:text-5xl 2xl:mb-4 2xl:mt-4">{{ fableseed.title }}</h2>
         <img src="{{ fableseed.flower_type.flower_image.url }}" alt="{{ fableseed.flower_type.flower_name }}"
@@ -39,7 +40,6 @@ Title: {{fableseed.title}}
                 class="w-[150px] h-[150px] object-cover">
             <p class="md:text-center mt-4 mb-4">{{ fableseed.author.userprofile.bio }}</p>
         </div>
-
         <span
             class="md:col-span-10 border-b-2 pb-2 mt-5 md:mt-0 italic text-sm 2xl:text-xl">{{ fableseed.created_on|date:"F jS, Y, g:i a" }}</span>
         <div class="md:col-span-10 md:row-span-10 mb-4">
@@ -57,7 +57,6 @@ Title: {{fableseed.title}}
             {% endif %}
         </div>
     </article>
-
     <!-- Iterates through all branches (replies) associated with this Fableseed, styles odd and even branch replies alternating colours. -->
     {% if posted_branches %}
     {% for branch in posted_branches %}

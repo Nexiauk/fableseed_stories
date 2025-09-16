@@ -12,12 +12,14 @@
 <html lang="en">
 
 <head>
+  <!-- Meta tags for SEO and accessibility: description helps search engines, author metadata, keywords -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Welcome to Fableseed, a collaborative storytelling platform where stories grow like plants and words breathe life into a blooming world.">
   <meta name="author" content="Lucy Sears">
   <meta name="keywords" content="storytelling, stories, collaborative, apocalypse, garden, flowers, ">
+  <!-- Block title so it can bet set on all pages -->
   <title>{% block title %}
     Fableseed
     {% endblock %}</title>
@@ -27,15 +29,16 @@
   <!-- Preconnect links for Google fonts so they can start immediately loading instead of waiting for the CSS file imports -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Google Fonts CDN link -->
+  <!-- Google Fonts CDN link - Great Vibes, Inclusive Sans, Merriweather -->
   <link
     href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Merriweather+Sans:ital,wght@1,700&display=swap"
     rel="stylesheet">
-  <!-- Favicon code -->
+ <!-- Favicons and manifest for cross-device compatibility -->
   <link rel="apple-touch-icon" sizes="180x180" href="../static/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16.png">
   <link rel="manifest" href="../static/images/site.webmanifest">
+  <!-- Block for child templates to insert extra CSS if required -->
   {% block extra_css %}
   {% endblock %}
 
@@ -60,7 +63,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </button>
-          <!-- Nav list and links. List items apply an active class when current page matches the link -->
+          <!-- Nav list and links for mobile. List items apply an active class when current page matches the link -->
           <ul tabindex="0" class="menu menu-lg dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li class="{% if request.path == home_url %} active" aria-current="page{% endif %}"><a
                 href="{% url 'home' %}">Home</a></li>
@@ -82,7 +85,7 @@
             {% endif %}
           </ul>
         </div>
-
+<!-- Logo and site name. -->
         <div class="flex items-center gap-4 flex-1 justify-center md:justify-start" id="logo-container">
           <!-- Logo image: uses responsive AVIF sources with fallback image -->
           <picture class="order-2 lg:order-1">
@@ -96,8 +99,8 @@
             <source media="(max-width: 767px)" type="image/avif"
               srcset="https://res.cloudinary.com/dppks2exv/image/upload/c_fit,w_160,dpr_auto/v1756564983/fableseed_logo2_1_slbqoc.avif">
             <!-- Fallback <img> -->
-            <img src="../static/images/logo_75x75.avif" alt="Fableseed logo" class="w-20 2xl:w-30 h-auto" width="120" height="93"
-              decoding="async">
+            <img src="../static/images/logo_75x75.avif" alt="Fableseed logo" class="w-20 2xl:w-30 h-auto" width="120"
+              height="93" decoding="async">
           </picture>
           <!-- Logo text acts as main site header on all pages. Links to the home page -->
           <h1 class="mt-3 lg:order-1"><a
@@ -166,7 +169,7 @@
     {% endblock %}
   </main>
   <!-- Footer shows login status -->
-  <footer class="bg-base-200 mt-4 py-4 border-t border-base-100"> {% if user.is_authenticated %}
+  <footer class="bg-base-200 mt-4 py-3 2xl:py-4 border-t border-base-100"> {% if user.is_authenticated %}
     <p class="text-center text-sm md:text-md lg:text-lg 2xl:text-3xl">You are currently logged in as
       {{user.get_display_name}} </p>
     {% else %}
