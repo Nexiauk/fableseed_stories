@@ -47,3 +47,20 @@ input[type="file"] {
         padding: 0 0 0.5em 0;
     }
 }
+
+@media screen and (min-width:2560px) {
+    dl {
+        width: 650px;
+
+    }
+
+    dt {
+        float: left;
+        width: 300px;
+    }
+
+    dd {
+        margin: 0 0 0 250px;
+        padding: 0 0 0.8 0;
+    }
+}

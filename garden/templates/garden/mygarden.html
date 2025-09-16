@@ -8,52 +8,52 @@
 {% block content %}
 <!-- Profile details section with header, image and user information -->
 <section
-    class="md:w-3/4 max-w-3xl mx-auto overflow-auto h-full w-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
+    class="md:w-3/4 max-w-3xl 2xl:max-w-3/4 mx-auto overflow-auto h-full w-full p-4 mb-3 2xl:mb-6 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col"
     id="profile-details">
     <!-- Section header displays the current user's display name -->
     <div class="text-center mb-4" id="profile-header">
-        <h2 class="font-bold text-2xl">{{user.get_display_name}}'s Garden</h2>
+        <h2 class="font-bold text-2xl 2xl:text-5xl 2xl:pt-4">{{user.get_display_name}}'s Garden</h2>
     </div>
 
     <div class="flex flex-col mb-4" id="profile-container">
         <div class="mx-auto">
             <!-- Profile image pulled from the userprofile model. -->
             <img src="{{user.userprofile.user_profile_image_url}}" alt="{{user.get_display_name}}'s profile image"
-                width="150" height="150" class="mx-auto mb-4">
+                width="150" height="150" class="mx-auto mb-4 2xl:w-70 h-auto">
         </div>
         <div class="mx-auto mb-2 mt-2" id="profile-descriptors">
             <!-- User information in description list (bio, email, full name, fablebud count) -->
             <dl>
-                <dt class="font-bold text-lg md:text-base">Display Name:</dt>
-                <dd class="pb-3 text-lg md:text-base">{{user.get_display_name}}</dd>
-                <dt class="font-bold text-lg md:text-base">User Bio:</dt>
-                <dd class="pb-3 text-lg md:text-base">{{user.userprofile.bio}}</dd>
+                <dt class="font-bold text-lg 2xl:text-3xl md:text-base">Display Name:</dt>
+                <dd class="pb-3 text-lg 2xl:text-3xl md:text-base">{{user.get_display_name}}</dd>
+                <dt class="font-bold text-lg 2xl:text-3xl md:text-base">User Bio:</dt>
+                <dd class="pb-3 text-lg 2xl:text-3xl md:text-base">{{user.userprofile.bio}}</dd>
                 {% if user.email %}
-                <dt class="font-bold text-lg md:text-base">Email Address:</dt>
-                <dd class="pb-3 text-lg md:text-base">{{user.email}}</dd>
+                <dt class="font-bold text-lg 2xl:text-3xl md:text-base">Email Address:</dt>
+                <dd class="pb-3 text-lg 2xl:text-3xl md:text-base">{{user.email}}</dd>
                 {% endif %}
                 {%if user.first_name and user.last_name%}
-                <dt class="font-bold text-lg md:text-base">Full Name:</dt>
-                <dd class="pb-3 text-lg md:text-base">
+                <dt class="font-bold text-lg 2xl:text-3xl md:text-base">Full Name:</dt>
+                <dd class="pb-3 text-lg 2xl:text-3xl md:text-base">
                     {{user.first_name}}
                     {{user.last_name}}
                 </dd>
                 {% endif %}
-                <dt class="font-bold text-lg md:text-base">Fablebud Count:</dt>
-                <dd class="pb-3 text-lg md:text-base">{{user.userprofile.fablebuds_count}}</dd>
+                <dt class="font-bold text-lg 2xl:text-3xl md:text-base">Fablebud Count:</dt>
+                <dd class="pb-3 text-lg 2xl:text-3xl md:text-base">{{user.userprofile.fablebuds_count}}</dd>
             </dl>
         </div>
     </div>
     <!-- Buttons to edit or delete the user profile. Only shows to authenticated users -->
     <div class="buttons flex flex-1 justify-end mt-3 gap-2"> {% if user.is_authenticated %} <a
-            href="{% url 'edit-profile' %}" class="btn hover:bg-secondary hover:text-secondary-content">Edit Profile</a>
+            href="{% url 'edit-profile' %}" class="btn 2xl:btn-xl hover:bg-secondary hover:text-secondary-content">Edit Profile</a>
         {% endif %}</div>
 </section>
 <!-- Section for earned flowers. Pulls from the user flower model -->
 <section id="user-flowers"
-    class="md:w-3/4 max-w-3xl mx-auto overflow-auto w-full h-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col">
+    class="md:w-3/4 max-w-3xl 2xl:max-w-3/4 mx-auto overflow-auto w-full h-full p-4 mb-3 md:p-6 bg-base-100 rounded-xl bg-clip-border text-primary-content drop-shadow-md drop-shadow-secondary-content flex flex-col">
     <div class="text-center mb-4" id="flower-header">
-        <h3 class="font-bold text-xl">Earned Flowers</h3>
+        <h3 class="font-bold text-xl 2xl:text-4xl 2xl:pt-2">Earned Flowers</h3>
     </div>
 
     <div class="flex flex-row flex-wrap" id="flower-container">
@@ -61,10 +61,10 @@
         {% for flower in user_flowers %}
         <div class="column text-center mx-auto mb-4">
             <!-- Flower name and quantity -->
-            <p class="mb-2">{{flower.flower}} ({{flower.quantity}})</p>
+            <p class="mb-2 2xl:text-2xl">{{flower.flower}} ({{flower.quantity}})</p>
             <!-- Flower image links back to the seed it was earned from -->
             <a href="{% url 'fableseed-view' flower.earned_from_seed.pk %}"><img src="{{flower.user_flower_image_url}}"
-                    alt="{{ flower.flower }}" width="100" height="100" class="hover:bg-accent">
+                    alt="{{ flower.flower }}" width="100" height="100" class="2xl:w-30 2xl:h-auto hover:bg-accent">
             </a>
         </div>
         {% endfor %}
